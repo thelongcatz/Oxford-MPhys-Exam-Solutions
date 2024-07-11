@@ -1,0 +1,100 @@
+name: Build and Commit PDFs with XeLaTeX
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  get_tex_files:
+    # If only *.tex are updated, we compile only those scripts
+    # Else we compile every script if manually invoked/class definition updated
+    # or if the variables for changed files are empty due to the commit being initial
+    name: Get A List of TeX Root Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check for Change in Custom Class
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        uses: tj-actions/changed-files@v44.5.5
+        id: changed-tex-class
+        with:
+          files: |
+            *.cls
+      - name: Get A List of Changed Directories
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        uses: tj-actions/changed-files@v44.5.5
+        id: changed-tex-dirs
+        # Set maxdepth=2 to avoid duplicates with changes in in *.tex and Images
+        with:
+          files: |
+            **/*.tex
+            **/Images/**
+          dir_names: true
+          dir_names_max_depth: '2'
+      - name: Construct List of TeX Root Files and Decide if Compilation Needed
+        id: get-file-list
+        run: |
+          declare -a output=()
+          if [ "$EVENT_NAME" != 'workflow_dispatch' -a "$CLASS_CHANGED" = 'false' ]; then
+            dirs="${TEX_DIRS}"
+          else
+            dirs="$(find . -name '*' -mindepth 2 -maxdepth 2 -type d -not -path './.*' | cut -c '3-')"
+          fi
+          for dir in $dirs; do
+            output+=("${dir}/$(basename ${dir}).tex")
+          done
+
+          if [ "$TEX_CHANGED" = 'true' -o "$CLASS_CHANGED" = 'true' ] || [ "$EVENT_NAME" = 'workflow_dispatch' ] || [ -z "$TEX_CHANGED" -o -z "$CLASS_CHANGED" ]; then
+            echo "to_compile=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "to_compile=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "tex_files=${output[@]}" >> "$GITHUB_OUTPUT"
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CLASS_CHANGED: ${{ steps.changed-tex-class.outputs.any_changed }}
+          TEX_CHANGED: ${{ steps.changed-tex-dirs.outputs.any_changed }}
+          TEX_DIRS: ${{ steps.changed-tex-dirs.outputs.all_changed_files }}
+    outputs:
+      to_compile: ${{ steps.get-file-list.outputs.to_compile }}
+      tex_files: ${{ steps.get-file-list.outputs.tex_files }}
+  compile:
+    name: Compile TeX Documents
+    needs: get_tex_files
+    if: ${{ needs.get_tex_files.outputs.to_compile == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compile PDFs with XeLaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ needs.get_tex_files.outputs.tex_files }}
+          work_in_root_file_dir: true
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+        env:
+          TEXINPUTS: "${{ github.workspace }}//:"
+      - name: Move and Commit PDFs
+        run: |
+          for tex in $TEX_FILES; do
+            file="$(basename ${tex})"
+            filename="${file%%.tex}"
+            dir="$(dirname ${tex})"
+            parent_dir="$(dirname ${dir})"
+            mv "${dir}/${filename}.pdf" "${parent_dir}"
+          done
+          git config --global user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          find . -name '*.pdf' -print0 | xargs -0 git add
+          git commit -m 'Auto-compilation by Github Actions'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
+        env:
+          TEX_FILES: ${{ needs.get_tex_files.outputs.tex_files }}

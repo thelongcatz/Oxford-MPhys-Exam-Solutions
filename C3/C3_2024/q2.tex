@@ -1,0 +1,99 @@
+Density of states of a \underline{non-parabolic} dispersion relation.
+
+Despite the seeming difficulty, it is perfectly doable with the hints given\footnote{Though sadly the author rolled a 1 in perception and failed to spot the boldface $\mathbf{k}$ in the hint given and lost 7 easy marks in part d\dots}.
+
+\begin{parts}
+	\part Straightforward calculation from the fact that we have an \textit{isotropic} band, thus
+	\begin{gather*}
+		A(k_{||}) = \pi k^{2} \\
+		\Rightarrow \frac{\partial A}{\partial k} = 2\pi k
+	\end{gather*}
+	
+	By chain rule, we have $\dfrac{\partial A}{\partial \epsilon} = \dfrac{\partial A}{\partial k} \dfrac{\mathrm{d} k}{\mathrm{d} \epsilon}$:
+	\begin{align}
+		\omega_c &= \frac{2\pi eB}{\hbar^2} \times \frac{\mathrm{d} \epsilon}{\mathrm{d} k} \times \frac{1}{2\pi k} \notag \\
+		&= \frac{eB}{\hbar^2} \frac{\mathrm{d}\epsilon / \mathrm{d}k}{k} \label{eqn:q2-omega-c}
+	\end{align}
+	
+	\part Implicitly differentiating the given dispersion gives (here $\epsilon^\prime = \mathrm{d} \epsilon / \mathrm{d} k$):
+	\begin{gather}
+		\epsilon^\prime + \frac{2\epsilon\epsilon^\prime}{E_g} = \frac{\hbar^2 k}{m_0^*} \notag \\
+		\Rightarrow \epsilon^\prime = \frac{\hbar^2 k}{m_0^*} \left[1 + \frac{2\epsilon}{E_g}\right]^{-1} \label{eqn:q2-de-dk}
+	\end{gather}
+	
+	Plugging \eqref{eqn:q2-de-dk} into \eqref{eqn:q2-omega-c} then gives:
+	\begin{align*}
+		\omega_c &= \frac{eB}{\hbar^2 k} \, \frac{\hbar^2 k}{m_0^*} \left[1 + \frac{2\epsilon}{E_g}\right]^{-1} \\
+		&= \frac{eB}{m_0^*} \, \frac{1}{1+2\epsilon / E_g}
+	\end{align*}
+	
+	\part Here we need to use the definition of cyclotron frequency $\omega_c = \dfrac{eB}{m_c}$, where $m_c$ is the cyclotron mass.
+	Comparing the two expression then gives:
+	\begin{equation*}
+		m_c = m_0^* \left[ 1+\frac{2\epsilon}{E_g} \right]
+	\end{equation*}
+	
+	\part Following the hints and taking care that we have a \textbf{3D} (see footnote \frownie) integral:
+	\begin{align*}
+		g(E) &= \frac{2}{V} \, \sum_{\mathbf{k}} \delta\left[E - \epsilon(\mathbf{k})\right] \\
+		&\rightarrow \frac{2}{V} \times \frac{V}{\left(2\pi\right)^3} \int \mathrm{d}^{3}\mathbf{k} \  \delta\left[E - \epsilon(\mathbf{k})\right] \textnormal{\hspace{1em}by continuum approximation} \\
+		&= \frac{2}{\left(2\pi\right)^3} \int \mathrm{d}k \  4\pi k^2 \  \delta\left[E - \epsilon(\mathbf{k})\right]
+	\end{align*}
+	
+	From \eqref{eqn:q2-de-dk} we have $k\,\mathrm{d}k = \dfrac{m_0^*}{\hbar^2}\left[ 1 + \dfrac{2\epsilon}{E_g}\right] \, \mathrm{d}\epsilon$, combining this together with $k$ from the dispersion then gives:
+	\begin{align*}
+		g(E) &= \frac{1}{\pi^2} \int \mathrm{d}\epsilon \,
+		\frac{\sqrt{2} m_0^{*^{3/2}}}{\hbar^3}
+		\left(1 + \frac{2\epsilon}{E_g}\right)
+		\sqrt{\epsilon\left[1 + \frac{\epsilon}{E_g}\right]}
+		\delta\left[E - \epsilon\right] \\
+		&= \underbracket{\frac{\sqrt{2} m_0^{*^{3/2}}}{\pi^2 \hbar^3}}_{\alpha} \left(1 + \frac{2E}{E_g}\right) \sqrt{E\left[1 + \frac{E}{E_g}\right]}
+	\end{align*}
+	as per the properties of the delta function.
+	
+	\part In the limit of $E / E_g \ll 1$, we may drop the $\epsilon / E_g$ term in the dispersion to get the parabolic dispersion immediately.
+	Similar result follows for the cyclotron mass.
+	
+	For d.o.s., we may drop higher order terms in the following expansion:
+	\begin{align*}
+		\lim\limits_{E/E_g \rightarrow 0} g(E) &= \lim\limits_{E/E_g \rightarrow 0} \alpha \sqrt{E} \left(1+\frac{2E}{E_g}\right) \left[1+\frac{E}{2E_g}+\ldots\right] \\
+		&= \lim\limits_{E/E_g \rightarrow 0} \alpha \sqrt{E} \left(1 + \frac{5}{2} \, \frac{E}{E_g} + \ldots\right) \\
+		&= \alpha \sqrt{E}
+	\end{align*}
+	And we have now recovered the parabolic d.o.s.!
+	
+	\part For the parabolic approximation to fit within the dispersion above with an accuracy of $10\unit{\percent}$, we construct the following ratio (for that $g(E)$ determines almost all properties of a material):
+	\begin{gather}
+		\frac{\alpha \left(1 + \frac{2E}{E_g}\right) \sqrt{E\left[1 + \frac{E}{E_g}\right]}}{\alpha \sqrt{E}} = 110\unit{\percent} \notag \\
+		\Rightarrow \left(1 + \frac{2E}{E_g}\right) \sqrt{1 + \frac{E}{E_g}} = 1.1 \label{eqn:q2-ratio}
+	\end{gather}
+	
+	From here we could meticulously solve the cubic equation, however we can binomial expand \eqref{eqn:q2-ratio} in hopes of the results being small\footnote{As reassurance, the actual roots are pretty small: $0.03946$ and the unphysical roots of $-1.01973 \pm 0.53910i$.}:
+	\begin{gather*}
+		\left(1+\frac{2E}{E_g}\right) \left[1+\frac{E}{2E_g}\right] = 1.1 \\
+		\left(\frac{E}{E_g}\right)^2 + \frac{5}{2} \, \frac{E}{E_g} - 0.1 = 0 \\
+		\frac{E}{E_g} = \frac{-\diagfrac{5}{2} \pm \sqrt{\diagfrac{25}{4} + 0.4}}{2} \\
+		= 0.0394
+	\end{gather*}
+	where the unphysical negative root is dropped.
+	
+	For the final part of this question, we simply plug in the value of the band gap for each semiconductor.
+	
+	InAs:
+	\begin{align*}
+		E &= 0.0394 \times \SI{0.35}{\electronvolt} \\
+		&= \SI{0.0138}{\electronvolt}
+	\end{align*}
+	
+	GaSb:
+	\begin{align*}
+		E &= 0.0394 \times \SI{0.73}{\electronvolt} \\
+		&= \SI{0.0287}{\electronvolt}
+	\end{align*}
+	
+	GaAs:
+	\begin{align*}
+		E &= 0.0394 \times \SI{1.42}{\electronvolt} \\
+		&= \SI{0.0559}{\electronvolt}
+	\end{align*}
+\end{parts}

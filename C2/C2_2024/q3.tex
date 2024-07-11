@@ -1,0 +1,152 @@
+\textbf{(DRAFT)}
+Rabi flopping in the context of atomic/ionic quantum computing.
+\begin{parts}
+	\part Mathematical proof as to why the evolution of a closed quantum system is unitary.
+	
+	From the spectral theorem, we may immediately quote that for an operator $\mathcal{H}$ that commutes with its conjugate, there exists a complete set\footnote{Mathematically referred to as the \textit{spectrum} of the operator. Surprise!} of orthonormal eigenbasis:
+	\begin{equation}
+		\mathcal{H} = \sum_{i} \lambda_i \ket{i}\bra{i}
+		\label{eqn:q3-spectral}
+	\end{equation}
+	
+	We then have the TISE which relates \eqref{eqn:q3-spectral} to the following:
+	\begin{equation*}
+		\mathcal{H}\ket{\psi} = E\ket{\psi}
+		\label{eqn:q3-tise}
+	\end{equation*}
+	where we rewrite $\ket{i}\rightarrow\ket{\psi}$, and $E$ takes the role of energy of state $\ket{\psi}$.
+	
+	We require energy to be real to make physical sense, hence the eigenvalues of $\mathcal{H}$ must be real.
+	
+	This means that $\mathcal{H}$ is Hermitian, i.e. $\mathcal{H} = \mathcal{H}^\dag$.
+	Hence the propagator $U = \exp(-i\mathcal{H}t/\hbar)$ satisfies the following relation:
+	\begin{align*}
+		UU^\dag &= \exp\left(-\frac{i \mathcal{H} t}{\hbar}\right) \exp\left(\frac{i \mathcal{H}^\dag t}{\hbar}\right) \\
+		&= \exp\left(-\frac{i \mathcal{H} t}{\hbar} + \frac{i \mathcal{H} t}{\hbar}\right) \textnormal{\hspace{1em}since }[\mathcal{H},\, \mathcal{H}^\dag] = 0 \\
+		&= \exp(0) \\
+		&= \mathds{1}
+	\end{align*}
+	Thus $U$ is unitary.
+	
+	\part Diagonalising $\mathcal{H}_2$ gives:
+	\begin{gather}
+		\begin{vmatrix}
+			-\lambda & \hbar V/2 \\
+			\hbar V/2 & \hbar\delta - \lambda
+		\end{vmatrix} = 0 \notag \\
+		\lambda^2 - \hbar\delta\lambda - \frac{\hbar^2 V^2}{4} = 0 \notag \\
+		\lambda = \frac{\hbar\delta \pm \sqrt{\hbar^2 \delta^2 + \hbar^2 V^2}}{2}
+		\label{eqn:q3-h2-eigenvalues}
+	\end{gather}
+	
+	For the case where $V = 0$, we have:
+	\begin{align*}
+		\lambda = \hbar\delta \Rightarrow \textnormal{Eigenvector: }
+		\begin{pmatrix}
+			0 \\ 1
+		\end{pmatrix}
+		&& \lambda = 0 \Rightarrow \textnormal{Eigenvector: }
+		\begin{pmatrix}
+			1 \\ 0
+		\end{pmatrix}
+	\end{align*}
+	
+	Hence a system with initial state $\ket{0}$ or $\ket{1}$ remains stationary over time in this case.
+	
+	Similarly for the case where $\delta = 0$, we have:
+	\begin{align*}
+		\lambda = \frac{\hbar V}{2} \Rightarrow \textnormal{Eigenvector: }
+		\ket{+} = \frac{1}{\sqrt{2}}
+		\begin{pmatrix}
+			1 \\ 1
+		\end{pmatrix} \\
+		\lambda = -\frac{\hbar V}{2} \Rightarrow \textnormal{Eigenvector: }
+		\ket{-} = \frac{1}{\sqrt{2}}
+		\begin{pmatrix}
+			1 \\ -1
+		\end{pmatrix}
+	\end{align*}
+	
+	So a system undergoes Rabi flopping over time:
+	\begin{equation*}
+		\ket{\psi(t)} = A \ket{+} \exp\left(-\frac{iVt}{2}\right) + B \ket{-} \exp\left(\frac{iVt}{2}\right)
+	\end{equation*}
+	Note that $\ket{0} = \bigl(\ket{+} \;+\; \ket{-}\bigr) / \sqrt{2}$ and $\ket{1} = \bigl(\ket{+} \;-\; \ket{-}\bigr) / \sqrt{2}$.
+	
+	An initial state of $\ket{0}$ then gives $A = B = 1/\sqrt{2}$, hence:
+	\begin{equation*}
+		\ket{\psi(t)} = \cos\left(\frac{Vt}{2}\right) \ket{0} -i\sin\left(\frac{Vt}{2}\right) \ket{1}
+	\end{equation*}
+	Whereas an initial state of $\ket{1}$ gives $A = -B = 1/\sqrt{2}$:
+	\begin{equation*}
+		\ket{\psi(t)} = -i\sin\left(\frac{Vt}{2}\right) \ket{0} + \cos\left(\frac{Vt}{2}\right) \ket{1}
+	\end{equation*}
+	
+	In the case where $V \ll \delta$, we may apply perturbation theory onto the case with $V = 0$.
+	So we rewrite $\mathcal{H} = \mathcal{H}_0 + \Delta\mathcal{H}$ where $\mathcal{H}_0$ is the Hamiltonian of the unperturbed two-level system, $\Delta\mathcal{H}$ is the control Hamiltonian with the off-diagonal terms.
+	
+	The first order change in the state is given as:
+	\begin{gather*}
+		\Delta\ket{0} = \sum_{i \neq 0} \frac{\bra{i} \Delta\mathcal{H} \ket{0}}{E_{0} - E_{i}} = -\frac{V}{2\delta} \ket{1} \sim 0 \\
+		\Delta\ket{1} = \sum_{i \neq 1} \frac{\bra{i} \Delta\mathcal{H} \ket{1}}{E_{1} - E_{i}} = \frac{V}{2\delta} \ket{0} \sim 0
+	\end{gather*}
+	
+	Therefore taking the eigenvectors from the case $V = 0$ is a valid approach.
+	
+	We proceed to solve the TDSE with the \textit{exact} eigenvalue\footnote{Not a huge fan of the wording but this is the most logical thing I can think of!} from \eqref{eqn:q3-h2-eigenvalues} to get detuned Rabi flopping:
+	\begin{align}
+		\ket{\psi(t)} &= C \ket{0} \exp\left( -\frac{i\lambda_+ t}{\hbar} \right) + D \ket{1} \exp\left( -\frac{i\lambda_- t}{\hbar} \right) \notag \\
+		&= C \ket{0} \exp\left( -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} \right) + D \ket{1} \exp\left( -it\,\frac{\delta - \sqrt{\delta^2 + V^2}}{2} \right) \notag \\
+		&= \exp(-i\delta t/2) \left[ C \ket{0} \exp\left( -it \, \sqrt{\delta^2 + V^2}/2 \right) + D \ket{1} 
+		\exp\left( it \, \sqrt{\delta^2 + V^2}/2 \right) \right]
+		\label{eqn:q3-detuned-rabi}
+	\end{align}
+	
+	\part The very first assumption we made to analyse an atomic/ionic quantum system is to assume that it is a two-level system.
+	
+	We also changed from the lab frame into the rotating frame to get rid of the oscillating exponentials.
+	
+	In addition, we have also invoked the rotating wave approximation where we ignored the counter-rotating component of the incoming wave: $\cos\omega t = \diagfrac{1}{2}(\mathrm{e}^{i\omega t} + \underbracket{\mathrm{e}^{-i\omega t}}_{\substack{\textnormal{counter-rotating}\\\textnormal{component}}})$.
+	
+	The difference between optical and microwave transitions is the lifetime of the levels involved -- as Rabi oscillation requires a fairly strongly-driven interaction to be observed, we need high-power laser to offset the inherent short lifetime of the upper optical level.
+	
+	On the other hand, the microwave transitions are usually electric dipole forbidden, which implies that they are of higher order and thus less likely to occur.
+	In addition, focusing a microwave beam to address an atom is difficult as the Abbe limit states that the minimum spot diameter $d \gtrsim \lambda/2$.
+	
+	\part In Dirac notation, we may write the Hamiltonian of the three-level system as:
+	\begin{equation*}
+		\mathcal{H}_3 = \frac{\hbar V}{2} \Bigl( \ket{2}\bra{0} \;+\; \ket{2}\bra{1} \Bigr) + \hbar\delta \ket{2}\bra{2} + \textnormal{complex conjugate (c.c.)}
+	\end{equation*}
+	
+	Rewriting $\ket{\pm} = \bigl(\ket{0} \pm \ket{1}\bigr)/\sqrt{2}$ then gives:
+	\begin{align*}
+		\mathcal{H}_3 &= \frac{\hbar V}{2} \ket{2} \times \left( \sqrt{2} \bra{+} \right) + \hbar\delta \ket{2}\bra{2} + \textnormal{c.c.} \\
+		&= \hbar \bordermatrix{
+			&\bra{-} & \bra{+} & \bra{2} \cr
+			&0 & 0 & 0 \cr
+			&0 & 0 & V/\sqrt{2} \cr
+			&0 & V/\sqrt{2} & \delta
+		}
+	\end{align*}
+	
+	Note that the off-diagonal interaction only occurs between the state $\ket{+}$ and $\ket{2}$, hence we may quote the previous part \eqref{eqn:q3-detuned-rabi} for the time evolution of the state:
+	\begin{align*}
+		\ket{\psi(t)} = &X \ket{-} \exp(0) \\
+		&+ \exp(-i\delta t/2) \left[ Y \ket{+} \exp\left( -it \, \sqrt{\delta^2 + V^2}/2 \right) + Z \ket{2} 
+		\exp\left( it \, \sqrt{\delta^2 + V^2}/2 \right) \right]
+	\end{align*}
+	
+	For an initial state of $\ket{0}$, we have $X=Y=1/\sqrt{2}$ and $Z=0$.
+	Hence the evolution will be given as:
+	\begin{align*}
+		\ket{\psi(t)} &= \frac{1}{\sqrt{2}} \left[ \ket{-} \;+\; \ket{+} \exp\left( -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} \right) \right] \\
+		&= \frac{1}{2} \Bigl[ \bigl(\exp(-i\Omega t)+1\bigr)\ket{0} \;+\; \bigl(\exp(-i\Omega t)-1\bigr)\ket{1} \Bigr] \\
+		&= \exp\left(-\frac{i\Omega t}{2}\right) \left[ \cos\left(\frac{\Omega t}{2}\right)\ket{0} - i\sin\left(\frac{\Omega t}{2}\right) \ket{1} \right]
+	\end{align*}
+	
+	And this is simply a detuned Rabi flopping with effective frequency $\Omega = \diagfrac{1}{2} \left(\delta + \sqrt{\delta^2 + V^2}\right)$.
+		
+	\part The setup above corresponds to Raman transitions where an additional third level is used to facilitate transitions between two low-lying levels where direct transition is forbidden via the two-photon process.
+	
+	The result shows that even though direct transition is forbidden, we may still induce Rabi flopping between the states $\ket{0}$ and $\ket{1}$.
+\end{parts}
