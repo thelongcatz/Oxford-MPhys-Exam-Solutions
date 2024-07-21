@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2024/06/18]
+\ProvidesClass{thelongcat_exam_solution}[2024/07/21]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -25,6 +25,7 @@
 \RequirePackage{mdframed} % Custom box borders
 \RequirePackage{braket} % Said to be Dirac's best joke
 \RequirePackage{dsfont} % For blackboard bold numerals, e.g. 𝟙 for identity
+\RequirePackage{cancel} % Cross out cancelled terms
 
 % Reference: https://tex.stackexchange.com/a/5020
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
