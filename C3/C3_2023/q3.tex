@@ -1,0 +1,70 @@
+A classic optical properties question.
+In fact most of this question is a rehash of Q7 2016!
+
+\begin{parts}
+	\part Substitute $x = x_0 \mathrm{e}^{i\omega t}$ into the ODE gives:
+	\begin{align*}
+		\left(-\omega^2 - i\gamma\omega + \omega_\textnormal{TO}^2\right) x &= \frac{q}{\mu} E \\
+		x &= \frac{qE}{\mu} \cdot \frac{1}{\left(\omega_\textnormal{TO} - \omega^2\right) - i\gamma\omega}
+	\end{align*}
+	
+	The displacement field $D$ is given as:
+	\begin{align*}
+		D &= \epsilon_0 E + P + P_\textnormal{bg} \\
+		&= \epsilon_0 \epsilon_r E
+	\end{align*}
+	where $P_\textnormal{bg}$ is the background polarisation.
+	
+	Since polarisation $P = nqx$, we then have:
+	\begin{align*}
+		\epsilon_r &= 1 + \chi_\textnormal{bg} + \frac{nq}{\epsilon_0 E} \cdot \frac{qE}{\mu} \cdot \frac{1}{\left(\omega_\textnormal{TO}^2 - \omega^2\right) - i\gamma\omega} \\
+		&= \underbracket{1 + \chi_\textnormal{bg}}_{\displaystyle \epsilon_\infty} + \frac{nq^2}{\epsilon_0 \mu \omega_\textnormal{TO}^2} \cdot \frac{1}{\left(\omega_\textnormal{TO}^2 - \omega^2\right) - i\gamma\omega} \\
+		&= \underbracket{\epsilon_\infty + \frac{nq^2}{\epsilon_0 \mu \omega_\textnormal{TO}^2}}_{\displaystyle \epsilon_s} \cdot \frac{1}{\left(1 - \omega^2/\omega_\textnormal{TO}^2\right) - i\gamma\omega/\omega_\textnormal{TO}^2} \\
+		&= \epsilon_\infty + \left(\epsilon_s - \epsilon_\infty\right) \cdot \frac{1}{\left(1 - \omega^2/\omega_\textnormal{TO}^2\right) - i\gamma\omega/\omega_\textnormal{TO}^2}
+	\end{align*}
+	
+	\part Note that reflectivity $R = \left|\dfrac{\tilde{n} - 1}{\tilde{n} + 1}\right|^2$ where complex $\tilde{n} = \sqrt{\epsilon_r}$.
+	
+	As $\omega \rightarrow \omega_\textnormal{TO}$, $\epsilon_r \rightarrow \epsilon_\infty + \left(\epsilon_s - \epsilon_\infty\right) \cdot \dfrac{1}{-i\gamma/\omega_\textnormal{TO}} \rightarrow \infty$ for small $\gamma$, hence we enter the Reststrahlen regime where EM wave no longer propagates.
+	
+	At $\epsilon_r = 0$, we enter the LO mode where the polarisation oscillates longitudinally. ($R = 1$ but immediately drops afterwards)
+	
+	From the graph, we immediately see that:
+	\begin{align*}
+		\omega_\textnormal{TO} &\simeq \frac{\SI{30}{\milli\electronvolt}}{\hbar} = \SI{4.56e13}{\radian\per\second} \\
+		\omega_\textnormal{LO} &\simeq \frac{\SI{38}{\milli\electronvolt}}{\hbar} = \SI{5.77e13}{\radian\per\second}
+	\end{align*}
+	
+	Thus:
+	\begin{align*}
+		R &= \left|\frac{\tilde{n} - 1}{\tilde{n} + 1}\right|^2 \\
+		\Rightarrow \sqrt{\epsilon_r} - 1 &= \left(\sqrt{\epsilon_r} + 1\right) \sqrt{R} \\
+		\left(1 - \sqrt{R}\right) \sqrt{\epsilon_r} &= \sqrt{R} + 1 \\
+		\epsilon_r &= \left(\frac{1 + \sqrt{R}}{1 - \sqrt{R}}\right)^2 \textnormal{\hspace{1em}assuming real $\epsilon_r$}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\epsilon_\infty &\simeq \left(\frac{1 + \sqrt{\num{.1}}}{1 - \sqrt{\num{.1}}}\right)^2 = \num{3.71} \\
+		\epsilon_s &\simeq \left(\frac{1 + \sqrt{\num{.3}}}{1 - \sqrt{\num{.3}}}\right)^2 = \num{11.7}
+	\end{align*}
+	
+	\part For $\gamma \ll \omega_\textnormal{TO}$, $\epsilon_r \simeq i\omega_\textnormal{TO}/\gamma \left(\epsilon_s - \epsilon_\infty\right)$ at $\omega = \omega_\textnormal{TO}$:
+	\begin{gather*}
+		R_\textnormal{TO} = \left|\frac{\sqrt{\omega_\textnormal{TO}/\gamma \left(\epsilon_s - \epsilon_\infty\right)} \overbracket{\mathrm{e}^{i\pi/4}}^{\left(1+i\right)/\sqrt{2}} - 1}{\sqrt{\omega_\textnormal{TO}/\gamma \left(\epsilon_s - \epsilon_\infty\right)} \mathrm{e}^{i\pi/4} + 1}\right|^2 \\
+		= \frac{\Omega^2 + 1 - \Omega \cdot 2\cos\frac{\pi}{4}}{\Omega^2 + 1 + \Omega \cdot 2\cos\frac{\pi}{4}} \textnormal{\hspace{1em}where $\Omega = \sqrt{\dfrac{\omega_\textnormal{TO}}{\gamma} \left(\epsilon_s - \epsilon_\infty\right)}$} \\
+		\Rightarrow R_\textnormal{TO} \left(\Omega^2 + \sqrt{2}\Omega + 1\right) = \Omega^2 - \sqrt{2}\Omega + 1 \\
+		\Rightarrow \left(1 - R_\textnormal{TO}\right)\Omega^2 + \left(-\sqrt{2} - \sqrt{2}R_\textnormal{TO}\right) + \left(1 - R_\textnormal{TO}\right) = 0 \\
+		\Omega = \frac{\sqrt{2}\left(1+R_\textnormal{TO}\right) \pm \sqrt{2\left(1+R_\textnormal{TO}\right)^2 - 4\left(1-R_\textnormal{TO}\right)^2}}{2\left(1-R_\textnormal{TO}\right)} \\
+		\simeq \sqrt{2} \, \frac{1 + R_\textnormal{TO}}{1 - R_\textnormal{TO}} \textnormal{\hspace{1em}picking positive root} \\
+		\Rightarrow \frac{\gamma}{\omega_\textnormal{TO}} = \frac{1}{2} \left(\epsilon_s - \epsilon_\infty\right) \left(\frac{1 - R_\textnormal{TO}}{1 + R_\textnormal{TO}}\right)^2
+	\end{gather*}
+	
+	\part From c, we have $\gamma \simeq \SI{7.90e9}{\per\second} = 1/\tau \Rightarrow \tau \sim 10^{-12} \unit{\second}$.
+	
+	Raman broadening: $\Gamma = \hbar / \tau_\textnormal{ph} \Rightarrow \tau_\textnormal{ph} \simeq \hbar / \SI{2.5}{\milli\electronvolt} = \SI{0.4}{\pico\second}$.
+	
+	The difference between the two can be attributed to the limited resolution of the graphs.
+	
+	Finite lifetime is due to the higher order process of phonon-phonon scattering (anharmonious term).
+\end{parts}
