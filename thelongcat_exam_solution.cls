@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2024/07/21]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/06]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -40,7 +40,7 @@
 
 % Setup diagonal fractions
 % Reference: https://tex.stackexchange.com/a/251123
-\newcommand{\diagfrac}[2]{
+\newcommand*{\diagfrac}[2]{%
 	{{}^{#1}{\mskip -5mu/\mskip -3mu}_{#2}}
 }
 
@@ -53,7 +53,7 @@
 \renewcommand{\thequestion}{\bfseries\arabic{question}}
 
 % Setup headers and footers with respect to the exam code
-\newcommand{\examcode}[1]{
+\newcommand*{\examcode}[1]{%
 	\pagestyle{headandfoot}
 	\headrule
 	\header{#1 Solution}{}{\today}
@@ -68,7 +68,7 @@
 \newmdenv[leftline=false, rightline=false, linewidth=.5pt]{topbot}
 
 % Custom maketitle for the cover page
-\newcommand{\makeexamtitle}[2]{
+\newcommand*{\makeexamtitle}[2]{%
 	\begin{coverpages}
 		\begin{center}
 			\centering
@@ -102,7 +102,7 @@
 }
 
 % Convience command for new page for each question
-\newcommand{\newquestion}{\newpage\question}
+\newcommand*{\newquestion}{\newpage\question}
 
 % Add custom line height to a matrix environment
 % Reference: https://tex.stackexchange.com/a/14072
@@ -113,3 +113,11 @@
   \let\@ifnextchar\new@ifnextchar
   \array{*\c@MaxMatrixCols c}}
 \makeatother
+
+% Aliases for answers in works
+\newcommand*{\draft}{%
+	\textbf{\color{red}(DRAFT)}
+}
+\newcommand*{\todo}{%
+	\textbf{\color{red}(TO EXPAND)}
+}
