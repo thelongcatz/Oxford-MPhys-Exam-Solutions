@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/06]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/07]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -47,6 +47,14 @@
 % A4 paper setup and custom image path
 \geometry{a4paper, portrait}
 \graphicspath{{Images/}}
+
+% Alias for image attachment
+\newcommand*{\image}[2]{%
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=#1]{#2}
+	\end{figure}
+}
 
 % Boldface the question numbering to match the Oxford style
 % Reference: https://tex.stackexchange.com/a/329795
@@ -121,3 +129,32 @@
 \newcommand*{\todo}{%
 	\textbf{\color{red}(TO EXPAND)}
 }
+
+% Aliases for derivatives and integrals
+\newcommand*{\deri}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand*{\hideri}[3]{\frac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand*{\diff}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+\newcommand*{\deridiag}[2]{\diagfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand*{\hideridiag}[3]{\diagfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand*{\diffdiag}[1]{\diagfrac{\mathrm{d}}{\mathrm{d}#1}}
+\newcommand*{\pderi}[2]{\frac{\partial{}#1}{\partial{}#2}}
+\newcommand*{\phideri}[3]{\frac{\partial{}^{#1}#2}{\partial{}#3^{#1}}}
+\newcommand*{\pdiff}[1]{\frac{\partial{}}{\partial{}#1}}
+\newcommand*{\pderidiag}[2]{\diagfrac{\partial{}#1}{\partial{}#2}}
+\newcommand*{\phideridiag}[3]{\diagfrac{\partial{}^{#1}#2}{\partial{}#3^{#1}}}
+\newcommand*{\pdiffdiag}[1]{\diagfrac{\partial{}}{\partial{}#1}}
+\newcommand*{\defint}[4]{\int_{#1}^{#2} #3 \,\mathrm{d}#4}
+\newcommand*{\indefint}[2]{\int #1 \,\mathrm{d}#2}
+\newcommand*{\inftsml}[1]{\,\mathrm{d}#1}
+
+% Aliases for trigonometric and hyperbolic funcs not defined by default
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
