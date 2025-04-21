@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/07]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/21]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -158,3 +158,10 @@
 \DeclareMathOperator{\arcoth}{arcoth}
 \DeclareMathOperator{\arsech}{arsech}
 \DeclareMathOperator{\arcsch}{arcsch}
+
+% A couple of mathematical and physical constants
+\newcommand*{\electron}{\mathrm{e}^-}
+\newcommand*{\permittivity}{\epsilon_0}
+\newcommand*{\permeability}{\mu_0}
+\newcommand*{\bohrmagneton}{\mu_\textnormal{B}}
+\newcommand*{\nuclearmagneton}{\mu_\textnormal{N}}
