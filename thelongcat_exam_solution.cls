@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/21]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/22]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -122,6 +122,157 @@
   \array{*\c@MaxMatrixCols c}}
 \makeatother
 
+% Aliases for particles
+%%% Quarks %%%
+\newcommand*{\Qup}{\mathrm{u}}
+\newcommand*{\Qdown}{\mathrm{d}}
+\newcommand*{\Qcharm}{\mathrm{c}}
+\newcommand*{\Qstrange}{\mathrm{s}}
+\newcommand*{\Qtop}{\mathrm{t}}
+\newcommand*{\Qbottom}{\mathrm{b}}
+%%% Elementary Bosons %%%
+\newcommand*{\photon}{\gamma}
+\newcommand*{\gluon}{\mathrm{g}}
+\newcommand*{\Wp}{\mathrm{W}^{+}}
+\newcommand*{\Wn}{\mathrm{W}^{-}}
+\newcommand*{\Zz}{\mathrm{Z}^{0}}
+\newcommand*{\higgs}{\mathrm{H}^{0}}
+%%% Leptons %%%
+\newcommand*{\electron}{\mathrm{e}^{-}}
+\newcommand*{\positron}{\mathrm{e}^{+}}
+\newcommand*{\muonp}{\mu^{+}}
+\newcommand*{\muonn}{\mu^{-}}
+\newcommand*{\taup}{\tau^{+}}
+\newcommand*{\taun}{\tau^{-}}
+\newcommand*{\neutrinoe}{\nu_\mathrm{e}}
+\newcommand*{\neutrinom}{\nu_{\mu}}
+\newcommand*{\neutrinot}{\nu_{\tau}}
+%%% Mesons %%%
+%% Pseudoscalar %%
+\newcommand*{\piz}{\pi^{0}}
+\newcommand*{\pip}{\pi^{+}}
+\newcommand*{\pin}{\pi^{-}}
+% \eta
+\newcommand*{\etaPr}{\eta^{\prime}}
+\newcommand*{\etac}{\eta_\mathrm{c}}
+\newcommand*{\etab}{\eta_\mathrm{b}}
+\newcommand*{\KzS}{\mathrm{K}_\mathrm{S}^{0}}
+\newcommand*{\KzL}{\mathrm{K}_\mathrm{L}^{0}}
+\newcommand*{\Kz}{\mathrm{K}^{0}}
+\newcommand*{\Kp}{\mathrm{K}^{+}}
+\newcommand*{\Kn}{\mathrm{K}^{-}}
+\newcommand*{\Dz}{\mathrm{D}^{0}}
+\newcommand*{\Dp}{\mathrm{D}^{+}}
+\newcommand*{\Dn}{\mathrm{D}^{-}}
+\newcommand*{\Dsp}{\mathrm{D}_\mathrm{s}^{+}}
+\newcommand*{\Dsn}{\mathrm{D}_\mathrm{s}^{-}}
+\newcommand*{\Bp}{\mathrm{B}^{+}}
+\newcommand*{\Bz}{\mathrm{B}^{0}}
+\newcommand*{\Bn}{\mathrm{B}^{-}}
+\newcommand*{\Bsz}{\mathrm{B}_\mathrm{s}^{0}}
+\newcommand*{\Bcp}{\mathrm{B}_\mathrm{c}^{+}}
+\newcommand*{\Bcn}{\mathrm{B}_\mathrm{c}^{-}}
+%% Vector %%
+\newcommand*{\rhop}{\rho^{+}}
+\newcommand*{\rhoz}{\rho^{0}}
+\newcommand*{\rhon}{\rho^{-}}
+% \omega
+% \phi
+\newcommand*{\JPsi}{\mathrm{J/\Psi}}
+% \Upsilon
+\newcommand*{\KKp}{\mathrm{K}^{*^{+}}}
+\newcommand*{\KKz}{\mathrm{K}^{*^{0}}}
+\newcommand*{\KKn}{\mathrm{K}^{*^{-}}}
+\newcommand*{\DDp}{\mathrm{D}^{*^{+}}}
+\newcommand*{\DDz}{\mathrm{D}^{*^{0}}}
+\newcommand*{\DDn}{\mathrm{D}^{*^{-}}}
+\newcommand*{\DDsp}{\mathrm{D}_\mathrm{s}^{*^{+}}}
+\newcommand*{\DDsn}{\mathrm{D}_\mathrm{s}^{*^{-}}}
+\newcommand*{\BBp}{\mathrm{B}^{*^{+}}}
+\newcommand*{\BBz}{\mathrm{B}^{*^{0}}}
+\newcommand*{\BBn}{\mathrm{B}^{*^{-}}}
+\newcommand*{\BBsz}{\mathrm{B}_\mathrm{s}^{*^{0}}}
+\newcommand*{\BBcp}{\mathrm{B}_\mathrm{c}^{*^{+}}}
+\newcommand*{\BBcn}{\mathrm{B}_\mathrm{c}^{+^{-}}}
+%%% Baryons %%%
+%% J^P = 1/2+ %%
+\newcommand*{\proton}{\mathrm{p}}
+\newcommand*{\neutron}{\mathrm{n}}
+\newcommand*{\Lambdaz}{\Lambda^{0}}
+\newcommand*{\Lambdac}{\Lambda_{\mathrm{c}}^{+}}
+\newcommand*{\Lambdab}{\Lambda_{\mathrm{b}}^{0}}
+\newcommand*{\Sigmaz}{\Sigma^{0}}
+\newcommand*{\Sigmap}{\Sigma^{+}}
+\newcommand*{\Sigman}{\Sigma^{-}}
+\newcommand*{\Sigmacpp}{\Sigma_\mathrm{c}^{++}}
+\newcommand*{\Sigmacp}{\Sigma_\mathrm{c}^{+}}
+\newcommand*{\Sigmacz}{\Sigma_\mathrm{c}^{0}}
+\newcommand*{\Sigmabp}{\Sigma_\mathrm{b}^{+}}
+\newcommand*{\Sigmabz}{\Sigma_\mathrm{b}^{0}}
+\newcommand*{\Sigmabn}{\Sigma_\mathrm{b}^{-}}
+\newcommand*{\Xiz}{\Xi^{0}}
+\newcommand*{\Xin}{\Xi^{-}}
+\newcommand*{\Xicp}{\Xi_\mathrm{c}^{+}}
+\newcommand*{\Xicz}{\Xi_\mathrm{c}^{0}}
+\newcommand*{\XicPrp}{\Xi_\mathrm{c}^{\prime^{+}}}
+\newcommand*{\XicPrz}{\Xi_\mathrm{c}^{\prime^{0}}}
+\newcommand*{\Xiccpp}{\Xi_\mathrm{cc}^{++}}
+\newcommand*{\Xiccp}{\Xi_\mathrm{cc}^{+}}
+\newcommand*{\Xibz}{\Xi_\mathrm{b}^{0}}
+\newcommand*{\Xibn}{\Xi_\mathrm{b}^{-}}
+\newcommand*{\XibPrz}{\Xi_\mathrm{b}^{\prime^{0}}}
+\newcommand*{\XibPrn}{\Xi_\mathrm{b}^{\prime^{-}}}
+\newcommand*{\Xibbz}{\Xi_\mathrm{bb}^{0}}
+\newcommand*{\Xibbn}{\Xi_\mathrm{bb}^{-}}
+\newcommand*{\Xicbp}{\Xi_\mathrm{cb}^{+}}
+\newcommand*{\Xicbz}{\Xi_\mathrm{cb}^{0}}
+\newcommand*{\XicbPrp}{\Xi_\mathrm{cb}^{\prime^{+}}}
+\newcommand*{\XicbPrz}{\Xi_\mathrm{cb}^{\prime^{0}}}
+\newcommand*{\Omegac}{\Omega_\mathrm{c}^{0}}
+\newcommand*{\Omegab}{\Omega_\mathrm{b}^{-}}
+\newcommand*{\Omegacc}{\Omega_\mathrm{cc}^{+}}
+\newcommand*{\Omegacb}{\Omega_\mathrm{cb}^{0}}
+\newcommand*{\OmegacbPr}{\Omega_\mathrm{cb}^{\prime^{0}}}
+\newcommand*{\Omegabb}{\Omega_\mathrm{bb}^{-}}
+\newcommand*{\Omegaccb}{\Omega_\mathrm{ccb}^{+}}
+\newcommand*{\Omegacbb}{\Omega_\mathrm{cbb}^{0}}
+%% J^P = 3/2+ %%
+\newcommand*{\Deltapp}{\Delta^{++}}
+\newcommand*{\Deltap}{\Delta^{+}}
+\newcommand*{\Deltaz}{\Delta^{0}}
+\newcommand*{\Deltan}{\Delta^{-}}
+\newcommand*{\SSigmap}{\Sigma^{*^{+}}}
+\newcommand*{\SSigmaz}{\Sigma^{*^{0}}}
+\newcommand*{\SSigman}{\Sigma^{*^{-}}}
+\newcommand*{\SSigmacpp}{\Sigma_\mathrm{c}^{*^{++}}}
+\newcommand*{\SSigmacp}{\Sigma_\mathrm{c}^{*^{+}}}
+\newcommand*{\SSigmacz}{\Sigma_\mathrm{c}^{*^{0}}}
+\newcommand*{\SSigmabp}{\Sigma_\mathrm{b}^{*^{+}}}
+\newcommand*{\SSigmabz}{\Sigma_\mathrm{b}^{*^{0}}}
+\newcommand*{\SSigmabn}{\Sigma_\mathrm{b}^{*^{-}}}
+\newcommand*{\XXiz}{\Xi^{*^{0}}}
+\newcommand*{\XXin}{\Xi^{*^{-}}}
+\newcommand*{\XXicp}{\Xi_\mathrm{c}^{*^{+}}}
+\newcommand*{\XXicz}{\Xi_\mathrm{c}^{*^{0}}}
+\newcommand*{\XXiccpp}{\Xi_\mathrm{cc}^{*^{++}}}
+\newcommand*{\XXiccp}{\Xi_\mathrm{cc}^{*^{+}}}
+\newcommand*{\XXibz}{\Xi_\mathrm{b}^{*^{0}}}
+\newcommand*{\XXibn}{\Xi_\mathrm{b}^{*^{-}}}
+\newcommand*{\XXibbz}{\Xi_\mathrm{bb}^{*^{0}}}
+\newcommand*{\XXibbn}{\Xi_\mathrm{bb}^{*^{-}}}
+\newcommand*{\XXicbp}{\Xi_\mathrm{cb}^{*^{+}}}
+\newcommand*{\XXicbz}{\Xi_\mathrm{cb}^{*^{0}}}
+\newcommand*{\Omegan}{\Omega^{-}}
+\newcommand*{\OOmegac}{\Omega_\mathrm{c}^{*^{0}}}
+\newcommand*{\OOmegab}{\Omega_\mathrm{b}^{*^{-}}}
+\newcommand*{\OOmegacc}{\Omega_\mathrm{cc}^{*^{+}}}
+\newcommand*{\OOmegacb}{\Omega_\mathrm{cb}^{*^{0}}}
+\newcommand*{\OOmegabb}{\Omega_\mathrm{bb}^{*^{-}}}
+\newcommand*{\Omegaccc}{\Omega_\mathrm{ccc}^{++}}
+\newcommand*{\OOmegaccb}{\Omega_\mathrm{ccb}^{*^{+}}}
+\newcommand*{\OOmegacbb}{\Omega_\mathrm{cbb}^{*^{0}}}
+\newcommand*{\Omegabbb}{\Omega_\mathrm{bbb}^{-}}
+
 % Aliases for answers in works
 \newcommand*{\draft}{%
 	\textbf{\color{red}(DRAFT)}
@@ -160,8 +311,26 @@
 \DeclareMathOperator{\arcsch}{arcsch}
 
 % A couple of mathematical and physical constants
-\newcommand*{\electron}{\mathrm{e}^-}
-\newcommand*{\permittivity}{\epsilon_0}
-\newcommand*{\permeability}{\mu_0}
-\newcommand*{\bohrmagneton}{\mu_\textnormal{B}}
-\newcommand*{\nuclearmagneton}{\mu_\textnormal{N}}
+\newcommand*{\masselectron}{m_\mathrm{e}}
+\newcommand*{\massproton}{m_\mathrm{p}}
+\newcommand*{\massneutron}{m_\mathrm{n}}
+\newcommand*{\permittivity}{\epsilon_{0}}
+\newcommand*{\permeability}{\mu_{0}}
+\newcommand*{\bohrmagneton}{\mu_\mathrm{B}}
+\newcommand*{\nuclearmagneton}{\mu_\mathrm{N}}
+\newcommand*{\protonmagmt}{\mu_\mathrm{p}}
+\newcommand*{\neutronmagmt}{\mu_\mathrm{n}}
+\newcommand*{\boltzmann}{k_\mathrm{B}}
+\newcommand*{\avogadro}{N_\mathrm{A}}
+\newcommand*{\thomsonxsec}{\sigma_\mathrm{T}}
+\newcommand*{\comptonelectron}{\lambda_\mathrm{C}}
+
+% Custom siunitx units
+\DeclareSIUnit\day{d}
+\DeclareSIUnit\month{mo}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\angstrom{\textup{\AA}} % https://tex.stackexchange.com/a/24278
+\DeclareSIUnit\fermi{\femto\metre}
+\DeclareSIUnit\barn{b}
+\DeclareSIUnit\AU{AU}
+\DeclareSIUnit\parsec{pc}
