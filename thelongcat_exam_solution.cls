@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/22]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/25]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -121,6 +121,23 @@
   \let\@ifnextchar\new@ifnextchar
   \array{*\c@MaxMatrixCols c}}
 \makeatother
+
+% Aliases for answers in works
+\newcommand*{\draft}{%
+	\textbf{\color{red}(DRAFT)}
+}
+\newcommand*{\todo}{%
+	\textbf{\color{red}(TO EXPAND)}
+}
+
+% Alias for texts following a line in math mode
+\newcommand*{\mtext}[1]{\textnormal{\hspace{1em}#1}}
+
+% Alias for atomic level labelling (e.g. ¹S₀)
+\newcommand*{\level}[3][]{{}^{#2} {#3}_{#1}}
+
+% Alias for chemical element (e.g. ¹²C)
+\newcommand*{\element}[3][]{\textsuperscript{#3}\textsubscript{#1}{#2}}
 
 % Aliases for particles
 %%% Quarks %%%
@@ -273,27 +290,19 @@
 \newcommand*{\OOmegacbb}{\Omega_\mathrm{cbb}^{*^{0}}}
 \newcommand*{\Omegabbb}{\Omega_\mathrm{bbb}^{-}}
 
-% Aliases for answers in works
-\newcommand*{\draft}{%
-	\textbf{\color{red}(DRAFT)}
-}
-\newcommand*{\todo}{%
-	\textbf{\color{red}(TO EXPAND)}
-}
-
 % Aliases for derivatives and integrals
-\newcommand*{\deri}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
-\newcommand*{\hideri}[3]{\frac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
-\newcommand*{\diff}[1]{\frac{\mathrm{d}}{\mathrm{d}#1}}
-\newcommand*{\deridiag}[2]{\diagfrac{\mathrm{d}#1}{\mathrm{d}#2}}
-\newcommand*{\hideridiag}[3]{\diagfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
-\newcommand*{\diffdiag}[1]{\diagfrac{\mathrm{d}}{\mathrm{d}#1}}
-\newcommand*{\pderi}[2]{\frac{\partial{}#1}{\partial{}#2}}
-\newcommand*{\phideri}[3]{\frac{\partial{}^{#1}#2}{\partial{}#3^{#1}}}
-\newcommand*{\pdiff}[1]{\frac{\partial{}}{\partial{}#1}}
-\newcommand*{\pderidiag}[2]{\diagfrac{\partial{}#1}{\partial{}#2}}
-\newcommand*{\phideridiag}[3]{\diagfrac{\partial{}^{#1}#2}{\partial{}#3^{#1}}}
-\newcommand*{\pdiffdiag}[1]{\diagfrac{\partial{}}{\partial{}#1}}
+\newcommand*{\deri}[3][]{\frac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand*{\diff}[2][]{\frac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
+\newcommand*{\dderi}[3][]{\dfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand*{\ddiff}[2][]{\dfrac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
+\newcommand*{\diagderi}[3][]{\diagfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
+\newcommand*{\diagdiff}[2][]{\diagfrac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
+\newcommand*{\pderi}[3][]{\frac{\partial^{#1}#2}{\partial{}#3^{#1}}}
+\newcommand*{\pdiff}[2][]{\frac{\partial^{#1}}{\partial{}#2^{#1}}}
+\newcommand*{\pdderi}[3][]{\dfrac{\partial^{#1}#2}{\partial{}#3^{#1}}}
+\newcommand*{\pddiff}[2][]{\dfrac{\partial^{#1}}{\partial{}#2^{#1}}}
+\newcommand*{\pdiagderi}[3][]{\diagfrac{\partial^{#1}#2}{\partial{}#3^{#1}}}
+\newcommand*{\pdiagdiff}[2][]{\diagfrac{\partial^{#1}}{\partial{}#2^{#1}}}
 \newcommand*{\defint}[4]{\int_{#1}^{#2} #3 \,\mathrm{d}#4}
 \newcommand*{\indefint}[2]{\int #1 \,\mathrm{d}#2}
 \newcommand*{\inftsml}[1]{\,\mathrm{d}#1}
@@ -324,6 +333,7 @@
 \newcommand*{\avogadro}{N_\mathrm{A}}
 \newcommand*{\thomsonxsec}{\sigma_\mathrm{T}}
 \newcommand*{\comptonelectron}{\lambda_\mathrm{C}}
+\newcommand*{\nbose}{n_\mathrm{B}}
 
 % Custom siunitx units
 \DeclareSIUnit\day{d}
