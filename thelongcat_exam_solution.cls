@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/25]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/27]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -133,13 +133,24 @@
 % Alias for texts following a line in math mode
 \newcommand*{\mtext}[1]{\textnormal{\hspace{1em}#1}}
 
+% Alias for \left...\right
+\newcommand*{\avg}[1]{\left\langle{}#1{}\right\rangle}
+\newcommand*{\evalat}[2]{\left.#1\right|_{#2}}
+\newcommand*{\abs}[1]{\left|#1\right|}
+\newcommand*{\rbracket}[1]{\left(#1\right)}
+\newcommand*{\sbracket}[1]{\left[#1\right]}
+\newcommand*{\cbracket}[1]{\left\{#1\right\}}
+
 % Alias for atomic level labelling (e.g. ¹S₀)
 \newcommand*{\level}[3][]{{}^{#2} {#3}_{#1}}
 
 % Alias for chemical element (e.g. ¹²C)
 \newcommand*{\element}[3][]{\textsuperscript{#3}\textsubscript{#1}{#2}}
+% Ion (e.g. Ca²⁺)
+\newcommand*{\ion}[2]{#1\textsuperscript{#2}}
 
 % Aliases for particles
+\newcommand*{\hole}{\mathrm{h}^{+}}
 %%% Quarks %%%
 \newcommand*{\Qup}{\mathrm{u}}
 \newcommand*{\Qdown}{\mathrm{d}}
@@ -321,6 +332,7 @@
 
 % A couple of mathematical and physical constants
 \newcommand*{\masselectron}{m_\mathrm{e}}
+\newcommand*{\masshole}{m_\mathrm{h}}
 \newcommand*{\massproton}{m_\mathrm{p}}
 \newcommand*{\massneutron}{m_\mathrm{n}}
 \newcommand*{\permittivity}{\epsilon_{0}}
@@ -334,6 +346,7 @@
 \newcommand*{\thomsonxsec}{\sigma_\mathrm{T}}
 \newcommand*{\comptonelectron}{\lambda_\mathrm{C}}
 \newcommand*{\nbose}{n_\mathrm{B}}
+\newcommand*{\nfermi}{n_\mathrm{F}}
 
 % Custom siunitx units
 \DeclareSIUnit\day{d}
