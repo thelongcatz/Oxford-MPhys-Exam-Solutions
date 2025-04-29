@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/27]
+\ProvidesClass{thelongcat_exam_solution}[2025/04/29]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -147,7 +147,7 @@
 % Alias for chemical element (e.g. ¹²C)
 \newcommand*{\element}[3][]{\textsuperscript{#3}\textsubscript{#1}{#2}}
 % Ion (e.g. Ca²⁺)
-\newcommand*{\ion}[2]{#1\textsuperscript{#2}}
+\newcommand*{\ion}[2]{{#1}\textsuperscript{#2}}
 
 % Aliases for particles
 \newcommand*{\hole}{\mathrm{h}^{+}}
@@ -302,21 +302,21 @@
 \newcommand*{\Omegabbb}{\Omega_\mathrm{bbb}^{-}}
 
 % Aliases for derivatives and integrals
-\newcommand*{\deri}[3][]{\frac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
-\newcommand*{\diff}[2][]{\frac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
-\newcommand*{\dderi}[3][]{\dfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
-\newcommand*{\ddiff}[2][]{\dfrac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
-\newcommand*{\diagderi}[3][]{\diagfrac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}}
-\newcommand*{\diagdiff}[2][]{\diagfrac{\mathrm{d}^{#1}}{\mathrm{d}#2^{#1}}}
-\newcommand*{\pderi}[3][]{\frac{\partial^{#1}#2}{\partial{}#3^{#1}}}
-\newcommand*{\pdiff}[2][]{\frac{\partial^{#1}}{\partial{}#2^{#1}}}
-\newcommand*{\pdderi}[3][]{\dfrac{\partial^{#1}#2}{\partial{}#3^{#1}}}
-\newcommand*{\pddiff}[2][]{\dfrac{\partial^{#1}}{\partial{}#2^{#1}}}
-\newcommand*{\pdiagderi}[3][]{\diagfrac{\partial^{#1}#2}{\partial{}#3^{#1}}}
-\newcommand*{\pdiagdiff}[2][]{\diagfrac{\partial^{#1}}{\partial{}#2^{#1}}}
-\newcommand*{\defint}[4]{\int_{#1}^{#2} #3 \,\mathrm{d}#4}
-\newcommand*{\indefint}[2]{\int #1 \,\mathrm{d}#2}
-\newcommand*{\inftsml}[1]{\,\mathrm{d}#1}
+\newcommand*{\deri}[3][]{\frac{\mathrm{d}^{#1}{#2}}{\mathrm{d}{#3}^{#1}}}
+\newcommand*{\diff}[2][]{\frac{\mathrm{d}^{#1}}{\mathrm{d}{#2}^{#1}}}
+\newcommand*{\dderi}[3][]{\dfrac{\mathrm{d}^{#1}{#2}}{\mathrm{d}{#3}^{#1}}}
+\newcommand*{\ddiff}[2][]{\dfrac{\mathrm{d}^{#1}}{\mathrm{d}{#2}^{#1}}}
+\newcommand*{\diagderi}[3][]{\diagfrac{\mathrm{d}^{#1}{#2}}{\mathrm{d}{#3}^{#1}}}
+\newcommand*{\diagdiff}[2][]{\diagfrac{\mathrm{d}^{#1}}{\mathrm{d}{#2}^{#1}}}
+\newcommand*{\pderi}[3][]{\frac{\partial^{#1}{#2}}{\partial{}{#3}^{#1}}}
+\newcommand*{\pdiff}[2][]{\frac{\partial^{#1}}{\partial{}{#2}^{#1}}}
+\newcommand*{\pdderi}[3][]{\dfrac{\partial^{#1}{#2}}{\partial{}{#3}^{#1}}}
+\newcommand*{\pddiff}[2][]{\dfrac{\partial^{#1}}{\partial{}{#2}^{#1}}}
+\newcommand*{\pdiagderi}[3][]{\diagfrac{\partial^{#1}{#2}}{\partial{}{#3}^{#1}}}
+\newcommand*{\pdiagdiff}[2][]{\diagfrac{\partial^{#1}}{\partial{}{#2}^{#1}}}
+\newcommand*{\defint}[4]{\int_{#1}^{#2} {#3} \,\mathrm{d}{#4}}
+\newcommand*{\indefint}[2]{\int {#1} \,\mathrm{d}{#2}}
+\newcommand*{\inftsml}[1]{\,\mathrm{d}{#1}}
 
 % Aliases for trigonometric and hyperbolic funcs not defined by default
 \DeclareMathOperator{\sinc}{sinc}
