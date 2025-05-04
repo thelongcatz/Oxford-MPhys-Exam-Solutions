@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/04/29]
+\ProvidesClass{thelongcat_exam_solution}[2025/05/04]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -317,6 +317,8 @@
 \newcommand*{\defint}[4]{\int_{#1}^{#2} {#3} \,\mathrm{d}{#4}}
 \newcommand*{\indefint}[2]{\int {#1} \,\mathrm{d}{#2}}
 \newcommand*{\inftsml}[1]{\,\mathrm{d}{#1}}
+\newcommand*{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % https://tex.stackexchange.com/a/253108
+\newcommand*{\inftsmlbar}[1]{\,\mathrm{\dbar}{#1}}
 
 % Aliases for trigonometric and hyperbolic funcs not defined by default
 \DeclareMathOperator{\sinc}{sinc}
@@ -357,3 +359,4 @@
 \DeclareSIUnit\barn{b}
 \DeclareSIUnit\AU{AU}
 \DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\atm{atm}
