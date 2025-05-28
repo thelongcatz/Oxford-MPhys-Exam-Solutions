@@ -1,6 +1,6 @@
 %%% Usual Definitions %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thelongcat_exam_solution}[2025/05/10]
+\ProvidesClass{thelongcat_exam_solution}[2025/05/28]
 \LoadClass[12pt]{exam}
 
 %%% Load Packages %%%
@@ -176,6 +176,9 @@
 \newcommand*{\neutrinoe}{\nu_\mathrm{e}}
 \newcommand*{\neutrinom}{\nu_{\mu}}
 \newcommand*{\neutrinot}{\nu_{\tau}}
+\newcommand*{\aneutrinoe}{\bar{\nu}_\mathrm{e}}
+\newcommand*{\aneutrinom}{\bar{\nu}_{\mu}}
+\newcommand*{\aneutrinot}{\bar{\nu}_{\tau}}
 %%% Mesons %%%
 %% Pseudoscalar %%
 \newcommand*{\piz}{\pi^{0}}
