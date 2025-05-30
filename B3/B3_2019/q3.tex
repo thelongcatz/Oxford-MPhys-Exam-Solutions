@@ -1,0 +1,75 @@
+\draft
+\begin{parts}
+	\part Rabi frequency $\Omega_R = \bra{2}eE_0 \hat{\mathbf{x}}\ket{1}$ where $\hat{\mathbf{x}}$ is the unit vector in the direction of $\mathbf{E}$, $\ket{1}$ and $\ket{2}$ are the lower and upper level states of the atom.
+	This describes the strength of the interaction between the radiation and the atom, i.e. the hopping potential from one level to another.
+	
+	\part For optical transition, $\omega + \omega_0 \gg |\omega - \omega_0|$ since spread in frequency $\Delta\omega = |\omega - \omega_0| \ll \omega_0 \sim \SI{e7}{\radian\per\second}$.
+	
+	$\Rightarrow$ Rotating wave approximation suitable $\Rightarrow$ terms with $\omega + \omega_0$ may be dropped.
+	
+	\begin{align*}
+		\dot{c}_2 &= -i\Omega_R c_1 \frac{1}{2}\sbracket{\cancelto{\textnormal{RWA}}{e^{i(\omega_0 + \omega)t}} + e^{i(\omega_0 - \omega)t}} \\
+		\dot{c}_1 &= -i\Omega_R c_2 \frac{1}{2}\sbracket{e^{i(-\omega_0 + \omega)t} + \cancelto{\textnormal{RWA}}{e^{i(-\omega_0 - \omega)t}}} \\[1em]
+		\Rightarrow \dot{c}_2 &= -\frac{i}{2} \Omega_R e^{i(\omega_0 - \omega)t} c_1 \\
+		\Rightarrow \ddot{c}_2 &= \underbracket{\frac{\omega_0 - \omega}{2}}_{i(\omega_0 - \omega)\dot{c}_2} - \frac{i}{2} \Omega_R e^{i(\omega_0 - \omega)t} \dot{c}_1 \\
+		\ddot{c}_2 &= -i \delta\omega \dot{c}_2 - \frac{i}{2} \Omega_R \cancel{e^{i(\omega_0 - \omega)t}} \cdot \rbracket{-i\Omega_R c_2 \frac{1}{2}\cancel{e^{-i(\omega_0 - \omega)t}}} \mtext{where } \delta\omega = \omega - \omega_0 \\
+		\ddot{c}_2 &+ i\delta\omega\dot{c}_2 + \frac{1}{4}\Omega_R^2 c_2 = 0
+	\end{align*}
+	
+	Insert Ansatz $c_2 = A e^{i\omega_A t}$ gives:
+	\begin{align*}
+		-\omega_A^2 c_2 + i\delta\omega (i\omega_A) c_2 + \frac{\Omega_R^2}{4} c_2 &= 0 \\
+		\omega_A^2 + \delta\omega \omega_A - \frac{\Omega_R^2}{4} &= 0 \\
+		\Rightarrow \omega_A &= \frac{-\delta\omega \pm \sqrt{(\delta\omega)^2 + \Omega_R^2}}{2} \\
+		&= \frac{\sqrt{\Omega_R^2 + (\delta\omega)^2} - \delta\omega}{2} \mtext{since $\omega_A > 0$}
+	\end{align*}
+	
+	Boundary conditions:
+	\begin{align*}
+		c_2(0) &= 0 \\
+		\Rightarrow c_2 &= A e^{i\omega_A t} - A e^{-i\omega_A t} \\
+		&= A (2i) \sin \omega_A t \rightarrow A \sin \omega_A t
+	\end{align*}
+	
+	Also $\dot{c}_2 = -\dfrac{i}{2} \Omega_R e^{i(\omega_0 - \omega)t} c_1$ from before:
+	\begin{align*}
+		\Rightarrow c_1 &= -\frac{2A \omega_A \cos \omega_A t}{\Omega_R} e^{i(\omega - \omega_0)t} \\
+		c_1(0) = 1 &\Rightarrow -\frac{2\omega_A}{\Omega_R} = \frac{1}{A} \\
+		\Rightarrow A &= -\frac{\Omega_R}{2\omega_A}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		c_2(t) &= 2i \rbracket{-\frac{\Omega_R}{2\omega_A}} \sin \omega_A t \\
+		\Rightarrow |c_2(t)|^2 &= 4 \rbracket{\frac{\Omega_R}{2\omega_A}}^2 \sin^2 \omega_A t \\
+		&= \rbracket{\frac{\Omega_R}{\sqrt{\Omega_R^2 + (\delta\omega)^2} - \delta\omega}}^2 \sin^2 \rbracket{\frac{\sqrt{\Omega_R^2 + (\delta\omega)^2} - \delta\omega}{2}t}
+	\end{align*}
+	
+	So $\Omega_\textnormal{eff} = \sqrt{\Omega_R^2 + (\delta\omega)^2} - \delta\omega$.
+	
+	\part For $\delta\omega=0$,
+	\begin{align*}
+		|c_2(t)|^2 &= \rbracket{\frac{\Omega_R}{\Omega_R}}^2 \sin^2 \rbracket{\frac{\Omega_R}{2}t} \\
+		&= \sin^2 \rbracket{\frac{\Omega_R}{2}t}
+	\end{align*}
+	So Rabi oscillations with periodicity $t=\dfrac{\pi}{\Omega_R}$.
+	\image{.8\linewidth}{q3-rabi-no-detuning}
+	
+	For $\delta\omega=\Omega_R$,
+	\begin{align*}
+		|c_2(t)|^2 &= \rbracket{\frac{\Omega_R}{(\sqrt{2}-1)\Omega_R}}^2 \sin^2 \sbracket{\frac{(\sqrt{2}-1)\Omega_R}{2}t} \\
+		&= (\sqrt{2}-1)^{-2} \sin^2 \sbracket{\frac{\sqrt{2}-1}{2}\Omega_R t}
+	\end{align*}
+	\image{.8\linewidth}{q3-rabi-detuning}
+	\textit{Expected smaller amplitude but faster oscillation, so mistakes in $\Omega_\textnormal{eff}$ expected.}
+	
+	\part As the detuning increases, the atomic response gets weaker.
+	Thus increasing the saturation intensity for lasing applications.
+	Oscillation frequency $\propto \delta$, sum of incoherent $\Rightarrow$ Einstein's equation applicable!
+	
+	For a broadband weak radiation, we may replace $E_0$ with $\dfrac{1}{2}\permittivity E_0^2 = \indefint{\rho(\omega)}{\omega}$, where $\rho(\omega)$ is the spectral energy density of the radiation.
+	Furthermore, approximating that $\indefint{\rho(\omega)}{\omega} = \rho(\omega_0) \Delta\omega$ where $\Delta\omega = |\omega - \omega_0|$ is acceptable due to the narrow response of the atom.
+	
+	Then by Einstein's coefficient, $B_{12} \rho = |c_2(t)|^2$, we may then calculate the values of $B_{12}$, $B_{21}$ and $A_{21}$.
+	\image{.3\linewidth}{q3-c2-broadband}
+\end{parts}

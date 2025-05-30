@@ -8,7 +8,7 @@ Perhaps the most straighforward question in this paper.
 	
 	We also know the tensor transformation law:
 	\begin{equation*}
-		\kappa_{ij}^\prime = \dfrac{\partial x_i^\prime}{\partial x_a} \dfrac{\partial x_j^\prime}{\partial x_b} \kappa_{ab}
+		\kappa_{ij}^\prime = \pderi{x_i^\prime}{x_a} \pderi{x_j^\prime}{x_b} \kappa_{ab}
 	\end{equation*}
 	
 	By Neumann's Principle, the bulk properties of a crystal should reflect its symmetries.
@@ -33,9 +33,9 @@ Perhaps the most straighforward question in this paper.
 	
 	\part Evaluate $\kappa_\mathbf{u}$ as follows:
 	\begin{align*}
-		\kappa_\mathbf{u} &\equiv \frac{\mathbf{j}_\textnormal{h} \cdot \hat{\mathbf{u}}}{\left|\nabla T\right|} \\
-		&= \frac{-\kappa \bm{\nabla}T \cdot \hat{\mathbf{u}}}{\left|\nabla T\right|} \\
-		&= \frac{\left[\kappa \bcancel{\left|\nabla T\right|} \hat{\mathbf{u}}\right] \cdot \hat{\mathbf{u}}}{\bcancel{\left|\nabla T\right|}} \\
+		\kappa_\mathbf{u} &\equiv \frac{\mathbf{j}_\textnormal{h} \cdot \hat{\mathbf{u}}}{\abs{\nabla T}} \\
+		&= \frac{-\kappa \bm{\nabla}T \cdot \hat{\mathbf{u}}}{\abs{\nabla T}} \\
+		&= \frac{\sbracket{\kappa \bcancel{\abs{\nabla T}} \hat{\mathbf{u}}} \cdot \hat{\mathbf{u}}}{\bcancel{\abs{\nabla T}}} \\
 		&= \begin{pmatrix}
 			\kappa_{xx} u_x & \kappa_{yy} u_y & \kappa_{zz} u_z
 		\end{pmatrix}
@@ -47,19 +47,19 @@ Perhaps the most straighforward question in this paper.
 	
 	\part We know $a = \SI{0.575}{\nano\metre}$, $b = \SI{0.587}{\nano\metre}$, $c = \SI{0.769}{\nano\metre}$, and that $\widehat{\mathbf{a} + \mathbf{b}} = \dfrac{a \hat{\mathbf{x}} + b \hat{\mathbf{y}}}{\sqrt{a^2 + b^2}}$:
 	\begin{align}
-		\kappa_{\left[1 1 0\right]} &= \left(\frac{a}{\sqrt{a^2 + b^2}}\right)^2 \kappa_{xx} + \left(\frac{b}{\sqrt{a^2 + b^2}}\right)^2 \kappa_{yy} + 0 \notag \\
+		\kappa_{\sbracket{1 1 0}} &= \rbracket{\frac{a}{\sqrt{a^2 + b^2}}}^2 \kappa_{xx} + \rbracket{\frac{b}{\sqrt{a^2 + b^2}}}^2 \kappa_{yy} + 0 \notag \\
 		&= \SI{24.2}{\watt\per\metre\per\kelvin} = \frac{a^2 \kappa_{xx} + b^2 \kappa_{yy}}{a^2 + b^2}
 		\label{eqn:q6-kappa-110}
 	\end{align}
 	
 	Similarly,
 	\begin{align}
-		\kappa_{\left[1 \bar{2} 0\right]} &= \left(\frac{a}{\sqrt{a^2 + 4b^2}}\right)^2 \kappa_{xx} + \left(\frac{2b}{\sqrt{a^2 + 4b^2}}\right)^2 \kappa_{yy} + 0 \notag \\
+		\kappa_{\sbracket{1 \bar{2} 0}} &= \rbracket{\frac{a}{\sqrt{a^2 + 4b^2}}}^2 \kappa_{xx} + \rbracket{\frac{2b}{\sqrt{a^2 + 4b^2}}}^2 \kappa_{yy} + 0 \notag \\
 		&= \SI{28.1}{\watt\per\metre\per\kelvin} = \frac{a^2 \kappa_{xx} + 4b^2 \kappa_{yy}}{a^2 + 4b^2}
 		\label{eqn:q6-kappa-1-20}
 	\end{align}
 	\begin{align}
-		\kappa_{\left[0 0 1\right]} &= 0 + 0 + \left(\frac{c}{\sqrt{c^2}}\right) \kappa_{zz} \notag \\
+		\kappa_{\sbracket{0 0 1}} &= 0 + 0 + \rbracket{\frac{c}{\sqrt{c^2}}} \kappa_{zz} \notag \\
 		&= \SI{5.4}{\watt\per\metre\per\kelvin} = \kappa_{zz}
 		\label{eqn:q6-kappa-001}
 	\end{align}
@@ -85,7 +85,7 @@ Perhaps the most straighforward question in this paper.
 		&= \SI{1.07e9}{\per\metre}
 	\end{align*}
 	
-	Hence the velocity of sound along each principal axis is ($\omega = 2\pi\left(\SI{1.0e12}{\hertz}\right) = \SI{6.28e12}{\radian\per\second}$):
+	Hence the velocity of sound along each principal axis is ($\omega = 2\pi\rbracket{\SI{1.0e12}{\hertz}} = \SI{6.28e12}{\radian\per\second}$):
 	\begin{align*}
 		v_1 &= \frac{\omega}{k_1} \\
 		&= \SI{4420}{\metre\per\second} \\

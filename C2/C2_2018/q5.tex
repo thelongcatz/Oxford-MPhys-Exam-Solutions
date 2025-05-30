@@ -1,0 +1,205 @@
+One of the rare cases where the question on NMR quantum computing is relatively easy to answer.
+
+\begin{parts}
+	\part Zeeman energy for spin:
+	\begin{equation*}
+		E = \hbar\gamma B = \hbar\omega
+	\end{equation*}
+	
+	NMR Hamiltonian:
+	\begin{equation*}
+		\mathcal{H} = \hbar\omega_1\frac{\sigma_{1z}}{2} + \hbar\omega_2\frac{\sigma_{2z}}{2} + \hbar\omega_{12}\frac{\sigma_{1z}\sigma_{2z}}{4}
+	\end{equation*}
+	
+	At thermal equilibrium, the kinetic population shall be described by the Boltzmann distribution:
+	\begin{gather*}
+		\frac{n_\uparrow}{n_\downarrow} = \mathrm{e}^{-\hbar\omega / \boltzmann T} \\
+		\Rightarrow
+		\begin{cases}
+			p_{\uparrow\uparrow} = \frac{1}{4} + \mathrm{e}^{-2\hbar\omega / \boltzmann T} \approx \frac{1}{4} - \frac{2\hbar\omega}{\boltzmann T} \\
+			p_{\downarrow\downarrow} = \frac{1}{4} + \frac{2\hbar\omega}{\boltzmann T}
+		\end{cases} \mtext{to 1st order}
+	\end{gather*}
+	
+	Thus we have density matrix:
+	\begin{align*}
+		\rho_\textnormal{th} &= \frac{1}{4} \ket{\uparrow\downarrow}\bra{\uparrow\downarrow} + \frac{1}{4} \ket{\downarrow\uparrow}\bra{\downarrow\uparrow} + p_{\uparrow\uparrow} \ket{\uparrow\uparrow}\bra{\uparrow\uparrow} + p_{\downarrow\downarrow} \ket{\downarrow\downarrow}\bra{\downarrow\downarrow} \\
+		&= \frac{1}{4} \begin{pmatrix}
+			1+\frac{\hbar\omega}{\boltzmann T} & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1-\frac{\hbar\omega}{\boltzmann T}
+		\end{pmatrix}
+	\end{align*}
+	
+	\part From the question, we have $\mathtt{CTG} \equiv \mathtt{crush} \cdot \ket{1}\bra{1} \otimes \mathrm{X}_\theta$.
+	
+	We then have:
+	\begin{align*}
+		\mathrm{X}_\theta &= \mathrm{e}^{-i\theta\sigma_x / 2} \\
+		&= \mathds{1} - i\theta \cdot \frac{1}{2}
+		\begin{pmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{pmatrix}
+		+ \frac{1}{2} \cdot \rbracket{\frac{i\theta}{2}}^2
+		\begin{pmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{pmatrix}
+		+ \ldots \\
+		&= \mathds{1} \cos\frac{\theta}{2} - i\sigma_x \sin\frac{\theta}{2} \\
+		&= \begin{pmatrix}
+			\cos\frac{\theta}{2} & -i\sin\frac{\theta}{2} \\
+			-i\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+		\end{pmatrix}
+	\end{align*}
+	
+	Hence controlled-$\mathrm{X}_\theta$ may be written as:
+	\begin{equation*}
+		\mathrm{CX}_\theta = \begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & \multicolumn{2}{c}{\multirow{2}{*}{$\mathrm{X}_\theta$}} \\
+			0 & 0 & \multicolumn{2}{c}{}
+		\end{pmatrix}
+	\end{equation*}
+	
+	We thus have the following CP map:
+	\begin{align*}
+		\rho &\rightarrow (\mathrm{CX}_\theta) \rho (\mathrm{CX}_\theta)^\dag \\
+		&= \begin{pmatrix}
+			1 & & & \\
+			& 1 & & \\
+			& & \multicolumn{2}{c}{\multirow{2}{*}{$\mathrm{X}_\theta$}} \\
+			& & \multicolumn{2}{c}{}
+		\end{pmatrix}
+		\begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c & \\
+			& & & d
+		\end{pmatrix}
+		\begin{pmatrix}
+			1 & & & \\
+			& 1 & & \\
+			& & \multicolumn{2}{c}{\multirow{2}{*}{$\mathrm{X}_\theta^\dag$}} \\
+			& & \multicolumn{2}{c}{}
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			1 & & & \\
+			& 1 & & \\
+			& & \cos\frac{\theta}{2} & -i\sin\frac{\theta}{2} \\
+			& & -i\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+		\end{pmatrix}
+		\begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c & \\
+			& & & d
+		\end{pmatrix}
+		\begin{pmatrix}
+			1 & & & \\
+			& 1 & & \\
+			& & \cos\frac{\theta}{2} & i\sin\frac{\theta}{2} \\
+			& & i\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+		\end{pmatrix} \\
+		&= \ldots \begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c \cos\frac{\theta}{2} & ic \sin\frac{\theta}{2} \\
+			& & id \sin\frac{\theta}{2} & d \cos\frac{\theta}{2}
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c \cos^2\frac{\theta}{2} + d \sin^2\frac{\theta}{2} & \ldots \\
+			& & \ldots & c \sin^2\frac{\theta}{2} + d \cos^2\frac{\theta}{2}
+		\end{pmatrix}
+		\xRightarrow{\mathtt{crush}} \begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c^\prime & \\
+			& & & d^\prime
+		\end{pmatrix}
+	\end{align*}
+	
+	Thus we have:
+	\begin{align*}
+		c^\prime &= c \cos^2\frac{\theta}{2} + d \sin^2\frac{\theta}{2} \\
+		&= c \rbracket{\frac{1 + \cos\theta}{2}} + d \rbracket{\frac{1 - \cos\theta}{2}} \\
+		&= \frac{(c+d) + \cos\theta (c-d)}{2}
+	\end{align*}
+	
+	Similarly we have $d^\prime = \dfrac{(c+d) - \cos\theta (c-d)}{2}$.
+	
+	If the upper qubit is acted upon instead, we simply swap $b$ and $c^\prime$.
+	
+	$a$ is unaffected since $\mathtt{CTG}$ is a conditional gate and $a$ corresponds to the case where both qubits are $0$.
+	
+	\part For $\rho_\textnormal{th}$, we have $a \equiv \diagfrac{1}{4} (1+\epsilon)$, $b \equiv \diagfrac{1}{4} \equiv c$, $d \equiv \diagfrac{1}{4} (1-\epsilon)$.
+	
+	After $\mathtt{CTG}(\theta_1 = \arccos(\diagfrac{1}{3}), \textnormal{lower})$, we have density matrix:
+	\begin{equation*}
+		\begin{pmatrix}
+			a & & & \\
+			& b & & \\
+			& & c^\prime & \\
+			& & & d^\prime
+		\end{pmatrix}
+	\end{equation*}
+	where $c^\prime = \dfrac{(c+d) + \diagfrac{1}{3} (c-d)}{2}$, $d^\prime = \dfrac{(c+d) - \diagfrac{1}{3} (c-d)}{2}$.
+	
+	After $\mathtt{CTG}(\theta_2 = \pi/2, \textnormal{upper})$, we have:
+	\begin{equation*}
+		\begin{pmatrix}
+			a & & & \\
+			& b^\prime & & \\
+			& & c^\prime & \\
+			& & & d^{\prime\prime}
+		\end{pmatrix}
+	\end{equation*}
+	where $b^\prime = \dfrac{(b+d^\prime) + 0 (b-d^\prime)}{2}$, $d^{\prime\prime} = \dfrac{(b+d^\prime) - 0 (b-d^\prime)}{2}$.
+	
+	Simplifying the expressions then gives:
+	\begin{align*}
+		c^\prime &= \frac{2}{3}c + \frac{1}{3}d = \frac{1}{6} + \frac{1}{12}(1-\epsilon) \\
+		d^\prime &= \frac{1}{3}c + \frac{2}{3}d = \frac{1}{12} + \frac{1}{6}(1-\epsilon) \\
+		b^\prime &= d^{\prime\prime} = \frac{b+d^\prime}{2} = \frac{1}{6} + \frac{1}{12}(1-\epsilon)
+	\end{align*}
+	
+	So we have the resulting density matrix:
+	\begin{align*}
+		\rho_\textnormal{th} &= \begin{pmatrix}
+			\dfrac{1}{4}(1+\epsilon) & & & \\
+			& \multicolumn{3}{c}{\multirow{3}{*}{diag$\rbracket{\dfrac{1}{6} + \dfrac{1}{12}(1-\epsilon)}$}} \\
+			& \multicolumn{3}{c}{} \\
+			& \multicolumn{3}{c}{}
+		\end{pmatrix} \\
+		&= \textnormal{diag}\rbracket{\frac{1}{6} + \frac{1}{12}(1-\epsilon)} + \begin{pmatrix}
+			\dfrac{1}{12} - \dfrac{1}{12} + \dfrac{\epsilon}{4} + \dfrac{\epsilon}{12} & & & \\
+			& 0 & & \\
+			& & 0 & \\
+			& & & 0
+		\end{pmatrix} \\
+		&= \frac{1}{4} \textnormal{diag}\rbracket{1-\frac{\epsilon}{3}} + \begin{pmatrix}
+			\dfrac{\epsilon}{3} & & & \\
+			& 0 & & \\
+			& & 0 & \\
+			& & & 0
+		\end{pmatrix}
+	\end{align*}
+	
+	Thus $p = \epsilon/3 = \hbar\omega/3\boltzmann T$.
+	
+	Now we note that $p$ scales as the inverse of the system size ($\rho$ has dimension $2^n$): $p\propto\frac{1}{2^n}$.
+	Therefore scaling up the system decreases $p$ quickly, rendering large scale NMR computing via pseudo-pure state unfeasible.
+	
+	\part To interact with the NMR system, one may employ an RF pulse at the appropriate $\omega$ and applying it for some time $\tau$ that corresponds to the desired phase.
+	In addition, by rotating the polarisation of the RF pulse, one may construct a general gate.
+	
+	The catch with homonuclear system is that the transition energies are exactly the same, so spatial separation is required for qubit addressing.
+	Whereas for heteronuclear system, there are only a finite number of elements, which then imposes an upper limit to the number of qubits available.
+	
+	NMR computing is not scalable due to the ever shrinking effective purity, as explored in the previous part.
+\end{parts}

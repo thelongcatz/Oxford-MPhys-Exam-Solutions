@@ -1,0 +1,113 @@
+\draft
+\begin{parts}
+	\part $\Kz \to \bar{\Kz}$ ($\Qstrange \bar{\Qdown} \to \bar{\Qstrange} \Qdown$):
+	\image{.5\linewidth}{q1-k-kbar}
+	Weak charged current allows generation crossing via Cabibbo mixing.
+	
+	\part
+	\begin{align*}
+		\hat{C}\hat{P}\ket{+} &= \ket{+} = \frac{1}{\sqrt{2}} \rbracket{\ket{\Kz} + \ket{\bar{\Kz}}} \\
+		\hat{C}\hat{P}\ket{-} &= -\ket{-} = -\frac{1}{\sqrt{2}} \rbracket{\ket{\Kz} - \ket{\bar{\Kz}}}
+	\end{align*}
+	
+	\begin{align*}
+		\hat{P}\ket{+} = \hat{P} \sbracket{\frac{1}{\sqrt{2}}\rbracket{\ket{\Kz} + \ket{\bar{\Kz}}}} \\
+		&= -\frac{1}{\sqrt{2}} \rbracket{\ket{\Kz} + \ket{\bar{\Kz}}}
+	\end{align*}
+	since kaons are fermions.
+	
+	Similarly,
+	\begin{equation*}
+		\hat{P}\ket{-} = -\frac{1}{\sqrt{2}} \rbracket{\ket{\Kz} - \ket{\bar{\Kz}}}
+	\end{equation*}
+	
+	So $\hat{C}$ should introduce a negative parity to the overall wavefunction while exchanging $\Kz$ with $\bar{\Kz}$:
+	\begin{align*}
+		\hat{C}\hat{P}\ket{+} &= \hat{C}\sbracket{-\frac{1}{\sqrt{2}} \rbracket{\ket{\Kz} + \ket{\bar{\Kz}}}} \\
+		&= \frac{1}{\sqrt{2}} \rbracket{\ket{\bar{\Kz}} + \ket{\Kz}} = \ket{+} \\[1em]
+		\hat{C}\hat{P}\ket{-} &= \hat{C}\sbracket{-\frac{1}{\sqrt{2}} \rbracket{\ket{\bar{\Kz}} - \ket{\Kz}}} \\
+		&= \frac{1}{\sqrt{2}} \rbracket{\ket{\bar{\Kz}} - \ket{\Kz}} = -\ket{-}
+	\end{align*}
+	CP symmetry is obeyed under strong interaction, so the final state must have the same CP parity.
+	
+	Each pion carries intrinsic parity $-1$, so $\ket{+}$ should decay into 2 pions, $\ket{-}$ into 3 pions (1 pion would be kinematically unfavourable due to the mass difference).
+	{\color{red}Also no way to conserve momentum in CoM frame.}
+	
+	\begin{equation*}
+		\hat{C}\hat{P}\ket{\pi} = -\ket{\pi}
+	\end{equation*}
+	So $\ket{+} \to$ even $\pi$'s, $\ket{-} \to$ odd $\pi$'s.
+	
+	Feynman diagram of $\ket{+} \to \pip \pin$:
+	\image{.25\linewidth}{q1-plus-decay}
+	
+	$\ket{-} \to \pip \piz \pin$:
+	\image{.4\linewidth}{q1-minus-decay-1}
+	or
+	\image{.35\linewidth}{q1-minus-decay-2}
+	
+	While both decays are OZI-suppressed, the kinematic factor from having 2 daughters is lower than having 3, so the $\ket{+}$ is short-lived compared to $\ket{-}$.
+	
+	{\color{red}$\ket{+}$ and $\ket{-}$ aren't actually states containing both $\Kz$ and $\bar{\Kz}$, it's a single particle but a mix of two possible states.
+	Need to show either $\Kz$ or $\bar{\Kz}$ decaying via both channels.
+	$\ket{-}$ decay involve only 1 virtual particle, so larger $M_{if}$ $\rightarrow$ lower $\tau$}
+	
+	\part \image{.8\linewidth}{q1-momentum}
+	In ZMF, the daughters possess no momentum at threshold.
+	
+	Lorentz invariance:
+	\begin{align*}
+		\mathsf{P}_\mu \mathsf{P}^\mu = -\rbracket{\frac{E_\textnormal{th}}{c} + \massproton c}^2 + p_\textnormal{th}^2 &= -(\massproton + m_{\pip} + m_{\Lambdaz} + m_{\Kz})^2 c^2 \\
+		\Rightarrow -\cancel{\frac{E_\textnormal{th}^2}{c^2}} - 2E_\textnormal{th} \massproton - \massproton^2 c^2 + \cancel{\frac{E_\textnormal{th}^2}{c^2}} - \massproton^2 c^2 &= -(\massproton + m_{\pip} + m_{\Lambdaz} + m_{\Kz})^2 c^2 \\
+		E_\textnormal{th} &= \frac{(\massproton + m_{\pip} + m_{\Lambdaz} + m_{\Kz})^2 c^2 - 2\massproton^2 c^2}{2\massproton} \\
+		&= \SI{2922}{\mega\electronvolt}
+	\end{align*}
+	
+	Quark flow diagram:
+	\image{.8\linewidth}{q1-quark-flow}
+	
+	After passing through the block, the kaon CP state would have been ``polarised'' to a specific state which depends on the material, similar to photons.
+	
+	A mix of $\KzL$ and $\KzS$ states will be regenerated.
+	
+	Thin -- no interaction with the material. (except resetting composition)
+	
+	The material acts as a measurement on the beam so $\ket{\psi} \to \ket{\Kz}$ OR $\ket{\bar{\Kz}}$, so $\KzL$ and $\KzS$ revert to mixing state.
+	
+	\part $A_S(0)$ is the amplitude of the wavefunction.
+	
+	$\exp (-im_s t)$ is the plane wave ($e^{iHt}$) from Schrödinger's equation.
+	
+	$\exp (-\dfrac{t}{2\tau_s})$ is the decay factor, $2\tau_s$ so that $I \propto e^{-\frac{t}{\tau_s}}$.
+	
+	\begin{equation*}
+		\ket{\Kz} = \frac{1}{\sqrt{2}} \rbracket{\ket{+} + \ket{-}} \qquad \ket{\bar{\Kz}} = \frac{1}{\sqrt{2}} \rbracket{\ket{+} - \ket{-}}
+	\end{equation*}
+	
+	\begin{align*}
+		\bra{\mathbf{r}}\ket{\Kz} &= \frac{1}{\sqrt{2}} \rbracket{\bra{\mathbf{r}}\ket{+} + \bra{\mathbf{r}}\ket{-}} \\
+		&= \frac{1}{\sqrt{2}} \sbracket{A_S(t) + A_L(t)} \\[1em]
+		\bra{\mathbf{r}}\ket{\bar{\Kz}} &= \frac{1}{\sqrt{2}} \sbracket{A_S(t) - A_L(t)} \mtext{similarly}
+	\end{align*}
+	
+	\part
+	\begin{align*}
+		I &= \abs{\bra{\mathbf{r}}\ket{\Kz}}^2 \\
+		&= \frac{1}{2} \sbracket{|A_S(t)|^2 + A_S^*(t) A_L(t) + A_S(t) A_L^*(t) + |A_L(t)|^2} \\
+		&= \frac{1}{2} \sbracket{\splitfrac{\rbracket{A_S(0)}^2 e^{-\frac{t}{\tau_s}} + A_S^*(0) A_L(0) e^{i(m_S - m_L)t} e^{-\frac{t}{2\tau_s}} e^{-\frac{t}{2\tau_L}}}{+ A_S(0) A_L^*(0) e^{-i(m_S - m_L)t} e^{-\frac{t}{2\tau_s}} e^{-\frac{t}{2\tau_L}} + \rbracket{A_L(0)}^2 e^{-\frac{t}{\tau_L}}}} \\
+		&= \underbracket{\frac{A_S(0)^2}{2}}_{A} e^{-\frac{t}{\tau_s}} + \underbracket{A_S(0) A_L(0) e^{-\frac{t}{2\tau_s} e^{-\frac{t}{2\tau_L}}}}_{C} \cos\underbracket{(m_S - m_L)t}_{\phi} + \underbracket{\frac{A_L(0)^2}{2}}_{B} e^{-\frac{t}{\tau_L}}
+	\end{align*}
+	
+	For $\bar{\Kz}$, $C \to -C$.
+	
+	\begin{align*}
+		I_{\bar{\Kz}} (t=0) &= 0 \\
+		\Rightarrow A_S(0)^2 + A_L(0)^2 - 2A_S(0) A_L(0) &= 0 \\
+		\Rightarrow A_S(0) = A_L(0) &= A
+	\end{align*}
+	So $I_{\Kz} (t=0) = 4A^2$.
+	
+	Sketch of $I_{\Kz}$ and $I_{\bar{\Kz}}$ against $t$:
+	\image{.8\linewidth}{q1-i-t-sketch}
+	$I_{\Kz} + I_{\bar{\Kz}} = \dfrac{A^2}{2} e^{-\frac{t}{\tau_s}} + \dfrac{A^2}{2} e^{-\frac{t}{\tau_L}}$ so approaches $\tau_L$ as $t \to \infty$.
+\end{parts}

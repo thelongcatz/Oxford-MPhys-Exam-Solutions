@@ -1,0 +1,111 @@
+\draft
+\begin{parts}
+	\part A lattice is an infinite set of linearly independent \underline{primitive lattice vectors} (PLVs) in the real space.
+	When combined with a basis in a crystal system, a crystal structure that precisely address the location of each atom is formed.
+	
+	\image{.7\linewidth}{q1-alpha-tungsten}
+	Therefore $\alpha$-tungsten is a body-centred cubic lattice (BCC).
+	
+	\part \image{.2\linewidth}{q1-braggs-law}
+	Bragg's condition:
+	\begin{align*}
+		2d_{hkl} \sin\theta &= \lambda \mtext{for 1st peak} \\
+		\Rightarrow d_{hkl} &= \frac{1}{2} \frac{\lambda}{\sin\theta} \\
+		&= \frac{1}{2} \frac{\SI{0.1542}{\nano\metre}}{\sin\SI{20.13}{\degree}} \\
+		&= \SI{0.224}{\nano\metre}
+	\end{align*}
+	
+	For cubic lattice,
+	\begin{equation}
+		d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 l^2}}
+		\label{eqn:q1-d-hkl}
+	\end{equation}
+	
+	BCC selection rule: $h+k+l$ even:
+	\begin{align*}
+		S_{hkl} &= \sum_{\mathbf{x} \in \textnormal{UC}} e^{i\mathbf{k}\cdot\mathbf{x}} \\
+		&= 1 + e^{\pi i(h+k+l)} \\
+		&= \begin{cases}
+			0 \mtext{$h+k+l$ odd} \\
+			2 \mtext{$h+k+l$ even}
+		\end{cases}
+	\end{align*}
+	So we know the smallest possible combination that yield the $d_{hkl}$ above is $(110)$:
+	\begin{align*}
+		N &= \sqrt{h^2 + k^2 + l^2} \\
+		&= \sqrt{2} \\
+		\xRightarrow{\eqref{eqn:q1-d-hkl}} a = \sqrt{2} d = \SI{0.317}{\nano\metre}
+	\end{align*}
+	
+	\part \image{.4\linewidth}{q1-beta-tungsten}
+	$\beta$-tungsten is a simple cubic crystal with basis $[0,0,0]$, $[0,\frac{1}{4},\frac{1}{2}]$, $[0,\bar{\frac{1}{4}},\frac{1}{2}]$, $[\frac{1}{2},0,\frac{1}{4}]$, $[\frac{1}{2},0,\bar{\frac{1}{4}}]$, $[\frac{1}{4},\frac{1}{2},0]$, $[\bar{\frac{1}{4}},\frac{1}{2},0]$, $[\frac{1}{2},\frac{1}{2},\frac{1}{2}]$.
+	
+	So try:
+	\begin{align*}
+		(\frac{1}{2}, \frac{1}{2}, \frac{1}{2}) + (\frac{1}{2}, 0, \frac{1}{4}) &= (1, \frac{1}{2}, \frac{3}{4}) \\
+		&\rightarrow (0, \frac{1}{2}, \frac{3}{4})
+	\end{align*}
+	This does not lead to an atom!
+	
+	So not BCC.
+	
+	\part Laue condition:
+	\begin{align*}
+		e^{\mathbf{a}\cdot\mathbf{G}} &= 1 \\
+		\Rightarrow \mathbf{a} \cdot \mathbf{G} &= 2n\pi
+	\end{align*}
+	where $\mathbf{a}$ is direct lattice vector, $\mathbf{G}$ is reciprocal lattice vector.
+	
+	Since $\beta$-tungsten is simple cubic, $S_\textnormal{UC} = 1 \forall (hkl)$, hence any extinction has to come from the basis:
+	\begin{align*}
+		S_{\textnormal{basis}} (hkl) &= 1 + e^{\pi i(h+k+l)} + 2e^{\pi ik} \cos\rbracket{\frac{\pi h}{2}} \\
+		&\qquad + 2e^{\pi il} \cos\rbracket{\frac{\pi k}{2}} + 2e^{\pi ih} \cos\rbracket{\frac{\pi l}{2}}
+	\end{align*}
+	
+	Trial and error then gives:
+	\begin{itemize}
+		\item $N=1$: $(100)$
+		\begin{equation*}
+			S_{\textnormal{basis}} (100) = 1 - 1 + 2\cos\rbracket{\frac{\pi}{2}} + 2\cos\rbracket{0} - 2\cos\rbracket{0} = 0
+		\end{equation*}
+		\item $N=2$: $(110)$
+		\begin{equation*}
+			S_{\textnormal{basis}} (110) = 1 + 1 - 2\cos\rbracket{\frac{\pi}{2}} + 2\cos\rbracket{\frac{\pi}{2}} - 2\cos\rbracket{0} = 0
+		\end{equation*}
+		\item $N=3$: $(111)$
+		\begin{equation*}
+			S_{\textnormal{basis}} (111) = 1 - 1 - 2\cos\rbracket{\frac{\pi}{2}} - 2\cos\rbracket{\frac{\pi}{2}} - 2\cos\rbracket{\frac{\pi}{2}} = 0
+		\end{equation*}
+		\item $N=4$: $(200)$
+		\begin{equation*}
+			S_{\textnormal{basis}} (200) = 1 + 1 + 2\cos\rbracket{\pi} + 2\cos\rbracket{0} + 2\cos\rbracket{0} = 4
+		\end{equation*}
+		We also have multiplicity $M_{200}=6$.
+		\item $N=5$: $(210)$
+		\begin{equation*}
+			S_{\textnormal{basis}} (210) = 1 - 1 - 2\cos\rbracket{\pi} + 2\cos\rbracket{\frac{\pi}{2}} + 2\cos\rbracket{0} = 4
+		\end{equation*}
+		We also have multiplicity $M_{210}=24$.
+	\end{itemize}
+	
+	Therefore ratio of intensities:
+	\begin{align*}
+		I_{hkl} &= \abs{S_{hkl}}^2 M_{hkl} \\
+		\Rightarrow \frac{I_{200}}{I_{210}} &= \frac{4^2}{4^2} \times \frac{6}{24} \\
+		&= \frac{1}{4}
+	\end{align*}
+	
+	\part Lower angles $\Rightarrow$ $N<4$.
+	
+	In the last part, we assumed that $f(\mathbf{k})$ is constant $\forall$ atoms.
+	But note that $(\frac{1}{2},\frac{1}{4},0)$ and $(0,0,\frac{1}{2})$ have different distances from the origin $\Rightarrow$ different orbital overlaps.
+	So we would actually have a separate structure factor: $f_1 (1+e^{\pi i(h+k+l)}) + f_2 (\ldots)$
+	
+	For example, for $N=2$:
+	\begin{align*}
+		S_\textnormal{basis} &= f_1 \rbracket{1+1} + f_2 \rbracket{- 2\cos\rbracket{\frac{\pi}{2}} + 2\cos\rbracket{\frac{\pi}{2}} - 2\cos\rbracket{0}} \\
+		&\neq 0
+	\end{align*}
+	for $f_1 \neq f_2$.
+	In fact $f_1 \simeq f_2$, hence the faint diffraction ring.
+\end{parts}

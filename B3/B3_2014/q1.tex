@@ -1,0 +1,43 @@
+\draft
+\begin{parts}
+	\part For each $\electron$, it has energy of form $\hat{H}_i = \hat{\mathbf{p}}^2/2m - Ze^2/4\pi\permittivity \hat{r}_i$, where the first term is non-relativistic kinetic energy, the second being the Coulomb potential of the nucleus with atomic number $Z$.
+	
+	Expressing $\hat{\mathbf{p}^2}$ in position representation gives $-\hbar^2 \nabla^2$.
+	
+	The final part, $e^2/4\pi\permittivity \hat{r}_{12}$, of the overal Hamiltonian is the inter-$\electron$ repulsion.
+	
+	For 2 identical particles, since there is no way of distinguishing one from another, we have exchange symmetry in the system -- that is a wavefunction must be an eigenfunction of the parity operator.
+	
+	Parity operator is defined such that $\hat{\mathcal{P}}^2 \psi = \psi$ $\Rightarrow$ $\hat{\mathcal{P}} \psi = \pm\psi$ and so the wavefunction must be either symmetric or antisymmetric.
+	
+	For the $1s^2$ config, Pauli's exclusion principle tells us that two $\electron$, as fermions, could not occupy the same quantum stute, hence the wavefunction must be antisymmetric so that $\psi \to 0$ as the $\electron$ draws close.
+	
+	For the $1s2p$ config, since the $\electron$ occupy different orbitals, Pauli's exclusion principle does not apply and thus the wavefunction may be either symmetric or antisymmetric.
+	
+	The nature of fermions being antisymmetric also mandates that the spin wavefunction must be symmetric ($S=1$) for antisymmetric spatial $\psi$, antisymmetric ($S=0$) for symmetric spatial $\psi$.
+	
+	Energy diagram of $1s^2$ and $1s2p$ config of He:
+	\image{.7\linewidth}{q1-energy-level}
+	
+	\part \todo As $Z$ increases, the expectation value of $1/r_{12}$ should decrease as the system increasingly pulls the $\electron$ more, making $\electron$ at different orbitals more far away.
+	
+	Modelling IE as $aZ^2 + b$:
+	\begin{align*}
+		\Rightarrow a &= \SI{11.89}{\electronvolt} \\
+		b &= \SI{-21.75}{\electronvolt}
+	\end{align*}
+	So Al${}^{11+}$ should have IE $\SI{1952}{\electronvolt}$, Al${}^{12+}$ should have IE given by Rydberg level:
+	\begin{align*}
+		E &= \frac{hcR_\infty}{1^2} \cdot Z^2 \\
+		&= \SI{2300}{\electronvolt}
+	\end{align*}
+	
+	From g to a,
+	\begin{tabular}{c c c}
+		g: Al${}^{12+}$ & d: Al${}^{11+}$ & a: \\
+		f: Al${}^{11+}$ & c: & \\
+		e: Al & b: &
+	\end{tabular}
+	
+	h is \textit{bremsstrahlung}?
+\end{parts}

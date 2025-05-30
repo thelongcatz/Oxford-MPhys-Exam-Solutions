@@ -1,0 +1,84 @@
+\draft
+\begin{parts}
+	\part
+	\begin{subparts}
+		\subpart In the quark mode, the particle states known as quarks form an approximate SU(3) [for light quarks] symmetry under strong interaction.
+		
+		The quarks are fermions, so they abide Pauli Exclusion Principle and possess spin $\dfrac{1}{2}$.
+		For mesons, which is made up of 2 quarks, there can be either $S=0$ on $S=1$ states.
+		{\color{red}Which corresponds to lightest pseudoscalar octet?}
+		
+		Also in the quark model, a particle and antiparticle have opposing parity, so a meson, which is a composite of a quark-antiquark pair, would have parity $-1$ inherently.
+		
+		Strangeness is a quantum number assigned to the $\Qstrange$ quark in the quark model to mark the symmetry breaking as particles with non-zero strangeness would have longer lifetime compared to its counterpart with the $\Qdown$ quark.
+		
+		{\color{red}Which quarts are involed in pseudoscaler ortet?
+		
+		What strangeness numbers are allowed? What is strangeness of s quark?
+		
+		More details needed for full 6 marks.}
+		
+		\subpart $\piz \to 2\photon$:
+		\image{.25\linewidth}{q2-pi-photon}
+		
+		$\piz \to \positron \electron \photon$:
+		\image{.3\linewidth}{q2-pi-eeph}
+		
+		$\piz \to \positron \electron \positron \electron$:
+		\image{.3\linewidth}{q2-pi-eeee}
+		
+		$\piz \to \nu \bar{\nu}$:
+		\image{.45\linewidth}{q2-pi-nu}
+		{\color{red}$\Zz$ weak decay?}
+		
+		Note that further down the row, more and more EM vertices are added, so the primary decay mode would be the one with the fewest vertices -- $\piz \to 2\photon$.
+		
+		$\piz \to \positron \electron \photon$ involves a further EM interaction vertex, hence the matrix element would be $(\sqrt{\alpha})^2 = \alpha = \dfrac{1}{137}$ smaller approximately.
+		The same reasoning goes for $\piz \to \positron \electron \positron \electron$.
+		
+		The process $\piz \to \nu \bar{\nu}$ further involves 2 weak interaction vertices, further reducing the decay rate as $g_W \ll \alpha$, where $g_W$ is the weak interaction constant.
+		
+		{\color{red}Do an actual rough calculation or the decay rate for each, ie. each additional vertex means $\Gamma = \Gamma_0 \alpha n$, where $n$ is the number of additional EM vertices. If final decays is weak-allowed then propagator also relevant.}
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart $\Dp \to \Kn \pip \pip$:
+		\image{.5\linewidth}{q2-d-kn}
+		
+		$\Dp \to \Kp \pin \pip$:
+		\image{.5\linewidth}{q2-d-kp}
+		
+		Under Cabibbo mixing, the light quark states are mixed with:
+		\begin{equation*}
+			\begin{pmatrix}
+				\Qdown^\prime \\
+				\Qstrange^\prime
+			\end{pmatrix}
+			= \underbracket{\begin{pmatrix}
+				\cos\theta & \sin\theta \\
+				-\sin\theta & \cos\theta
+			\end{pmatrix}}_{\mathclap{\textnormal{Cabibbo matrix}}}
+			\begin{pmatrix}
+				\Qdown \\
+				\Qstrange
+			\end{pmatrix}
+		\end{equation*}
+		
+		Assuming no extension to heavy quarks, and similar phase space, the ratio of decay rate is simply ratio of matrix element $|M_{if}|^2$.
+		
+		For $\Dp \to \Kn \pip \pip$, $|M_{if}|^2 \propto |\cos\theta \cdot \cos\theta \cdot \sin\theta \cdot \cos\theta|^2$
+		
+		For $\Dp \to \Kp \pin \pip$, $|M_{if}|^2 \propto |\cos\theta \cdot \sin\theta \cdot \sin\theta \cdot \sin\theta|^2$
+		
+		\begin{align*}
+			\Rightarrow \frac{\Gamma_{\Dp \to \Kn \pip \pip}}{\Gamma_{\Dp \to \Kp \pin \pip}} &= \frac{\cos^6 \theta \sin^2 \theta}{\cos^2 \theta \sin^6 \theta} \\
+			&= \cot^4 \theta \\
+			&= \frac{7688}{59} = \num{130.31} \\
+			\Rightarrow \theta &= \SI{16.5}{\degree}
+		\end{align*}
+		
+		\subpart The process is not forbidden, however as $\neutrinoe$ is near massless and right-handed the process is helicity suppressed.
+		\image{.3\linewidth}{q2-d-decay}
+	\end{subparts}
+\end{parts}

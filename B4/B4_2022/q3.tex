@@ -1,0 +1,96 @@
+\draft
+\begin{parts}
+	\part $\beta^-$ decay: $\element[Z]{P}{A} \to \element[Z+1]{D^+}{A} + \electron + \aneutrinoe$
+	
+	$\beta^+$ decay: $\element[Z]{P}{A} \to \element[Z-1]{D^-}{A} + \positron + \neutrinoe$
+	
+	EC: $\element[Z]{P}{A} + \electron \to \element[Z-1]{D^-}{A} + \neutrinoe$
+	
+	Assuming neutrino to be massless, then $Q$ value of $\beta^-$ decay is:
+	\begin{equation*}
+		Q = (m_P - m_D)c^2
+	\end{equation*}
+	since $\masselectron$ is included in the \underline{atomic mass} of $D$.
+	
+	For $\beta^+$ decay,
+	\begin{equation*}
+		Q = (m_P - m_D)c^2 - 2\masselectron c^2
+	\end{equation*}
+	to account for the extra $\electron$ and $\positron$.
+	
+	For EC,
+	\begin{equation*}
+		Q = (m_P - m_D) c^2
+	\end{equation*}
+	for the extra electrons cancel each other out across the LHS and RHS.
+	
+	\part $\alpha$ decay: $\element[Z]{P}{A} \to \element[Z-2]{D}{A-4} + \element[2]{\alpha}{4}$
+	
+	\begin{equation*}
+		Q = (m_D + m_\alpha) c^2 - m_P c^2
+	\end{equation*}
+	
+	Also:
+	\begin{align*}
+		Q &= m_\alpha c^2 + T \mtext{where $T$ is kinetic energy of $\alpha$ particle} \\
+		\Rightarrow T &= Q - m_\alpha c^2
+	\end{align*}
+	
+	In ZMF, some of $Q$ goes to the kinetic energy of the recoiling nucleus, so $T_\alpha$ is ``ratio-ed'' by the masses:
+	\begin{equation*}
+		T_\alpha = Q \frac{(A-4)}{A}
+	\end{equation*}
+	
+	\part Assuming that the entire $\alpha$ particle tunnels out of the nucleus (i.e. probability of formation independent of atomic number), potential square well in nucleus and Coulomb outside, which may be approximated as:
+	\begin{equation*}
+		\frac{(Z-2)e62}{4\pi\permittivity r} \simeq \frac{Ze^2}{4\pi\permittivity r}
+	\end{equation*}
+	for large $Z$ and $r$ is the radius of the nucleus (assumed to be constant).
+	
+	The tunneling probability, assuming plane wave, is given by $e^{-2G}$ with $G$ being the Gamow factor,
+	\begin{align*}
+		G &\propto \frac{V}{pc} \\
+		&\propto \frac{Ze^2}{\permittivity \hbar \underbracket{kc}_{\mathclap{\omega=\frac{v}{r}}} r} = \frac{Ze^2}{\permittivity \hbar v}
+	\end{align*}
+	
+	\part
+	\begin{subparts}
+		\subpart $N_b(0) = \alpha + \beta = N_{b0}$
+		
+		Also:
+		\begin{align*}
+			\deri{N_a}{t} &= -\lambda_a N_a \\
+			\Rightarrow N_a &= N_{a0} e^{-\lambda_a t} \\[1em]
+			\deri{N_b}{t} &= \lambda_a N_a - \lambda_b N_b \\
+			\Rightarrow -\lambda_a \alpha e^{-\lambda_a t} - \lambda_b \beta e^{-\lambda_b t} &= \lambda_a N_a - \lambda_b N_b
+		\end{align*}
+		
+		Combining the expressions gives:
+		\begin{align*}
+			-\lambda_a \alpha e^{-\lambda_a t} - \lambda_b \beta e^{\lambda_b t} &= \lambda_a N_{a0} e^{-\lambda_a t} - \lambda_b \alpha e^{-\lambda_a t} - \lambda_b \beta e^{-\lambda_b t} \\
+			\Rightarrow \rbracket{\lambda_b \alpha - \lambda_a \alpha - \lambda_a N_{a0}} e^{-\lambda_a t} &= 0 \\
+			\Rightarrow \alpha &= \frac{\lambda_a N_{a0}}{\lambda_b - \lambda_a} \\
+			\Rightarrow \beta &= N_{b0} - \frac{\lambda_a N_{a0}}{\lambda_b - \lambda_a}
+		\end{align*}
+		
+		\subpart $N_{b0} = 0 \Rightarrow \beta = -\alpha$, so:
+		\begin{align*}
+			N_b(t) &= \alpha \rbracket{e^{-\lambda_a t} - e^{-\lambda_b t}} \\
+			\deri{N_b}{t} &= \alpha \rbracket{\lambda_b e^{-\lambda_b t} - \lambda_a e^{-\lambda_a t}}
+		\end{align*}
+		
+		At max $N_b$, $\dderi{N_b}{t}$:
+		\begin{align*}
+			\Rightarrow e^{(\lambda_a - \lambda_b) t_\textnormal{max}} &= \frac{\lambda_a}{\lambda_b} \\
+			t_\textnormal{max} &= \frac{\ln(\lambda_a) - \ln(\lambda_b)}{\lambda_a - \lambda_b}
+		\end{align*}
+		
+		\subpart Assuming no other decay channels, $N_c = N_{a0} - N_a - N_b$ or:
+		\begin{align*}
+			\deri{N_c}{t} = \lambda_b N_b \\
+			\Rightarrow \deri{N_c}{t} &= \lambda_b \alpha \rbracket{e^{-\lambda_a t} - e^{-\lambda_b t}} \\
+			N_c(t) &= \lambda_b \alpha \sbracket{\frac{e^{-\lambda_b t}}{\lambda_b} - \frac{e^{-\lambda_a t}}{\lambda_a}}_{t=0}^t \\
+			&= \lambda_b \alpha \sbracket{\frac{e^{-\lambda_b t} - 1}{\lambda_b} - \frac{e^{-\lambda_a t} - 1}{\lambda_a}}
+		\end{align*}
+	\end{subparts}
+\end{parts}

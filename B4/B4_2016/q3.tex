@@ -1,0 +1,107 @@
+\draft
+\begin{parts}
+	\part Deuterium production: $\proton + \proton \to \neutron \proton + \positron + \neutrinoe$
+	
+	Q-value:
+	\begin{align*}
+		Q &= -(m_{np} + m_e)c^2 + (2m_p c^2) \mtext{assuming $m_\nu$ negligible} \\
+		&\simeq (2m_p - m_n - m_p - m_e)c^2 \mtext{assuming negligible binding energy} \\
+		&= \SI{-1.811}{\mega\electronvolt} ?
+	\end{align*}
+	
+	\part Total energy released $E=WT$ where $W=\SI{3.86e26}{\watt}$, $T=\SI{4.6e9}{\year}$.
+	
+	Each fusion has energy nett output of:
+	\begin{equation*}
+		\mathcal{E} = Q + 2\epsilon_e - 2\epsilon_\nu
+	\end{equation*}
+	where $Q = \SI{24.68}{\mega\electronvolt}$, $\epsilon_e = \SI{1.02}{\mega\electronvolt}$, $\epsilon_\nu = \SI{0.26}{\mega\electronvolt}$.
+	
+	Total energy produced if all H was used:
+	\begin{equation*}
+		\mathbb{E} = N_0 \mathcal{E}
+	\end{equation*}
+	where $N_0 = \dfrac{1}{4} \times \num{9e56}$.
+	
+	Lifetime of the helium production $T_\textnormal{total} = \dfrac{\mathbb{E}}{W}$.
+	
+	$\Rightarrow$ Remaining time:
+	\begin{align*}
+		T_\textnormal{left} &= T_\textnormal{total} - T \\
+		&= \frac{\mathbb{E}}{W} - T \\
+		&= \frac{N_0 \sbracket{Q + 2\epsilon_e - 2\epsilon_\nu}}{W} - T \\
+		&= \rbracket{\num{7.8e10} - \num{4.6e9}} \unit{\year} \\
+		&= \SI{7.3e10}{\year}
+	\end{align*}
+	
+	\part SEMF assumes the validity of the liquid drop model, so:
+	\begin{itemize}
+		\item $a_v$ is the volume term that states the strong field is short-ranged, hence each nucleon may only interact with its neighbours and renders the potential $\propto$ the volume of nucleus.
+		\item $a_s$ is the surface term that provides correction for the nucleons at the surface of the nucleus since they have fewer neighbours.
+		\item $a_c$ is the Coulomb term that accounts for the electrostatic repulsion between protons.
+		\item $a_a$ is the asymmetry term, it accounts for the fact that nucleons are fermions and must thus occupy different energy levels, for large nucleus it is favourable to have neutrons and protons equal in numbers to avoid energy penalty in the levels.
+		\item $a_p$ is the pairing term that accounts for the overlap of the nucleon wavefunction due to spin alignment, even-even nucteus is favoured since it forms $S=0$ singlet and allows the nucleons to overlap each other.
+	\end{itemize}
+	
+	$Z(m_p + m_e)$ accounts for the proton and electron mass, $(A-Z)m_n$ accounts for the neutron masses.
+	
+	Since strong field is attractive, $a_v$ is $-$ve, $a_s$ is $+$ve for it being a correction term.
+	
+	$a_c$ is $+$ve since the EM interaction is repulsive.
+	
+	$a_a$ is $+$ve since energy penalty is added for asymmetry.
+	
+	$a_p$ is $+$ve or $-$ve depending on the \# of nucleons, odd-odd is $+$ve since $S=1$ has higher energy state.
+	
+	\part \begin{equation*}
+		{}^{235}_{92} U + n \to {}^{236}_{92} U \to {}^{92}_{37} Rb + {}^{140}_{55} Cs + 4n
+	\end{equation*}
+	
+	Q-value of the fission:
+	\begin{align*}
+		Q &= \sbracket{M(92, 236) - M(37, 92) - M(55, 140) - 4m_n}c^2 \\
+		&= \SI{152.38}{\mega\electronvolt} - 12 (236)^{1/2} \unit{\mega\electronvolt} - \SI{0}{\mega\electronvolt} - \SI{0}{\mega\electronvolt} \\
+		&= \SI{-31.97}{\mega\electronvolt} ?
+	\end{align*}
+	
+	\textit{There appears to be a sign error in the $a_p$ terms.}
+	
+	Nevertheless, total energy production by the reactor in a year: $E=WT$ with $W=\SI{100}{\mega\watt}$, $T=\SI{1}{\year}$.
+	
+	$\Rightarrow$ \# of uranium burnt:
+	\begin{align*}
+		N &= \frac{E}{Q} \\
+		&= \num{6.16e26}
+	\end{align*}
+	
+	Mass of \element{U}{235}: $235u$
+	
+	$\Rightarrow$ Mass of \element{U}{235} burnt:
+	\begin{align*}
+		M &= 235Nu \\
+		&=  \SI{240}{\kilo\gram} = \SI{240000}{\gram}
+	\end{align*}
+	
+	OR if $a_p$ is wrong then $Q=\SI{336.73}{\mega\electronvolt}$:
+	\begin{align*}
+		\Rightarrow N = \num{5.85e25} \\
+		M &= \SI{22.81}{\kilo\gram} \\
+		&= \SI{22810}{\gram}
+	\end{align*}
+	
+	\part \image{.5\linewidth}{q3-neutron-thermalise}
+	Reduction ratio:
+	\begin{align*}
+		R &= \frac{m_c^2 + m_n^2}{(m_c + m_n)^2} \\
+		&= \num{0.857}
+	\end{align*}
+	
+	For $n$ collisions, final energy $E_f = R^n E_i$.
+	
+	For $E_i = \SI{2}{\mega\electronvolt}$, $E_f = \SI{0.025}{\electronvolt}$:
+	\begin{align*}
+		\Rightarrow n &= \frac{\ln(E_f) - \ln(E_i)}{\ln(R)} \\
+		&= \num{117.8} \simeq 118
+	\end{align*}
+	So 118 collisions required to thermalise the emitted neutrons.
+\end{parts}

@@ -1,0 +1,90 @@
+\draft
+\begin{parts}
+	\part
+	\begin{subparts}
+		\subpart Partial width refers to the contribution to the total width due to a particular process $i$, e.g. $\Gamma_i$ is the width due to the initial state and $\Gamma_f$ is that due to the final state in Breit-Wigner equation.
+		
+		Total width is simply the sum of all partial widths, and is the FWHM one measures from data: $\Gamma = \sum_j \Gamma_j$
+		{\color{red}Circular definition, what do the partial/total widths correspond to physically?}
+		
+		For Breit-Wigner resonance to occur, the incoming wave must be plane wave, and that the time spent in the interaction potential is long enough that the probability of transitions is random.
+		
+		\subpart At resonance,
+		\begin{align}
+			\sigma_\textnormal{peak} &= \pi g \rbracket{\frac{\lambda}{2\pi}}^2 \frac{\Gamma_i \Gamma_f}{\frac{1}{4}\Gamma^2} \notag \\
+			&= \frac{g\lambda^2}{\pi} \frac{\Gamma_i \Gamma_f}{\Gamma^2}
+			\label{eqn:q4-peak-1}
+		\end{align}
+		
+		For FWHM $\Gamma = 2\delta$,
+		\begin{align}
+			\frac{1}{2} \sigma_\textnormal{peak} &= \pi g \rbracket{\frac{\lambda}{2\pi}}^2 \frac{\Gamma_i \Gamma_f}{\delta^2 + \frac{1}{4}\Gamma^2} \notag \\
+			\Rightarrow \sigma_\textnormal{peak} &= \frac{g\lambda^2}{2\pi} \frac{\Gamma_i \Gamma_f}{\delta^2 + \frac{1}{4}\Gamma^2}
+			\label{eqn:q4-peak-2}
+		\end{align}
+		
+		From \eqref{eqn:q4-peak-1}, neglecting other channels so $\Gamma = \Gamma_i + \Gamma_f$:
+		\begin{equation*}
+			\sigma_\textnormal{peak} = \frac{g\lambda^2}{\pi} \frac{\Gamma_i (\Gamma - \Gamma_i)}{\Gamma^2}
+		\end{equation*}
+		
+		\begin{align*}
+			g &= \frac{2 \cdot 1 + 1}{(2 \cdot \frac{3}{2} + 1)(2 \cdot \frac{1}{2} + 1)} \\
+			&= \frac{1}{8}
+		\end{align*}
+		
+		\begin{align*}
+			p &= \frac{h}{\lambda} \\
+			\Rightarrow \lambda &= \frac{h}{p} \mtext{where $p$ is proton momentum} \\
+			T &= \frac{p^2}{2\massproton} \\
+			\Rightarrow p &= \sqrt{2 \massproton T} \mtext{at non-relativistic regime} \\
+			\Rightarrow \lambda &= \frac{h}{\sqrt{2\massproton T}} \\
+			&= \frac{2\pi\hbar c}{\sqrt{2\massproton c^2 T}} \\
+			&= \frac{2\pi (\SI{197.33}{\mega\electronvolt\fermi})}{\sqrt{2(\SI{938.3}{\mega\electronvolt})(\SI{1.4}{\mega\electronvolt})}} \\
+			&= \SI{24.2}{\fermi}
+		\end{align*}
+		
+		So:
+		\begin{align*}
+			\sigma_\textnormal{peak} \cdot \pi \cdot \Gamma^2 &= g\lambda^2 \Gamma_i (\Gamma - \Gamma_i) \\
+			\Rightarrow g\lambda^2 \Gamma_i^2 - g\lambda^2 \Gamma \Gamma_i + \Gamma^2 \pi \sigma_\textnormal{peak} &= 0 \\
+			\Gamma_i &= \frac{g\lambda^2 \Gamma \pm \sqrt{g^2 \lambda^4 \Gamma^2 - 4g\lambda^2 \Gamma^2 \pi \sigma_\textnormal{peak}}}{2g\lambda^2} \\
+			&= \num{1.059}\Gamma \mtext{or\hspace{1em}} \num{-0.059}\Gamma \mtext{(unphysical)} \\
+			&= \SI{1.218}{\mega\electronvolt} \mtext{or\hspace{1em}} \SI{-0.06785}{\mega\electronvolt}
+		\end{align*}
+		{\color{red}Doesn't make sense as $\Gamma_i + \Gamma_f = \Gamma > \Gamma_i$}
+		
+		\subpart Instead of $\alpha$ decay, one might also observe $\beta$ decay and $\gamma$ emission.
+	\end{subparts}
+	
+	\part Gamow factor $G$ encodes the probability of an alpha particle tunneling through the Coulombic barrier of the nucleus, $e^{2G}$.
+	
+	Now consider the Coulomb potential of the nucleus sans $\alpha$-particle: $\dfrac{(Z-2)e}{4\pi\permittivity r}$
+	
+	So the energy barrier required would be:
+	\begin{equation*}
+		V \sim \frac{2(Z-2)e^2}{4\pi\permittivity r}
+	\end{equation*}
+	with $r \sim r_0 A^{1/3}$ where $r_0 \simeq \SI{1.2}{\fermi}$ and $A$ is the atomic \#.
+	
+	So:
+	\begin{equation*}
+		V = \frac{2(Z-2)e^2}{4\pi\permittivity r_0 A^{1/3}}
+	\end{equation*}
+	
+	For \element{Be}{8}, $Z=4$, $A=8$:
+	\begin{align*}
+		\Rightarrow V &= \frac{4e^2}{4\pi\permittivity r_0 \underbracket{8^{1/3}}_{2}} \\
+		&= \frac{2e^2}{4\pi\permittivity r_0} \\
+		&= \frac{2\alpha\hbar c}{r_0} \\
+		&= \frac{2(\frac{1}{137})(\SI{197.33}{\mega\electronvolt\fermi})}{\SI{1.2}{\fermi}} \\
+		&= \SI{2.4}{\mega\electronvolt} \gg Q = \SI{91}{\kilo\electronvolt}
+	\end{align*}
+	
+	\begin{align*}
+		G &= \sqrt{\frac{2m_\alpha}{\hbar^2}} \indefint{\sqrt{V(r) - Q}}{r} \\
+		&\simeq \sqrt{\frac{2m_\alpha}{\hbar^2}} \defint{0}{\infty}{\sqrt{\frac{4e^2}{4\pi\permittivity r}}}{r} \\
+		&= \sqrt{\frac{2m_\alpha}{\hbar^2}} \defint{0}{\infty}{\sqrt{\frac{4\alpha\hbar c}{r}}}{r} \\
+		&= \sqrt{\frac{2m_\alpha}{\hbar^2}} \sqrt{4\alpha\hbar c} \sbracket{r^{1/2}}_{r=0}^\infty
+	\end{align*}
+\end{parts}

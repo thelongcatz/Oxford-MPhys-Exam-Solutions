@@ -1,0 +1,64 @@
+\draft
+\begin{parts}
+	\part Hamiltonian of external magnetic interaction:
+	\begin{align*}
+		\hat{H}_z &= -\bm{\mu}\cdot\mathbf{B} \\
+		&= \sbracket{g_s \bohrmagneton \hat{\mathbf{s}} - \bohrmagneton \hat{\mathbf{l}}} \cdot \mathbf{B}
+	\end{align*}
+	
+	In vector model, the component of $\mathbf{L}$, $\mathbf{S}$ perpendicular to $\mathbf{J}$ vanishes upon averaging so:
+	\begin{align*}
+		\langle E_z \rangle &= \sbracket{g_s \bohrmagneton \langle\hat{\mathbf{s}}\rangle - \bohrmagneton \langle\hat{\mathbf{l}}\rangle} \cdot \mathbf{B} \\
+		&= \sbracket{g_s \bohrmagneton \sbracket{\frac{\hat{\mathbf{S}}\cdot\hat{\mathbf{J}}}{\hat{\mathbf{J}}^2} \hat{\mathbf{J}}} - \bohrmagneton \sbracket{\frac{\hat{\mathbf{L}}\cdot\hat{\mathbf{J}}}{\hat{\mathbf{J}}^2} \hat{\mathbf{J}}}} \cdot \mathbf{B} \\
+		&= g_J \bohrmagneton \hat{\mathbf{J}} \cdot \mathbf{B} \\
+		&= g_J \bohrmagneton M_J B
+	\end{align*}
+	where $g_J$ is:
+	\begin{align*}
+		g_J &= g_s \cdot \frac{\langle\hat{\mathbf{S}}\cdot\hat{\mathbf{L}}\rangle + \langle\hat{\mathbf{S}}^2\rangle}{\langle\hat{\mathbf{J}}^2\rangle} - \frac{\langle\hat{\mathbf{L}}^2\rangle + \langle\hat{\mathbf{L}}\cdot\hat{\mathbf{S}}\rangle}{\hat{\mathbf{J}}^2} \\
+		&= g_s \frac{\diagfrac{1}{2}\sbracket{J(J+1)-L(L+1)-S(S+1)} + S(S+1)}{J(J+1)} \\
+		&\qquad -\frac{L(L+1) + \diagfrac{1}{2}\sbracket{J(J+1)-L(L+1)-S(S+1)}}{J(J+1)} \\
+		&= (g_s - 1) \frac{J(J+1)-L(L+1)-S(S+1)}{2J(J+1)} + \frac{g_s S(S+1) - L(L+1)}{J(J+1)}
+	\end{align*}
+	
+	\part Normal Zeeman effect refers to an even splitting of energy levels under weak B field, which then leads to a degeneracy in transition lines and causing the observable lines be proportional to the splitting itself.
+	This happens when either $S=0$ or $L=0$ in both levels.
+	
+	Anomalous Zeeman effect is the general case where $g_J$ is dependent on $J$, this causes the levels splitting uneven and leads to a greater number of transition lines to be observed.
+	
+	\image{.55\linewidth}{q4-zeeman-levels}
+	Transition: ${}^3 P \to ?$, $S=1$, $L=1$, $J=0, 1, 2$
+	
+	Dipole selection rules: $\Delta S=0$, $\Delta L=\pm 1$, $\Delta J=0,\pm 1$ ($0 \nrightarrow 0$), $\Delta M_J = 0,\pm 1$ ($0 \nrightarrow 0 \iff \Delta J=0$)
+	
+	Try ${}^3 P \to {}^3 S$ ($S=1$, $L=0$, $J=0, 1$), and further consider ${}^3 P_1 \to {}^3 S_1$:
+	\image{.4\linewidth}{q4-zeeman-transitions}
+	So 6 distinct lines!
+	
+	For ${}^3 P_1$, $J=1$, $L=1$, $S=1$:
+	\begin{align*}
+		g_J &= (g_s - 1) \frac{-2}{4} + \frac{g_s \cdot 2 - 2}{2} \\
+		&= -\frac{1}{2}(g_s - 1) + (g_s + 1) \\
+		&= \frac{g_s - 1}{2} \simeq \frac{1}{2} \mtext{for } g_s \simeq 2
+	\end{align*}
+	
+	For ${}^3 S_1$, $J=1$, $L=0$, $S=1$:
+	\begin{align*}
+		g_J &= (g_s - 1) \cdot 0 + \frac{g_s \cdot 2 - 0}{2} \\
+		&= g_s \simeq 2
+	\end{align*}
+	
+	The difference between the highest and lowest line splits is then:
+	\begin{align*}
+		\Delta E_\nu &= \bohrmagneton B \sbracket{1\cdot\frac{1}{2} + 1 \cdot 2} \\
+		hc\Delta\nu &= \frac{3}{2}\bohrmagneton B \\
+		\Rightarrow B &= \frac{2hc}{3\bohrmagneton} \Delta\nu \\
+		&= \SI{0.714}{\tesla}
+	\end{align*}
+	
+	Since Zeeman splitting is extremely fine, a high precision instrument such as a Fabry-Pérot étalon must be used.
+	
+	\newpage
+	Sketch of the apparatus:
+	\image{.8\linewidth}{q4-apparatus}
+\end{parts}

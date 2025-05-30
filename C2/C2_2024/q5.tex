@@ -8,9 +8,9 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	By second quantisation, we may make the (up to some constant that makes up $\hbar\omega$) substitutions $E \rightarrow \diagfrac{1}{\sqrt{2}}(a+a^\dag)$ and $B \rightarrow \diagfrac{i}{\sqrt{2}}(a-a^\dag)$.
 	The resulting Hamiltonian is then:
 	\begin{align*}
-		\mathcal{H} &= \frac{1}{4} \hbar\omega \left[\left(a + a^\dag\right)^2 - \left(a - a^\dag\right)^2\right] \\
-		&= \frac{\hbar\omega}{4} \left[2 \underbracket{a a^\dag}_{1+a^\dag a} + 2a^\dag a\right] \\
-		&= \hbar\omega \left(a^\dag a + \frac{1}{2}\right)
+		\mathcal{H} &= \frac{1}{4} \hbar\omega \sbracket{\rbracket{a + a^\dag}^2 - \rbracket{a - a^\dag}^2} \\
+		&= \frac{\hbar\omega}{4} \sbracket{2 \underbracket{a a^\dag}_{1+a^\dag a} + 2a^\dag a} \\
+		&= \hbar\omega \rbracket{a^\dag a + \frac{1}{2}}
 	\end{align*}
 	This corresponds nicely to a quantum harmonic oscillator -- in fact the offset of $\diagfrac{1}{2}$ suggests that energy is non-zero even when there is no photon!
 	
@@ -38,7 +38,7 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	
 	TDSE then tells us the general solution would be:
 	\begin{equation*}
-		\ket{\psi(t)} = A\exp\left(-\frac{iE_+ t}{\hbar}\right) \ket{+} + B\exp\left(-\frac{iE_- t}{\hbar}\right) \ket{-}
+		\ket{\psi(t)} = A\exp\rbracket{-\frac{iE_+ t}{\hbar}} \ket{+} + B\exp\rbracket{-\frac{iE_- t}{\hbar}} \ket{-}
 	\end{equation*}
 	Substituting the initial condition of $\ket{\psi(0)} = \ket{\textnormal{e},\, 0_a} = \diagfrac{1}{\sqrt{2}} \bigl(\ket{+} + \ket{-}\bigr)$ then gives:
 	\begin{equation*}
@@ -48,16 +48,16 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	\begin{align}
 		\ket{\psi(t)} &=
 		\begin{aligned}[t]
-			\frac{1}{\sqrt{2}} \exp\left(-\frac{i\omega t}{2}\right) &\left[\frac{1}{\sqrt{2}} \left(\exp\left(-\frac{\Omega_a t}{2}\right) + \exp\left(\frac{\Omega_a t}{2}\right)\right) \ket{\textnormal{e},\, 0_a} \right. \\
-			&\left. + \frac{1}{\sqrt{2}} \left(\exp\left(-\frac{\Omega_a t}{2}\right) - \exp\left(\frac{\Omega_a t}{2}\right)\right) \ket{\textnormal{g},\, 1_a}\right]
+			\frac{1}{\sqrt{2}} \exp\rbracket{-\frac{i\omega t}{2}} &\sbracket{\frac{1}{\sqrt{2}} \rbracket{\exp\rbracket{-\frac{\Omega_a t}{2}} + \exp\rbracket{\frac{\Omega_a t}{2}}} \ket{\textnormal{e},\, 0_a} \right. \\
+			&\left. + \frac{1}{\sqrt{2}} \rbracket{\exp\rbracket{-\frac{\Omega_a t}{2}} - \exp\rbracket{\frac{\Omega_a t}{2}}} \ket{\textnormal{g},\, 1_a}}
 		\end{aligned} \notag \\
-		&= \exp\left(-\frac{i\omega t}{2}\right) \left[\cos\left(\frac{\Omega_a t}{2}\right) \ket{\textnormal{e},\, 0_a} - i\sin\left(\frac{\Omega_a t}{2}\right) \ket{\textnormal{g},\, 1_a}\right]
+		&= \exp\rbracket{-\frac{i\omega t}{2}} \sbracket{\cos\rbracket{\frac{\Omega_a t}{2}} \ket{\textnormal{e},\, 0_a} - i\sin\rbracket{\frac{\Omega_a t}{2}} \ket{\textnormal{g},\, 1_a}}
 		\label{eqn:q5-psi-t}
 	\end{align}
 	
 	\part At $t = \tau = \pi / 2\Omega_a$, \eqref{eqn:q5-psi-t} becomes:
 	\begin{equation*}
-		\ket{\psi(\tau)} = \exp\left(-\frac{i\omega\pi}{4\Omega_a}\right) \left[\cos\left(\frac{\pi}{4}\right) \ket{\textnormal{e},\, 0_a} -i\sin\left(\frac{\pi}{4}\right) \ket{\textnormal{g},\, 1_a}\right]
+		\ket{\psi(\tau)} = \exp\rbracket{-\frac{i\omega\pi}{4\Omega_a}} \sbracket{\cos\rbracket{\frac{\pi}{4}} \ket{\textnormal{e},\, 0_a} -i\sin\rbracket{\frac{\pi}{4}} \ket{\textnormal{g},\, 1_a}}
 	\end{equation*}
 	
 	Now we turn mode $a$ off and mode $b$ on, now we have coupling between the states $\ket{\textnormal{e},\, 0_b}$ and $\ket{\textnormal{g},\, 1_b}$.
@@ -66,7 +66,7 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	
 	Repeating the same procedure as the previous part then yields:
 	\begin{equation*}
-		\ket{\psi^\prime (t)} = C\exp\left(-\frac{iE_+^\prime t}{\hbar}\right) \ket{+^\prime} + D\exp\left(-\frac{iE_-^\prime t}{\hbar}\right) \ket{-^\prime}
+		\ket{\psi^\prime (t)} = C\exp\rbracket{-\frac{iE_+^\prime t}{\hbar}} \ket{+^\prime} + D\exp\rbracket{-\frac{iE_-^\prime t}{\hbar}} \ket{-^\prime}
 	\end{equation*}
 	where the primed variables are of mode $b$ instead of $a$.
 	
@@ -77,20 +77,20 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	
 	So the new state at time $t$ shall be:
 	\begin{align*}
-		\ket{\Psi (t)} = \frac{1}{\sqrt{2}} \exp\left(-\frac{i\omega t}{2}\right) &\left[\cos\left(\frac{\Omega_b t}{2}\right) \ket{\textnormal{e},\, 0_a,\, 0_b} - i\sin\left(\frac{\Omega_b t}{2}\right) \ket{\textnormal{g},\, 0_a,\, 1_b} \right. \\
-		&\left. -i \exp\left(-\frac{i\omega\pi}{4\Omega_a}\right) \ket{\textnormal{g},\, 1_a,\, 0_b}\right]
+		\ket{\Psi (t)} = \frac{1}{\sqrt{2}} \exp\rbracket{-\frac{i\omega t}{2}} &\sbracket{\cos\rbracket{\frac{\Omega_b t}{2}} \ket{\textnormal{e},\, 0_a,\, 0_b} - i\sin\rbracket{\frac{\Omega_b t}{2}} \ket{\textnormal{g},\, 0_a,\, 1_b} \right. \\
+		&\left. -i \exp\rbracket{-\frac{i\omega\pi}{4\Omega_a}} \ket{\textnormal{g},\, 1_a,\, 0_b}}
 	\end{align*}
 	
 	Given the atom is measured to be in the ground state, the state of the field is then the following mixed state:
 	\begin{equation*}
-		\rho = \frac{\diagfrac{1}{2}}{\diagfrac{1}{2} [\sin^2(\Omega_b t/2) + 1]} \left[\sin^2\left(\frac{\Omega_b t}{2}\right) \ket{0_a,\, 1_b} \bra{0_a,\, 1_b} + \ket{1_a,\, 0_b} \bra{1_a,\, 0_b}\right]
+		\rho = \frac{\diagfrac{1}{2}}{\diagfrac{1}{2} [\sin^2(\Omega_b t/2) + 1]} \sbracket{\sin^2\rbracket{\frac{\Omega_b t}{2}} \ket{0_a,\, 1_b} \bra{0_a,\, 1_b} + \ket{1_a,\, 0_b} \bra{1_a,\, 0_b}}
 	\end{equation*}
 	where the denominator simply normalises the probabilities of the density matrix.
 	
 	To examine if they are separable, we shall inspect the density matrices of the subsystems:
 	\begin{align*}
 		\rho_{a/b} &= \textnormal{tr}_{a/b}\,\rho \\
-		&= \frac{1}{\sin^2(\Omega_b t/2) + 1} \left[\sin^2\left(\frac{\Omega_b t}{2}\right) \ket{0_a/1_b} \bra{0_a/1_b} + \ket{1_a/0_b} \bra{1_a/0_b}\right]
+		&= \frac{1}{\sin^2(\Omega_b t/2) + 1} \sbracket{\sin^2\rbracket{\frac{\Omega_b t}{2}} \ket{0_a/1_b} \bra{0_a/1_b} + \ket{1_a/0_b} \bra{1_a/0_b}}
 	\end{align*}
 	
 	Note that by symmetry, $\rho_a$ and $\rho_b$ share the same purity:
@@ -100,8 +100,8 @@ Classic Jaynes-Cummings question. The recent topic of separable/non-separable ve
 	
 	The states are separable when the purity is 1:
 	\begin{gather*}
-		\sin^4 \left(\frac{\Omega_b t}{2}\right) + 2\sin^2 \left(\frac{\Omega_b t}{2}\right) + 1 = \sin^4 \left(\frac{\Omega_b t}{2}\right) + 1 \\
-		\Rightarrow \sin\left(\frac{\Omega_b t}{2}\right) = 0 \\
+		\sin^4 \rbracket{\frac{\Omega_b t}{2}} + 2\sin^2 \rbracket{\frac{\Omega_b t}{2}} + 1 = \sin^4 \rbracket{\frac{\Omega_b t}{2}} + 1 \\
+		\Rightarrow \sin\rbracket{\frac{\Omega_b t}{2}} = 0 \\
 		\Rightarrow t = \frac{2n\pi}{\Omega_b}
 	\end{gather*}
 	where $n\in\mathbb{Z}$. At other times the states are entangled.

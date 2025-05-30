@@ -58,15 +58,15 @@
 		\begin{align*}
 			S(\mathbf{G}) &= \sum_{x \in \textnormal{UC}} b_x \mathrm{e}^{i \mathbf{G}\cdot\mathbf{R}_x} \\
 			&= S_\textnormal{lattice} \times S_\textnormal{basis} \\
-			&= \left( 1 + \mathrm{e}^{i\pi(h+k+l)} \right) \left[
+			&= \rbracket{ 1 + \mathrm{e}^{i\pi(h+k+l)} } \sbracket{
 			b_\textnormal{Ca}
-			+ b_\textnormal{Fe} \left( \mathrm{e}^{i\pi(h+l/2)} - \mathrm{e}^{i\pi(h-l/2)} \right)
-			+ b_\textnormal{As} \left( \mathrm{e}^{i\pi lz} - \mathrm{e}^{-i\pi lz} \right)
-			\right] \\
-			&= \left( 1 + \mathrm{e}^{i\pi(h+k+l)} \right) \left[ b_\textnormal{Ca}
-			+ 2ib_\textnormal{Fe} \mathrm{e}^{i\pi h} \sin\left(\frac{l}{2}\right)
-			+ 2ib_\textnormal{As} \sin\left(lz\right)
-			\right]
+			+ b_\textnormal{Fe} \rbracket{ \mathrm{e}^{i\pi(h+l/2)} - \mathrm{e}^{i\pi(h-l/2)} }
+			+ b_\textnormal{As} \rbracket{ \mathrm{e}^{i\pi lz} - \mathrm{e}^{-i\pi lz} }
+			} \\
+			&= \rbracket{ 1 + \mathrm{e}^{i\pi(h+k+l)} } \sbracket{ b_\textnormal{Ca}
+			+ 2ib_\textnormal{Fe} \mathrm{e}^{i\pi h} \sin\rbracket{\frac{l}{2}}
+			+ 2ib_\textnormal{As} \sin\rbracket{lz}
+			}
 		\end{align*}
 		where $h$, $k$ and $l$ are the usual Miller indices.
 		
@@ -76,8 +76,8 @@
 			\begin{cases*}
 				0 \textnormal{\hspace{1em}for $h+l$ odd} \\
 				2 b_\textnormal{Ca} \textnormal{\hspace{1em}}l=0 \\
-				2 \left[ b_\textnormal{Ca} + 2ib_\textnormal{Fe} \sin\diagfrac{1}{2} + 2ib_\textnormal{As} \sin z \right] \textnormal{\hspace{1em}(1, 0, 1)} \\
-				2 \left[ b_\textnormal{Ca} + 2ib_\textnormal{Fe} \sin 1 + 2ib_\textnormal{As} \sin\left(2z\right) \right] \textnormal{\hspace{1em}(0, 0, 2)}
+				2 \sbracket{ b_\textnormal{Ca} + 2ib_\textnormal{Fe} \sin\diagfrac{1}{2} + 2ib_\textnormal{As} \sin z } \textnormal{\hspace{1em}(1, 0, 1)} \\
+				2 \sbracket{ b_\textnormal{Ca} + 2ib_\textnormal{Fe} \sin 1 + 2ib_\textnormal{As} \sin\rbracket{2z} } \textnormal{\hspace{1em}(0, 0, 2)}
 			\end{cases*} \\
 			|S(\mathbf{G})|^2 =
 			\begin{cases*}

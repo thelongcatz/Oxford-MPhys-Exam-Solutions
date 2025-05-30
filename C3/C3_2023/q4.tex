@@ -37,7 +37,7 @@ Though there is some sprinkles of symmetry breaking this year.
 	
 	\part Unpacking the nearest-neighbour sum into sum over lattice gives $J \rightarrow J/2$:
 	\begin{equation*}
-		\mathcal{H} = \sum_{i, j} \frac{J}{2} \mathbf{S}_i \cdot \mathbf{S}_j - \sum_{i} D\left(S_i^z\right)^2
+		\mathcal{H} = \sum_{i, j} \frac{J}{2} \mathbf{S}_i \cdot \mathbf{S}_j - \sum_{i} D\rbracket{S_i^z}^2
 	\end{equation*}
 	
 	\begin{figure}[H]
@@ -61,40 +61,40 @@ Though there is some sprinkles of symmetry breaking this year.
 	Adding dipole energy:
 	\begin{align*}
 		E_d &= \bm{\mu} \cdot \mathbf{B} \\
-		&= -g \mu_\textnormal{B} S \sin\theta \cdot B \textnormal{\hspace{1em}due to electron having negative charge}
+		&= -g \bohrmagneton  S \sin\theta \cdot B \textnormal{\hspace{1em}due to electron having negative charge}
 	\end{align*}
 	
 	So total energy per site is:
 	\begin{equation*}
-		E = -\frac{n}{2} JS^2 \cos 2\theta - g \mu_\textnormal{B} SB \sin\theta - DS^2 \cos^2 \theta
+		E = -\frac{n}{2} JS^2 \cos 2\theta - g \bohrmagneton  SB \sin\theta - DS^2 \cos^2 \theta
 	\end{equation*}
 	
 	At stationary state:
 	\begin{align*}
-		\frac{\partial E}{\partial \theta} = 0 \qquad\qquad & \\
-		\Rightarrow nJS^2 \sin 2\theta - g \mu_\textnormal{B} BS \cos\theta + 2DS^2 \cos\theta &= 0 \\
-		\cos\theta \left[2nJS^2 \sin\theta - g \mu_\textnormal{B} BS + 2DS^2 \sin\theta\right] &= 0 \\
-		\cos\theta = 0 \qquad \textnormal{or} \qquad &\sin\theta = \frac{g \mu_\textnormal{B} BS}{2nJS^2 + 2DS^2} \\
-		\qquad &\sin\theta = \frac{g \mu_\textnormal{B} B}{2S\left(nJ + D\right)}
+		\pderi{E}{\theta} = 0 \qquad\qquad & \\
+		\Rightarrow nJS^2 \sin 2\theta - g \bohrmagneton  BS \cos\theta + 2DS^2 \cos\theta &= 0 \\
+		\cos\theta \sbracket{2nJS^2 \sin\theta - g \bohrmagneton  BS + 2DS^2 \sin\theta} &= 0 \\
+		\cos\theta = 0 \qquad \textnormal{or} \qquad &\sin\theta = \frac{g \bohrmagneton  BS}{2nJS^2 + 2DS^2} \\
+		\qquad &\sin\theta = \frac{g \bohrmagneton  B}{2S\rbracket{nJ + D}}
 	\end{align*}
 	
 	So magnetisation along field per spin:
 	\begin{align*}
-		M &= -g \mu_\textnormal{B} S \sin\theta \\
-		&= -\frac{\left(g \mu_\textnormal{B}\right)^2}{2\left(nJ + D\right)} \cdot B
+		M &= -g \bohrmagneton  S \sin\theta \\
+		&= -\frac{\rbracket{g \bohrmagneton}^2}{2\rbracket{nJ + D}} \cdot B
 	\end{align*}
 	
 	\part Antiferromagnetic: $B = 0$ and $\theta = 0$ $\Rightarrow$ $E_\textnormal{AFM} = -n/2 JS^2 - DS^2$.
 	
 	Equating this to the flip energy at equilibrium:
 	\begin{align*}
-		E_\textnormal{sf} &= \frac{n}{2} JS^2 - DS^2 - g \mu_\textnormal{B} BS \\
-		\Rightarrow B_\textnormal{sf} &= \frac{nJS}{g \mu_\textnormal{B}}
+		E_\textnormal{sf} &= \frac{n}{2} JS^2 - DS^2 - g \bohrmagneton  BS \\
+		\Rightarrow B_\textnormal{sf} &= \frac{nJS}{g \bohrmagneton}
 	\end{align*}
 	
 	\part We know that the slope of the graph for the case $B \bot c$ is:
 	\begin{equation*}
-		\frac{\left(g \mu_\textnormal{B}\right)^2}{2\left(nJ + D\right)} = \frac{1 \cdot \mu_\textnormal{B}}{\SI{8}{\tesla}}
+		\frac{\rbracket{g \bohrmagneton}^2}{2\rbracket{nJ + D}} = \frac{1 \cdot \bohrmagneton}{\SI{8}{\tesla}}
 	\end{equation*}
 	Also $B_\textnormal{sf} \simeq \SI{8}{\tesla}$ gives $g = 2.35$.
 	Combining these equations then gives:

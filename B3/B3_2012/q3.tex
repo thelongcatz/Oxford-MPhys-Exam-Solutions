@@ -1,0 +1,91 @@
+\draft
+\begin{parts}
+	\part \image{.35\linewidth}{q3-two-level}
+	The Einstein coefficient are defined such that the following rate equations are satisfied:
+	\begin{align*}
+		\deri{N_2}{t} &= B_{12} \rho(\omega) N_1 - B_{21} \rho(\omega) N_2 - A_{21} N_2 \\
+		\deri{N_1}{t} &= -\deri{N_2}{t}
+	\end{align*}
+	where $\rho(\omega)$ is spectral energy density of the incoming radiation.
+	
+	At thermal equilibrium,	the population should satisfy Boltzmann distribution:
+	\begin{equation*}
+		N_2 \propto g_2 e^{-\beta E_2} \qquad
+		N_1 \propto g_1 e^{-\beta E_1}
+	\end{equation*}
+	where $g_i$ is the degeneracy of state $\ket{i}$, $E_i$ is its energy.
+	
+	Hence:
+	\begin{equation*}
+		\frac{N_2}{N_1} = \frac{g_2}{g_1} e^{-\beta\hbar\omega_0}
+	\end{equation*}
+	where $\hbar\omega_0 = E_2 - E_1$.
+	
+	Also at steady state,
+	\begin{gather*}
+		\deri{N_2}{t} = 0 \\
+		\Rightarrow B_{12} \rho(\omega) N_1 = B_{21} \rho(\omega) N_2 + A_{21} N_2 \\
+		\Rightarrow \frac{N_2}{N_1} = \frac{B_{12} \rho(\omega)}{B_{21} \rho(\omega) + A_{21}}
+	\end{gather*}
+	
+	Combining both expressions:
+	\begin{align*}
+		\frac{B_{12} \rho(\omega)}{B_{21} \rho(\omega) + A_{21}} &= \frac{g_2}{g_1} e^{-\beta\hbar\omega_0} \\
+		\frac{g_1 B_{12} \rho(\omega)}{g_2 B_{21} \rho(\omega) + A_{21} g_2} &=  e^{-\beta\hbar\omega_0} \\
+		\frac{g_1 B_{12} \rho(\omega)}{g_2 B_{21} \rho(\omega) + g_2 A_{21} \cdot \frac{\pi^2 c^3}{\hbar\omega^3} (e^{\beta\hbar\omega_0} - 1)} &=  e^{-\beta\hbar\omega_0} \\
+		g_1 B_{12} &= g_2 B_{21} e^{-\beta\hbar\omega_0} + g_2 A_{21} \cdot \frac{\pi^2 c^3}{\hbar\omega^3} \rbracket{1 - e^{-\beta\hbar\omega_0}}
+	\end{align*}
+	
+	Since the relation must hold regardless of the temperature,
+	\begin{align*}
+		g_2 B_{21} &= g_2 A_{21} \cdot \frac{\pi^2 c^3}{\hbar\omega^3} \\
+		\Rightarrow A_{21} &= \frac{\hbar\omega^3 B_{21}}{\pi^2 c^3}
+	\end{align*}
+	
+	In addition:
+	\begin{equation*}
+		g_1 B_{12} = g_2 A_{21} \cdot \frac{\pi^2 c^3}{\hbar\omega^3} = g_2 B_{21}
+	\end{equation*}
+	
+	Since $A_{21}$, $B_{12}$, $B_{21}$ all relate to the same levels, the lineshape is identical as Lorentzian.
+	
+	\part Homogeneous broadening refers to the spectral line broadening that is uniform throughout a sample, one example would be natural broadening which is a consequence of the uncertainty principle.
+	
+	Inhomegeneous broadening refers to broadening that is sensitive towards a specific region/direction, i.e. there exists an asymmetry in the broadening. One example of this is Doppler broadening which is due to the particles' motion in the sample.
+	
+	\part Sketch of the setup:
+	\image{.6\linewidth}{q3-setup}
+	Find $N_\gamma / t \cdot \Omega \cdot A \cdot \nu$.
+	
+	Known parameters:
+	\begin{align*}
+		t &= \SI{e-13}{\second} \\[1em]
+		\Omega \simeq \pi\theta^2 &= \pi \rbracket{\SI{e-6}{\radian}}^2 \mtext{since } \theta \ll 1 \\
+		&= \SI{3.142e-12}{\steradian} \\[1em]
+		A &= \pi\rbracket{\frac{d}{2}}^2 \\
+		&= \pi \cdot \frac{\rbracket{\SI{300}{\micro\metre}}^2}{4} = \SI{7.069e-8}{\metre\squared} \\[1em]
+		\nu &= \Delta\omega = \rbracket{\num{5e-3}} \rbracket{\frac{\SI{8}{\kilo\electronvolt}}{\hbar}} = \SI{6.077e16}{\per\second}
+	\end{align*}
+	
+	So spectral brightness $B$:
+	\begin{align*}
+		B &= \frac{\num{e12}}{\rbracket{\SI{e-13}{\second}} \rbracket{\SI{3.142e-12}{\steradian}} \rbracket{\SI{7.069e-8}{\metre\squared}} \rbracket{\SI{6.077e16}{\per\second}}} \\
+		&= \SI{7.410e26}{\per\steradian\per\metre\squared}
+	\end{align*}
+	
+	For blackbody,
+	\begin{align*}
+		\rho(\omega) &= \frac{n\hbar\omega}{\nu} \\
+		&= \frac{N_1 \hbar\omega}{\nu Act} \\
+		&= \frac{\hbar\omega}{c} \cdot B\Omega \\
+		\Rightarrow B &= \frac{\rho(\omega) c}{\hbar\omega\Omega}
+	\end{align*}
+	
+	Assuming isotropy, $\Omega = 4\pi\si{\steradian}$:
+	\begin{align*}
+		\Rightarrow \rho(\omega) &= \frac{\hbar\omega B\Omega}{c} = \frac{\hbar\omega^3}{\pi^2 c^3} \frac{1}{e^{\beta\hbar\omega} - 1} \\
+		\Rightarrow e^{\beta\hbar\omega} &= 1 + \frac{\omega^2 B\Omega}{\pi^2 c^2} \\
+		\frac{\hbar\omega}{\boltzmann T} &= \ln\sbracket{1 + \frac{\omega^2 B\Omega}{\pi^2 c^2}} \\
+		T &= \frac{\hbar\omega}{\boltzmann \ln\sbracket{1 + \frac{\omega^2 B\Omega}{\pi^2 c^2}}} = \SI{8.367e5}{\kelvin}
+	\end{align*}
+\end{parts}

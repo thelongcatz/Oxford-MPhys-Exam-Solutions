@@ -1,0 +1,38 @@
+\draft Nasty NMR as usual.
+
+\begin{parts}
+	\part NMR Hamiltonian:
+	\begin{align*}
+		\mathcal{H} &= \hbar\gamma B \frac{\sigma_z}{2} \\
+		\Rightarrow \Delta E &= \hbar\gamma B = \hbar\omega \\
+		\Rightarrow B &= \frac{\omega}{\gamma}
+	\end{align*}
+	
+	Usually we would have a B field of around $\SI{10}{\tesla}$, thus the level splitting would involve frequency around $\omega = B\gamma \simeq \SI{425.8}{\mega\hertz}$, thus we are in the RF regime.
+	
+	\part Single-qubit gate is implemented by applying an RF pulse with specific frequency for qubit addressing since each species in the ensemble possesses different resonance frequencies due to either them being distinguishable nuclei (heteronuclear system) or chemical screening (homonuclear system).
+	
+	Preparation of NMR qubit is difficult as trying to initialise a zeor state requires cooling the liquid NMR down, which can be physically infeasible.
+	In addition, while a pseudo-pure state may achieve initialisation for a liquid NMR system, it is difficult to scale up due to the shrinking effective purity.
+	
+	Measurement of a NMR computer is rather challenging as the pulse absorption happens across the ensemble rather than an individual qubit $\Rightarrow$ readout is a statistical average than the direct result of a qubit.
+	
+	\part \todo Recall that in NMR we need a background B field at $\hat{\mathbf{z}}$, but applying another B field at other directions would lead to non-unitarity as different directions of $\sigma$ do not commute.
+	
+	However, we can rewrite $\sigma_x = (\sigma_+ + \sigma_-)/2$, $\sigma_y = (\sigma_+ - \sigma_-)/2i$ so in effect we are projecting the state onto the z-axis.
+	
+	Gradient strength???
+	
+	\part \todo As a quantum system evolves unitarily in time, by applying a sufficiently frequent measurement, one may retain the original constant in time with high probability.
+	In an NMR, the issue is that the response time of a qubit can take a while before decoherence kicks in?
+	
+	\part Consider logical qubit $\ket{0_L} \equiv \ket{01} + \ket{10}$, $\ket{1_L} \equiv \ket{00} + \ket{11}$ ignoring normalisation.
+	
+	A simultaneous X flip protects the logical qubits from errors $\Rightarrow$ decoherence-free subspace (DFS).
+	
+	In a heteronuclear system, the resonance frequency for each qubit is different $\Rightarrow$ inherent protection against simultaneous gate.
+	
+	\part \todo Spin-echo: suppresses unitary evolution via sequences of Y gates.
+	
+	So to act on a single nuclear type, ???
+\end{parts}

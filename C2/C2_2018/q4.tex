@@ -1,0 +1,147 @@
+Quantum gates and their fidelities.
+\begin{parts}
+	\part Universal set of unitary quantum gates: the set of all possible qubit gates that are unitary (i.e. reversible), which may be approximated up to an arbitrary accuracy.
+	
+	Clifford set: need 2-qubit gate, e.g. $\mathtt{CX}$, $\mathtt{CNOT}$ to introduce entanglement.
+	
+	\part \begin{align*}
+		\theta_\phi &= \mathrm{e}^{-i\theta \sigma_\phi/2} \\
+		&= \mathrm{e}^{-i\theta \sigma_x \cos\phi/2} \mathrm{e}^{-i\theta \sigma_y \sin\phi/2} \\
+		&= \mathds{1} - i\theta \underbracket{\begin{pmatrix}
+				0 & \frac{\cos\phi}{2} -i \frac{\sin\phi}{2} \\
+				\frac{\cos\phi}{2} + i\frac{\sin\phi}{2} & 0
+			\end{pmatrix}
+		}_{M} + \frac{(-i\theta)^2}{2} M^2 + \ldots
+	\end{align*}
+	
+	Note that $M = \frac{1}{2} \begin{pmatrix}
+	0 & \mathrm{e}^{-i\phi} \\
+	\mathrm{e}^{i\phi} & 0
+	\end{pmatrix} \Rightarrow M^2 = \frac{1}{4} \begin{pmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix}$:
+	
+	\begin{align*}
+		\theta_\phi &= \mathds{1} \sbracket{1 + \frac{1}{2!} \rbracket{-\frac{i\theta}{2}}^2 + \frac{1}{4!} \rbracket{-\frac{i\theta}{2}}^4 + \ldots} + \begin{pmatrix}
+			0 & \mathrm{e}^{-i\phi} \\
+			\mathrm{e}^{i\phi} & 0
+		\end{pmatrix} \sbracket{\rbracket{-\frac{i\theta}{2}} + \frac{1}{3!} \rbracket{-\frac{i\theta}{2}}^3 + \ldots} \\
+		&= \mathds{1} \cdot \cos\frac{\theta}{2} + \begin{pmatrix}
+			0 & \mathrm{e}^{-i\phi} \\
+			\mathrm{e}^{i\phi} & 0
+		\end{pmatrix} (-i) \sin\frac{\theta}{2} \\
+		&= \begin{pmatrix}
+			\cos\frac{\theta}{2} & -i\mathrm{e}^{-i\phi} \sin\frac{\theta}{2} \\
+			-i \mathrm{e}^{i\phi} \sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+		\end{pmatrix}
+	\end{align*}
+	
+	We then have:
+	\begin{align*}
+		\pi_{\phi_2} \cdot \pi_{\phi_1} &= \begin{pmatrix}
+			\cos\frac{\pi}{2} & -i\mathrm{e}^{-i\phi_2} \sin\frac{\pi}{2} \\
+			-i\mathrm{e}^{i\phi_2} \sin\frac{\pi}{2} & \cos\frac{\pi}{2}
+		\end{pmatrix}
+		\begin{pmatrix}
+			\cos\frac{\pi}{2} & -i\mathrm{e}^{-i\phi_1} \sin\frac{\pi}{2} \\
+			-i\mathrm{e}^{i\phi_1} \sin\frac{\pi}{2} & \cos\frac{\pi}{2}
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			-\mathrm{e}^{i(\phi_1 - \phi_2)} & 0 \\
+			0 & -\mathrm{e}^{-i(\phi_1 - \phi_2)}
+		\end{pmatrix} \\
+		&= -\mathrm{e}^{i(\phi_1 - \phi_2)} \begin{pmatrix}
+			1 & 0 \\
+			0 & \mathrm{e}^{-2i(\phi_1 - \phi_2)}
+		\end{pmatrix}
+	\end{align*}
+	Note that for $-2i(\phi_1 - \phi_2) = \pi/4 \Rightarrow \phi_2 = \phi_1 + \pi/8$, we recover a $\mathrm{T}$ gate up to a global phase.
+	
+	Next we examine $\mathrm{H}\mathrm{T}^4$:
+	\begin{align*}
+		\mathrm{H}\mathrm{T}^4 &= \mathrm{H}\mathrm{Z} \\
+		&= \frac{1}{\sqrt{2}} \begin{pmatrix}
+			1 & 1 \\
+			1 & -1
+		\end{pmatrix}
+		\begin{pmatrix}
+			1 & 0 \\
+			0 & -1
+		\end{pmatrix} \\
+		&= \frac{1}{\sqrt{2}} \begin{pmatrix}
+			1 & -1 \\
+			1 & 1
+		\end{pmatrix} \\
+		&= \mathrm{H} \cdot 90^\circ_y
+	\end{align*}
+	This is similar to a Hadamard gate, which can in fact be recovered by the observing that $(\mathrm{H}\mathrm{T}^4)\mathrm{T}^4 = \mathrm{H}$ up to a global phase.
+	
+	From part a, we also know that $\mathrm{H}$ and $\mathrm{T}$ are universal single-qubit gates.
+	Therefore we only need one distinct rotation ($\phi_1$ as $\phi_2$ is fixed by the relation above) to perform a general single-qubit manipulation up to an arbitrary precision.
+	
+	\part Propose $\mathcal{F} = \dfrac{\abs{\textnormal{tr}\rbracket{U^\dag V}}}{\textnormal{tr}\rbracket{U^\dag U}}$, this is a good measure since if $V = U$, we have $\mathcal{F} = 1$, and if $V \neq U$, we have $U^\dag V \neq \mathds{1}$, hence its trace would be less than $\textnormal{tr}\rbracket{U^\dag U} = \textnormal{tr}\rbracket{\mathds{1}} = \textnormal{rk}\rbracket{\mathds{1}} = 2$, which indicates lower accuracy.
+	
+	\begin{gather*}
+		V = \theta^\prime_\phi = \begin{pmatrix}
+			\cos\frac{\theta^\prime}{2} & -i\mathrm{e}^{-i\phi} \sin\frac{\theta^\prime}{2} \\
+			-i \mathrm{e}^{i\phi} \sin\frac{\theta^\prime}{2} & \cos\frac{\theta^\prime}{2}
+		\end{pmatrix} \\
+		\Rightarrow U^\dag V = \begin{pmatrix}
+			\cos\frac{\theta}{2} & +i\mathrm{e}^{-i\phi} \sin\frac{\theta}{2} \\
+			+i \mathrm{e}^{i\phi} \sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+		\end{pmatrix}
+		\begin{pmatrix}
+			\ldots
+		\end{pmatrix} \\
+		= \begin{pmatrix}
+			\cos\frac{\theta}{2} \cos\frac{\theta^\prime}{2} + \sin\frac{\theta}{2} \sin\frac{\theta^\prime}{2} & \ldots \\
+			\ldots & \sin\frac{\theta}{2} \sin\frac{\theta^\prime}{2} + \cos\frac{\theta}{2} \cos\frac{\theta^\prime}{2}
+		\end{pmatrix}
+	\end{gather*}
+	
+	So the trace is:
+	\begin{align*}
+		\textnormal{tr}\rbracket{U^\dag V} &= 2\sbracket{\cos\frac{\theta}{2} \cos\frac{\theta + \epsilon\theta}{2} + \sin\frac{\theta}{2} \sin\frac{\theta + \epsilon\theta}{2}} \\
+		&= 2\sbracket{\cos^2\frac{\theta}{2} \cos\frac{\epsilon\theta}{2} - \cos\frac{\theta}{2} \sin\frac{\theta}{2} \sin\frac{\epsilon\theta}{2} + \sin^2\frac{\theta}{2} \cos\frac{\epsilon\theta}{2} + \sin\frac{\theta}{2} \cos\frac{\theta}{2} \sin\frac{\epsilon\theta}{2}} \\
+		&= 2 \cos\frac{\epsilon\theta}{2}
+	\end{align*}
+	
+	Thus $\mathcal{F}_1$ is:
+	\begin{align*}
+		\mathcal{F}_1 &= \cos\frac{\epsilon\theta}{2} \\
+		&= 1 - \frac{1}{2} \rbracket{\frac{\epsilon\theta}{2}}^2 + \ldots
+	\end{align*}
+	
+	For $\theta = \pi$, we then have $\alpha = \pi^2 / 8$.
+	
+	\part From part b, we have:
+	\begin{align*}
+		\pi_\phi \pi_{2\phi} \pi_\phi &= \begin{pmatrix}
+			0 & -i\mathrm{e}^{-i\phi} \\
+			-i\mathrm{e}^{i\phi} & 0
+		\end{pmatrix}
+		\begin{pmatrix}
+			-\mathrm{e}^{-i\phi} & 0 \\
+			0 & -\mathrm{e}^{i\phi}
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			0 & i \\
+			i & 0
+		\end{pmatrix} \\
+		&= \mathrm{e}^{i\pi/2} \cdot \mathrm{X}
+	\end{align*}
+	
+	Also from the given fidelity, we shall seek the value of $\phi$ such that the lowest order error term is $0$:
+	\begin{align*}
+		1 + 2\cos\phi &= 0 \\
+		\Rightarrow \cos\phi &= -\frac{1}{2} \\
+		\phi &= \pm\frac{2\pi}{3}
+	\end{align*}
+	
+	Hence the maximum achievable fidelity shall be:
+	\begin{align*}
+		\max(\mathcal{F}_3) &= 1 + \frac{\pi^4}{384} \underbracket{\rbracket{21 + 40\cos\frac{2\pi}{3} + 20\cos\frac{4\pi}{3}}}_{-9} \epsilon^4 \ldots \\
+		&= 1 - \frac{3\pi^4}{128} \epsilon^4 + \ldots
+	\end{align*}
+\end{parts}

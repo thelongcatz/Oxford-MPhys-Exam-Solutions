@@ -1,0 +1,156 @@
+\draft
+\begin{parts}
+	\part Transforming time measuremnts:
+	\begin{align*}
+		\begin{pmatrix}
+			c\Delta t \\
+			\mathbf{x}
+		\end{pmatrix}
+		&= \begin{pmatrix}
+			\gamma & -\beta\gamma && \\
+			-\beta\gamma & \gamma && \\
+			&& 1 & \\
+			&&& 1
+		\end{pmatrix}
+		\begin{pmatrix}
+			c\Delta\tau \\
+			\mathbf{0}
+		\end{pmatrix} \\
+		\Rightarrow c\Delta t &= \gamma c\Delta\tau \\
+		\Rightarrow \inftsml{t} &= \gamma \inftsml{\tau}
+	\end{align*}
+	
+	Definition of 4-velocity:
+	\begin{align*}
+		\mathsf{U}^\mu &= \deri{\mathsf{X}^\mu}{\tau} \\
+		&= \gamma\deri{\mathsf{X}^\mu}{t} \\
+		&= \gamma\rbracket{c, \mathbf{u}}
+		\mtext{where } \mathbf{u} = \deri{\mathbf{x}}{t}
+	\end{align*}
+	
+	\part Sketch of the frames in question:
+	\image{.5\linewidth}{q3-boost}
+	Transforming the 4-vectors:
+	\begin{align*}
+		\begin{pmatrix}
+			ct^\prime \\
+			x^\prime \\
+			y^\prime \\
+			z^\prime
+		\end{pmatrix}
+		&= \begin{pmatrix}
+			\gamma & -\beta\gamma && \\
+			-\beta\gamma & \gamma && \\
+			&& 1 & \\
+			&&& 1
+		\end{pmatrix}
+		\begin{pmatrix}
+			ct \\
+			x \\
+			y \\
+			z
+		\end{pmatrix}
+		\mtext{with boost $+v\hat{\mathbf{x}}$} \\[1em]
+		\Rightarrow \inftsml{x^\prime} &= -\beta\gamma c\inftsml{t} + \gamma \inftsml{x} \\
+		c \inftsml{t^\prime} &= \gamma c\inftsml{t} - \beta\gamma\inftsml{x} \\[1em]
+		\Rightarrow v^\prime &= \deri{x^\prime}{t^\prime} \\
+		&= \frac{\gamma \inftsml{x} - \beta\gamma c\inftsml{t}}{\gamma \inftsml{t} - \beta\gamma/c \inftsml{x}} \\
+		&= \frac{\diagderi{x}{t} - \beta c}{1 - \rbracket{\beta\diagderi{x}{t}}}/c \\
+		&= \frac{u-v}{1-uv/c^2} \mtext{ since $\beta = v/c$}
+	\end{align*}
+	
+	\newpage
+	\part Sketch of the frames in question:
+	\image{.5\linewidth}{q3-rotate}
+	Rotate such that $x$-axis $\parallel$ $\mathbf{v}$ and so:
+	\begin{equation*}
+		\mathbf{u} = \frac{\overbracket{\rbracket{\mathbf{u}\cdot\mathbf{v}}}^{\mathclap{\diagderi{x}{t}}}}{v} \hat{\mathbf{x}} + \frac{\overbracket{\rbracket{\mathbf{u}\times\mathbf{v}}}^{\mathclap{\diagderi{y}{t}}}}{v}
+	\end{equation*}
+	
+	As with before, we have:
+	\begin{align*}
+		w_x &= \deri{x^\prime}{t^\prime} \\
+		&= \frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}/v - v}{1-\frac{\frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}}{v} - v}{c^2}} \\
+		&= \frac{\frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}}{v} - v}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}}
+	\end{align*}
+	
+	\begin{align*}
+		w_y &= \deri{y^\prime}{t^\prime} \\
+		&= \frac{\inftsml{y}}{\gamma\inftsml{t} - \frac{\beta\gamma}{c}\inftsml{x}} \\
+		&= \frac{\deri{y}{t}}{\gamma - \frac{\beta\gamma}{c}\deri{x}{t}} \\
+		&= \frac{1}{\gamma_v} \frac{\deri{y}{t}}{1-\frac{v}{c^2} \deri{x}{t}} \\
+		&= \frac{1}{\gamma_v} \frac{\frac{\rbracket{\mathbf{u}\times\mathbf{v}}}{v}}{1-\frac{v}{c^2}\cdot\frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}}{v}} \\
+		&= \frac{1}{\gamma_v} \frac{\frac{\rbracket{\mathbf{u}\times\mathbf{v}}}{v}}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}}
+	\end{align*}
+	
+	Thus:
+	\begin{align*}
+		\abs{\mathbf{w}} &= \sqrt{w_x^2 + w_y^2} \\
+		&= \frac{1}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}} \sqrt{\sbracket{\frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}}{v} - v}^2 + \rbracket{\frac{\rbracket{\mathbf{u}\times\mathbf{v}}}{\gamma_v v}}^2} \\
+		&= \ldots \sbracket{\frac{\rbracket{\mathbf{u}\cdot\mathbf{v}}^2}{v^2} - 2\rbracket{\mathbf{u}\cdot\mathbf{v}} + v^2 + \frac{\rbracket{\mathbf{u}\times\mathbf{v}}^2}{\gamma_v^2 v^2}}^{1/2} \\
+		&= \ldots \sbracket{\ldots + \frac{\rbracket{\mathbf{u}\times\mathbf{v}}^2}{\gamma_v^2 v^2} \cdot \rbracket{1-\frac{v^2}{c^2}}}^{1/2} \\
+		&= \frac{1}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}} \sbracket{\frac{\overbracket{\rbracket{\mathbf{u}\cdot\mathbf{v}}^2 + \rbracket{\mathbf{\mathbf{u}\times\mathbf{v}}}}^{u^2 v^2} }{v^2} - 2\rbracket{\mathbf{u}\cdot\mathbf{v}} + v^2 - \frac{\rbracket{\mathbf{u}\times\mathbf{v}}^2}{c^2}}^{1/2} \\
+		&= \frac{\sqrt{\rbracket{u^2 - 2\rbracket{\mathbf{u}\cdot\mathbf{v}} + v^2} - \frac{1}{c^2}\rbracket{\mathbf{u}\times\mathbf{v}}^2}}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}}
+	\end{align*}
+	
+	\part Sketch of the frames in question:
+	\image{.5\linewidth}{q3-doppler}
+	From c, $S_2$ should possess speed:
+	\begin{equation*}
+		w = \frac{\sqrt{\rbracket{\mathbf{v}-\mathbf{u}}^2 - \frac{1}{c^2}\rbracket{\mathbf{u}\times\mathbf{v}}^2}}{1-\frac{\mathbf{u}\cdot\mathbf{v}}{c^2}}
+	\end{equation*}
+	with $\mathbf{u}=(c/2, 0, 0)$, $\mathbf{v} = (c/\sqrt{2}, c/\sqrt{2}, 0)$.
+	
+	\begin{align*}
+		w &= \frac{1}{1-2\sqrt{2}} \sbracket{\rbracket{\frac{\sqrt{2}-1}{2}c}^2 + \rbracket{\frac{c}{\sqrt{2}}}^2 + \frac{1}{c^2} \rbracket{\frac{c^2}{2\sqrt{2}}}}^{1/2} \\
+		&= \frac{1}{1-2\sqrt{2}} \sbracket{\frac{2+1+2\sqrt{2}}{4} + \frac{1}{2} - \frac{1}{8}}^{1/2} c \\
+		&= \frac{\sqrt{\frac{9}{8} + \frac{\sqrt{2}}{2}}}{1-2\sqrt{2}} c
+	\end{align*}
+	
+	In $S_2$ rest frame, 4-wavevector $\mathsf{K}_0^\mu$ is related by:
+	\begin{align*}
+		\mathsf{K}^\mu &= \begin{pmatrix}
+			\omega / c \\
+			k \cos\theta \\
+			k \sin\theta \\
+			0
+		\end{pmatrix} \\
+		&= \begin{bmatrix}
+			\gamma & -\beta\gamma && \\
+			-\beta\gamma & \gamma && \\
+			&& 1 & \\
+			&&& 1
+		\end{bmatrix}
+		\begin{pmatrix}
+			\omega_0 / c \\
+			k_0 \cos\theta_0 \\
+			k_0 \sin\theta_0 \\
+			0
+		\end{pmatrix}
+	\end{align*}
+	
+	Thus we have:
+	\begin{align}
+		\Rightarrow \frac{\omega}{c} &= \frac{\gamma \omega_0}{c} + \beta\gamma k_0 \cos\theta_0 = \frac{\omega_0}{c} \label{eqn:q3-1} \\
+		\Rightarrow k \cos\theta &= \frac{\beta\gamma\omega_0}{c} + \gamma k_0 \cos\theta_0 = k_0 \cos\theta \label{eqn:q3-2}
+	\end{align}
+	
+	\eqref{eqn:q3-2}$\div$\eqref{eqn:q3-1}:
+	\begin{align*}
+		\cos\theta &= \frac{\beta\gamma + \gamma\cos\theta_0}{\gamma + \beta\gamma\cos\theta_0} \\
+		&= \frac{\beta + \cos\theta_0}{1 + \beta\cos\theta_0}
+	\end{align*}
+	where $\beta=w/c$.
+	
+	Also from \eqref{eqn:q3-1},
+	\begin{align*}
+		\beta\gamma\cos\theta_0 &= 1-\gamma \\
+		\cos\theta_0 &= \frac{1-\gamma}{\beta\gamma} \\
+		\Rightarrow \cos\theta &= \frac{\beta + \frac{1-\gamma}{\beta\gamma}}{1 + \beta\frac{1-\gamma}{\beta\gamma}} \mtext{where $\gamma = \sbracket{1-\rbracket{w/c}^2}^{-1/2}$} \\
+		&= \num{0.255} \\
+		\Rightarrow \theta &= \SI{75.2}{\degree}
+	\end{align*}
+	
+	For the Doppler shift to be negated, the photon must travel along the bisector between the path of the bodies in frame A (by symmetry so that Doppler shitts from $S_1 \to A \to S_2$ are cancelled precisely).
+	\image{.3\linewidth}{q3-s2-rf}
+\end{parts}

@@ -1,0 +1,32 @@
+\draft
+\begin{parts}
+	\part Debye model:
+	\begin{itemize}
+		\item Atoms behave like a harmonic oscillator independent to its immediate neighbours.
+		\item The oscillation is quantised such that the quantisation (phonons) obeys the Bose-Einstein statistics.
+		\item Linear phonon dispersion $\omega = vk$.
+	\end{itemize}
+	
+	von Karman boundary condition:
+	\begin{equation*}
+		\sum_\mathbf{k} \to \frac{V}{(2\pi)^3} \indefint{}{{}^3 \mathbf{k}}
+	\end{equation*}
+	
+	Total energy:
+	\begin{align*}
+		E &= 3 \cdot \frac{V}{(2\pi)^3} \defint{0}{\infty}{4\pi k^2 \cdot \hbar\omega \cdot \rbracket{\nbose + \frac{1}{2}}}{k} \mtext{where } \nbose = \frac{1}{e^{\beta\hbar\omega} - 1} \\
+		&= \frac{3V}{2\pi} \defint{0}{\infty}{\frac{1}{v} \rbracket{\frac{\omega}{v}}^2 \hbar\omega \cdot \frac{1}{e^{\beta\hbar\omega} - 1}}{\omega}
+	\end{align*}
+	
+	Make substitution $x = \beta\hbar\omega \Rightarrow \inftsml{x} = \beta\hbar \inftsml{\omega}$:
+	\begin{align*}
+		\Rightarrow E &= \frac{3V}{2\pi} \defint{0}{\infty}{\frac{1}{\beta\hbar v} \frac{\hbar}{v^2} \cdot \rbracket{\frac{x}{\beta\hbar}}^3 \cdot \frac{1}{e^{x} - 1}}{x} \\
+		&= \frac{3V}{2\pi} \cdot \frac{1}{\beta^4 v^3 \hbar^3} \defint{0}{\infty}{\frac{x^3}{e^{x} - 1}}{x}
+	\end{align*}
+	
+	Hence heat capacity:
+	\begin{align*}
+		C &= \pderi{E}{T} \\
+		&= \frac{6V\boltzmann^4 T^3}{v^3 \hbar^3} \defint{0}{\infty}{\frac{x^3}{e^{x} - 1}}{x}
+	\end{align*}
+\end{parts}

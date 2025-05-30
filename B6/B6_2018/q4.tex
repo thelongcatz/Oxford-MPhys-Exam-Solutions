@@ -1,0 +1,101 @@
+\draft
+\begin{parts}
+	\part Paramagnet: matter whose magnetisation aligns with an externally applied $B$ field.
+	Most metals with $J \neq 0$ exhibits this, e.g. steel.
+	$\chi > 0$, $M=0$ when $B=0$.
+	
+	Diamagnet: matter whose magnetisation anti-aligns with the external $B$ field.
+	All atoms exhibit this to some extent, e.g. xenon gas.
+	$\chi < 0$, $M=0$ when $B=0$.
+	
+	Ferromagnet: matter whose magnetisation occurs spontaneously and may retain even after an external $B$ field is removed, e.g. iron.
+	$\chi > 0$, $M \neq 0$ when $B=0$.
+	
+	\part Hund's Rules give:
+	\image{.5\linewidth}{q4-hunds-rule}
+	So every $\electron$ in the $f$ shell has their spins aligned, so \ion{Gd}{3+} has $S=\dfrac{7}{2}$.
+	\image{.8\linewidth}{q4-lattice}
+	
+	\part Paramagnetic Hamiltonian:
+	\begin{equation*}
+		\hat{H} = \tilde{g} \bohrmagneton \mathbf{B} \cdot \mathbf{J}
+	\end{equation*}
+	where
+	\begin{align*}
+		\tilde{g} &= \frac{1}{2}\rbracket{g+1} + \frac{1}{2}\rbracket{g-1} \underbracket{\sbracket{\frac{S(S+1)-L(L+1)}{J(J+1)}}}_{1 \textnormal{ since } L=0} \\
+		&= 2
+	\end{align*}
+	
+	Single particle partition function:
+	\begin{align*}
+		Z &= \sum_{J=-\frac{7}{2}}^{J=+\frac{7}{2}} \exp\sbracket{-\beta\rbracket{\tilde{g}\bohrmagneton BJ}} \\
+		&= 2 \cosh\sbracket{2\beta\bohrmagneton B\rbracket{\frac{7}{2}}} \\
+		&= 2 \cosh\rbracket{7\beta\bohrmagneton B}
+	\end{align*}
+	since only $\pm\hat{\mathbf{z}}$ is only allowed.
+	
+	Total partition function for $N$ independent particles:
+	\begin{align*}
+		\mathcal{Z} &= \mathcal{Z}^N \\
+		&= \sbracket{2 \cosh\rbracket{7\beta\bohrmagneton B}}^N
+	\end{align*}
+	
+	Magnetic moment:
+	\begin{align*}
+		m &= -\pderi{F}{B} \\
+		&= -\pdiff{B} \sbracket{-\boltzmann T \ln \mathcal{Z}} \\
+		&= \boltzmann T \cdot \frac{1}{\mathcal{Z}} \cdot \pderi{\mathcal{Z}}{B} \\
+		&= \cancel{\boltzmann T} \cdot \frac{N \sbracket{2 \cosh\rbracket{7\beta\bohrmagneton B}}^{N-1} \rbracket{2 \sinh\rbracket{7\beta\bohrmagneton B} \cdot 7\cancel{\beta}\bohrmagneton}}{\sbracket{2 \cosh\rbracket{7\beta\bohrmagneton B}}^N} \\
+		&= \frac{\cancel{2}N \sinh\rbracket{7\beta\bohrmagneton B} \cdot 7\bohrmagneton}{\cancel{2} \cosh\rbracket{7\beta\bohrmagneton B}} \\
+		&= 7N \tanh\rbracket{7\beta\bohrmagneton B}
+	\end{align*}
+	
+	Number density of \ion{Gd}{3+}:
+	\begin{align*}
+		n &= \frac{\frac{1}{8} \cdot 8 + 4 \cdot \frac{1}{2}}{\rbracket{\SI{0.50}{\nano\metre}}^3} \\
+		&= \SI{3.20e28}{\per\metre\cubed}
+	\end{align*}
+	
+	Magnetisation:
+	\begin{align*}
+		M &= \frac{m}{V} \\
+		&= 7\frac{N}{V} \tanh\rbracket{7\beta\bohrmagneton B} \\
+		&= 7n \tanh\rbracket{7\beta\bohrmagneton B} \\
+		&\approx \frac{n \rbracket{7\bohrmagneton}^2}{\boltzmann T} B
+	\end{align*}
+	for $\bohrmagneton B \ll \boltzmann T$.
+	
+	Also magnetic susceptibility $\chi = \lim_{B \to 0} \pderi{M}{H}$.
+	
+	Assuming $\chi \ll 1$,
+	\begin{align*}
+		H &\simeq \frac{B}{\permeability} \\
+		\Rightarrow \chi &= \permeability \pderi{M}{B} \\
+		&= \frac{\permeability n \rbracket{7\bohrmagneton}^2}{\boltzmann T}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		C &= \frac{\permeability n \rbracket{7\bohrmagneton}^2}{\boltzmann} \\
+		&= \SI{12.3}{\kelvin}
+	\end{align*}
+	
+	\part For ferromagnetism, there exists the exchange interaction in the Hamiltonian:
+	\begin{equation*}
+		\hat{H}_\textnormal{exchange} = \sum_{j \neq i} A_{ij} \mathbf{S}_i \cdot \mathbf{S}_j
+	\end{equation*}
+	So the denominator should have an additional term that lets $\chi \to \infty$ as $T \to T_c$.
+	
+	At the transition temperature $T_c$, $\chi$ should diverge, hence it should be of form:
+	\begin{equation*}
+		\chi = \frac{C}{T - T_c}
+	\end{equation*}
+	
+	At $T=0$, entropy is null.
+	Therefore all magnetic moments align, hence:
+	\begin{align*}
+		\lim_{\beta \to \infty} M &= 7n \bohrmagneton \underbracket{\lim_{\beta \to \infty} \tanh\rbracket{7\beta\bohrmagneton B}}_{1} \\
+		&= 7n \bohrmagneton
+	\end{align*}
+	\image{.8\linewidth}{q4-magnetisation}
+\end{parts}

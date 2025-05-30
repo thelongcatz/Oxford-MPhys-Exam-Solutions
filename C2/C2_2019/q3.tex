@@ -3,29 +3,29 @@ Classic Jaynes-Cummings question.
 	\part Jaynes-Cummings model quantises the electric dipole interaction as follows:
 	\begin{align*}
 		\mathcal{H} &= \mathbf{p}\cdot\mathbf{E} \\
-		&\rightarrow \left(\sigma_+ + \sigma_-\right) \left(a+a^\dag\right)
+		&\rightarrow \rbracket{\sigma_+ + \sigma_-} \rbracket{a+a^\dag}
 	\end{align*}
 	where $\sigma_\pm$ are the raising/lowering operators for the atomic energy levels, $a$ and $a^\dag$ are annihilation/creation operators.
 	
 	In the rotating frame, we may write the interacting Hamiltonian as:
 	\begin{align*}
-		\mathcal{H}_\textnormal{int} &= \frac{\hbar\Omega}{2}\left[
+		\mathcal{H}_\textnormal{int} &= \frac{\hbar\Omega}{2}\sbracket{
 		\sigma_+ a \mathnormal{e}^{-i(\omega_0 - \omega)t}
 		+ \sigma_+ a^\dag \mathnormal{e}^{-i(\omega_0 + \omega)t}
 		+ \sigma_- a \mathnormal{e}^{i(\omega_0 - \omega)t}
 		+ \sigma_- a^\dag \mathnormal{e}^{i(\omega_0 + \omega)t}
-		\right] \\
-		&\approx \frac{\hbar\Omega}{2}\left[\sigma_+ a \mathnormal{e}^{-i(\omega_0 - \omega)t} + \sigma_- a^\dag \mathnormal{e}^{i(\omega_0 - \omega)t}\right] \textnormal{\hspace{1em}by RWA}
+		} \\
+		&\approx \frac{\hbar\Omega}{2}\sbracket{\sigma_+ a \mathnormal{e}^{-i(\omega_0 - \omega)t} + \sigma_- a^\dag \mathnormal{e}^{i(\omega_0 - \omega)t}} \textnormal{\hspace{1em}by RWA}
 	\end{align*}
 	where $\omega_0$ is the energy difference between ground and excited states of the atom, $\omega$ is the frequency of the photon, $\Omega$ is the Rabi frequency of the system.
 	
 	Thus the total Hamiltonian on resonance is:
 	\begin{align*}
 		\mathcal{H} &= \mathcal{H}_\textnormal{atom} + \mathcal{H}_\textnormal{light} + \mathcal{H}_\textnormal{int} \\
-		&= \hbar\omega\frac{\sigma_z}{2} + \hbar\omega a^\dag a + \frac{\hbar\Omega}{2} \left(\sigma_+ a^\dag + \sigma_- a\right)
+		&= \hbar\omega\frac{\sigma_z}{2} + \hbar\omega a^\dag a + \frac{\hbar\Omega}{2} \rbracket{\sigma_+ a^\dag + \sigma_- a}
 	\end{align*}
 	
-	\part TDSE: $i\hbar\frac{\partial}{\partial t} \ket{\psi} = \mathcal{H}\ket{\psi}$.
+	\part TDSE: $i\hbar\pdiff{t} \ket{\psi} = \mathcal{H}\ket{\psi}$.
 	
 	In matrix notation the Hamiltonian reads:
 	\begin{equation*}
@@ -48,7 +48,7 @@ Classic Jaynes-Cummings question.
 	
 	Thus the system evolves in the Schrödinger picture as:
 	\begin{equation*}
-		\ket{\psi(t)} = \alpha\ket{+} \exp\left(-\frac{iE_+ t}{\hbar}\right) + \beta\ket{-} \exp\left(-\frac{iE_- t}{\hbar}\right)
+		\ket{\psi(t)} = \alpha\ket{+} \exp\rbracket{-\frac{iE_+ t}{\hbar}} + \beta\ket{-} \exp\rbracket{-\frac{iE_- t}{\hbar}}
 	\end{equation*}
 	
 	We have initial condition $\ket{\psi(0)} = \ket{\textnormal{e, 0}}$ so:
@@ -63,25 +63,27 @@ Classic Jaynes-Cummings question.
 	
 	Thus
 	\begin{align*}
-		\ket{\psi(t)} &= \frac{1}{2} \left\{\exp\left[-i\left(\frac{\omega+\Omega}{2}\right)t\right]\ket{+} \;+\; \exp\left[-i\left(\frac{\omega-\Omega}{2}\right)t\right]\ket{-}\right\} \\
-		&= \exp\left(-\frac{i\omega}{2}t\right) \left[\cos\left(\frac{\Omega}{2}t\right)\ket{\textnormal{e, 0}} + i\sin\left(\frac{\Omega}{2}t\right)\ket{\textnormal{g, 1}}\right]
+		\ket{\psi(t)} &= \frac{1}{2} \cbracket{
+			\exp\sbracket{-i\rbracket{\frac{\omega+\Omega}{2}}t}\ket{+} \;+\; \exp\sbracket{-i\rbracket{\frac{\omega-\Omega}{2}}t}\ket{-}
+		} \\
+		&= \exp\rbracket{-\frac{i\omega}{2}t} \sbracket{\cos\rbracket{\frac{\Omega}{2}t}\ket{\textnormal{e, 0}} + i\sin\rbracket{\frac{\Omega}{2}t}\ket{\textnormal{g, 1}}}
 	\end{align*}
 	
 	\part From above, we have probability of excited state:
 	\begin{equation*}
-		P_{\ket{\textnormal{e, 0}}}(t) = \cos^2 \left(\frac{\Omega}{2}t\right)
+		P_{\ket{\textnormal{e, 0}}}(t) = \cos^2 \rbracket{\frac{\Omega}{2}t}
 	\end{equation*}
 	
 	For $P > 0.9$, we have:
 	\begin{align*}
-		\cos^2 \left(\frac{\Omega}{2}t\right) &> 0.9 \\
+		\cos^2 \rbracket{\frac{\Omega}{2}t} &> 0.9 \\
 		\frac{\Omega}{2}t &< \arccos\sqrt{0.9} = 0.322 \\
 		t &< \frac{0.644}{\Omega}
 	\end{align*}
 	
 	\part To measure 1 photon, we need state $\ket{\textnormal{g, 1}}$:
 	\begin{equation*}
-		P_{\ket{\textnormal{g, 1}}}(t) = \sin^2\left(\frac{\Omega}{2}t\right)
+		P_{\ket{\textnormal{g, 1}}}(t) = \sin^2\rbracket{\frac{\Omega}{2}t}
 	\end{equation*}
 	
 	After such measurement, the dressed states shall collapse into $\ket{\textnormal{g, 1}}$ immediately.
@@ -98,21 +100,21 @@ Classic Jaynes-Cummings question.
 	
 	From Boltzmann distribution we have:
 	\begin{align*}
-		\frac{N_\textnormal{e}}{N_\textnormal{g}} &= \exp\left(-\frac{\hbar\omega}{k_\textnormal{B} T}\right) \\
+		\frac{N_\textnormal{e}}{N_\textnormal{g}} &= \exp\rbracket{-\frac{\hbar\omega}{k_\textnormal{B} T}} \\
 		\Rightarrow p_\textnormal{e} &= \frac{N_\textnormal{e}}{N_\textnormal{e} + N_\textnormal{g}} \\
-		&= \frac{N_{e}}{N_{e}\left[1+\exp\left(\dfrac{\hbar\omega}{k_\textnormal{B} T}\right)\right]} \\
-		&= \frac{1}{1+\exp\left(\dfrac{\hbar\omega}{k_\textnormal{B} T}\right)} \\
+		&= \frac{N_{e}}{N_{e}\sbracket{1+\exp\rbracket{\dfrac{\hbar\omega}{k_\textnormal{B} T}}}} \\
+		&= \frac{1}{1+\exp\rbracket{\dfrac{\hbar\omega}{k_\textnormal{B} T}}} \\
 		\Rightarrow p_\textnormal{g} &= 1-p_\textnormal{e} \\
-		&= \frac{1}{1+\exp\left(-\dfrac{\hbar\omega}{k_\textnormal{B} T}\right)}
+		&= \frac{1}{1+\exp\rbracket{-\dfrac{\hbar\omega}{k_\textnormal{B} T}}}
 	\end{align*}
 	
 	Equating $p_\textnormal{g}$ with $P_{\ket{\textnormal{g, 1}}}$ gives:
 	\begin{gather*}
-		\sin^2 \frac{\omega t}{2} = \frac{1}{1+\exp\left(-\dfrac{\hbar\omega}{k_\textnormal{B} T}\right)} \\
-		\Rightarrow 1+\exp\left(-\frac{\hbar\omega}{k_\textnormal{B} T}\right) = \frac{1}{\sin^2 \frac{\Omega t}{2}} \\
-		\frac{\hbar\omega}{k_\textnormal{B} T} = -\ln\left( \frac{1}{\sin^2 \frac{\Omega t}{2}} - 1 \right) \\
-		= \ln\left(\frac{\sin^2 \frac{\Omega t}{2}}{1 - \sin^2 \frac{\Omega t}{2}}\right) \\
-		\Rightarrow T = \frac{\hbar\omega}{k_\textnormal{B} \ln\left(\tan^2 \dfrac{\Omega t}{2}\right)}
+		\sin^2 \frac{\omega t}{2} = \frac{1}{1+\exp\rbracket{-\dfrac{\hbar\omega}{k_\textnormal{B} T}}} \\
+		\Rightarrow 1+\exp\rbracket{-\frac{\hbar\omega}{k_\textnormal{B} T}} = \frac{1}{\sin^2 \frac{\Omega t}{2}} \\
+		\frac{\hbar\omega}{k_\textnormal{B} T} = -\ln\rbracket{ \frac{1}{\sin^2 \frac{\Omega t}{2}} - 1 } \\
+		= \ln\rbracket{\frac{\sin^2 \frac{\Omega t}{2}}{1 - \sin^2 \frac{\Omega t}{2}}} \\
+		\Rightarrow T = \frac{\hbar\omega}{k_\textnormal{B} \ln\rbracket{\tan^2 \dfrac{\Omega t}{2}}}
 	\end{gather*}
 	where $T$ is the critical temperature at which both probabilities match.
 	

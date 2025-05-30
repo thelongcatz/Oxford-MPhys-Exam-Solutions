@@ -1,0 +1,148 @@
+\draft
+\begin{parts}
+	\part \image{.5\linewidth}{q4-population-dynamics}
+	Rate equations:
+	\begin{align*}
+		\deri{N_2}{t} &= \mathcal{R}_2 - A_{21}N_2 \\
+		\deri{N_1}{t} &= A_{21}N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	Change in number of photons:
+	\begin{equation*}
+		\Delta N_\gamma = A_{21}N_2 g_H (\omega - \omega_0) \rho (\omega, z) \delta\omega A \inftsml{z}
+	\end{equation*}
+	where $g_H$ is the broadening function, $\delta\omega$ is frequency width, $A$ is the cross-sectional area of the amp, $\inftsml{z}$ is a length element along propagation.
+	
+	So energy contribution:
+	\begin{align*}
+		\Delta E &= \Delta N_\gamma \cdot \hbar\omega = \sbracket{I(z+\inftsml{z}) - I(z)} A \delta\omega \\
+		\Rightarrow \inftsml{I} &= A_{21}N_2 g_H (\omega - \omega_0) \hbar\omega \inftsml{z} \cdot \frac{I}{c} \mtext{since spectral energy density } \rho = \frac{I}{c} \\
+		\deri{I}{z} &= N_2 \underbracket{A_{21} g_H (\omega - \omega_0) \frac{\hbar\omega}{c}}_{\sigma_{21}} I
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\deri{N_2}{t} &= \mathcal{R}_2 - \frac{N_2 \sigma_{21} I}{\hbar\omega} \\
+		\deri{N_1}{t} &= \frac{N_2 \sigma_{21} I}{\hbar\omega} - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	At steady state,
+	\begin{align*}
+		\deri{N_2}{t} &= 0 \\
+		\Rightarrow N_2 &= \frac{\hbar\omega\mathcal{R}_2}{\sigma_{21} I}
+	\end{align*}
+	
+	So gain coefficient:
+	\begin{align*}
+		\alpha &= N_2 \sigma_{21} \\
+		&= \frac{\hbar\omega\mathcal{R}}{I}
+	\end{align*}
+	
+	\part \begin{align*}
+		\deri{I}{z} &= \alpha I \\
+		\Rightarrow \frac{\inftsml{I}}{I} &= \frac{\alpha_0}{1 + \cfrac{I}{I_s}} \inftsml{z} \\
+		\Rightarrow \frac{1}{I} + \frac{1}{I_s} \inftsml{I} &= \alpha_0 \inftsml{z} \\
+		\ln\rbracket{\frac{I_\textnormal{out}}{I_\textnormal{in}}} + \frac{I_\textnormal{out} - I_\textnormal{in}}{I_s} &= \alpha_0 z
+	\end{align*}
+	
+	\part Sketch of the setup:
+	\image{.5\linewidth}{q4-gain}
+	\begin{align*}
+		\ln\rbracket{\frac{70I_0}{I_0}} + \frac{70I_0 - I_0}{I_s} &= \alpha_0 L \\
+		\Rightarrow \ln 70 + 69 \frac{I_0}{I_s} &= \alpha_0 L
+	\end{align*}
+	
+	Also:
+	\begin{align*}
+		\ln\rbracket{\frac{150I_0}{70I_0}} + \frac{150I_0 - 70I_0}{I_s} &= \alpha_0 L \\
+		\Rightarrow \ln\rbracket{\frac{15}{7}} + 80 \frac{I_0}{I_s} &= \alpha_0 L
+	\end{align*}
+	
+	Combining the two expressions gives:
+	\begin{align*}
+		\ln 70 + 69 \frac{I_0}{I_s} &= \ln\rbracket{\frac{15}{7}} + 80 \frac{I_0}{I_s} \\
+		11 \frac{I_0}{I_s} &= \ln\rbracket{\frac{70 \cdot 7}{15}} \\
+		\Rightarrow \frac{I_0}{I_s} &= \frac{\ln\rbracket{\cfrac{490}{15}}}{11} = \num{0.317}
+	\end{align*}
+	
+%	\part For light absorption, pumping $=0$.
+%	\image{.5\linewidth}{q4}
+%	\begin{align*}
+%		\deri{N_2}{t} &= B_{12} \rho N_1 - B_{21} \rho N_2 - \frac{N_2}{\tau_2} \\
+%		\deri{N_1}{t} &= B_{21} \rho N_2 - B_{12} \rho N_1 - \frac{N_1}{\tau_1}
+%	\end{align*}
+%	
+%	\begin{align*}
+%		\Delta N_\gamma &= (B_{21}N_2 - B_{12}N_1) g_H (\omega - \omega_0) \rho (\omega, z) \delta\omega A \inftsml{z} \\
+%		&= \rbracket{N_2 - \frac{g_2}{g_1}N_1} B_{21} g_H (\omega - \omega_0) \rho (\omega, z) \delta\omega A \inftsml{z}
+%	\end{align*}
+%	since $g_1 B_{12} = g_2 B_{21}$.
+%	
+%	So:
+%	\begin{align*}
+%		N^* &= N_2 - \frac{g_2}{g_1}N_1 \\
+%		\sigma_{21} &= B_{21} g_H (\omega - \omega_0) \frac{\hbar\omega}{c} \\[1em]
+%		\deri{N_2}{t} &= -\frac{N^* \sigma_{21} I}{\hbar\omega} - \frac{N_2}{\tau_2} \\
+%		\Rightarrow N_2 &= -\frac{N^* \sigma_{21} I}{\hbar\omega} \tau_2 \mtext{at steady state} \\[1em]
+%		\deri{N_1}{t} &= \frac{N^* \sigma_{21} I}{\hbar\omega} - \frac{N_1}{\tau_1} \\
+%		\Rightarrow N_1 &= \frac{N^* \sigma_{21} I}{\hbar\omega} \tau_1
+%	\end{align*}
+%	
+%	\begin{align*}
+%		N^* &= N_2 - \frac{g_2}{g_1}N_1 \\
+%		N^* &= N^* \rbracket{-\frac{\sigma_{21} I}{\hbar\omega}\tau_2 + \frac{g_2 \sigma_{21} I}{g_1 \hbar\omega}\tau_1} \\
+%		\Rightarrow \tau_1 - \frac{g_2}{g_1}\tau_2 &= 1
+%	\end{align*}
+%	
+%	\begin{align*}
+%		\dot{N}_2 &= -N_2 A_{21} + \frac{\sigma_{21} I}{\hbar\omega} \underbracket{\rbracket{N_1 - \frac{g_1}{g_2}N_2}}_{\tilde{N}} \\
+%		\dot{N}_1 &= -\dot{N}_2 \\
+%		N = N_1 + N_2 = \textnormal{const.}
+%	\end{align*}
+%	Steady state:
+%	\begin{align*}
+%		(N-\tilde{N})A_{21} &= \frac{\sigma_{21} I}{\hbar\omega} \tilde{N} \\
+%		\Rightarrow \tilde{N} &= \frac{N}{1 + \cfrac{I}{I_s}} \qquad I_s = \frac{2g_2 \hbar\omega A_{21}}{g_1 \sigma_{21}}
+%	\end{align*}
+	\part Sketch of the absorption dynamics:
+	\image{.4\linewidth}{q4-absorption}
+	
+	At steady state,
+	\begin{equation*}
+		\deri{N_2}{t} = \underbracket{\rho B_{12} N_1 - \rho B_{21} N_2}_{\rho B_{12} (N_1 - \frac{g_2}{g_1}N_2)} - A_{21} N_2 = 0
+	\end{equation*}
+	Also note that $N=N_1 + N_2$.
+	
+	Next define $\tilde{N} = N_1 - \dfrac{g_1}{g_2} N_2$:
+	\begin{align*}
+		N - \tilde{N} &= N_2 \rbracket{1+\frac{g_1}{g_2}} \\
+		N_2 &= \frac{N - \tilde{N}}{f}
+	\end{align*}
+	where $f=1+\dfrac{g_1}{g_2}$.
+	
+	Then:
+	\begin{align*}
+		A_{21} \rbracket{\frac{N-\tilde{N}}{f}} &= \rho B_{12} \tilde{N} \\
+		\tilde{N} &= N \sbracket{1+\frac{\tilde{\sigma} I}{\hbar\omega} \frac{f}{A_{21}}}^{-1}
+	\end{align*}
+	where $\rho B = \dfrac{\tilde{\sigma} I}{\hbar\omega}$.
+	
+	Comparing with the form of $N^*$ gives:
+	\begin{equation*}
+		\tilde{I}_s = \frac{A_{21} \hbar\omega}{\tilde{\sigma} f}
+	\end{equation*}
+	
+	The gain equation now reads:
+	\begin{align*}
+		\deri{I}{z} &= -\alpha I = \rbracket{\frac{\alpha_0}{1 + \diagfrac{I}{\tilde{I}_s}}} I \\
+		\sbracket{\ln I + \frac{I}{\tilde{I}_s}}_{I_0}^{I_z} &= -\alpha_0 z \\
+		\Rightarrow \ln \frac{I_z}{I_0} + \frac{I_z - I_0}{\tilde{I}_s} &= \ln \frac{I_z^\prime}{I_0^\prime} + \cancelto{\textnormal{negligible}}{\frac{I_z^\prime - I_0^\prime}{\tilde{I}_s}}
+	\end{align*}
+	where LHS is the strong case, RHS is the weak case.
+	
+	Solving for $\tilde{I}_s$ then gives:
+	\begin{align*}
+		\tilde{I}_s &= \SI{124}{\watt\per\metre\squared} \\
+		\tilde{\sigma} &= \SI{1.13e-13}{\metre\squared}
+	\end{align*}
+\end{parts}

@@ -106,7 +106,7 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 	So in the first case we may construct the density matrix as follows:
 	\begin{align*}
 		\rho_{\pm\phi} &= \frac{1}{2} \ket{\psi^{+\phi}}\bra{\psi^{+\phi}} + \frac{1}{2} \ket{\psi^{-\phi}}\bra{\psi^{-\phi}} \\
-		&= \frac{1}{2} \left[
+		&= \frac{1}{2} \sbracket{
 		\begin{pmatrix}
 			\alpha \\ \beta \mathrm{e}^{+i\phi}
 		\end{pmatrix}
@@ -119,8 +119,8 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 		\begin{pmatrix}
 			\alpha^* & \beta^* \mathrm{e}^{+i\phi}
 		\end{pmatrix}
-		\right] \\
-		&= \frac{1}{2} \left[
+		} \\
+		&= \frac{1}{2} \sbracket{
 		\begin{pmatrix}
 			|\alpha|^2 & \alpha \beta^* \mathrm{e}^{-i\phi} \\
 			\alpha^* \beta \mathrm{e}^{+i\phi} & |\beta|^2
@@ -129,7 +129,7 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 			|\alpha|^2 & \alpha \beta^* \mathrm{e}^{+i\phi} \\
 			\alpha^* \beta \mathrm{e}^{-i\phi} & |\beta|^2
 		\end{pmatrix}
-		\right] \\
+		} \\
 		&= \begin{pmatrix}
 			|\alpha|^2 & \alpha \beta^* \cos\phi \\
 			\alpha^* \beta \cos\phi & |\beta|^2
@@ -138,8 +138,8 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 	
 	And for the case where the qubit experiences a phase flip with probability $q$, we have:
 	\begin{align*}
-		\phi_\textnormal{Z} &= \left(1-q\right) \ket{\psi}\bra{\psi} + q \ket{\psi^\textnormal{Z}}\bra{\psi^\textnormal{Z}} \\
-		&= \left(1-q\right) \begin{pmatrix}
+		\phi_\textnormal{Z} &= \rbracket{1-q} \ket{\psi}\bra{\psi} + q \ket{\psi^\textnormal{Z}}\bra{\psi^\textnormal{Z}} \\
+		&= \rbracket{1-q} \begin{pmatrix}
 			\alpha \\ \beta
 		\end{pmatrix}
 		\begin{pmatrix}
@@ -151,7 +151,7 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 		\begin{pmatrix}
 			\alpha^* & -\beta^*
 		\end{pmatrix} \\
-		&= \left(1-q\right) \begin{pmatrix}
+		&= \rbracket{1-q} \begin{pmatrix}
 			|\alpha|^2 & \alpha \beta^* \\
 			\alpha^* \beta & |\beta|^2
 		\end{pmatrix}
@@ -160,8 +160,8 @@ You may also find the notes from the MMathPhys course useful: \url{https://zheny
 			-\alpha^* \beta & |\beta|^2
 		\end{pmatrix} \\
 		&= \begin{pmatrix}
-			|\alpha|^2 & \left(1-2q\right) \alpha \beta^* \\
-			\left(1-2q\right) \alpha^* \beta & |\beta|^2
+			|\alpha|^2 & \rbracket{1-2q} \alpha \beta^* \\
+			\rbracket{1-2q} \alpha^* \beta & |\beta|^2
 		\end{pmatrix}
 	\end{align*}
 	

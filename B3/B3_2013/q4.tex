@@ -1,0 +1,58 @@
+\draft
+\begin{parts}
+	\part The natural width of a transition is the homogeneous broadening due to the intrinsic lifetime associated with the transition itself.
+	This may be illustrated by considering the Uncertainty Principle: $\Delta E \Delta t \ge \hbar/2$
+	
+	Thus:
+	\begin{equation*}
+		\Delta E \sim \Delta\omega \sim \frac{1}{\Delta t}
+	\end{equation*}
+	
+	For a gas phase amplifier, Doppler broadening and pressure broadening are the major contributions to the overall broadening -- at higher temperatures the average speed of the atoms increases, increasing both Doppler and pressure broadenings.
+	For larger density the pressure broadening will increase as the mean free path decreases.
+	
+	Rate equations:
+	\begin{align*}
+		\deri{N_\mathrm{e}}{t} &= \Gamma - \frac{N_\mathrm{e}}{\tau_\mathrm{e}} \\
+		\deri{N_m}{t} &= \frac{N_\mathrm{e}}{\tau_\mathrm{e}} - \frac{N_m}{\tau_m} \\
+		\deri{N_g}{t} &= \frac{N_m}{\tau_m} - \Gamma
+	\end{align*}
+	
+	At steady state:
+	\begin{align*}
+		N_\mathrm{e} &= \Gamma\tau_\mathrm{e} \\
+		\frac{N_\mathrm{e}}{\tau_\mathrm{e}} &= \frac{N_m}{\tau_m} \\
+		N_m &= \Gamma \tau_m
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		N_\mathrm{e} &= \frac{N_g - N_\mathrm{e}}{\hbar\omega_\textnormal{L}} \sigma_{g\mathrm{e}} I_L \tau_\mathrm{e} \\
+		&= \frac{N-N_m-2N_\mathrm{e}}{\hbar\omega_\textnormal{L}} \sigma_{g\mathrm{e}} I_L \tau_\mathrm{e} \\
+		&= \frac{N-(\tau_m/\tau_\mathrm{e} + 2)N_\mathrm{e}}{\hbar\omega_\textnormal{L}} \sigma_{g\mathrm{e}} I_L \tau_\mathrm{e}
+	\end{align*}
+	
+	\begin{align*}
+		\Rightarrow \rbracket{\hbar\omega_\textnormal{L} + \frac{\tau_m}{\tau_\mathrm{e}} + 2} N_\mathrm{e} &- N \\
+		N_\mathrm{e} &= N \sbracket{\frac{\hbar\omega_\textnormal{L}}{\sigma_{g\mathrm{e}} I_L \tau_\mathrm{e}} + \frac{\tau_m}{\tau_\mathrm{e}} + 2}^{-1} \\
+		&= N \frac{\sigma_{g\mathrm{e}} I_L \tau_\mathrm{e}}{\hbar\omega_\textnormal{L} + \sigma_{g\mathrm{e}} I_L \tau_m \tau_\mathrm{e} + 2\sigma_{g\mathrm{e}} I_L \tau_m} \\
+		&= N \frac{\tau_\mathrm{e}}{\tau_m} \, \frac{\sigma_{g\mathrm{e}} I_L}{\frac{\hbar\omega_\textnormal{L}}{\tau_m} + \sigma_{g\mathrm{e}} I_L (\tau_\mathrm{e} + 2)} \\
+		&=  N \frac{\tau_\mathrm{e}}{\tau_m} \, \cfrac{\cfrac{\sigma_{g\mathrm{e}} I_L \tau_m}{\hbar\omega_\textnormal{L}}}{1+\cfrac{\sigma_{g\mathrm{e}} I_L \tau_m}{\hbar\omega_\textnormal{L}} \rbracket{\tau_\mathrm{e} + 2}}
+	\end{align*}
+	
+	Hence $x=\dfrac{\sigma_{g\mathrm{e}} I_L \tau_m}{\hbar\omega_\textnormal{L}}$, $\dfrac{\tau_R}{\tau_m} = \tau_\mathrm{e} + 2$ $\Rightarrow$ $\tau_R = \tau_m (\tau_\mathrm{e} + 2)$.
+	And:
+	\begin{equation*}
+		I_F \propto \frac{N_\mathrm{e}}{\tau_\mathrm{e}} = \frac{N}{\tau_m} \cdot \frac{x}{1+x\rbracket{\cfrac{\tau_R}{\tau_m}}}
+	\end{equation*}
+	
+	For $\tau_m \gg \tau_\mathrm{e}$, $\tau_R \simeq \tau_m$:
+	\begin{equation*}
+		\frac{N_\mathrm{e}}{\tau_\mathrm{e}} = \frac{N}{\tau_m} \cdot \frac{x}{1+x}
+	\end{equation*}
+	
+	\image{.8\linewidth}{q4-if-x-sketch}
+	
+	When $x$ is not small, $I_p$ so the broadening is of width $1/\tau_m$ instead.
+	In intermediate regime, the broadening is of width $\frac{x}{\tau_m \rbracket{1_x\rbracket{\frac{\tau_R}{\tau_m}}}}$.
+\end{parts}

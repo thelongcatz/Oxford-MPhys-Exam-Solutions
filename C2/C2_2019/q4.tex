@@ -18,10 +18,10 @@ Quantum information with a twist at quantum money.
 		
 		\begin{align*}
 			\ket{\psi} &= \alpha \ket{0} + \beta \ket{1} \\
-			&= \alpha \left(\frac{\ket{+} + \ket{-}}{\sqrt{2}}\right) + \beta \left(\frac{\ket{+} - \ket{-}}{\sqrt{2}}\right) \\
+			&= \alpha \rbracket{\frac{\ket{+} + \ket{-}}{\sqrt{2}}} + \beta \rbracket{\frac{\ket{+} - \ket{-}}{\sqrt{2}}} \\
 			&= \frac{\alpha + \beta}{\sqrt{2}}\ket{+} \;+\; \frac{\alpha - \beta}{\sqrt{2}}\ket{-} \\[1em]
-			\Rightarrow P(+) &= \left|\frac{\alpha + \beta}{\sqrt{2}}\right|^2 = \frac{1}{2} \left|\alpha + \beta\right|^2 \\
-			P(-) &= \frac{1}{2} \left|\alpha - \beta\right|^2
+			\Rightarrow P(+) &= \abs{\frac{\alpha + \beta}{\sqrt{2}}}^2 = \frac{1}{2} \abs{\alpha + \beta}^2 \\
+			P(-) &= \frac{1}{2} \abs{\alpha - \beta}^2
 		\end{align*}
 		
 		\subpart Realise that after measurement, Alice would have a pure state of $\ket{+}$ or $\ket{-}$, either containing $(\ket{0}\pm\ket{1}) / \sqrt{2} \Rightarrow P(0)=P(1)=\diagfrac{1}{2}$ after X measurement.
@@ -84,7 +84,7 @@ Quantum information with a twist at quantum money.
 		For $n=24$ we have:
 		\begin{align*}
 			P(\textnormal{detection}) &= 1-P(\textnormal{no wrong value}) \\
-			&= 1 - \left(\frac{3}{4}\right)^n \\
+			&= 1 - \rbracket{\frac{3}{4}}^n \\
 			&= 0.999
 		\end{align*}
 		

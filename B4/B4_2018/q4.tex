@@ -1,0 +1,90 @@
+\draft
+\begin{parts}
+	\part Differential cross section is the derivative of total cross section of some scattering w.r.t. the solid angle.
+	\begin{align*}
+		\sigma &= \indefint{\deri{\sigma}{\Omega}}{\Omega} \\
+		\deri{\sigma}{\Omega} &= \rbracket{\frac{m}{2\pi\hbar^2}}^2 \abs{\indefint{V(\mathbf{x}) e^{i\mathbf{q}\cdot\mathbf{x}}}{{}^3 \mathbf{x}}}^2
+	\end{align*}
+	where $\mathbf{q} = |\mathbf{k}^\prime - \mathbf{k}|$ is the scattering wavevector, $m$ is the rest mass of the particle.
+	
+	\part Potential:
+	\begin{equation*}
+		V_\mu (r) = V_0 \frac{e^{-\mu r}}{r}
+	\end{equation*}
+	
+	\begin{align*}
+		\Rightarrow \indefint{V(\mathbf{x}) e^{i\mathbf{q}\cdot\mathbf{x}}}{{}^3 \mathbf{x}} &= 2\pi \defint{0}{\pi}{}{\theta} \defint{0}{\infty}{V_0 \frac{e^{-\mu r}}{r} e^{iqr\cos\theta} r^2 \sin\theta}{r} \\
+		&= 2\pi V_0 \defint{0}{\pi}{}{\theta} \defint{0}{\infty}{\sin\theta e^{r(-\mu + iq\cos\theta)} \cdot r}{r}
+	\end{align*}
+	
+	Integration by parts:
+	\begin{equation*}
+		\begin{matrix}
+			F &= r \\
+			\inftsml{G} &= e^{r(-\mu + iq\cos\theta)} \inftsml{r}
+		\end{matrix}
+		\Rightarrow
+		\begin{matrix}
+			\inftsml{F} &= \inftsml{r} \\
+			G &= \frac{e^{r(-\mu + iq\cos\theta)}}{-\mu + iq\cos\theta}
+		\end{matrix}
+	\end{equation*}
+	
+	\begin{align*}
+		&\Rightarrow 2\pi V_0 \defint{0}{\pi}{}{\theta} \sbracket{\cancelto{0}{\sbracket{r\frac{e^{r(-\mu + iq\cos\theta)}}{-\mu + iq\cos\theta}}} - \defint{0}{\infty}{\frac{e^{r(-\mu + iq\cos\theta)}}{-\mu + iq\cos\theta}}{r}} \\
+		&= 2\pi V_0 \defint{0}{\infty}{}{\theta} \sbracket{-\frac{e^{r(-\mu + iq\cos\theta)}}{(-\mu + iq\cos\theta)^2}}_{r=0}^{r=\infty} \\
+		&= 2\pi V_0 \defint{0}{\pi}{\frac{1}{(-\mu + iq\cos\theta)^2}}{\theta} \\
+		&= \frac{2\pi^2 V_0}{\mu^2 - q^2 - 2\mu qi}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\deri{\sigma}{\Omega} &= \rbracket{\frac{m}{2\pi\hbar^2}}^2 \abs{\frac{2\pi^2 V_0}{\mu^2 - q^2 - 2\mu qi}}^2 \\
+		&= \sbracket{\frac{m}{2\pi\hbar^2} \cdot 2\pi^2 V_0}^2 \cdot \frac{1}{(\mu^2 - q^2) + 4\mu^2 q^2} \\
+		&= \rbracket{\frac{2mV_0}{\hbar^2}}^2 \cdot \frac{1}{(q^2 + \mu^2)^2}
+	\end{align*}
+	
+	\todo For Coulomb scattering, $\mu = 0$, $q \to q \cos\theta$:
+	\image{.15\linewidth}{q4-coulomb-scattering}
+	\begin{align*}
+		\Rightarrow \deri{\sigma}{\Omega} &\propto \frac{1}{q^4 \cos^4 \theta} \\
+		&\propto \frac{1}{\cos^4 (\pi - \Theta)} \\
+		&= \frac{1}{(-\cos\Theta)^4} \\
+		&\propto \frac{1}{\cos^4 \Theta} \\
+		&= \sec^4 \Theta
+	\end{align*}
+	
+	\part Elastic $\electron$-$\electron$ scattering by $\higgs$ bosons:
+	\image{.5\linewidth}{q4-elastic-e}
+	
+	Matrix element:
+	\begin{equation*}
+		M_{if} = \lambda_\mathrm{e}^2 \cdot \frac{1}{\mathsf{P}^2 - m_\mathrm{H}^2 c^2}
+	\end{equation*}
+	
+	Since the scattering is elastic, no energy is transferred so $\mathsf{P}^2 = q^2$ where $q$ is momentum of electrons.
+	
+	Now for photon exchange:
+	\image{.5\linewidth}{q4-photon-exchange}
+	
+	Matrix element:
+	\begin{align*}
+		M_{if}^\prime &= (\sqrt{4\pi\alpha})^2 \cdot \frac{1}{\mathsf{P}^2} \mtext{since $\gamma$ is massless} \\
+		&= 4\pi\alpha \cdot \frac{1}{q^2} \mtext{due to it being elastic}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		R_H &= \frac{M_{if}}{M_{if}^\prime} \\
+		&= \frac{\lambda_\mathrm{e}^2}{4\pi\alpha} \frac{q^2}{q^2 + \mu_\mathrm{H}^2}
+	\end{align*}
+	where $\mu_\mathrm{H} = im_\mathrm{H} c$.
+	
+	At ZMF energy of \SI{200}{\giga\electronvolt}, $q \simeq \SI{200}{\giga\electronvolt /c}$ so:
+	\begin{align*}
+		R_H &= \frac{\lambda_\mathrm{e}^2}{4\pi\alpha} \frac{q^2}{q^2 - m_\mathrm{H}^2 c^2} \\
+		&= \frac{(\num{2.9e-6})^2}{\frac{4\pi}{137}} \cdot \frac{(\SI{200}{\giga\electronvolt /c})^2}{(\SI{200}{\giga\electronvolt /c})^2 - (\SI{125}{\giga\electronvolt /c})^2} \\
+		&= \num{1.5e-10} \lll 1
+	\end{align*}
+	Since $R_H$ is extremely small($\sim \alpha^5$ so much much smaller than EM interaction), measuring $\higgs$ exchange via $\electron$-$\electron$ collision is not viable.
+\end{parts}

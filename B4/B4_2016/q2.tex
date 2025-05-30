@@ -1,0 +1,49 @@
+\draft
+
+Meson $J^P = 0^-$ nonet:
+\image{.8\linewidth}{q2-meson-nonet}
+where $Q$ is electric charge, $S$ is strangeness, $I_3$ is the z-component of isospin.
+
+$\pi^+ \to \mu^+ \nu_\mu$ decay:
+\image{.5\linewidth}{q2-pi-mu}
+
+$K^+ \to \mu^+ \nu_\mu$ decay:
+\image{.5\linewidth}{q2-k-mu}
+
+$K^+ \to \pi^+ \pi^0$ decay:
+\image{.5\linewidth}{q2-k-pi}
+
+Note that weak charged current has a helicity preference, and since neutrinos are largely left-handed, but since $\pi^+$ has spin 0, the daughters must have anti-aligned spins, together with conservation of momentum to give right-handedness requirement.
+So the pion decay is heavily suppressed compared to kaon: $\dfrac{m_e^2}{(m_p - m_e)^2}$ is the suppression factor where $m_p$ is the mass of parent.
+
+For $K^+ \to \pi^+ \pi^0$, since it involves a coupling across generations, a penalty of $\sin\theta$ is added compared to $\pi^+ \to \mu^+ \nu_\mu$.
+Therefore the decay is Cabibbo suppressed.
+\begin{parts}
+	\part Assuming $B_\textnormal{in} = 100\%$ at each resonance:
+	\begin{align*}
+		\sigma_\rho \propto (2+1) \frac{\Gamma_\textnormal{tot}^2}{(E^2 -m_p^2)^2 + E^2 \Gamma_\textnormal{tot}^2} \\
+		\sigma_K \propto (0+1) \frac{0.69 \Gamma_\textnormal{tot}^2}{(E^2 -m_K^2)^2 + E^2 \Gamma_\textnormal{tot}^2}
+	\end{align*}
+	where $\Gamma_\textnormal{tot} = \Gamma_K + \Gamma_\rho$ is assumed.
+	
+	\begin{align*}
+		\Rightarrow \frac{\sigma_\rho}{\sigma_K} &= \frac{2}{0.69} \frac{(E^2 -m_K^2)^2 + E^2 \Gamma_\textnormal{tot}^2}{(E^2 -m_p^2)^2 + E^2 \Gamma_\textnormal{tot}^2} \\
+		&= 0
+	\end{align*}
+	for $E=\SI{249}{\mega\electronvolt} \times 2 = m_K$.
+	
+	\part For $E=\SI{250}{\mega\electronvolt} \times 2$, $\dfrac{\sigma_\rho}{\sigma_K} = \num{0.129}$.
+	
+	It is impractical to study $K^0$ resonance with $\pi^+ \pi^-$ collision as the partial width is so small that it is overwhelmed by other resonances within an error window.
+	
+	\part \image{.3\linewidth}{q2-magnetic-field}
+	Lorentz force $\mathbf{f} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})$:
+	\begin{align*}
+		\Rightarrow qBv &= {\color{red}\gamma} \frac{mv^2}{r} \mtext{for circular motion} \\
+		\frac{v}{r} &= \frac{qB}{m} \\
+		\Rightarrow r &= \frac{mv}{qB} \\
+		&= \frac{p}{qB} \mtext{where $p$ is momentum} \\
+		&= \frac{\sqrt{E^2 - m_\pi^2 c^4}}{qBc} \\
+		&= \SI{0.687}{\metre}
+	\end{align*}
+\end{parts}

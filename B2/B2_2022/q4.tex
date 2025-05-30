@@ -1,0 +1,73 @@
+\draft
+\begin{parts}
+	\part Three-force:
+	\begin{align*}
+		\mathbf{F} = \deri{\mathbf{p}}{t} \Rightarrow \mathbf{p}(t) &= \mathbf{F}t \\
+		\gamma mv &= \mathbf{F}t \\
+		\Rightarrow \frac{mv}{\sqrt{1-\frac{v^2}{c^2}}} &= Ft \\
+		m^2 v^2 &= F^2 t^2 \rbracket{1-\frac{v^2}{c^2}} \\
+		\rbracket{m^2 + \frac{F^2 t^2}{c^2}} v^2 &= F^2 t^2 \\
+		v &= \frac{Ft}{\sqrt{m^2 + \frac{F^2 t^2}{c^2}}}
+	\end{align*}
+	Note that as $t\to\infty$, $v\to\frac{Ft}{\frac{Ft}{c}} = c$.
+	
+	\part With 4-momentum $\mathsf{P}^\mu = (E/c, \mathbf{p})$, we have the 4-force:
+	\begin{align*}
+		\mathsf{F}^\mu = \deri{\mathsf{P}^\mu}{\tau} &= \gamma\deri{\mathsf{P}^\mu}{t} \\
+		&= \rbracket{\frac{\gamma W}{c}, \gamma\mathbf{f}}
+	\end{align*}
+	where $W=\deri{E}{t}$, $\mathbf{f}=\deri{\mathbf{p}}{t}$.
+	
+	We also need the derivative of $\gamma$ w.r.t. $t$:
+	\begin{align*}
+		\deri{\gamma}{t} &= -\frac{1}{2}\rbracket{1-\frac{v^2}{c^2}}^{-3/2} \cdot \rbracket{-\frac{2v\cdot a}{c^2}} \\
+		&= \gamma^3 \frac{v\cdot a}{c^2}
+	\end{align*}
+	
+	From energy $E=\gamma mc^2$,
+	\begin{align*}
+		\deri{E}{t} &= \dot{\gamma}mc^2 \\
+		&= \gamma^3 mc^2 \frac{\mathbf{v}\cdot\mathbf{a}}{c^2} = \gamma \frac{\mathbf{F}\cdot\mathbf{v}}{c}
+	\end{align*}
+	
+	We also have:
+	\begin{align*}
+		\gamma\mathbf{f} = \deri{\mathbf{p}}{t} &= \dot{\gamma}m\mathbf{v} + \gamma m\mathbf{a} \\
+		\Rightarrow \gamma^3 m \frac{\mathbf{v}\cdot\mathbf{a}}{c^2} \mathbf{v} + \gamma m\mathbf{a} \\
+		&= m\gamma^3 \rbracket{\frac{\mathbf{v}\cdot\mathbf{a}}{c^2} \mathbf{v} + \rbracket{1-\frac{v^2}{c^2}} \mathbf{a}} \\
+		&= m\gamma^3 \rbracket{\mathbf{a} + \frac{-v^2 \mathbf{a} + \rbracket{\mathbf{v}\cdot\mathbf{a}}\mathbf{v}}{c^2}} \\
+		&= m\gamma^3 \rbracket{\mathbf{a} + \frac{\mathbf{v}\times\mathbf{v}\times\mathbf{a}}{c^2}}
+	\end{align*}
+	
+	\part Larmor's formula:
+	\begin{equation*}
+		P = -\frac{1}{6\pi\permittivity} \frac{q^2}{m^2 c^3} \mathsf{F}^\alpha \mathsf{F}_\alpha
+	\end{equation*}
+	Note that only the contraction plays a critical role in differentiating the power loss in both cases.
+	
+	\image{.2\linewidth}{q4-linac}
+	For the linac in LAB frame:
+	\begin{align*}
+		\mathsf{F}^\alpha \mathsf{F}_\alpha &= -\frac{\gamma^2 \rbracket{\mathbf{F}\cdot\mathbf{v}}^2}{c^2} + \gamma^2 F^2 \\
+		&= \gamma^2 F^2 \underbracket{\rbracket{1-\frac{v^2}{c^2}}}_{\gamma^{-2}} \mtext{since $\mathbf{F}\parallel\mathbf{v}$} \\
+		&= F^2 \\
+		&= \gamma^4 m^2 a^2
+	\end{align*}
+	
+	\image{.2\linewidth}{q4-synchrotron}
+	Similarly, for a synchrotron in LAB frame:
+	\begin{align*}
+		\mathsf{F}^\alpha \mathsf{F}_\alpha &= -\frac{\gamma^2 \cancelto{0}{\rbracket{\mathbf{F}\cdot\mathbf{v}}^2}}{c^2} + \gamma^2 F^2 \\
+		&= \gamma^2 F^2 \\
+		&= \gamma^2 m^2 a^2
+	\end{align*}
+	where the difference arises from the fact that $\mathbf{F}\perp\mathbf{v}$ in a synchroton.
+	
+	Thus for the same energy (i.e. same $\gamma$) and the same acceleration, a linac configuration would have higher power dissipation than a synchrotron.
+	
+	\part Energy of a particle $E=\gamma mc^2$.
+	So with larger mass, one can pack more $E$ without increasing $\gamma$.
+	Hence muons are the better choice, provided that their decays are accounted for.
+	
+	Additionally, since the synchroton has lower power dissipation as shown above, using it would be more economical.
+\end{parts}

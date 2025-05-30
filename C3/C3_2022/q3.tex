@@ -32,8 +32,8 @@ Usual SC with a brief exploration of thin film SC.
 			\partial_x & \partial_y & \partial_z \\
 			0 & 0 & B
 		\end{vmatrix} &= \mu_0 \mathbf{J} \\
-		\Rightarrow \mu_0 \mathbf{J} &= -\frac{\partial}{\partial x}\left(B_0 \frac{\cosh\left(x/\lambda\right)}{\cosh\left(t/\lambda\right)}\right) \hat{\mathbf{y}} \\
-		\mathbf{J} &= -\frac{B_0}{\mu_0 \lambda} \frac{\sinh\left(x/\lambda\right)}{\cosh\left(t/\lambda\right)} \hat{\mathbf{y}}
+		\Rightarrow \mu_0 \mathbf{J} &= -\pdiff{x}\rbracket{B_0 \frac{\cosh\rbracket{x/\lambda}}{\cosh\rbracket{t/\lambda}}} \hat{\mathbf{y}} \\
+		\mathbf{J} &= -\frac{B_0}{\mu_0 \lambda} \frac{\sinh\rbracket{x/\lambda}}{\cosh\rbracket{t/\lambda}} \hat{\mathbf{y}}
 	\end{align*}
 	
 	\newpage
@@ -44,7 +44,7 @@ Usual SC with a brief exploration of thin film SC.
 		\includegraphics[width=.8\linewidth]{q3-j}
 	\end{figure}
 	
-	For $\lambda \gg t$, we see that $B(x) \rightarrow B_0 \left[1 + \mathcal{O}\left(x^2/\lambda^2\right)\right]$ so we have the B field virtually penetrating the sample.
+	For $\lambda \gg t$, we see that $B(x) \rightarrow B_0 \sbracket{1 + \mathcal{O}\rbracket{x^2/\lambda^2}}$ so we have the B field virtually penetrating the sample.
 	
 	Critical current density wise, it follows from the graph that it must also shrink to 0.
 	
@@ -52,9 +52,9 @@ Usual SC with a brief exploration of thin film SC.
 	
 	Extrapolating from the graph gives us $B_{c2} \simeq \SI{100}{\tesla}$.
 	
-	Also for type-II SC, upper field corresponds to when $\left(2\pi\xi^2\right)B_c \Phi_0$ where $\xi$ is coherence length:
+	Also for type-II SC, upper field corresponds to when $\rbracket{2\pi\xi^2}B_c \Phi_0$ where $\xi$ is coherence length:
 	\begin{gather*}
-		\left(2\pi\xi^2\right)B_c \Phi_0 = \SI{100}{\tesla} \\
+		\rbracket{2\pi\xi^2}B_c \Phi_0 = \SI{100}{\tesla} \\
 		\Rightarrow \xi = \SI{1.81}{\nano\metre}
 	\end{gather*}
 	Hence:

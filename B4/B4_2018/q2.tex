@@ -1,0 +1,78 @@
+\draft
+\begin{parts}
+	\part In the light quark model, due to the invariance of strong force in the flavours of the quarks, we may propose a basis of representation as follows:
+	\image{.5\linewidth}{q2-quark-isospin-strangeness}
+	where $q$ is electric charge, $S$ is strangeness, $I_3$ is isospin.
+	
+	Assembling the hadrons with these quarks then yields the Eightfold Way, explaining the mass, charge, isospin and strangeness.
+	
+	For spin, recall that hadrons are composite particles of quarks, thus the quantum mechanical rule of spin addition holds, since each quark has spin $\frac{1}{2}$, a hadron may have spin $S=0, \frac{1}{2}, 1, \frac{3}{2}$.
+	
+	The parity of a particle is defined as $P=(-1)^L$ where $L$ is total orbital angular momentum.
+	At ground state, $L=0 \Rightarrow P=\pm 1$.
+	
+	{
+		\color{red} Give a more specific explanation for the multiplet given.
+		
+		Why, for example, does the $\SSigmaz$ have a strangeness of $-1$?
+		What values of $q$ do the dashed lines represent?
+	}
+	
+	\part \begin{equation*}
+		\Kn + \proton \to \Omegan + \Kz + \mathrm{X}
+	\end{equation*}
+	
+	Strong interaction preserves flavour so the quark contents should be preserved:
+	\image{.45\linewidth}{q2-k-omega}
+	So $\mathrm{X}$ is $\Kp$.
+	
+	\part For each strange quark added, the mass increases by \SI{147}{\mega\electronvolt /c^2}, so $\Omegan$ should have mass $\num{1532} + \num{147} = \SI{1679}{(\mega\electronvolt /c^2)}$.
+	
+	\image{.6\linewidth}{q2-momentum}
+	At threshold energy, the products are at rest in ZMF.
+	
+	Lorentz invariance of system 4-momentum:
+	\begin{align*}
+		\mathsf{P}_\mu \mathsf{P}^\mu &= \mathsf{P}^\prime_\mu \mathsf{P}^{\prime^\mu} \\
+		-\rbracket{\frac{E}{c} + \massproton c}^2 + p^2 &= -\rbracket{m_\Omega + m_\Kz + m_\mathrm{X}}^2 c^2 \\
+		\underbracket{\rbracket{\frac{E^2}{c^2} - p^2}}_{m_\mathrm{K}^2 c^2} + 2E\massproton + \massproton^2 c^2 &= \rbracket{m_\Omega + m_\Kz + m_\mathrm{X}}^2 c^2 \\
+		\Rightarrow E &= \frac{\sbracket{\rbracket{m_\Omega + m_\Kz + m_\mathrm{X}}^2 - \rbracket{m_\mathrm{K}^2 + \massproton^2}} c^2}{2\massproton} \\
+		&= \SI{3200}{\mega\electronvolt}
+	\end{align*}
+	
+	So threshold momentum:
+	\begin{align*}
+		pc &= \sqrt{E^2 - m_\mathrm{K}^2 c^4} \\
+		\Rightarrow p &= \SI{3162}{\mega\electronvolt /c}
+	\end{align*}
+	
+	\part \begin{align*}
+		\Omegan &\to \Xiz + &\pin \\
+		\Qstrange\Qstrange\Qstrange &\to \Qstrange\Qstrange\Qup &\Qdown\bar{\Qup}
+	\end{align*}
+	
+	Conservation of flavour/quark number violated, try $\mathrm{W}^\pm$ interaction:
+	\image{.6\linewidth}{q2-omega-decay}
+	
+	\part Momentum $p = \gamma mv = \SI{2015}{\mega\electronvolt /c}$. Hence energy:
+	\begin{align*}
+		E &= \sqrt{m^2 c^4 + p^2 c^2} = \gamma mc^2 \\
+		\Rightarrow \gamma &= \frac{\sqrt{m^2 c^4 + p^2 c^2}}{mc^2} \\
+		\Rightarrow v &= c\sbracket{1-\gamma^{-2}}^{1/2} \\
+		&= c\sbracket{1-\frac{m^2 c^4}{m^2 c^4 + p^2 c^2}}^{1/2}
+	\end{align*}
+	
+	Measured lifetime:
+	\begin{align*}
+		t &= \frac{d}{v} \\
+		&= \frac{d}{c} \rbracket{\frac{m^2 c^4 + p^2 c^2}{m^2 c^4}}^{1/2}
+	\end{align*}
+	
+	But time dilation means that $t = \gamma\tau$ where $\tau$ is proper lifetime:
+	\begin{align*}
+		\tau &= \frac{mc^2}{\sqrt{m^2 c^4 + p^2 c^2}} \cdot \frac{d}{c} \sbracket{\frac{m^2 c^4 + p^2 c^2}{p^2 c^2}}^{1/2} \\
+		&= \frac{mcd}{pc} \\
+		&= \frac{md}{p} \\
+		&= \frac{\SI{0.0208}{\metre}}{c} = \SI{6.944e-11}{\second}
+	\end{align*}
+\end{parts}

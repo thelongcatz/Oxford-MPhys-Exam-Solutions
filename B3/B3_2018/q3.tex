@@ -1,0 +1,79 @@
+\draft
+\begin{parts}
+	\part \image{.4\linewidth}{q3-excitation}
+	
+	In semi-classical treatment of light-atom interaction, we obtain the given differential equations by TDSE.
+	
+	Rabi frequency is defined such that:
+	\begin{align*}
+		\hbar\Omega_R &= \bra{2}e\bm{\mathcal{E}}_0 \cdot \mathbf{r} \ket{1} \\
+		&= \bra{2}e\mathcal{E}_0 x\ket{1}
+	\end{align*}
+	is the matrix element of transition due to the electric field.
+	
+	At $\omega = \Omega_R$, Rabi oscillation may occur for purely radiative processes.
+	
+	\part Weak light: $\rightarrow$ $c_1(t) \simeq 1$, $c_2(t) \simeq 0$:
+	\begin{align*}
+		\Rightarrow &\begin{cases}
+			\dot{c}_1 &= 0 \\
+			\dot{c}_2 &= 0
+		\end{cases} \\
+		\Rightarrow c_2(t) &= \defint{0}{t}{-i\Omega_R \cdot \sbracket{\frac{e^{i(\omega_0 + \omega)t} + ^{\omega_0 - \omega}}{2}}}{t} \\
+		&= -\frac{i\Omega_R}{2} \sbracket{\frac{e^{i(\omega_0 + \omega)}}{i(\omega_0 + \omega)} + \frac{e^{i(\omega_0 - \omega)t}}{i(\omega_0 - \omega)}}_{t=0}^t
+	\end{align*}
+	
+	Invoke rotating wave approximation, $\omega_0 + \omega \gg |\omega_0 - \omega|$:
+	\begin{align*}
+		c_2(t) &\simeq -\frac{i\Omega_R}{2} \cdot \frac{e^{i(\omega_0 - \omega)t} - 1}{i(\omega_0 - \omega)} \\
+		&= -\frac{i\Omega_R}{2} \cdot e^{i\frac{(\omega_0 - \omega)}{2}t} \frac{e^{i\frac{(\omega_0 - \omega)}{2}t} - e^{-i(\frac{(\omega_0 - \omega)}{2})t}}{2i(\frac{\omega_0 - \omega}{2}t)} t \\
+		&= -\frac{i\Omega_R}{2} e^{i\frac{\delta}{2}t} \sinc\rbracket{\frac{\delta}{2}t} t
+	\end{align*}
+	where $\delta=\omega_0 - \omega$.
+	
+	So:
+	\begin{align*}
+		\abs{c_2(t)}^2 &= \rbracket{\frac{\Omega_R}{2}}^2 \sinc^2\rbracket{\frac{\delta t}{2}} t^2 \\
+		&= \frac{\Omega_R^2}{\rbracket{2 \cdot \frac{\delta t}{2} \cdot \frac{1}{t}}^2} \sin^2 \rbracket{\frac{\delta t}{2}} \\
+		&= \frac{\Omega_R^2}{\delta^2} \sin^2 \rbracket{\frac{\delta t}{2}}
+	\end{align*}
+	So $\alpha = \delta = \omega_0 - \omega$.
+	
+	\part For $\delta=0$, $|c_2(t)|^2 = \rbracket{\dfrac{\Omega_R}{2}}^2 t^2$.
+	
+	Increasing detuning then causes $|c_2(t)|^2$ to oscillate with decreasing amplitude.
+	\image{.8\linewidth}{q3-rabi}
+	
+	\part Again for weak light, $c_1 \simeq 1$, $c_2 \simeq c_3 \simeq 0$:
+	\begin{equation*}
+		\Rightarrow \begin{cases}
+			\dot{c}_1 &= 0 \\
+			\dot{c}_2 &= -i\Omega_R \cos\rbracket{\omega t} e^{i\omega_0 t} \\
+			\dot{c}_3 &= 0
+		\end{cases}
+	\end{equation*}
+	
+	So similar to b:
+	\begin{equation*}
+		c_2(t) = -\frac{i\Omega_R}{2} e^{i\frac{\delta t}{2}} \sinc\rbracket{\frac{\delta t}{2}} t
+	\end{equation*}
+	
+	\part Plugging $c_2(t)$ into $\dot{c}_3(t)$:
+	\begin{align*}
+		\dot{c}_3 &= -i\Phi_R \cos\rbracket{\omega t} e^{i\phi_0 t} \cdot \rbracket{-\frac{i\Omega_R}{2}} \cdot \frac{e^{i\delta t} - 1}{i\delta} \\
+		&= \frac{i\Phi_R \Omega_R}{4} \rbracket{e^{i\omega t} + e^{-i\omega t}} e^{i\phi_0 t} \rbracket{e^{i\delta t} - 1}
+	\end{align*}
+	
+	Know $\Delta\omega = \underbracket{\omega_0 - \omega}_{\delta} + \phi_0 - \omega$ negligible.
+	So:
+	\begin{align*}
+		\dot{c}_3 &\simeq \frac{i\Phi_R \Omega_R}{4} \sbracket{e^{i(\omega + \phi_0 + \delta)t} \underbracket{- e^{-i(\omega + \phi_0)t} - e^{i(-\omega + \phi_0)t}}_{-2\cos (\omega + \phi_0)t}} \\
+		\Rightarrow c_3(t) &= \defint{0}{t}{\frac{i\Phi_R \Omega_R}{4}\sbracket{\ldots}}{t} \\
+		&= \frac{i\Phi_R \Omega_R}{4} \sbracket{\frac{e^{i(\omega + \phi_0 + \delta)t}}{i(\omega + \phi_0 + \delta)} - \frac{2 \sin (\omega + \phi_0)t}{\omega + \phi_0}}_{t=0}^t \\
+		&= \frac{i\Phi_R \Omega_R}{4} \sbracket{\frac{e^{i(\omega + \phi_0)t} - 1}{i(\omega + \phi_0)} - \underbracket{\frac{2 \sin (\omega + \phi_0)t}{\omega + \phi_0}}_{\mathclap{\substack{\to 0 \\ \textnormal{by RWA}}}}} \\
+		&= \frac{\Phi_R \Omega_R}{4(\omega_0 + \phi_0)} \cdot e^{i(\frac{\omega_0 + \phi_0}{2})t} \sbracket{\frac{e^{i\frac{\omega_0 + \phi_0}{2}t} - e^{-i\frac{\omega_0 + \phi_0}{2}t}}{2i}} 2i \\
+		&= \frac{i\Phi_R \Omega_R}{2\beta} \cdot e^{i\frac{\beta}{2}t} \sin\rbracket{\frac{\beta t}{2}} \mtext{where } \beta = \omega_0 + \phi_0 \\
+		\Rightarrow |c_3(t)|^2 &= \frac{\Phi_R^2 \Omega_R^2}{4\beta^2} \sin^2 \rbracket{\frac{\beta t}{2}}
+	\end{align*}
+	so $\Omega_\textnormal{eff} = \dfrac{\Phi_R \Omega_R}{2}$.
+\end{parts}

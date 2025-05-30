@@ -1,0 +1,169 @@
+\draft
+
+\begin{parts}
+	\part Define parity operator $\hat{\rho}$ such that it maps a 3-vector $(x,y,z) \to (-x,-y,-z)$.
+	So we expect for a vector $\mathbf{v}$, $\hat{\rho}\hat{\rho}\mathbf{v} = \mathbf{v}$, but then 2 possibilities arise:
+	\begin{enumerate}
+		\item A \underline{polar vector} obeys the transformation above such that $\hat{\rho}\mathbf{v}=-\mathbf{v}$;
+		\item An \underline{axial vector}, however, does not flip its sign upon $\hat{\rho}$: $\hat{\rho}\mathbf{v}=\mathbf{v}$
+	\end{enumerate}
+	
+	Lorentz force $\mathbf{f} = q(\mathbf{E}+\mathbf{v}\times\mathbf{B})$
+	
+	Since $\mathbf{f}$ should revese upon $\hat{\rho}$, $\mathbf{E}$ should be a polar vector, however $\hat{\rho}\mathbf{v}=-\mathbf{v}$ so $\mathbf{B}$ has to be axial for $\mathbf{v}\times\mathbf{B}$ to be polar vector.
+	
+	\part With $\mathsf{U}^\mu = \gamma (c, \mathbf{v})$ the 4-velocity, we have 4-current:
+	\begin{align*}
+		\mathsf{J}^\mu &= \rho\mathsf{U}^\mu \\
+		&= \rbracket{\rho c, \mathbf{j}}
+	\end{align*}
+	
+	Continuity equation then tells us:
+	\begin{align*}
+		+\pderi{\rho}{t} +\div\cdot\mathbf{j} &= 0 \\
+		\Rightarrow +\frac{1}{c} \pdiff{t}\rbracket{\rho c} +\div\cdot\mathbf{j} &= 0 \\
+		\Rightarrow \partial_\mu \mathsf{J}^\mu &= 0
+		\mtext{where } \partial_\mu = \rbracket{+\frac{1}{c}\pdiff{t}, \mathbf{v}}
+	\end{align*}
+	
+	3-force component of $\mathsf{f}_\mu$:
+	\begin{equation*}
+		\mathbf{f} = \rho\rbracket{\mathbf{E}+\mathbf{v}\times\mathbf{B}}
+		= \rho\mathbf{E} + \mathbf{j}\times\mathbf{B}
+		\mtext{ since $\rho\mathbf{v} = \mathbf{j}$}
+	\end{equation*}
+	
+	EM tensor:
+	\begin{gather*}
+		\mathsf{F}^{\mu\nu} = \begin{bmatrix}
+			0 & & \mathbf{E}/c & \\
+			 & 0 & B_z & -B_y \\
+			 -\mathbf{E}/c & -B_z & 0 & B_x \\
+			  & B_y & -B_x & 0
+		\end{bmatrix} \\
+		\Rightarrow \mathsf{f}_i = \mathsf{J}^j \mathsf{F}_{ji}
+		\mtext{ satisfies $\mathbf{j}\times\mathbf{B}$}
+	\end{gather*}
+	
+	Extending to 4-vector gives $\mathsf{f}_\mu = \mathsf{J}^\nu \mathsf{F}_{\nu\mu}$.
+	
+	$\mathsf{f}_0$ refers to the power density due to the current: $\mathsf{J}^\nu \mathsf{F}_{\nu 0} = -\mathbf{j}\cdot\mathbf{E}/c$
+	
+	\part Know:
+	\begin{align*}
+		\mathsf{A}^\mu &= \rbracket{0, A_0 \cos\sbracket{\mathsf{K}^\mu \mathsf{X}_\mu}, A_0 \sin\sbracket{\mathsf{K}^\mu \mathsf{X}_\mu}, 0} \\
+		\mathsf{X}^\mu &= \rbracket{ct, x, y, z} \\
+		\mathsf{K}^\mu &= \rbracket{\frac{\omega}{c}, 0, 0, k_z} \\[1em]
+		\Rightarrow \mathsf{K}^\mu \mathsf{X}_\mu &= -\omega t+zk_z \\
+		\Rightarrow \mathsf{A}^\mu &= \rbracket{0, A_0 \cos\rbracket{k_z z-\omega t}, A_0 \sin\rbracket{k_z z-\omega t}, 0}
+	\end{align*}
+	
+	We then have EM tensor:
+	\begin{align*}
+		\mathsf{F}^{\mu\nu} = \partial^\mu \mathsf{A}^\nu - \partial^\nu \mathsf{A}^\mu \\
+		&= \begin{bmatrix}
+			0 & E_x/c & E_y/c & E_z/c \\
+			-E_x/c & 0 & B_z & -B_y \\
+			-E_y/c & -B_z & 0 & B_x \\
+			-E_z/c & B_y & -B_x & 0
+		\end{bmatrix}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\frac{E_x}{c} &= \partial^0 \mathsf{A}^1 - \cancelto{0}{\partial^1 \mathsf{A}^0} \\
+		&= -\frac{1}{c} \pdiff{t}\sbracket{A_0 \cos\rbracket{k_z z-\omega t}} \\
+		&= -\frac{\omega}{c} A_0 \sin\rbracket{k_z z-\omega t}
+		\frac{E_y}{c} &= \partial^0 \mathsf{A}^2 - \cancelto{0}{\partial^2 \mathsf{A}^0} \\
+		&= -\frac{1}{c} \pdiff{t}\sbracket{A_0 \sin\rbracket{k_z z-\omega t}} \\
+		&= \frac{\omega}{c} A_0 \cos\rbracket{k_z z-\omega t}
+		-B_y &= \cancelto{0}{\partial^1 \mathsf{A}^3} - \partial^3 \mathsf{A}^1 \\
+		&= -\pdiff{z} A_0 \cos\rbracket{k_z z-\omega t} \\
+		&= A_0 k_z \sin\rbracket{k_z-\omega t} \\
+		B_x &= \cancelto{0}{\partial^2 \mathsf{A}^3} - \partial^3 \mathsf{A}^2 \\
+		&= -\pdiff{z} A_0 \sin\rbracket{k_z z-\omega t} \\
+		&= -A_0 k_z \cos\rbracket{k_z-\omega t}
+	\end{align*}
+	The rest is $0$ so $\mathsf{F}^{\mu\nu}$ is now:
+	\begin{equation*}
+		\begin{bmatrix}
+			0 & -\diagfrac{\omega}{c} A_0 \sin\rbracket{k_z z-\omega t} & \diagfrac{\omega}{c} A_0 \cos\rbracket{k_z z-\omega t} & 0 \\
+			\diagfrac{\omega}{c} A_0 \sin\rbracket{k_z z-\omega t} & 0 & 0 & A_0 k_z \sin\rbracket{k_z-\omega t} \\
+			-\diagfrac{\omega}{c} A_0 \cos\rbracket{k_z z-\omega t} & 0 & 0 & -A_0 k_z \cos\rbracket{k_z-\omega t} \\
+			0 & -A_0 k_z \sin\rbracket{k_z-\omega t} & A_0 k_z \cos\rbracket{k_z-\omega t} & 0
+		\end{bmatrix}
+	\end{equation*}
+	
+	\part E-field transformation:
+	\begin{align*}
+		\mathbf{E}^\prime_\parallel &= \gamma\rbracket{\mathbf{E}_\parallel - \mathbf{v}\times\mathbf{B}} \\
+		\mathbf{E}^\prime_\perp &= \mathbf{E}_\perp
+	\end{align*}
+	
+	B-field transformation:
+	\begin{align*}
+		\mathbf{B}^\prime_\parallel &= \mathbf{B}_\parallel \\
+		\mathbf{B}^\prime_\perp &= \gamma\rbracket{\mathbf{B}_\perp - \frac{\mathbf{v}\times\mathbf{E}}{c^2}}
+	\end{align*}
+	where $\mathbf{X}_\parallel$ is the X-field component parallel to $\mathbf{v}$, $\mathbf{X}_\perp$ is that perpendicular to $\mathbf{v}$.
+	
+	\part \image{.8\linewidth}{q4-plates}
+	\begin{subparts}
+		\subpart At the other end of the capacitor, the $\electron$ would have gained kinetic energy $T=e\epsilon d$:
+		\begin{align*}
+			\textnormal{Total energy } E &= \masselectron c^2 + T \\
+			&= \masselectron c^2 + e\epsilon d \\
+			&= \SI{0.5110}{\mega\electronvolt} + \SI{100}{\mega\electronvolt\per\metre} \cdot \SI{0.1}{\metre} \\
+			&= \SI{100.511}{\mega\electronvolt}
+		\end{align*}
+		
+		The velocity would be:
+		\begin{align*}
+			\gamma &= \frac{E}{\masselectron c^2} \\
+			\rbracket{1-\beta^2}^{-1/2} &= \frac{E}{\masselectron c^2} \\
+			\beta &= \sqrt{1-\rbracket{\frac{\masselectron c^2}{E}}^2} \\
+			v &= c \sqrt{1-\rbracket{\frac{\SI{0.511}{\mega\electronvolt}}{\SI{100.511}{\mega\electronvolt}}}^2} = \num{0.999987}c
+		\end{align*}
+		
+		\subpart By applying sufficient magnetic field in the $yz$-plane, we should be able to trap the $\electron$ in between the plates such that the energy in \textit{bremsstrahlung} is compensated by the E-field.
+		
+		\subpart As explained above, $yz$-plane to induce a curvature in $\electron$ motion.
+		
+		\subpart Boosting along, say $\hat{\mathbf{y}}$, and $\mathbf{B}\parallel\hat{\mathbf{z}}$, to a frame where $E^\prime = 0$:
+		\begin{gather*}
+			E^\prime_\perp = \gamma_u \rbracket{E_\perp - \mathbf{u}\times\mathbf{B}}
+			\mtext{with boost $-\mathbf{u}$ along $\hat{\mathbf{y}}$} \\
+			\Rightarrow uB = E \Rightarrow u = \frac{E}{B}
+		\end{gather*}
+		
+		\newpage
+		In this frame,
+		\image{.7\linewidth}{q4-plates-b}
+		In this pure $B^\prime$ field, $\electron$ would undergo circular motion with radius $d/2$.
+		
+		Since perpendicular dimensions are not contracted, $d/2$ remains invariant across different frames.
+		
+		\begin{align*}
+			\textnormal{Lorentz force } \mathbf{f} &= q\mathbf{v}\times\mathbf{B} \\
+			\frac{\masselectron u^2}{r} &= \rbracket{-e}\mathbf{u}\times\mathbf{B}^\prime \\
+			\frac{2\masselectron u^2}{d} &= euB^\prime \\
+			\Rightarrow B^\prime &= \frac{2\masselectron u}{ed}
+		\end{align*}
+		
+		Boosting back to $S$ for consistent solution:
+		\begin{align*}
+			\mathbf{B}_\perp &= \gamma_u \rbracket{\mathbf{B}_\perp^\prime + \frac{\mathbf{u}\times\mathbf{E}^\prime}{c^2}} \\
+			\Rightarrow B &= \gamma_u \rbracket{\frac{2\masselectron u}{ed} + 0} \\
+			&= \frac{2\masselectron u}{ed\sqrt{1-(u/c)^2}} \\
+			&= \frac{2\masselectron}{ed} \frac{E/B}{\sqrt{1-(E/Ec)^2}} \\
+			\Rightarrow B^2 \sqrt{1-\rbracket{\frac{E}{Bc}}^2} &= \frac{2\masselectron}{ed} \\
+			\Rightarrow B^4 - \frac{E^2 B^2}{c^2} &= \frac{2\masselectron}{ed} \\
+			\Rightarrow B^2 &= \frac{E^2/c^2 \pm \sqrt{E^4/c^4 + 8\masselectron E/ed}}{2}
+				= \begin{cases*}
+					\num{0.351} \\
+					\num{-0.129} \mtext{(unphysical)}
+				\end{cases*} \\
+			\Rightarrow B &= \SI{0.593}{\tesla}
+		\end{align*}
+	\end{subparts}
+\end{parts}

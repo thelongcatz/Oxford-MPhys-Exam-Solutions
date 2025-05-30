@@ -1,0 +1,83 @@
+\draft
+\begin{parts}
+	\part Hund's rules:
+	\begin{enumerate}
+		\item $\electron$ tend to align their spins;
+		\item $\electron$ tend to occupy states that maximises $L_z$;
+		\item Total $J=L+S$ for $>$half-filled shell, $J=L-S$ for $<$half-filled.
+	\end{enumerate}
+	
+	The alignment of spin has to do with the exchange integral -- due to Pauli's exclusion principle, $\electron$ with the same spin cannot come close to each other, increasing the inter-$\electron$ distance, and thus lowering the Coulomb interaction energy.
+	
+	The tendency to maximise $L_z$ simply has to do with the magnetic Hamitonian:
+	\begin{equation*}
+		\hat{H} = -\sbracket{-g_s \bohrmagneton \hat{\mathbf{s}} + \bohrmagneton \hat{\mathbf{l}}} \cdot \mathbf{B}
+	\end{equation*}
+	so maximising $\hat{\mathbf{l}}$ can reduce the overall energy.
+	
+	\part
+	\begin{subparts}
+		\subpart Magnetic moment:
+		\begin{align*}
+			\bm{\mu} &= -g_s \bohrmagneton \hat{\mathbf{s}} + \bohrmagneton \hat{\mathbf{l}} \\
+			&= \tilde{g} \bohrmagneton \hat{\mathbf{J}}
+		\end{align*}
+		where $\tilde{g} = 1 + \dfrac{1}{2} \sbracket{\frac{L(L+1)-S(S+1)}{J(J+1)}}$.
+		
+		Susceptibility:
+		\begin{align*}
+			\chi_\textnormal{vol} &= \frac{n\permeability m_\textnormal{eff}^2 \bohrmagneton^2}{(T-\Theta) 3 \boltzmann} \\
+			nV_\textnormal{mol} = Z\avogadro &\Rightarrow V_\textnormal{mol} = \frac{Z\avogadro}{n} \mtext{($Z=1$)} \\
+			\chi_\textnormal{mol} &= \chi_\textnormal{vol} \cdot V_\textnormal{mol} \\
+			&= \frac{\avogadro \permeability \bohrmagneton^2}{3\boltzmann} \frac{m_\textnormal{eff}^2}{T-\Theta}
+		\end{align*}
+		
+		\subpart \todo $m_\textnormal{eff} = \tilde{g}\sqrt{J(J+1)}$
+		
+		\subpart $\Theta$ is transition temperature where paramagnetism no longer applies.
+		
+		Below $\Theta$, ferromagnetism dominates over paramagnetism and the interaction between neighbouring $\electron$ dictates if the material is ferromagnetic / antiferromagnetic / ferrimagnetic.
+		
+		$\Theta \propto J$ the Curie temperature.
+		$\Theta > 0$ ferromagnetic, $\Theta < 0$ antiferromagnetic.
+		\begin{equation*}
+			\hat{H}_\textnormal{exchange} = -J \sum_{\avg{i,j}} \hat{\mathbf{S}}_i \cdot \hat{\mathbf{S}}_j
+		\end{equation*}
+	\end{subparts}
+	
+	\part From b,
+	\begin{align*}
+		\chi_\textnormal{mol} &= \gamma \frac{(m_\textnormal{eff})^2}{T-\Theta} \mtext{where $\gamma = \SI{1.57e-6}{\metre\cubed\kelvin\per\mole}$} \\
+		\Rightarrow \frac{1}{\chi_\textnormal{mol}} &= \frac{\gamma}{(m_\textnormal{eff})^2} (T-\Theta) \\
+		\Rightarrow \textnormal{gradient} &= \frac{\gamma}{(m_\textnormal{eff}^2)} \\
+		\Rightarrow \frac{\num{18}-\num{9}}{\num{280}-\num{100}} \unit{\mole\per\metre\cubed\per\kelvin} &= \frac{\gamma}{(m_\textnormal{eff})^2} \\
+		\Rightarrow (m_\textnormal{eff})^2 &= ? \\
+		m_\textnormal{eff} &= \num{3.57}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\frac{1}{\chi_\textnormal{mol}} &= \num{0.05} \sbracket{\unit{\mole\metre\cubed\per\kelvin}} (T-\Theta) \\
+		\Rightarrow \SI{14}{\mole\per\metre\cubed} &= \num{0.05}(\num{200}-\Theta) \unit{\mole\per\metre\cubed} \\
+		\Rightarrow \Theta &= \SI{-80}{\kelvin}
+	\end{align*}
+	Since $\Theta < 0$, \ion{Pr}{3+} is antiferromagnetic since $\chi_\textnormal{mol} \nrightarrow \infty$ in physical regime.
+	
+	\part
+	\begin{subparts}
+		\subpart \ion{Pr}{3+}: $\sbracket{\textnormal{Xe}} 4f^2$ $\Rightarrow$ 2 valence $\electron$.
+		
+		So by Hund's rules,
+		\image{.5\linewidth}{q4-hunds-rule}
+		should be the $\electron$ config.
+		
+		$\Rightarrow$ $L=5$, $S=1$ $\Rightarrow$ $J=L-S=4$ as per Hund's rule.
+		
+		\subpart
+		\begin{align*}
+			m_\textnormal{eff} &= \tilde{g} \sqrt{\num{4.5}} \\
+			\Rightarrow \tilde{g} &= \num{0.798}
+		\end{align*}
+		Theoretically $\tilde{g} = \dfrac{3}{2} + \dfrac{2-30}{40} = \num{0.8}$, the values match pretty well.
+	\end{subparts}
+\end{parts}

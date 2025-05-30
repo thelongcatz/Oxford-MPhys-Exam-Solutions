@@ -1,0 +1,115 @@
+\draft
+\begin{parts}
+	\part In many-$\electron$ systems, by separating the atomic Hamiltonian $\hat{H}$ into a central field $\hat{H}_\textnormal{CF}$ and a residual electrostatic $\Delta\hat{H}_\textnormal{RE}$ parts, the systems may be treated as an H-like system with perturbation from non-central components.
+	
+	Further including spin-orbit interaction $\Delta\hat{H}_\textnormal{SO}$ then gives rise to the $LS$ coupling scheme, provided that $\Delta\hat{H}_\textnormal{SO} \ll \Delta\hat{H}_\textnormal{RE}$ so spin-orbit may be treated as a secondary perturbation after $\Delta\hat{H}_\textnormal{RE}$.
+	
+	In this scheme, $\hat{\mathbf{L}}$ the total angular momentum is conserved as the inter-$\electron$ repulsion is an internal interaction.
+	Then by the conservation of total angular momentum $\hat{\mathbf{J}}$, the spin-orbit interaction should only involve the precession of $\hat{\mathbf{L}}$ and $\hat{\mathbf{S}}$ about $\hat{\mathbf{J}}$, making $\hat{\mathbf{L}}$, $\hat{\mathbf{S}}$, $\hat{\mathbf{J}}$ good operators.
+	
+	E-dipole selection rules:
+	
+	\begin{tabular}{l l}
+		\underline{General} & \underline{$LS$} \\
+		$\Delta n=$any & $\Delta L=0, \pm 1$ ($0 \nrightarrow 0$) \\
+		$\Delta l= \pm 1$ & $\Delta S=0$ \\
+		& $\Delta J=0, \pm 1$ ($0 \nrightarrow 0$) \\
+		& $\Delta M_J = 0, \pm 1$ ($0 \nrightarrow 0$ iff $\Delta J=0$)
+	\end{tabular}
+	
+	For configuration $5s^2$, $L=0$, $S=0$ $\rightarrow$ term ${}^1 S$ $\rightarrow$ level ${}^1 S_0$.
+	
+	$5s5p$:
+	\begin{equation*}
+		L=1,\,
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\, \rightarrow \, \textnormal{terms} \,
+		\begin{matrix}
+			{}^1 P \\
+			{}^3 P
+		\end{matrix}
+		\, \rightarrow \, \textnormal{levels} \,
+		\begin{matrix}
+			{}^1 P_1 \\
+			{}^3 P_0,\, {}^3 P_1,\, {}^3 P_2
+		\end{matrix}
+	\end{equation*}
+	
+	$5s6s$:
+	\begin{equation*}
+		L=0,\,
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\, \rightarrow \, \textnormal{terms} \,
+		\begin{matrix}
+			{}^1 S \\
+			{}^3 S
+		\end{matrix}
+		\, \rightarrow \, \textnormal{levels} \,
+		\begin{matrix}
+			{}^1 S_0 \\
+			{}^3 S_1
+		\end{matrix}
+	\end{equation*}
+	
+	\part Assuming e-dipole transitions, $\lambda_0 = \SI{461}{\nano\metre}$ in absorption $\Rightarrow$ transitions from ground state since $\boltzmann T \sim \SI{0.1}{\electronvolt}$.
+	
+	The only possible transition is $5s^2 \;\; {}^1 S_0 \to 5s5p \;\; {}^1 P_1$.
+	
+	\SI{679}{\nano\metre}, \SI{688}{\nano\metre} and \SI{707}{\nano\metre} are very close to one another, therefore the transitions must involve the $5s5p \;\; {}^3 P$ terms.
+	
+	The allowed transitions are:
+	\begin{align*}
+		6s5p \;\; {}^3 P_0 &\leftrightarrow 5s6s \;\; {}^3 S_1 \\
+		{}^3 P_1 &\leftrightarrow {}^3 S_1 \\
+		{}^3 P_2 &\leftrightarrow {}^3 S_1
+	\end{align*}
+	
+	So \SI{1.12}{\micro\metre} corresponds to the transition $5s5p \;\; {}^1 P_1 \leftrightarrow 5s6s \;\; {}^1 S_0$.
+	\image{.8\linewidth}{q1-energy-level}
+	Weak \SI{689}{\nano\metre} $\Rightarrow$ non e-dipole transition so ${}^1 S_0 \to {}^3 P_1$.
+	
+	\part $5s5d$
+	\begin{equation*}
+		L=2 \,
+		\begin{matrix}
+			S=0 \rightarrow \textnormal{ term } {}^1 D \\
+			S=1 \rightarrow \textnormal{ term } {}^3 D
+		\end{matrix}
+		\, \rightarrow \, \textnormal{levels} \,
+		\begin{matrix}
+			{}^1 D_2 \\
+			{}^3 D_1, {}^3 D_2, {}^3 D_3
+		\end{matrix}
+	\end{equation*}
+	
+	For e-dipole transitions, possible transitions:
+	\begin{align*}
+		5s5p \;\; {}^1 P_1 &\leftrightarrow 5s5d \;\; {}^1 D_2 \qquad 3 \textnormal{ (Normal)} \\
+		{}^3 P_0 &\leftrightarrow {}^3 D_1 \qquad 3 \\
+		{}^3 P_1 &\leftrightarrow {}^3 D_1 \qquad 6 \\
+		{}^3 P_1 &\leftrightarrow {}^3 D_2 \qquad 9 \\
+		{}^3 P_2 &\leftrightarrow {}^3 D_1 \qquad 9 \\
+		{}^3 P_2 &\leftrightarrow {}^3 D_2 \qquad \vdots \\
+		{}^3 P_2 &\leftrightarrow {}^3 D_3 \qquad \vdots \\
+	\end{align*}
+	
+	For photons perpendicular to B field, transition with $\Delta M_J = 0, \pm 1$ is expected by conservation of angular momentum.
+	
+	So the number of splittings observed should correspond to the degeneracies of the level $5s5p \;\; {}^3 P_1 \leftrightarrow 5s6s \;\; {}^3 D_1$ (together with anomalous effect so $\times 2$).
+	\image{.3\linewidth}{q1-zeeman-polarisation}
+	\begin{equation*}
+		\Delta M_J = \underbracket{0}_{\pi}, \underbracket{\pm 1}_{\sigma}
+	\end{equation*}
+	\textit{Can argue $g_J$ diff since $S$ same, $L$ diff.}
+	
+	\part \todo Note that Zeeman splitting is extremely small compared to the level splitting, so a high precision optical apparatus such as a Fabry-Pérot étalon should be used to distinguish between the fine splitting.
+	
+	Sketch of experimental setup:
+	\image{.8\linewidth}{q1-setup}
+\end{parts}

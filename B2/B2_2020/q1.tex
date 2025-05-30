@@ -1,0 +1,101 @@
+\draft
+\begin{parts}
+	\part \image{.8\linewidth}{q1-collision}
+	Conservation of 4-momentum:
+	\begin{align*}
+		\mathsf{P}_\textnormal{th}^\mu + \mathsf{P}_M^\mu &= \mathsf{P}_\textnormal{sys}^\mu \\
+		\underbracket{\rbracket{\mathsf{P}_\textnormal{th}^\mu + \mathsf{P}_M^\mu}^2}_{\substack{\textnormal{evaluate in LAB} \\ \textnormal{before collision}}} &= \underbracket{\rbracket{\mathsf{P}_\textnormal{sys}^\mu}^2}_{\substack{\textnormal{evaluate in ZMF} \\ \textnormal{after collision}}} \\
+		-\rbracket{\frac{E_\textnormal{th}}{c} + Mc}^2 + \underbracket{p_\textnormal{th}^2}_{\frac{1}{c^2} \sbracket{E_\textnormal{th}^2 - m^2 c^4}} &= -\rbracket{\sum_i m_i c}^2 \\
+		-2E_\textnormal{th} M - M^2 c^2 - m^2 c^2 &= -c^2\rbracket{\sum_i m_i}^2 \\
+		E_\textnormal{th} &= -\frac{\sbracket{M^2 + m^2 - \rbracket{\sum_i m_i}^2} c^2}{2M}
+	\end{align*}
+	
+	\part For the process $p + p \to p + p + \pi^0$,
+	\begin{gather*}
+		E_\textnormal{th} = \frac{\sbracket{\rbracket{2m_p + m_\pi}^2 - 2m_p^2} c^2}{2m_p} \\
+		\Rightarrow \textnormal{Threshold KE } K_\textnormal{th} = E_\textnormal{th} - m_p c^2 \\
+		= \frac{\sbracket{\rbracket{2m_p + m_\pi}^2 - 4m_p^2} c^2}{2m_p} \\
+		= \frac{\rbracket{2m_p m_\pi + m_\pi^2} c^2}{2m_p} \\
+		= \rbracket{m_\pi + \frac{m_pi^2}{m_p}} c^2 \\
+		= \SI{154.4}{\mega\electronvolt} > m_\pi c
+	\end{gather*}
+	
+	Momentum:
+	\begin{align*}
+		p_\textnormal{th} &= \frac{1}{c} \sqrt{E_\textnormal{th}^2 - m_p^2 c^4} \\
+		p_\textnormal{th} c &= \SI{776.6}{\mega\electronvolt}
+	\end{align*}
+	
+	ZMF speed = pion $v$:
+	\begin{align*}
+		\beta &= \frac{pc}{E} = \num{0.64} \\
+		\Rightarrow v &= \num{0.64}c
+	\end{align*}
+	
+	\part Sketch of the pion decay in ZMF:
+	\image{.8\linewidth}{q1-decay}
+	Conservation of energy:
+	\begin{align*}
+		m_\pi c^2 &= 2pc \\
+		p &= \frac{m_\pi}{2} c = \frac{h}{\lambda} \\
+		\Rightarrow \lambda &= \frac{h}{p} = \frac{2h}{m_\pi c} \\
+		&= \SI{1.84e-8}{\metre}
+	\end{align*}
+	
+	Consider photons at $\pi / 2$ to $\pi^0$ motion:
+	\image{.5\linewidth}{q1-photons}
+	
+	4-wavevector $\mathsf{K}^\mu = \rbracket{\omega/c, k\cos\theta, k\sin\theta, 0}$
+	
+	Lorentz transformation gives:
+	\begin{align}
+		\begin{pmatrix}
+			\omega / c \\
+			k\cos\theta \\
+			k\sin\theta \\
+			0
+		\end{pmatrix}
+		&= \begin{pmatrix}
+			\gamma & \beta\gamma && \\
+			\beta\gamma & \gamma && \\
+			&& 1 & \\
+			&&& 1
+		\end{pmatrix}
+		\begin{pmatrix}
+			\omega_0 / c \\
+			k_0 \cos\theta_0 \\
+			k_0 \sin\theta_0 \\
+			0
+		\end{pmatrix} \notag \\[1em]
+		\Rightarrow \frac{\omega}{c} &= \frac{\gamma\omega_0}{c} + \beta\gamma k_0 \cos\theta_0 \label{eqn:q1-1} \\
+		\Rightarrow k\cos\theta &= \frac{\beta\gamma\omega_0}{c} + \gamma k_0 \cos\theta_0 \label{eqn:q1-2}
+	\end{align}
+	
+	\eqref{eqn:q1-2}$\div$\eqref{eqn:q1-1} and invoke dispersion $\omega=ck$:
+	\begin{align*}
+		\cos\theta &= \frac{\beta\gamma + \gamma\cos\theta_0}{\gamma + \beta\gamma\cos\theta_0} = \beta
+		\mtext{for $\theta_0 = \SI{90}{\degree}$} \\
+		\Rightarrow \theta &= \arccos\rbracket{\frac{v}{c}} \mtext{for half of the photons}
+	\end{align*}
+	
+	\part To redice $E_\textnormal{th}$, we should make ZMF tha LAB frame, i.e. let the target move opposite to the photon.
+	
+	In that case, the final particles are all at rest.
+	\image{.5\linewidth}{q1-rest}
+	
+	Conservation of 4-momentum:
+	\begin{align*}
+		\rbracket{\mathsf{P}_\textnormal{sys}^\mu}^2 &= -\rbracket{\frac{2E_\textnormal{th}^\prime}{c}}^2 = -\rbracket{\sum_i m_i c}^2 \\
+		E_\textnormal{th}^\prime &= \frac{\sum_i m_i c^2}{2}
+	\end{align*}
+	
+	For $pp \to pp\pi^0$,
+	\begin{align*}
+		E_\textnormal{th}^\prime &= \frac{\rbracket{2m_p + m_\pi} c^2}{2} \\
+		\frac{E_\textnormal{th}^\prime}{E_\textnormal{th}} &= \frac{\rbracket{2m_p + m_\pi} \cancel{c^2}}{\bcancel{2}} \cdot \frac{\bcancel{2}m_p}{\sbracket{\rbracket{2m_p + m_\pi}^2 - 2m_p^2} \cancel{c^2}} \\
+		&= \frac{\rbracket{2m_p + m_\pi} m_p}{\rbracket{2m_p + m_\pi}^2 - 2m_p^2} \\
+		&= \num{0.83}
+	\end{align*}
+	
+	So $~17\%$ energy saved.
+\end{parts}

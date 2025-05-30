@@ -1,0 +1,46 @@
+\draft
+\begin{parts}
+	\part Note that the $\electron$ are indistinguishable, therefore it follows an exchange symmetry and thus $\hat{p}^2 \phi = \phi$ where $\hat{p}$ is the parity operator.
+	
+	The definition of $\hat{p}$ implies that $\hat{p}\phi = \pm\phi$ and thus $\phi$ may be either symmetric or antisymmetric.
+	
+	Since $\electron$ are fermions, they are antisymmetric under $\hat{p}$, however we may write $\phi=\phi_\textnormal{space} \phi_\textnormal{spin}$ so we have 2 cases:
+	\begin{enumerate}
+		\item Symmetric $\phi_\textnormal{space}$, antisymmetric $\phi_\textnormal{spin}$; and
+		\item Antisymmetric $\phi_\textnormal{space}$, symmetric $\phi_\textnormal{spin}$.
+	\end{enumerate}
+	
+	Therefore a normalised spatial wavefunction should look like this:
+	\begin{equation*}
+		\phi(\mathbf{r}_1, \mathbf{r}_2) = \frac{1}{\sqrt{2}} \sbracket{u_A(\mathbf{r}_1 u_B(\mathbf{r}_2)) + u_B(\mathbf{r}_1) u_A(\mathbf{r}_2)}
+	\end{equation*}
+	
+	For aligned spin ($S=1$), we have antisymmetric spatial $phi$:
+	\begin{align*}
+		\bra{\phi}\rbracket{\mathbf{r}_1 - \mathbf{r}_2}^2\ket{\phi} &= \frac{1}{2} \int
+		\sbracket{u_A^*(\mathbf{r}_1) u_B^*(\mathbf{r}_2) - u_B^* (\mathbf{r}_1) u_A^* (\mathbf{r}_2)} \\
+			&\qquad\qquad (\mathbf{r}_1 - \mathbf{r}_2)^2 \\
+			&\qquad\qquad \sbracket{u_A(\mathbf{r}_1) u_B(\mathbf{r}_2) - u_B(\mathbf{r}_1) u_A(\mathbf{r}_2)} \;
+			\inftsml{{}^3\mathbf{r}_1} \, \inftsml{{}^3\mathbf{r}_2} \\
+		&= \frac{1}{2} \rbracket{2I-2K} \\
+		&= I-K
+	\end{align*}
+	where
+	\begin{align*}
+		I &= \indefint{\abs{u_A(\mathbf{r}_1)}^2 \abs{u_B(\mathbf{r}_2)}^2 \rbracket{\mathbf{r}_1 - \mathbf{r}_2}^2}{{}^3\mathbf{r}_1}\,\inftsml{{}^3\mathbf{r}_2} \\
+		J &= \indefint{u_A^*(\mathbf{r}_1)u_A(\mathbf{r}_2) u_B^*(\mathbf{r}_2)u_B(\mathbf{r}_1) \rbracket{\mathbf{r}_1 - \mathbf{r}_2}}{{}^3\mathbf{r}_1}\,\inftsml{{}^3\mathbf{r}_2}
+	\end{align*}
+	
+	\part Since aligned spins have larger separation, it has lower energy than antialigned spins.
+	This means that a configuration is split into different terms with differing $S$.
+	
+	Since electrical dipole transition forbids change in $S$, this effectively means that there exists groups of lines close together with scale greater than spin-orbit splitting.
+	
+	However, intercombination lines are possible with non-electric-dipole transitions, e.g. magnetic dipole.
+	
+	For this ground state, we may invoke Hund's rules:
+	\image{.2\linewidth}{q2-lz}
+	So the $\electron$ arrange to give net nil orbital angular momentum, $L=0$.
+	
+	For phosphorous, the Aufbau principle gives config $1s^2 2s^2 2p^6 3s^2 3p^3$ $\Rightarrow$ ground state term ${}^4 S$.
+\end{parts}

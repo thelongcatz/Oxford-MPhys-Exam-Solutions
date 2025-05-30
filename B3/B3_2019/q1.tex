@@ -1,0 +1,215 @@
+\draft
+\begin{parts}
+	\part For a many-$\electron$ system, its Hamiltonian is
+	\begin{equation*}
+		\hat{H}=\sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + \sum_{j>i} \frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}
+	\end{equation*}
+	where the first term is kinetic energy, second term is potential due to nucleus, and the last term is the inter-$\electron$ repulsion.
+	
+	Introduce a central field such that $\hat{H}=\hat{H}_\textnormal{CF} + \Delta\hat{H}_\textnormal{RE}$, where
+	\begin{align*}
+		\hat{H}_\textnormal{CF} &= \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + S(r_i)}
+		\mtext{and} \\
+		\Delta\hat{H}_\textnormal{RE} &= \sum_i \sbracket{\sum_{j>i} \frac{e^2}{4\pi\permittivity\hat{r}_{ij}} - S(r_i)}
+	\end{align*}
+	and the system may be treated as a central field with non-central perturbation.
+	
+	As the strength of $\Delta\hat{H}_\textnormal{RE} \ll \hat{H}_\textnormal{CF}$, the $LS$ coupling scheme applies where the energy eigenstates may be labelled as $\ket{nlm_l sm_s}$ for each $\electron$ $\to$ $\ket{n LM_L SM_S}$ for the whole system.
+	
+	As $\Delta\hat{H}_\textnormal{RE}$ is an internal interaction, the total orbital angular momentum is then conserved, rendering $L$ a good quantum number by Ehrenfest's Theorem.
+	Similarly $S$ is also a good quantum number.
+	
+	This leads to the idea of terms, where the eigenstates are labelled with ${}^{2S+1} L$.
+	$L$ takes the form of $S$, $P$, $D\ldots$
+	
+	\part \image{.2\linewidth}{q1-electron-orbit}
+	In $\electron$ rest frame,
+	\begin{align*}
+		\mathbf{B} &= -\frac{1}{c^2} \mathbf{v}\times\mathbf{E} \mtext{by Lorentz transformation} \\
+		&= -\frac{1}{c^2} \frac{\mathbf{p}}{m_e} \times \frac{Ze^2}{4\pi\permittivity r^3} \mathbf{r}
+	\end{align*}
+	
+	Recall orbital angular momentum $\hbar\hat{\mathbf{l}} = \mathbf{r}\times\mathbf{p}$, so:
+	\begin{equation*}
+		\mathbf{B} = \frac{\hbar}{m_e c^2} \cdot \frac{Ze^2}{4\pi\permittivity r^2} \hat{\mathbf{l}}
+	\end{equation*}
+	
+	Magnetic dipole energy:
+	\begin{align*}
+		\avg{E_\textnormal{SO}} &= \avg{-\bm{\mu}_s \cdot \mathbf{B}} \\
+		&= \avg{-g_s \bohrmagneton \hat{\mathbf{s}}\cdot\hat{\mathbf{l}} \cdot \frac{\hbar}{m_e c^2} \cdot \frac{Ze^2}{4\pi\permittivity r^2}} \\
+		&= \beta_\textnormal{SO} \hat{\mathbf{l}}\cdot\hat{\mathbf{s}}
+	\end{align*}
+	
+	For multi-$\electron$,
+	\begin{align*}
+		\avg{E_\textnormal{SO}} &= \sum_i \beta_{\textnormal{SO}_i} \hat{\mathbf{l}}_i \cdot \hat{\mathbf{s}}_i \\
+		&= \beta_\textnormal{SO} \hat{\mathbf{L}}\cdot\hat{\mathbf{S}} \mtext{by Wigner-Eckart where } \hat{\mathbf{l}}_i \to \frac{\hat{\mathbf{l}}_i \cdot \hat{\mathbf{L}}}{\hat{L}^2},\, \hat{\mathbf{s}}_i \to \frac{\hat{\mathbf{s}}_i \cdot \hat{\mathbf{S}}}{\hat{S}^2} \\
+		&= \frac{1}{2} \beta_\textnormal{SO} \rbracket{J(J+1)-L(L+1)-S(S+1)}
+	\end{align*}
+	since $\hat{\mathbf{J}}^2 = \rbracket{\hat{\mathbf{L} + \hat{\mathbf{S}}}}^2$.
+	
+	So for different combination of $J$, there exists different energy levels.
+	
+	Consider:
+	\begin{align*}
+		\Delta E_{J, J-1} &= \frac{1}{2} \beta_\textnormal{SO} \sbracket{\splitfrac{J(J+1) - \cancel{L(L+1)} - \cancel{S(S+1)}}{- (J-1)J + \cancel{L(L+1)} + \cancel{S(S+1)}}} \\
+		&= \beta_\textnormal{SO} J \\[1em]
+		\Delta E_{J-1, J-2} &= \frac{1}{2} \beta_\textnormal{SO} \sbracket{\splitfrac{(J-1)J - \cancel{L(L+1)} - \cancel{S(S+1)}}{- (J-2)(J-1) + \cancel{L(L+1)} + \cancel{S(S+1)}}} \\
+		&= \beta_\textnormal{SO} (J-1) \\[1em]
+		\Rightarrow \frac{\Delta E_{J, J-1}}{\Delta E_{J-1, J-2}} &= \frac{J}{J-1} \Rightarrow \textnormal{Interval Rule}
+	\end{align*}
+	
+	\part Assuming electric dipole transition, then:
+	
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			1 $\electron$ moves & $\Delta L=0, \pm 1$ ($0 \nrightarrow 0$) & $\Delta J=0, \pm 1$ ($0 \nrightarrow 0$) \\
+			$\Delta n=$any & & \\
+			$\Delta l=\pm 1$ & $\Delta S=0$ & $\Delta M_J = 0, \pm 1$ ($0 \nrightarrow 0$ iff $\Delta J=0$) \\ \hline
+			CONFIG & TERM & LEVEL
+		\end{tabular}
+	\end{center}
+	
+	Valence $\electron$ configuration of Mg: $3s^2$ ($2+8+2=12$) at ground.
+	\begin{equation*}
+		\begin{matrix}
+			L=0 \\
+			S=0
+		\end{matrix}
+		\rightarrow
+		{}^1 S \textnormal{ term only}
+		\rightarrow
+		{}^1 S_0 \textnormal{ level}
+	\end{equation*}
+	
+	1st excited state:
+	\begin{equation*}
+		3s3p \rightarrow L=1 \;\;
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 P \\
+			{}^3 P
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 P_1 \\
+			{}^3 P_0, {}^3 P_1, {}^3 P_2
+		\end{matrix}
+	\end{equation*}
+	
+	2nd excited state:
+	\begin{equation*}
+		3s4s \rightarrow L=0 \;\;
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 S \\
+			{}^3 S
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 S_0 \\
+			{}^3 S_1
+		\end{matrix}
+	\end{equation*}
+	
+	\SI{285.21}{\nano\metre} absorption $\Rightarrow$ ground level excitation $\Rightarrow$ only transition $3s^2 \;\; {}^1 S_0$ $\to$ $3s3p {}^1 P_1$ possible.
+	
+	Other possible transitions:
+	\begin{itemize}
+		\item $3s3p \;\; {}^1 P_1 \to 3s4s \;\; {}^1 S_0$
+		\item $3s3p \;\; {}^3 P_0 \to 3s4s \;\; {}^3 S_1$
+		\item $3s3p \;\; {}^3 P_1 \to 3s4s \;\; {}^3 S_1$
+		\item $3s3p \;\; {}^3 P_2 \to 3s4s \;\; {}^3 S_1$
+	\end{itemize}
+	
+	For the closely grouped lines, they belong to the ${}^3 P$ $\to$ ${}^3 S$ family.
+	
+	\image{.8\linewidth}{q1-energy-level}
+	Energy $E = \dfrac{hc}{\lambda} = \dfrac{1}{\lambda}$ in natural units.
+	
+	${}^1 P_1$: $\dfrac{1}{\SI{285.21}{\nano\metre}} = \SI{3506200}{\per\metre}$
+	
+	${}^1 S_0$: $E_{{}^1 P_1} + \dfrac{1}{\SI{1182.8}{\nano\metre}} = \SI{4351600}{\per\metre}$
+	
+	${}^3 S_1$: $E_{{}^1 S_0} - \Delta = \SI{4121000}{\per\metre}$
+	
+	${}^3 P_2$: $E_{{}^3 S_1} - \dfrac{1}{\SI{518.36}{\nano\metre}} = \SI{2191000}{\per\metre}$
+	
+	${}^3 P_1$: $E_{{}^3 S_1} - \dfrac{1}{\SI{517.27}{\nano\metre}} = \SI{2187000}{\per\metre}$
+	
+	${}^3 P_0$: $E_{{}^3 S_1} - \dfrac{1}{\SI{516.73}{\nano\metre}} = \SI{2185800}{\per\metre}$
+	
+	\begin{align*}
+		\Delta E_{2, 1} &= E_{{}^3 P_2} - E_{{}^3 P_1} \\
+		&= \SI{4065.2}{\per\metre} \\[1em]
+		\Delta E_{1, 0} &= E_{{}^3 P_1} - E_{{}^3 P_0} \\
+		&= \SI{2020.3}{\per\metre}
+	\end{align*}
+	
+	$\dfrac{\Delta E_{2, 1}}{\Delta E_{1, 0}} = \num{2.012} \simeq 2$ so Interval Rule is obeyed well.
+	
+	\part Under $LS$ coupling scheme,
+	\begin{equation*}
+		6s5d \rightarrow L=2 \;\;
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 D_2 \\
+			{}^3 D_1, {}^3 D_2, {}^3 D_3 \textnormal{ -- expect 3 closely grouped lines}
+		\end{matrix}
+	\end{equation*}
+	\begin{equation*}
+		6s6p \rightarrow L=1 \;\;
+		\begin{matrix}
+			S=0 \\
+			S=1
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^1 P_1 \\
+			{}^3 P_0, {}^3 P_1, {}^3 P_2 \textnormal{ -- expect 3 closely grouped lines}
+		\end{matrix}
+	\end{equation*}
+	\begin{equation*}
+		6s^2 \rightarrow L=0 \, S=0 \rightarrow {}^1 S_0 \textnormal{ only}
+	\end{equation*}
+	The levels appear fine so far.
+	
+	Next examine the Interval Rule:
+	\underline{$6s6p$}:
+	\begin{equation*}
+		\begin{matrix}
+			\Delta E_{2, 1} = \SI{38103}{\per\metre} \\
+			\Delta E_{1, 0} = \SI{18153}{\per\metre}
+		\end{matrix}
+		\Rightarrow
+		\frac{\Delta E_{2, 1}}{\Delta E_{1, 0}} = \num{2.099} \simeq 2
+	\end{equation*}
+	
+	\underline{$6s5d$}:
+	\begin{equation*}
+		\begin{matrix}
+			\Delta E_{3, 2} = \SI{87812}{\per\metre} \\
+			\Delta E_{2, 1} = \SI{37060}{\per\metre}
+		\end{matrix}
+		\Rightarrow
+		\frac{\Delta E_{3, 2}}{\Delta E_{2, 1}} = \num{2.369} \not\approx \frac{3}{2} = 1.5
+	\end{equation*}
+	
+	So $LS$ coupling is only good for $6s^2$ and $6s6p$ configs.
+	For $6s5d$ the Interval Rule begins to break down.
+	
+	Can also compare $\dfrac{\Delta E_\textnormal{RE}}{\Delta E_\textnormal{SO}} \sim \dfrac{1}{0.17}$.
+\end{parts}

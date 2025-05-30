@@ -17,14 +17,14 @@ Inverse AC Josephson effect and some BCS questions.
 	
 	\part 1st Josephson equation: $I(\phi) = I_J \sin\phi$
 	
-	2nd Josephson equation: $V = \dfrac{\hbar}{2e} \dfrac{\partial \phi}{\partial t}$
+	2nd Josephson equation: $V = \dfrac{\hbar}{2e} \pdderi{\phi}{t}$
 	
 	For an AC current,
 	\begin{align*}
 		V &= V_0 + V_\textnormal{rf} \cos\omega t \\
 		\phi(t) &= \phi_0 + \frac{2eV_0}{\hbar} t + \frac{2eV_\textnormal{rf}}{\hbar\omega} \sin\omega t \\
-		\Rightarrow I(t) &= I_J \sin\left[\phi_0 + \frac{2eV_0}{\hbar} t + \frac{2eV_\textnormal{rf}}{\hbar\omega} \sin\omega t\right] \\
-		&= I_J \sum_{n = -\infty}^{\infty} \left(-1\right)^n J_n\left(\frac{2eV_\textnormal{rf}}{\hbar\omega}\right) \sin\left[\phi_0 + \underbracket{\frac{2eV_0}{\hbar} t - n\omega t}_{\left(2eV_0 / \hbar - n\omega\right)t}\right]
+		\Rightarrow I(t) &= I_J \sin\sbracket{\phi_0 + \frac{2eV_0}{\hbar} t + \frac{2eV_\textnormal{rf}}{\hbar\omega} \sin\omega t} \\
+		&= I_J \sum_{n = -\infty}^{\infty} \rbracket{-1}^n J_n\rbracket{\frac{2eV_\textnormal{rf}}{\hbar\omega}} \sin\sbracket{\phi_0 + \underbracket{\frac{2eV_0}{\hbar} t - n\omega t}_{\rbracket{2eV_0 / \hbar - n\omega}t}}
 	\end{align*}
 	
 	For every $n\omega = \dfrac{2eV_0}{\hbar}$, the time dependence of $I$ vanishes $\Rightarrow$ DC spikes (Shapiro steps) develop.
@@ -35,66 +35,66 @@ Inverse AC Josephson effect and some BCS questions.
 	
 	The reason why the jump in current is different is due to the RF voltage reducing $I_J$ via the Bessel sum.
 	
-	We have $I_J \simeq \SI{0.1}{\milli\ampere}$ and $\omega \simeq 2eV_0 / \hbar = 2e/\hbar \left(\SI{2.05}{\milli\volt}\right) = \SI{6.23e12}{\radian\per\second}$.
+	We have $I_J \simeq \SI{0.1}{\milli\ampere}$ and $\omega \simeq 2eV_0 / \hbar = 2e/\hbar \rbracket{\SI{2.05}{\milli\volt}} = \SI{6.23e12}{\radian\per\second}$.
 	
 	\part Condensation energy: $E_\textnormal{cond} = \dfrac{B_\textnormal{c}^2}{2\mu_0} = g_n - g_s$ where $g_n$ and $g_s$ are the Gibbs free energy per unit volume associated to the normal and SC phases.
 	
 	Noting that $g = u - Ts + mB$, we have:
 	\begin{align*}
-		\mathrm{d}g &= -s \,\mathrm{d}T + B \,\mathrm{d}m \\
+		\inftsml{g} &= -s \inftsml{T} + B \inftsml{m} \\
 		\Rightarrow \textnormal{Entropy\hspace{1em}} s &=
-		-\left(
-		 \frac{\partial g}{\partial T}
-		\right)_B \\
+		-\rbracket{
+		 \pderi{g}{T}
+		}_B \\
 		\Rightarrow \textnormal{Heat capacity\hspace{1em}} c &=
-		\left(
-		 \frac{\partial u}{\partial T}
-		\right)_B \\
+		\rbracket{
+		 \pderi{u}{T}
+		}_B \\
 		&= T
-		\left(
-		 \frac{\partial s}{\partial T}
-		\right)_B
-		\textnormal{\hspace{1em}for $\mathrm{d}u = T \,\mathrm{d}s - m \,\mathrm{d}B$} \\
+		\rbracket{
+		 \pderi{s}{T}
+		}_B
+		\textnormal{\hspace{1em}for $\inftsml{u} = T \inftsml{s} - m \inftsml{B}$} \\
 		&= -T
-		\left(
-		 \frac{\partial}{\partial T}
-		 \left(
-		  \frac{\partial g}{\partial T}
-		 \right)_B
-		\right)_B
+		\rbracket{
+		 \pdiff{T}
+		 \rbracket{
+		  \pderi{g}{T}
+		 }_B
+		}_B
 	\end{align*}
 	
 	Hence the jump in heat capacity:
 	\begin{gather*}
 		\Delta c = -T
-		\left[
-		 \frac{\partial}{\partial T}
-		 \left(
-		  \frac{\partial (\Delta g)}{\partial T}
-		 \right)_B
-		\right]_B \\
+		\sbracket{
+		 \pdiff{T}
+		 \rbracket{
+		  \pderi{(\Delta g)}{T}
+		 }_B
+		}_B \\
 		= -\frac{T B_0^2}{2 \mu_0}
-		\left[
-		 \frac{\partial}{\partial T}
-		 \left(
-		  \frac{\partial}{\partial T}
-		  \left(1 - \alpha t^2 + \beta t^3\right)^2
-		 \right)_B
-		\right]_B
+		\sbracket{
+		 \pdiff{T}
+		 \rbracket{
+		  \pdiff{T}
+		  \rbracket{1 - \alpha t^2 + \beta t^3}^2
+		 }_B
+		}_B
 		\textnormal{\hspace{1em}where $\alpha = \num{1.211}$, $\beta = \num{.211}$, $t = T/T_\textnormal{c}$}\\
 		= -\frac{T B_0^2}{T_\textnormal{c}^2 \mu_0}
-		\left[
-		 \left(1 - \alpha t^2 + \beta t^3\right)
-		 \left(-2\alpha + 6\beta t\right)
-		 + \left(-2\alpha t^2 + 3\beta t^2\right)^2
-		\right]\\
+		\sbracket{
+		 \rbracket{1 - \alpha t^2 + \beta t^3}
+		 \rbracket{-2\alpha + 6\beta t}
+		 + \rbracket{-2\alpha t^2 + 3\beta t^2}^2
+		}\\
 		= \SI{-616}{\joule\per\kelvin\per\metre\cubed}
 		\textnormal{\hspace{1em}at $T=T_\textnormal{c} \Rightarrow t=1$}
 	\end{gather*}
 	
 	\part From BCS, $\Delta C = 1.43 C_n$, and $C_n = \gamma T = \SI{317}{\joule\per\kelvin\per\metre\cubed}$, thus $\Delta C = \SI{450}{\joule\per\kelvin\per\metre\cubed}$.
 	
-	\part From BCS, $\left|\Delta (0)\right| = 2\hbar\omega_\textnormal{D} \mathrm{e}^{-1/\lambda}$ and $k_\textnormal{B} T_\textnormal{c} \simeq 1.13 \hbar\omega_\textnormal{D} \mathrm{e}^{-1/\lambda}$:
+	\part From BCS, $\abs{\Delta (0)} = 2\hbar\omega_\textnormal{D} \mathrm{e}^{-1/\lambda}$ and $k_\textnormal{B} T_\textnormal{c} \simeq 1.13 \hbar\omega_\textnormal{D} \mathrm{e}^{-1/\lambda}$:
 	\begin{align*}
 		k_\textnormal{B} T_\textnormal{c} &\simeq 1.13 \frac{\Delta}{2} \\
 		\Delta &\simeq \frac{k_\textnormal{B} T_\textnormal{c}}{2.26} \\

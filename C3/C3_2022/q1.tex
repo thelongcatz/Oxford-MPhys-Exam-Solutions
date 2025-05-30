@@ -16,9 +16,9 @@ Classic tight-binding question with graphene.
 	
 	For each type, the nearest neighbours have relative positions:
 	\begin{align*}
-		\left(a_\textnormal{CC}, 0\right) &= \left(\frac{a}{\sqrt{3}}, 0\right) \\
-		\left(-\frac{a_\textnormal{CC}}{2}, \frac{a}{2}\right) &= \left(-\frac{a}{2\sqrt{3}}, \frac{a}{2}\right) \\
-		\left(-\frac{a_\textnormal{CC}}{2}, -\frac{a}{2}\right) &= \left(-\frac{a}{2\sqrt{3}}, -\frac{a}{2}\right)
+		\rbracket{a_\textnormal{CC}, 0} &= \rbracket{\frac{a}{\sqrt{3}}, 0} \\
+		\rbracket{-\frac{a_\textnormal{CC}}{2}, \frac{a}{2}} &= \rbracket{-\frac{a}{2\sqrt{3}}, \frac{a}{2}} \\
+		\rbracket{-\frac{a_\textnormal{CC}}{2}, -\frac{a}{2}} &= \rbracket{-\frac{a}{2\sqrt{3}}, -\frac{a}{2}}
 	\end{align*}
 	
 	\part In the tight-binding model, we begin with the Hamiltonian for the $i$th atom:
@@ -47,37 +47,46 @@ Classic tight-binding question with graphene.
 	\begin{gather*}
 		\bra{\Psi}\mathcal{H}\ket{\Psi} = \bra{\Psi}E\ket{\Psi} \\
 		\Rightarrow \bra{\Psi}H_\textnormal{at}\ket{\Psi} + \bra{\Psi}\Delta V\ket{\Psi} = E \textnormal{\hspace{1em}assuming $\Phi_\textnormal{A}$, $\Phi_\textnormal{B}$ are orthonormal} \\
-		= \sum_{a=1}^{N} \sum_{b=1}^{N} \int \mathrm{d}\mathbf{r} \phi_i^* \left(\mathbf{r} - \mathbf{R}_a + \mathbf{d}_i\right) \Delta V \phi_j \left(\mathbf{r} - \mathbf{R}_b + \mathbf{d}_j\right) \cdot \mathrm{e}^{i\mathbf{k}\cdot\left(-\mathbf{R}_a - \mathbf{d}_i + \mathbf{R}_b + \mathbf{d}_j\right)} \\
-		= \sum_{\substack{\textnormal{nearest} \\ \textnormal{neighbour}}} \mathrm{e}^{i\mathbf{k}\cdot\left(\mathbf{R}_\textnormal{nn} + \mathbf{d}_{ij}\right)} \underbracket{\int \mathrm{d}\mathbf{r}^\prime \phi_i^* \left(\mathbf{r}^\prime\right) \Delta V \phi_j \left(\mathbf{r}^\prime - \mathbf{R}_\textnormal{nn} + \mathbf{d}_{ij}\right)}_{\tilde{t}_{ij}}
+		= \sum_{a=1}^{N} \sum_{b=1}^{N} \int \inftsml{\mathbf{r}}
+		\phi_i^* \rbracket{\mathbf{r} - \mathbf{R}_a + \mathbf{d}_i}
+		\Delta V
+		\phi_j \rbracket{\mathbf{r} - \mathbf{R}_b + \mathbf{d}_j}
+		\cdot \mathrm{e}^{i\mathbf{k}\cdot\rbracket{-\mathbf{R}_a - \mathbf{d}_i + \mathbf{R}_b + \mathbf{d}_j}} \\
+		= \sum_{\substack{\textnormal{nearest} \\ \textnormal{neighbour}}} \mathrm{e}^{i\mathbf{k}\cdot\rbracket{\mathbf{R}_\textnormal{nn} + \mathbf{d}_{ij}}} \underbracket{
+			\int \inftsml{\mathbf{r}^\prime}
+			\phi_i^* \rbracket{\mathbf{r}^\prime}
+			\Delta V
+			\phi_j \rbracket{\mathbf{r}^\prime - \mathbf{R}_\textnormal{nn} + \mathbf{d}_{ij}}
+		}_{\tilde{t}_{ij}}
 	\end{gather*}
 	
 	For nearest neighbours we then have:
 	\begin{equation*}
-		t_{ij} = \left[\mathrm{e}^{i\mathbf{k}\cdot(a/\sqrt{3}, 0)} + \mathrm{e}^{i\mathbf{k}\cdot(-a/2\sqrt{3}, a/2)} + \mathrm{e}^{i\mathbf{k}\cdot(-a/2\sqrt{3}, -a/2)}\right] \underbracket{\tilde{t}_{ij}}_{\substack{\begin{pmatrix}
+		t_{ij} = \sbracket{\mathrm{e}^{i\mathbf{k}\cdot(a/\sqrt{3}, 0)} + \mathrm{e}^{i\mathbf{k}\cdot(-a/2\sqrt{3}, a/2)} + \mathrm{e}^{i\mathbf{k}\cdot(-a/2\sqrt{3}, -a/2)}} \underbracket{\tilde{t}_{ij}}_{\substack{\begin{pmatrix}
 				0 & t \\ t & 0
 		\end{pmatrix} \\ \textnormal{where $t$ is the hopping integral}}}
 	\end{equation*}
 	
 	Hence:
 	\begin{equation*}
-		t_{ij} = \underbracket{\left[\mathrm{e}^{ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{ik_x \left(-a/2\sqrt{3}\right) \cdot 2\cos\left(k_y \cdot a/2\right)}\right]}_{\gamma} \tilde{t}_{ij}
+		t_{ij} = \underbracket{\sbracket{\mathrm{e}^{ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{ik_x \rbracket{-a/2\sqrt{3}} \cdot 2\cos\rbracket{k_y \cdot a/2}}}}_{\gamma} \tilde{t}_{ij}
 	\end{equation*}
 	
 	Now we seek the eigenvalues of the matrix above:
 	\begin{align*}
-		\textnormal{det}\left[\left(E_0 - E\right)\mathds{1} + t_{ij}\right] &= 0 \\
+		\textnormal{det}\sbracket{\rbracket{E_0 - E}\mathds{1} + t_{ij}} &= 0 \\
 		\begin{vmatrix}
 			E_0 - E & \gamma t \\
 			\gamma^* t^* & E_0 - E
 		\end{vmatrix} &= 0 \\
-		\Rightarrow E &= E_0 \pm \left|\gamma\right| t \textnormal{\hspace{1em}where $E_0$ is the unperturbed energy per atomic site}
+		\Rightarrow E &= E_0 \pm \abs{\gamma} t \textnormal{\hspace{1em}where $E_0$ is the unperturbed energy per atomic site}
 	\end{align*}
 	
 	Now:
 	\begin{align*}
-		\left|\gamma\right|^2 &= \left(\mathrm{e}^{ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{-ik_x a/2\sqrt{3}} \cdot 2\cos\left(k_y \cdot a/2\right)\right) \left(\mathrm{e}^{-ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{ik_x a/2\sqrt{3}} \cdot 2\cos\left(k_y \cdot a/2\right)\right) \\
-		&= 1 + 4\cos^2 \left(\frac{k_y a}{2}\right) + 2\cos\left(\frac{k_y a}{2}\right) \underbracket{\left[\mathrm{e}^{ik_x 3a/2\sqrt{3}} + \mathrm{e}^{-ik_x 3a/2\sqrt{3}}\right]}_{2\cos\left(\sqrt{3}k_x a/2\right)} \\
-		&= 1 + 4 \cos\left(\frac{\sqrt{3}k_x a}{2}\right) \cos\left(\frac{k_y a}{2}\right) + 4 \cos^2 \left(\frac{k_y a}{2}\right)
+		\abs{\gamma}^2 &= \rbracket{\mathrm{e}^{ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{-ik_x a/2\sqrt{3}} \cdot 2\cos\rbracket{k_y \cdot a/2}} \rbracket{\mathrm{e}^{-ik_x \cdot a/\sqrt{3}} + \mathrm{e}^{ik_x a/2\sqrt{3}} \cdot 2\cos\rbracket{k_y \cdot a/2}} \\
+		&= 1 + 4\cos^2 \rbracket{\frac{k_y a}{2}} + 2\cos\rbracket{\frac{k_y a}{2}} \underbracket{\sbracket{\mathrm{e}^{ik_x 3a/2\sqrt{3}} + \mathrm{e}^{-ik_x 3a/2\sqrt{3}}}}_{2\cos\rbracket{\sqrt{3}k_x a/2}} \\
+		&= 1 + 4 \cos\rbracket{\frac{\sqrt{3}k_x a}{2}} \cos\rbracket{\frac{k_y a}{2}} + 4 \cos^2 \rbracket{\frac{k_y a}{2}}
 	\end{align*}
 	
 	Thus recovering the shown dispersion in the question.
@@ -90,21 +99,21 @@ Classic tight-binding question with graphene.
 	
 	With $\kappa$ being a path parameter, we have the following dispersions:
 	
-	$M$ $\rightarrow$ $\Gamma$: choose path $k_x = \kappa$, $k_y =0$, $\kappa\in\left[2\pi / \sqrt{3}a, 0\right]$:
+	$M$ $\rightarrow$ $\Gamma$: choose path $k_x = \kappa$, $k_y =0$, $\kappa\in\sbracket{2\pi / \sqrt{3}a, 0}$:
 	\begin{gather*}
-		E \simeq E_1 \pm t \sqrt{5 + 4\cos \left(\frac{\sqrt{3}\kappa a}{2}\right)} \\
+		E \simeq E_1 \pm t \sqrt{5 + 4\cos \rbracket{\frac{\sqrt{3}\kappa a}{2}}} \\
 		\Rightarrow E(M) = E_1 \pm t \qquad E(\Gamma) = E_1 \pm 3t
 	\end{gather*}
 	
-	$\Gamma$ $\rightarrow$ $K$: choose path $k_x = 0$, $k_y = \kappa$, $\kappa\in\left[0, 4\pi / 3a\right]$:
+	$\Gamma$ $\rightarrow$ $K$: choose path $k_x = 0$, $k_y = \kappa$, $\kappa\in\sbracket{0, 4\pi / 3a}$:
 	\begin{gather*}
-		E \simeq E_1 \pm t \underbracket{\sqrt{1 + 4\cos\left(\frac{\kappa a}{2}\right) + 4\cos^2 \left(\frac{\kappa a}{2}\right)}}_{2\cos\left(\kappa a/2\right) + 1} \\
+		E \simeq E_1 \pm t \underbracket{\sqrt{1 + 4\cos\rbracket{\frac{\kappa a}{2}} + 4\cos^2 \rbracket{\frac{\kappa a}{2}}}}_{2\cos\rbracket{\kappa a/2} + 1} \\
 		\Rightarrow E(K) = E_1
 	\end{gather*}
 	
-	$K$ $\rightarrow$ $M$: choose path $k_x = 2\pi / \sqrt{3}a$, $k_y = \kappa$, $\kappa\in\left[2\pi / 3a, 0\right]$:
+	$K$ $\rightarrow$ $M$: choose path $k_x = 2\pi / \sqrt{3}a$, $k_y = \kappa$, $\kappa\in\sbracket{2\pi / 3a, 0}$:
 	\begin{equation*}
-		E \simeq E_1 \pm t \underbracket{\sqrt{1 - 4\cos\left(\frac{\kappa a}{2}\right) + 4\cos^2 \left(\frac{\kappa a}{2}\right)}}_{2\cos\left(\kappa a/2\right) - 1}
+		E \simeq E_1 \pm t \underbracket{\sqrt{1 - 4\cos\rbracket{\frac{\kappa a}{2}} + 4\cos^2 \rbracket{\frac{\kappa a}{2}}}}_{2\cos\rbracket{\kappa a/2} - 1}
 	\end{equation*}
 	
 	Sketch of graphene dispersion:

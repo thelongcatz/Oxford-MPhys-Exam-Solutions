@@ -81,14 +81,14 @@ As always drawing out a schematic of the cavity helps:
 	We then have $A+D$:
 	\begin{align*}
 		A+D &= 2-\frac{4L}{R_1}-\frac{4L}{R_2}+\frac{4L^2}{R_1 R_2} \\
-		&= 4\left(\frac{1}{2} - \frac{L}{R_1} - \frac{L}{R_2} \left(1-\frac{L}{R_1}\right) \right) \\
-		&= 4\left[\left(1-\frac{L}{R_1}\right) \left(1-\frac{L}{R_2}\right) - \frac{1}{2}\right]
+		&= 4\rbracket{\frac{1}{2} - \frac{L}{R_1} - \frac{L}{R_2} \rbracket{1-\frac{L}{R_1}} } \\
+		&= 4\sbracket{\rbracket{1-\frac{L}{R_1}} \rbracket{1-\frac{L}{R_2}} - \frac{1}{2}}
 	\end{align*}
 	
 	Plugging this into \eqref{eqn:low-loss-cond} then gives:
 	\begin{gather}
-		-\frac{1}{2} < \left(1-\frac{L}{R_1}\right) \left(1-\frac{L}{R_2}\right) - \frac{1}{2} < \frac{1}{2} \notag \\
-		0 < \underbracket{\left(1-\frac{L}{R_1}\right)}_{g_1} \underbracket{\left(1-\frac{L}{R_2}\right)}_{g_2} < 1 \label{eqn:low-loss-cond-sph}
+		-\frac{1}{2} < \rbracket{1-\frac{L}{R_1}} \rbracket{1-\frac{L}{R_2}} - \frac{1}{2} < \frac{1}{2} \notag \\
+		0 < \underbracket{\rbracket{1-\frac{L}{R_1}}}_{g_1} \underbracket{\rbracket{1-\frac{L}{R_2}}}_{g_2} < 1 \label{eqn:low-loss-cond-sph}
 	\end{gather}
 	
 	\part For a symmetric confocal cavity, $R_1=R_2=R$ and $L=R$, we then set $\mathcal{P}$ in the middle so $L_1=L_2=\diagfrac{L}{2}$.
@@ -109,13 +109,13 @@ As always drawing out a schematic of the cavity helps:
 			q \\ 1
 		\end{pmatrix} \\
 		\Rightarrow q^\prime \equiv z_0^\prime - iz_R^\prime = \frac{\diagfrac{L}{2}}{-\diagfrac{2}{L}\times q} \textnormal{\hspace{1em}as per the definition of Gaussian beam} \\
-		\Rightarrow z_0^\prime - iz_R^\prime = -\left( \frac{L}{2} \right)^2 \times \frac{1}{-iz_R} \\
-		\Rightarrow z_0^\prime = 0 \textnormal{\hspace{1em}and\hspace{1em}} z_R z_R^\prime = \left( \frac{L}{2} \right)^2
+		\Rightarrow z_0^\prime - iz_R^\prime = -\rbracket{ \frac{L}{2} }^2 \times \frac{1}{-iz_R} \\
+		\Rightarrow z_0^\prime = 0 \textnormal{\hspace{1em}and\hspace{1em}} z_R z_R^\prime = \rbracket{ \frac{L}{2} }^2
 	\end{gather*}
 	
-	Next we note that $\exp\left(\dfrac{ik\rho^2}{2q}\right) = \exp\left[\dfrac{ik\rho^2}{2}\left(\dfrac{i}{z_R}\right)\right]=\exp\left[-\dfrac{k\rho^2}{2z_R}\right]$ and thus the spot size $w \propto z_R$ ($\rho^2 = x^2 + y^2$ are the in-plane coordinates).
+	Next we note that $\exp\rbracket{\dfrac{ik\rho^2}{2q}} = \exp\sbracket{\dfrac{ik\rho^2}{2}\rbracket{\dfrac{i}{z_R}}}=\exp\sbracket{-\dfrac{k\rho^2}{2z_R}}$ and thus the spot size $w \propto z_R$ ($\rho^2 = x^2 + y^2$ are the in-plane coordinates).
 	
-	Also we have $z_R^\prime = \dfrac{1}{z_R} \left(\dfrac{L}{2}\right)^2$ and that $z_R^{\prime\prime} = z_R$ by the low-loss condition.
+	Also we have $z_R^\prime = \dfrac{1}{z_R} \rbracket{\dfrac{L}{2}}^2$ and that $z_R^{\prime\prime} = z_R$ by the low-loss condition.
 	
 	We then have the sketch below:
 	\begin{figure}[H]
@@ -133,9 +133,9 @@ As always drawing out a schematic of the cavity helps:
 	
 	At the mirror, we have:
 	\begin{gather*}
-		q = \frac{L}{2} - iz_R = \frac{L}{2}\left(1-i\right) \\
-		\Rightarrow \exp\left[\frac{ik\rho^2}{2q}\right] = \exp\left[\frac{ik\rho^2}{2}\times\frac{2}{L}\times\frac{1+i}{1^2+1^2}\right] \\
-		= \exp\left[-\frac{k\rho^2}{2L} + i\ldots\right]
+		q = \frac{L}{2} - iz_R = \frac{L}{2}\rbracket{1-i} \\
+		\Rightarrow \exp\sbracket{\frac{ik\rho^2}{2q}} = \exp\sbracket{\frac{ik\rho^2}{2}\times\frac{2}{L}\times\frac{1+i}{1^2+1^2}} \\
+		= \exp\sbracket{-\frac{k\rho^2}{2L} + i\ldots}
 	\end{gather*}
 	So spot size $w^2 = \dfrac{2L}{k} = \dfrac{L\lambda}{\pi}$.
 	

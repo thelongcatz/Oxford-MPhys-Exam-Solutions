@@ -8,7 +8,7 @@ Classic optical properties question.
 	
 	As usual, to find relative permittivity $\epsilon_r$ we shall imagine the system as a collection of electric dipoles $\longrightarrow$ \textit{find displacement $\mathbf{x}$ first!}
 	
-	Plugging in Ansatz $\mathbf{x} = \mathbf{x}_0 \exp\left[i(\mathbf{k}\cdot\mathbf{r}-\omega t)\right]$ gives
+	Plugging in Ansatz $\mathbf{x} = \mathbf{x}_0 \exp\sbracket{i(\mathbf{k}\cdot\mathbf{r}-\omega t)}$ gives
 	\begin{gather*}
 		-m\omega^2 \mathbf{x}_0 -im\gamma\omega \mathbf{x}_0 = q\mathbf{E}_0 \\
 		\Rightarrow \mathbf{x}_0 = \frac{q\mathbf{E}_0}{-m\omega^2 -im\gamma\omega}
@@ -19,30 +19,30 @@ Classic optical properties question.
 	\begin{align*}
 		\epsilon_r &= 1 + \chi_\textnormal{bg} + \frac{Nq\,\mathbf{x}}{\epsilon_0 \mathbf{E}} \\
 		&= 1 + \chi_\textnormal{bg} + \frac{Nq\,\mathbf{x}_0}{\epsilon_0 \mathbf{E}_0} \\
-		&= \underbracket{1 + \chi_\textnormal{bg}}_{\epsilon_\infty} + \frac{Nq^2}{\epsilon_0 \left(-m\omega^2 -im\gamma\omega\right)} \\
+		&= \underbracket{1 + \chi_\textnormal{bg}}_{\epsilon_\infty} + \frac{Nq^2}{\epsilon_0 \rbracket{-m\omega^2 -im\gamma\omega}} \\
 		&= \epsilon_\infty + \frac{\epsilon_\infty \omega_p^2}{-\omega^2 - i\gamma\omega} \\
-		&= \epsilon_\infty \left(1 - \frac{\omega_p^2}{\omega^2 + i\omega/\tau}\right)
+		&= \epsilon_\infty \rbracket{1 - \frac{\omega_p^2}{\omega^2 + i\omega/\tau}}
 	\end{align*}
 	where $\omega_p^2 = \dfrac{Nq^2}{m\epsilon_0 \epsilon_\infty}$ is the plasma frequency.
 	
-	\part Lookup from the graph to get $N$. I picked the high-frequency limit so $\epsilon_r \rightarrow \epsilon_\infty \left(1 - \omega_p^2/\omega^2\right)$.
+	\part Lookup from the graph to get $N$. I picked the high-frequency limit so $\epsilon_r \rightarrow \epsilon_\infty \rbracket{1 - \omega_p^2/\omega^2}$.
 	
 	Then we have reflectivity $R$ with the complex refractive index $\tilde{n} = \sqrt{\epsilon_r}$:
 	\begin{equation}
-		R = \left|\frac{\tilde{n} - 1}{\tilde{n} + 1}\right|
+		R = \abs{\frac{\tilde{n} - 1}{\tilde{n} + 1}}
 		\label{eqn:q3-reflectivity}
 	\end{equation}
 	
 	Rearranging \eqref{eqn:q3-reflectivity} gives
 	\begin{equation}
-		\left|\epsilon_r\right| = \left|\frac{1 + R}{1 - R}\right|^2
+		\abs{\epsilon_r} = \abs{\frac{1 + R}{1 - R}}^2
 	\end{equation}
 	
 	\newpage
 	Plugging in $R=0.05$, $\hbar\omega = \SI{21}{\electronvolt}$, and $\epsilon_\infty = 1$ due to aluminium being metal (or from the graph $R(\omega\rightarrow\infty)=0$) gives
 	\begin{gather*}
-		\left|1-\frac{\omega_p^2}{\omega^2}\right| = \left|\frac{1 + R}{1 - R}\right|^2 \\
-		\Rightarrow \frac{\omega_p^2}{\omega^2} = \left|\frac{1 + R}{1 - R}\right|^2 + 1 \textnormal{\hspace{1em}by inspection} \\
+		\abs{1-\frac{\omega_p^2}{\omega^2}} = \abs{\frac{1 + R}{1 - R}}^2 \\
+		\Rightarrow \frac{\omega_p^2}{\omega^2} = \abs{\frac{1 + R}{1 - R}}^2 + 1 \textnormal{\hspace{1em}by inspection} \\
 		\omega_p^2 = \SI{2.26e33}{\radian\per\second}
 	\end{gather*}
 	

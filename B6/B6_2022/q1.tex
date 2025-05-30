@@ -1,0 +1,126 @@
+\draft
+\begin{parts}
+	\part
+	\begin{subparts}
+		\subpart \image{.8\linewidth}{q1-lattice}
+		Within a UC, \# of Au atoms: $8 \cdot \frac{1}{8} = 1$;
+		
+		\# of Cu atoms: $4 \cdot \frac{1}{2} + 2 \cdot \frac{1}{2} = 3$.
+		
+		$\Rightarrow$ Cu\textsubscript{3}Au is consistent with the UC arrangement.
+		
+		\subpart Structure factor:
+		\begin{align*}
+			S_{(hkl)} &= \sum_{\mathclap{\substack{\textnormal{atom } j \\\textnormal{in UC}}}} f_j e^{i \mathbf{G}\cdot\mathbf{x}_j} \mtext{with } \mathbf{G}=h\hat{\mathbf{b}}_1 + k\hat{\mathbf{b}}_2 + l\hat{\mathbf{b}}_3 \textnormal{ the reciprocal lattice vector} \\
+			&= f_\textnormal{Au} \sbracket{e^{i2\pi (0+0+0)}} + f_\textnormal{Cu} \sbracket{e^{i2\pi (\frac{h}{2}+0+\frac{l}{2})} + e^{i2\pi (0+\frac{k}{2}+\frac{l}{2})} + e^{i2\pi (\frac{h}{2}+\frac{k}{2}+0)}} \\
+			&= f_\textnormal{Au} + \underbracket{\sbracket{e^{i\pi (h+l)} + e^{i\pi (k+l)} + e^{i\pi (h+k)}}}_{\alpha_{hkl}} f_\textnormal{Cu}
+		\end{align*}
+		
+		\subpart \image{.3\linewidth}{q1-braggs-law}
+		Bragg's law gives $2d \sin\theta_{hkl} = \lambda$.
+		
+		Recall for cubic crystal,
+		\begin{align*}
+			\mathbf{G} \cdot \mathbf{d} &= 2\pi \mtext{with reciprocal lattice vector $\mathbf{G}$} \\
+			\Rightarrow G &= \frac{2\pi}{d}
+		\end{align*}
+		
+		So:
+		\begin{align*}
+			\frac{4\pi}{G} \sin\theta_{hkl} &= \lambda \\
+			\Rightarrow G &= \frac{4\pi \sin\theta_{hkl}}{\lambda}
+		\end{align*}
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart For $(110)$,
+		\begin{align*}
+			|\mathbf{G}| &= \sqrt{\rbracket{\frac{2\pi}{a}}^2 + \rbracket{\frac{2\pi}{a}}^2} \\
+			&= \sqrt{2} \frac{2\pi}{a} \\
+			\Rightarrow \sin\theta_{hkl} &= \frac{\lambda \sqrt{2} 2\pi}{4\pi a} \\
+			\theta_{(110)} &= \arcsin\sbracket{\frac{\SI{0.154}{\nano\metre}}{\sqrt{2} (\SI{0.375}{\nano\metre})}} \\
+			&= \SI{16.9}{\degree} \\
+			\Rightarrow 2\theta_{(110)} &= \SI{33.8}{\degree}
+		\end{align*}
+		
+		Similarly for $(111)$,
+		\begin{align*}
+			\mathbf{G} &= \sqrt{3} \frac{2\pi}{a} \\
+			\Rightarrow \theta_{(111)} &= \arcsin\sbracket{\frac{\sqrt{3}\SI{0.154}{\nano\metre}}{2 (\SI{0.375}{\nano\metre})}} \\
+			&= \SI{20.9}{\degree} \\
+			\Rightarrow 2\theta_{(110)} &= \SI{41.7}{\degree}
+		\end{align*}
+		
+		\subpart Structure factors:
+		\begin{align*}
+			S_{(110)} &= f_\textnormal{Au} + f_\textnormal{Cu} \sbracket{e^{2i\pi} + e^{i\pi} + e^{i\pi}} \\
+			&= f_\textnormal{Au} - f_\textnormal{Cu} \\[1em]
+			S_{(111)} &= f_\textnormal{Au} + f_\textnormal{Cu} \sbracket{3e^{2i\pi}} \\
+			&= f_\textnormal{Au} + 3f_\textnormal{Cu}
+		\end{align*}
+		
+		For $(110)$,
+		\begin{align*}
+			f_\textnormal{Au} &= Z_\textnormal{Au} e^{-b_\textnormal{Au} (\frac{\sin\theta_{(110)}}{\lambda})^2} \\
+			&= \num{59.4} \\
+			\Rightarrow f_\textnormal{Cu} &= \num{23.2}
+		\end{align*}
+		
+		Similarly $(111)$,
+		\begin{align*}
+			f_\textnormal{Au} &= \num{51.6} \\
+			f_\textnormal{Cu} &= \num{20.7}
+		\end{align*}
+		
+		Hence:
+		\begin{align*}
+			\frac{I_{\cbracket{111}}}{I_{\cbracket{110}}} &= \frac{M_{\cbracket{111}}}{M_{\cbracket{110}}} \cdot \abs{\frac{S_{\cbracket{111}}}{S_{\cbracket{110}}}}^2 \mtext{with multiplicity $M_{\cbracket{hkl}}$} \\
+			&= \frac{8}{12} \abs{\frac{\num{51.6} + 3 \cdot (\num{20.7})}{\num{59.4} - \num{23.2}}}^2 \\
+			&= \num{6.56}
+		\end{align*}
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart Replace $f_\textnormal{Au} \to \langle f \rangle$, $f_\textnormal{Cu} \to \langle f \rangle$, then:
+		\begin{align*}
+			S_{(110)} &= \langle f \rangle + \langle f \rangle \sbracket{e^{2i\pi} + 2e^{i\pi}} \\
+			&= 0 \Rightarrow I_{(110)} = 0 \\[1em]
+			S_{(111)} &= \langle f \rangle + \langle f \rangle \sbracket{3e^{2i\pi}} \\
+			&= 4 \langle f \rangle \\
+			&= 4 \frac{3f_\textnormal{Cu} + f_\textnormal{Au}}{4} \\
+			&= 3f_\textnormal{Cu} + f_\textnormal{Au} \mtext{so unchanged!}
+		\end{align*}
+		
+		\subpart For the average crystal, we may treat each site as a mixture of $\frac{3}{4}\textnormal{Cu} + \frac{1}{4}\textnormal{Au}$, rendering the UC an FCC structure, thereby abiding the FCC selection rules where $h$, $k$, $l$ must all have the same parity.
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart As the crystal becomes more disordered, each Au would become more Cu-like, so:
+		\begin{align*}
+			\langle f_\textnormal{Au} \rangle &= f_\textnormal{Au} + (1-\rho) \frac{f_\textnormal{Au} + 3f_\textnormal{Cu}}{4} \\
+			&= \frac{1}{4} \sbracket{f_\textnormal{Au} \sbracket{3\rho + 1} + 3(1-\rho)f_\textnormal{Cu}}
+		\end{align*}
+		
+		Similarly for Cu,
+		\begin{align*}
+			\langle f_\textnormal{Cu} \rangle &= \rho f_\textnormal{Cu} + (1-\rho) \frac{f_\textnormal{Au} + 3f_\textnormal{Cu}}{4} \\
+			&= \frac{1}{4} \sbracket{f_\textnormal{Cu} \sbracket{\rho + 3} + (1-\rho)f_\textnormal{Au}}
+		\end{align*}
+		
+		\subpart
+		\begin{align*}
+			S_{(111)} &= \langle f_\textnormal{Au} \rangle + 3 \langle f_\textnormal{Cu} \rangle \mtext{from before} \\
+			&= \frac{1}{4} \sbracket{f_\textnormal{Au} (\cancel{3\rho} + 1) + 3(1-\bcancel{\rho}) f_\textnormal{Cu} + 3(\bcancel{\rho} + 3) f_\textnormal{Cu} + 3(1-\cancel{\rho}) f_\textnormal{Au}} \\
+			&= \frac{1}{4} \sbracket{4f_\textnormal{Au} + 12f_\textnormal{Cu}} \\
+			&= f_\textnormal{Au} + 3f_\textnormal{Cu} \not\propto \rho \\[1em]
+			S_{(110)} &= \avg{f_\textnormal{Au}} - \avg{f_\textnormal{Cu}} \\
+			&= \frac{1}{4} \sbracket{f_\textnormal{Au} (3\rho + \cancel{1}) + 3(\bcancel{1}-\rho) f_\textnormal{Cu} - (\rho + \bcancel{3}) f_\textnormal{Cu} - (\cancel{1}-\rho) f_\textnormal{Au}} \\
+			&= \frac{1}{4} \sbracket{4\rho f_\textnormal{Au} - 4\rho f_\textnormal{Cu}} \\
+			&= \rho (f_\textnormal{Au} - f_\textnormal{Cu}) \\
+			\Rightarrow I_{(110)} \propto \abs{S_{(110)}}^2 \propto \rho^2
+		\end{align*}
+	\end{subparts}
+\end{parts}

@@ -20,20 +20,20 @@ After nearly a decade of absence, non-linear optics finally appears again this y
 	
 	Starting from the given $\partial A_3 / \partial x$, we invoke the non-depleting-pump approximation where $A_1$ is constant, thus:
 	\begin{align}
-		\frac{\partial A_3}{\partial x} &= \beta A_1^2 \exp(-i\Delta kx) \notag \\
+		\pderi{A_3}{x} &= \beta A_1^2 \exp(-i\Delta kx) \notag \\
 		\Rightarrow A_3 (x) - A_3 (0) &= \beta A_1^2 \frac{\exp(-i\Delta kx) - \exp(0)}{-i\Delta k} \notag \\
 		A_3 (x)&= \beta A_1^2 \frac{\exp(-i\Delta kx) - 1}{-i\Delta k} \notag \\
-		&= \beta A_1^2 \exp\left(\frac{-i\Delta k x}{2}\right) \frac{\sin\left(\frac{\Delta kx}{2}\right)}{i\Delta k} \notag \\
-		&= 2\beta A_1^2 \exp\left(\frac{-i\Delta k x}{2}\right) x\, \textnormal{sinc}\left(\frac{\Delta kx}{2}\right)
+		&= \beta A_1^2 \exp\rbracket{\frac{-i\Delta k x}{2}} \frac{\sin\rbracket{\frac{\Delta kx}{2}}}{i\Delta k} \notag \\
+		&= 2\beta A_1^2 \exp\rbracket{\frac{-i\Delta k x}{2}} x\, \textnormal{sinc}\rbracket{\frac{\Delta kx}{2}}
 		\label{eqn:q2-a3-x}
 	\end{align}
 	where $A_3 (0)$ is assumed to be null.
 	
 	Therefore the intensity of the second harmonics is:
 	\begin{align*}
-		I_3 (x) &\propto \left|A_3\right|^2 \\
-		&\propto 4\beta^2 \left|A_1^2\right|^2 x^2 \textnormal{sinc}^2\left(\frac{\Delta kx}{2}\right) \\
-		&\propto I_1^2 \, x^2 \, \textnormal{sinc}^2\left(\frac{\Delta kx}{2}\right)
+		I_3 (x) &\propto \abs{A_3}^2 \\
+		&\propto 4\beta^2 \abs{A_1^2}^2 x^2 \textnormal{sinc}^2\rbracket{\frac{\Delta kx}{2}} \\
+		&\propto I_1^2 \, x^2 \, \textnormal{sinc}^2\rbracket{\frac{\Delta kx}{2}}
 	\end{align*}
 	
 	\newpage
@@ -56,9 +56,9 @@ After nearly a decade of absence, non-linear optics finally appears again this y
 		\centering
 		\includegraphics[width=.8\linewidth]{q2-phasor}
 	\end{figure}
-	In the case of $\Delta k = 0$, the phasors in each $\mathrm{d}x$ step are perfectly aligned to one another, thereby maximising the growth in $A_3$ as we integrate along $x$.
+	In the case of $\Delta k = 0$, the phasors in each $\inftsml{x}$ step are perfectly aligned to one another, thereby maximising the growth in $A_3$ as we integrate along $x$.
 	
-	However for $\Delta k \neq 0$, the phasors in each $\mathrm{d}x$ step would be at an angle to one another, thereby causing an oscillatory behaviour where the beam growth is stunted.
+	However for $\Delta k \neq 0$, the phasors in each $\inftsml{x}$ step would be at an angle to one another, thereby causing an oscillatory behaviour where the beam growth is stunted.
 	
 	Phase-matching is thus a technique by which the condition $\Delta k = 0$ is achieved.
 	In the optical regime, we may align the optic axis of an uniaxial crystal at an angle $\theta$ to the incoming wavevector to vary the refractive index $n(\theta)$, thereby adjusting the resulting wavevector $k=nk_0$ where $k_0$ is the wavevector in vacuum.
@@ -82,7 +82,7 @@ After nearly a decade of absence, non-linear optics finally appears again this y
 	
 	As suggested by the sketch of $I_3$ against $x$ above, the optimal zone length $L_p$ should be the value of $x$ at which $A_3$ is maximised:
 	\begin{gather}
-		\sin \left(\frac{\Delta kx}{2}\right) = 1 \notag \\
+		\sin \rbracket{\frac{\Delta kx}{2}} = 1 \notag \\
 		\Rightarrow \frac{\Delta k L_p}{2} = \frac{\pi}{2} \textnormal{\hspace{1em}picking the minimal root} \notag \\
 		\Rightarrow L_p = \frac{\pi}{\Delta k}
 		\label{eqn:q2-lp}
@@ -110,8 +110,8 @@ After nearly a decade of absence, non-linear optics finally appears again this y
 	\begin{align*}
 		\frac{I_{3_\textnormal{pole}}}{I_{3_\textnormal{uni}}} &= \frac{|A_{3_\textnormal{pole}}|^2}{|A_{3_\textnormal{uni}}|^2} \\
 		&= \frac{\beta_\textnormal{pole}^2}{\beta_\textnormal{uni}^2} \\
-		&= \left(\frac{d_{33}}{d_{31}}\right)^2 \\
-		&= \left(\frac{d_{33} / \epsilon_0}{d_{31} / \epsilon_0}\right)^2 = 32.3
+		&= \rbracket{\frac{d_{33}}{d_{31}}}^2 \\
+		&= \rbracket{\frac{d_{33} / \epsilon_0}{d_{31} / \epsilon_0}}^2 = 32.3
 	\end{align*}
 	
 	\part Now recall from part b we argued that for birefringent phase-matching to work, the wavevectors between the pump and the second harmonics have to be at an angle to one another.

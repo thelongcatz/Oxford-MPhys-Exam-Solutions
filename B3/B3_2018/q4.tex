@@ -1,0 +1,48 @@
+\draft
+\begin{parts}
+	\part Einstein coefficients of atomic transitions (level 2 higher than level 1):
+	
+	$A_{21}$: constant of proportionality to spontaneous decay from level $2 \to 1$;
+	
+	$B_{21}$: constant of proportionality to stimulated transition from level $1 \to 2$;
+	
+	$B_{12}$: constant of proportionality to stimulated decay from level $2 \to 1$.
+	
+	\image{.5\linewidth}{q4-population-dynamics}
+	
+	The net energy released by the system per volume element:
+	\begin{align*}
+		\Delta E &= \Delta N_\gamma \cdot \hbar\omega + A_{21} N_2 \hbar\omega_0 \\
+		&= \rbracket{B_{21} \rho N_2 - B_{12} \rho N_1} \hbar\omega + A_{21} N_2 \hbar\omega_0
+	\end{align*}
+	
+	\part For purely radiative decay,
+	\begin{align*}
+		\Delta E &= \rbracket{B_{21} \rho N_2 - B_{12} \rho N_1} \hbar\omega g_H \cancel{\delta\omega} \cancel{A} \inftsml{z} = \inftsml{I} \cdot \cancel{A \delta\omega} \\
+		\Rightarrow \deri{I}{z} &= B_{21} \underbracket{\rho}_{\mathclap{\frac{I}{c}}} \rbracket{N_2 - \frac{g_2}{g_1}N_1} \hbar\omega g_H \\
+		&= \rbracket{N_2 - \frac{g_2}{g_1}N_1} \underbracket{\frac{\hbar\omega}{c} g_H B_{21}}_{\sigma_{21}} I
+	\end{align*}
+	
+	Einstein relation:
+	\begin{align*}
+		\frac{A_{21}}{B_{21}} &= \frac{\hbar\omega^3}{\pi^2 c^3} \\
+		\Rightarrow B_{21} &= \frac{\pi^2 c^3}{\hbar\omega^3} A_{21} \\
+		\Rightarrow \sigma_{21} &\propto \frac{1}{\omega^2}
+	\end{align*}
+	
+	So at $\omega = \nu_0$, $I_s \propto \dfrac{\nu_0}{\cfrac{1}{\nu_0^2}} = \nu_0^3$.
+	
+	\part \todo \image{.3\linewidth}{q4-optical-cavity}
+	Beam growth:
+	\begin{equation*}
+		\deri{I}{z} = \alpha I
+	\end{equation*}
+	where $\alpha = N^*(I) \sigma_{21}$.
+	
+	\begin{align*}
+		\Rightarrow \frac{1}{I} + \frac{1}{I_s} \inftsml{I} &= \alpha(0) \inftsml{z} \\
+		\ln\rbracket{\frac{I}{I_0}} + \frac{I-I_0}{I_s} &= N^*(0) \sigma_{21} l = 1 \\
+		\Rightarrow \frac{I}{I_0} &= e^{1} \\
+		I &= eI_0 (?)
+	\end{align*}
+\end{parts}

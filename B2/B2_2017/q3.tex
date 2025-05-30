@@ -1,0 +1,191 @@
+\draft
+
+\begin{parts}
+	\part
+	\begin{enumerate}
+		\item Headlight effect -- the distribution of photons emitted by a body is skewed towards its motion, a consequence of the Lorentz transformation.
+		\item Transverse/Oblique Doppler effect -- Galilean transformation fails to explain frequency shift at high velocities.
+		\item Abberation -- direction of emitted photons seemingly ``bent'' in the direction of boost.
+	\end{enumerate}
+	
+	\image{.8\linewidth}{q3-collision}
+	Conservation of 4-momentum gives:
+	\begin{gather*}
+		\mathsf{P}_\gamma^\mu + \mathsf{P}_\mathrm{e}^\mu = \mathsf{P}_\gamma^{\prime^\mu} + \mathsf{P}_\mathrm{e}^{\prime^\mu} \\
+		\Rightarrow \rbracket{\mathsf{P}_\gamma^\mu + \mathsf{P}_\mathrm{e}^\mu - \mathsf{P}_\gamma^{\prime^\mu}}^2 = \rbracket{\mathsf{P}_\mathrm{e}^{\prime^\mu}}^2 \\[1em]
+		\begin{aligned}
+			&\cancelto{0}{\rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\gamma}^\mu}
+			+ \underbracket{\rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu}_{-\masselectron^2 c^2}
+			+ \cancelto{0}{\rbracket{\mathsf{P}^\prime_\gamma}_\mu \rbracket{\mathsf{P}^\prime_\gamma}^\mu}
+			\\
+			&\qquad + 2\sbracket{
+				\rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu
+				- \rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\gamma^\prime}^\mu
+				- \rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_\gamma^\prime}^\mu
+			}
+			= \underbracket{\rbracket{\mathsf{P}_\mathrm{e}^\prime}_\mu \rbracket{\mathsf{P}_\mathrm{e}^\prime}^\mu}_{-\masselectron^2 c^2}
+		\end{aligned} \\
+		\Rightarrow 2\sbracket{
+			- \frac{E_\gamma}{c} \cdot \masselectron c + 0 + \frac{E_\gamma E_\gamma^\prime}{c^2}
+			- p_\gamma p_\gamma^\prime \cos\theta + \frac{E_\gamma^\prime}{c} \cdot \masselectron c - 0
+		} = 0 \\
+		\rbracket{p_\gamma^\prime - p_\gamma} \masselectron c + p_\gamma p_\gamma^\prime - p_\gamma p_\gamma^\prime \cos\theta = 0 \\
+		p_\gamma^\prime \sbracket{\masselectron c + p_\gamma \rbracket{1-\cos\theta}} = p_\gamma \masselectron c \\
+		p_\gamma^\prime = \frac{p_\gamma \masselectron c}{\masselectron c + p_\gamma \rbracket{1-\cos\theta}} \\
+		\Rightarrow \frac{1}{\lambda^\prime} = \frac{1}{\lambda} \rbracket{\frac{\masselectron c}{\masselectron c + \diagfrac{h}{\lambda} \rbracket{1-\cos\theta}}} \\
+		= \frac{1}{\lambda - \diagfrac{h}{\masselectron c} \rbracket{1-\cos\theta}}
+	\end{gather*}
+	
+	Rotate in $xy$-plane such that the 4-wavevector $\mathsf{K}^\mu = (\omega/c, k\cos\theta, k\sin\theta, 0)$ with $k=k_\pi$.
+	
+	Boosting along the $x$-axis (by say $+u\hat{\mathbf{x}}$) gives:
+	\begin{align*}
+		\rbracket{\mathsf{K}^\prime}^\mu &= \mathsf{\Lambda}^\mu_\nu \mathsf{K}^\nu \\
+		\begin{pmatrix}
+			\dfrac{\omega^\prime}{c} \\
+			k^\prime \cos\theta^\prime \\
+			k^\prime \sin\theta^\prime \\
+			0
+		\end{pmatrix}
+		&= \begin{bmatrix}
+			\gamma & -\beta\gamma & 0 & 0 \\
+			-\beta\gamma & \gamma & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{bmatrix}
+		\begin{pmatrix}
+			\dfrac{\omega}{c} \\
+			k \cos\theta \\
+			k \sin\theta \\
+			0
+		\end{pmatrix}
+		\mtext{where $\beta = +\dfrac{u}{c}$, $\gamma = (1-\beta)^{-1/2}$} \\
+		\Rightarrow \frac{\omega^\prime}{c} &= \gamma \frac{\omega}{c} - \beta\gamma k \cos\theta \\
+		\omega^\prime &= \gamma\omega - \beta\gamma \underbracket{kc}_{\mathclap{\omega\textnormal{ for EM wave}}} \cos\theta \\
+		\omega^\prime &= \gamma \rbracket{1-\beta\cos\theta} \omega
+	\end{align*}
+	
+	\part For frame $S^\prime$ moving in $\mathbf{v} = (v_x, 0, 0)$, $\theta = 0$ so:
+	\begin{align*}
+		\omega^\prime &= \gamma \rbracket{1-\beta}\omega \\
+		&= \frac{1-v_x / c}{\sqrt{1 - \rbracket{v_x / c}^2}} \omega \\
+	\end{align*}
+	\image{.4\linewidth}{q3-boost-a}
+	
+	\part For $\mathbf{v} = (0, v_y, 0)$, $\theta = -90\degree$, so:
+	\begin{align*}
+		\omega^\prime &= \gamma\omega \\
+		&= \frac{1}{\sqrt{1 - \rbracket{v_y / c}^2}} \omega
+	\end{align*}
+	\image{.5\linewidth}{q3-boost-b}
+	
+	\image{.8\linewidth}{q3-collision-2}
+	Conservation of 4-momentum gives (in $S$):
+	\begin{gather}
+		\mathsf{P}_1^\mu + \mathsf{P}_2^\mu = \rbracket{\mathsf{P}_1^\prime}^\mu + \rbracket{\mathsf{P}_2^\prime}^\mu \notag \\
+		\Rightarrow \rbracket{\mathsf{P}_1^\mu + \mathsf{P}_2^\mu - \mathsf{P}_1^{\prime^\mu}}^2 = \rbracket{\mathsf{P}_2^{\prime^\mu}}^2 \notag \\
+		\begin{aligned}
+			&\rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_1}^\mu
+			+ \rbracket{\mathsf{P}_2}_\mu \rbracket{\mathsf{P}_2}^\mu
+			+ \rbracket{\mathsf{P}_1^\prime}_\mu \rbracket{\mathsf{P}_1^\prime}^\mu \\
+			&\qquad + 2\sbracket{
+				\rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_2}^\mu
+				- \rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_1^\prime}^\mu
+				- \rbracket{\mathsf{P}_2}_\mu \rbracket{\mathsf{P}_1^\prime}^\mu
+			} = \rbracket{\mathsf{P}_2^\prime}_\mu \rbracket{\mathsf{P}_2^\prime}^\mu
+		\end{aligned} \notag \\
+		-M_1^2 c^2 - \cancel{M_2^2 c^2} - -M_1^2 c^2
+		+ 2\sbracket{
+			-\frac{E_1}{c} M_2 c
+			+ 0
+			+ \frac{E_1 E_1^\prime}{c^2}
+			- p_1 p_1^\prime \cos\theta_1
+			+ M_2 c \frac{E_1^\prime}{c}
+			- 0
+		} = -\cancel{M_2^2 c^2} \notag \\
+		M_2 c \sbracket{\frac{E_1^\prime - E_1}{c}} + \frac{E_1 E_1^\prime}{c^2} - p_1 p_1^\prime \cos\theta_1 = M_1^2 c^2
+		\label{eqn:q3-e1prime}
+	\end{gather}
+	
+	\begin{equation}
+		\textnormal{Similarly, }
+		M_2 c \sbracket{\frac{E_2^\prime - E_1}{c}} + \frac{E_1 E_2^\prime}{c^2} - p_1 p_2^\prime \cos\theta_2 = M_1^2 c^2
+		\label{eqn:q3-e2prime}
+	\end{equation}
+	
+	Conservation of 3-momentum in $S$:
+	\begin{align*}
+		p_1 &= p_1^\prime \cos\theta_1 + p_2^\prime \cos\theta_2
+		&\Rightarrow p_1^\prime \cos\theta_1 &= p_1 - p_2^\prime \cos\theta_2 \\
+		0 &= p_1^\prime \sin\theta_1 - p_2^\prime \sin\theta_2
+		&\Rightarrow p_1^\prime \sin\theta_1 &= p_2^\prime \sin\theta_2
+	\end{align*}
+	
+	Now if $\theta_1 = \theta_2 = \phi$,
+	\begin{gather*}
+		p_1^\prime = p_2^\prime = p^\prime \\
+		\Rightarrow p^\prime \cos\phi = p_1 - p^\prime \cos\phi \\
+		\Rightarrow p^\prime \cos\phi = \frac{1}{2} p_1
+	\end{gather*}
+	
+	\eqref{eqn:q3-e1prime} $\div$ \eqref{eqn:q3-e2prime}:
+	\begin{equation*}
+		1 = \frac{M_2 c \sbracket{\frac{E_1^\prime - E_1}{c}} + \frac{E_1 E_1^\prime}{c^2} - \overbracket{p_1 p_1^\prime \cos\theta}^{\mathclap{\diagfrac{1}{2} p_1^2}}}%
+		{M_2 c \sbracket{\frac{E_2^\prime - E_1}{c}} + \frac{E_1 E_2^\prime}{c^2} - \underbracket{p_1 p_2^\prime \cos\theta}_{\mathclap{\diagfrac{1}{2} p_1^2}}}
+	\end{equation*}
+	
+	Since the numerator and denominator must match, we must have $E_1^\prime = E_2^\prime$:
+	\begin{gather*}
+		\Rightarrow M_1^2 c^4 + \underbracket{p_1^{\prime^2}}_{\mathclap{p^{\prime^2} c^2}} = M_2^2 c^4 + \underbracket{p_2^{\prime^2}}_{\mathclap{p^{\prime^2} c^2}} \\
+		\Rightarrow M_1 = M_2
+	\end{gather*}
+	
+	\part Sketch of the system in both lab and $\electron$ rest frames:
+	\image{.8\linewidth}{q3-e-rest-frame}
+	
+	4-potential $\mathsf{A}^\mu = (0, 0, A_0 \cos(k_u z), 0)$
+	\begin{gather*}
+		\Rightarrow \mathsf{F}^{\mu\nu} = \partial^\mu \mathsf{A}^\nu - \partial^\nu \mathsf{A}^\mu
+		= \begin{bmatrix}
+			0 & \dfrac{E_x}{c} & \dfrac{E_y}{c} & \dfrac{E_z}{c} \\
+			& 0 & B_z & -B_y \\
+			-\mathbf{E} & -B_z & 0 & B_x \\
+			& B_y & -B_x & 0
+		\end{bmatrix} \\
+		\Rightarrow \mathbf{E} = 0 \textnormal{ in $S$}
+	\end{gather*}
+	
+	Non-zero component of $B$ involves $\pderi{\mathsf{A}^2}{z}$:
+	\begin{align*}
+		B_x &= \partial^2 \mathsf{A}^3 - \partial^3 \mathsf{A}^2 \\
+		&= -\pdiff{z} A_0 \cos\rbracket{k_u z} \\
+		&= A_0 k_u \sin\rbracket{k_u z}
+	\end{align*}
+	
+	Transformation of EM fields:
+	\begin{align*}
+		\mathbf{E}_\parallel^\prime &= \mathbf{E}_\parallel \qquad \mathbf{B}_\parallel^\prime = \mathbf{B}_\parallel \\
+		\mathbf{E}_\perp^\prime &= \gamma \rbracket{\mathbf{E}_\perp + \mathbf{v}\times\mathbf{B}} \\
+		\mathbf{B}_\perp^\prime &= \gamma \rbracket{\mathbf{B}_\perp - \frac{\mathbf{v}\times\mathbf{E}}{c^2}}
+	\end{align*}
+	
+	After boosting along $\hat{\mathbf{z}}$, we get:
+	\begin{align*}
+		B_z^\prime &= B_z = 0 \\
+		E_z^\prime &= E_z = 0 \\
+		\mathbf{E}_\perp &= \gamma \rbracket{0 + \mathbf{v}\times\mathbf{B}} \\
+		&= \gamma v \hat{\mathbf{z}} \times B_x \hat{\mathbf{x}} \\
+		&= \gamma v B_x \hat{\mathbf{y}} \\
+		\mathbf{B}_\perp &= \gamma \rbracket{\mathbf{B} - \frac{\overbracket{\mathbf{v}\times\mathbf{E}}^{0}}{c^2}} \\
+		&= \gamma B_x \hat{\mathbf{x}}
+	\end{align*}
+	
+	So in $S^\prime$,
+	\begin{gather*}
+		\mathbf{E}^\prime = \gamma v B_x \hat{\mathbf{y}} \\
+		\mathbf{B}^\prime = \gamma B_x \hat{\mathbf{x}}
+	\end{gather*}
+	where $\gamma = \sbracket{1 - v^2 / c^2}^{-1/2}$.
+	
+	For EM wave, $B = E/c$, however $B^\prime / E^\prime = 1/v \sim 1/c$, so the observed field is not an EM wave, though it approaches one as $v \to c$.
+\end{parts}

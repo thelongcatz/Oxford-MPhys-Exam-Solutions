@@ -1,0 +1,84 @@
+\draft Electro-optic effect and its applications.
+
+\begin{parts}
+	\part Pockels effect is a 1st order effect.
+	By Neumann's Principle, upon inversion the polarisation $\mathbf{P}^{(1)} \rightarrow -\mathbf{P}^{(1)}$ must be invariant in a centrosymmetric material, which implies that $\mathbf{P}^{(1)} = -\mathbf{P}^{(1)} = 0$.
+	So a crystal with Pockel effects must be non-centrosymmetric.
+	
+	\part For $\mathbf{E} = E \hat{\mathbf{z}}$, we have:
+	\begin{gather*}
+		\begin{pmatrix}
+			\Delta (1/n^2)_1 \\ \ldots \\ \Delta (1/n^2)_6
+		\end{pmatrix} =
+		\begin{pmatrix}
+			0 & & \\
+			0 & & \\
+			0 & & \\
+			r_{41} & & \\
+			& r_{52} & \\
+			& & r_{63}
+		\end{pmatrix}
+		\begin{pmatrix}
+			0 \\ 0 \\ E
+		\end{pmatrix} \\
+		\Rightarrow \Delta (1/n^2)_6 = r_{63}E \qquad \Delta (1/n^2)_{1,2\ldots 5} = 0
+	\end{gather*}
+	
+	And since ADP has a tetragonal symmetry, we only have 1 unique optic axis for $E=0$.
+	The indicatrix should then take the following form:
+	\begin{gather}
+		\frac{x^2 + y^2}{n_o^2} + \frac{z^2}{n_e^2} = 1 \notag \\
+		\xRightarrow{\textnormal{Pockel}} \frac{x^2 + y^2}{n_o^2} + 2xyr_{63}E + \frac{z^2}{n_e^2} = 1
+		\label{eqn:q4-pockels-indicatrix}
+	\end{gather}
+	
+	Writing \eqref{eqn:q4-pockels-indicatrix} with $z=0$ in quadratic form and diagonalising it:
+	\begin{align*}
+		\begin{pmatrix}
+			x & y
+		\end{pmatrix}
+		\begin{pmatrix}
+			1/n_o^2 & r_{63}E \\
+			r_{63}E & 1/n_o^2
+		\end{pmatrix}
+		\begin{pmatrix}
+			x \\ y
+		\end{pmatrix} &= 1 \\
+		\Rightarrow \begin{vmatrix}
+			1/n_o^2 - \lambda & r_{63}E \\
+			r_{63}E & 1/n_o^2 - \lambda
+		\end{vmatrix} &= 0 \\
+		\Rightarrow -\lambda + \frac{1}{n_o^2} &= \pm r_{63}E \\
+		\lambda &= \frac{1}{n_o^2} \pm r_{63}E
+	\end{align*}
+	
+	So we have eigenvectors $(x+y)/\sqrt{2}$ and $(x-y)/\sqrt{2}$.
+	
+	Inverse transforming \eqref{eqn:q4-pockels-indicatrix} with $x=(x^\prime + y^\prime)/\sqrt{2}$ and $y=(x^\prime - y^\prime)/\sqrt{2}$ then gives:
+	\begin{align*}
+		\frac{1}{2}\,\frac{(x^\prime + y^\prime)^2 + (x^\prime - y^\prime)^2}{n_o^2} + 2\frac{(x^\prime)^2 - (y^\prime)^2}{2} r_{63}E + \frac{z^2}{n_e^2} &= 1 \\
+		\frac{(x^\prime)^2 + (y^\prime)^2}{n_o^2} + \frac{(x^\prime)^2 - (y^\prime)^2}{1} r_{63}E &= 1 \\
+		\Rightarrow \frac{(x^\prime)^2}{n_{x^\prime}^2} + \frac{(y^\prime)^2}{n_{y^\prime}^2} + \frac{z^2}{n_e^2} &= 1
+	\end{align*}
+	where the new effective refractive indices take the forms:
+	\begin{align*}
+		(n_{x^\prime})^{-2} = \frac{1}{n_o^2} + r_{63}E &\Rightarrow n_{x^\prime}^2 = \frac{n_o^2}{1 + n_o^2 r_{63}E} \\
+		(n_{y^\prime})^{-2} = \frac{1}{n_o^2} - r_{63}E &\Rightarrow n_{y^\prime}^2 = \frac{n_o^2}{1 - n_o^2 r_{63}E}
+	\end{align*}
+	
+	For such propagation, we have $x^\prime = E^\prime/\sqrt{2}$, $y^\prime = E^\prime/\sqrt{2}$.
+	
+	For $90\degree$ polarisation rotation we need a phase lag of $\pi$
+	\begin{gather*}
+		\abs{k_0 (n_{x^\prime} - n_{y^\prime}) \cdot l} = \pi \mtext{where \parbox[t]{18em}{$l$ is the length of crystal along z,\\ $k_0$ is wavenumber in vacuum}} \\
+		\abs{n_{x^\prime} - n_{y^\prime}} = \frac{\lambda_0}{2l} \\
+		\Rightarrow \abs{\frac{n_0}{\sqrt{1 + n_0^2 r_{63}E}} - \frac{n_0}{\sqrt{1 - n_0^2 r_{63}E}}} = \frac{\lambda_0}{2l} \\
+		\xRightarrow{\textnormal{Pockel is small so expand}} n_o \abs{1 - \frac{1}{2}n_o^2 r_{63}E - \rbracket{1 + \frac{1}{2}n_o^2 r_{63}E}} = \frac{\lambda_0}{2l} \\
+		n_o^3 r_{63}E = \frac{\lambda_0}{2l} \\
+		El = V_0 = \frac{\lambda_0}{2n_o^3 r_{63}} \mtext{assuming uniform field}
+	\end{gather*}
+	
+	\part \todo Snell's Law
+	
+	\part \todo 2nd prism cancels out constant birefringence.
+\end{parts}

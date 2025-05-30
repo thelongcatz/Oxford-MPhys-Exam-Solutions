@@ -1,0 +1,83 @@
+\draft
+\begin{parts}
+	\part Total momentum of the system:
+	\begin{equation*}
+		\mathsf{P}^\mu = \rbracket{\sum_i E_i, \sum_i \mathbf{p}_i}
+	\end{equation*}
+	
+	Consider a transformation to the ZMF (align $x$-axis with $\sum_i \mathbf{p}_i$):
+	\begin{align*}
+		\rbracket{\mathsf{P}^\prime}^\mu &= \mathsf{\Lambda}^\mu_\nu \mathsf{P}^\nu \\
+		\Rightarrow \rbracket{\mathsf{P}^\prime}^1 &= 0 = -\beta\gamma\rbracket{\sum_i E_i} + \gamma\rbracket{\sum_i \mathbf{p}_i} \\
+		\Rightarrow \beta &= \frac{\sum_i \mathbf{p}_i}{\sum_i E_i}
+	\end{align*}
+	
+	\part Sketch of the decay process:
+	\image{.8\linewidth}{q2-decay}
+	Conservation of 4-momentum gives:
+	\begin{align*}
+		\mathsf{P}_\pi^\mu &= \rbracket{\mathsf{P}_1^\mu + \mathsf{P}_2^\mu} \\
+		\Rightarrow \rbracket{\mathsf{P}_\pi^\mu}^2 &= \rbracket{\mathsf{P}_1^\mu + \mathsf{P}_2^\mu}^2 \\
+		-M_\pi^2 &= \cancelto{0}{\rbracket{\mathsf{P}_1^\mu}^2} + \cancelto{0}{\rbracket{\mathsf{P}_2^\mu}^2} + 2\rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_2}^\mu \\
+		&= 2\rbracket{-E_1 E_2 + p_1 p_2 \cos A} = 2p_1 p_2 \rbracket{\cos A - 1} \mtext{since $E=pc$ for $\gamma$}
+	\end{align*}
+	
+	With $\cos 2\theta = \cos^2 \theta - \sin^2 \theta = 1-2\sin^2 \theta$, we then have:
+	\begin{align*}
+		\Rightarrow M_\pi^2 &= -2E_1 E_2 \rbracket{\cancel{1} - 2\sin^2 \frac{A}{2} \cancel{-1}} \\
+		\Rightarrow \sin^2 \frac{A}{2} &= \frac{M_\pi^2}{4E_1 E_2}
+	\end{align*}
+	
+	\part \todo Want $\diagderi{N}{A} = \diagderi{N}{\theta^*} \cdot \diagderi{\theta^*}{A}$.
+	\image{.6\linewidth}{q2-zmf}
+	
+	Lorentz boosting from ZMF to LAB:
+	\begin{gather*}
+		\begin{pmatrix}
+			E_1 \\
+			\mathbf{p}_1
+		\end{pmatrix}
+		= \begin{pmatrix}
+			\gamma & \beta\gamma & & \\
+			\beta\gamma & \gamma & & \\
+			&& 1 & \\
+			&&& 1
+		\end{pmatrix}
+		\begin{pmatrix}
+			E^\prime \\
+			\mathbf{p}^\prime
+		\end{pmatrix} \\
+		\Rightarrow E_1 = \frac{\gamma M_\pi}{2} \rbracket{1+\beta\cos\theta^*} \\[1em]
+		\begin{pmatrix}
+			E_2 \\
+			\mathbf{p}_2
+		\end{pmatrix}
+		= \begin{pmatrix}
+			\gamma & \beta\gamma & & \\
+			\beta\gamma & \gamma & & \\
+			&& 1 & \\
+			&&& 1
+		\end{pmatrix}
+		\begin{pmatrix}
+			E^\prime \\
+			\mathbf{p}^\prime
+		\end{pmatrix} \\
+		\Rightarrow E_2 = \frac{\gamma M_\pi}{2} \rbracket{1-\beta\cos\theta^*}
+	\end{gather*}
+	
+	Substituting into ():
+	\begin{align*}
+		\sin^2 \frac{A}{2} &= \frac{M_\pi^2}{4} \cdot \frac{4}{\gamma^2 M_\pi^2} \cdot \frac{1}{1-\beta^2 \cos^2 \theta^*} \\
+		&= \frac{1}{\gamma\rbracket{1-\beta^2 \cos^2 \theta^*}} \\
+		\Rightarrow \sin\frac{A}{2} \cos\frac{A}{2} \inftsml{A} &= -\frac{1}{\gamma} \cdot \sbracket{1-\beta^2 \cos^2 \theta^*}^{-2} 2\beta^2 \cos\theta^* \inftsml{\rbracket{\cos\theta^*}} \\
+		\Rightarrow \deri{\rbracket{\cos\theta^*}}{A} &= \frac{-\gamma \sin\frac{A}{2} \cos\frac{A}{2}}{2\beta^2 \cos\theta^*} \rbracket{1-\beta^2\cos^2 \theta^*}^{-2} \\
+		&= a \frac{\sin\theta^* \inftsml{\theta^*}}{\inftsml{A}} = a\deri{\rbracket{\cos\theta^*}}{A}
+	\end{align*}
+	
+	\part \todo
+	\begin{align*}
+		A_\textnormal{max} &= 2\arcsin\underbracket{\frac{1}{\gamma^2}}_{\mathclap{\rbracket{\frac{M_\pi}{E_\pi}}^2}}
+	\end{align*}
+	
+	$\diagderi{N}{A} > 0$ so $A_\textnormal{min}=\pi$.
+\end{parts}

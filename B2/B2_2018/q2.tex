@@ -1,0 +1,152 @@
+\draft
+
+\begin{parts}
+	\part 4-wavevector $\mathsf{K}^\mu = (\omega/c, \mathbf{k})$
+	
+	Dispersion \textit{in vacuo} means that $\omega=ck \Rightarrow \mathsf{K}_\mu \mathsf{K}^\mu = 0$.
+	
+	Phase velocity $v_p$ and group velocity $v_g$ are given by:
+	\begin{align*}
+		v_p &= \frac{\omega}{k} \\
+		&= \frac{c\mathsf{K}^0}{\sqrt{\mathsf{K}_i \mathsf{K}^i}} = \frac{c\mathsf{K}^0}{\mathsf{K}^1}
+		\mtext{in standard config} \\[1em]
+		v_g &= \pderi{\omega}{k} \\
+		&= \partial_i \partial^i c\mathsf{K}^0
+		\mtext{for $\partial^i = \pdiff{k_i}$} \\
+		&= \partial_1 \partial^1 c\mathsf{K}^0
+		\mtext{in standard config}
+	\end{align*}
+	
+	Also for a 4-position $\mathsf{X}^\mu = (ct, \mathbf{x})$, the phase $\phi$ is given as:
+	\begin{align*}
+		\phi &= \mathsf{K}_\mu \mathsf{X}^\mu \\
+		&= -\omega t + \mathbf{k}\cdot\mathbf{x}
+	\end{align*}
+	
+	However as the relation of $\phi$ with $\omega t$ and $\mathbf{k}\cdot\mathbf{x}$ may be written in terms of the contraction of two 4-vectors, $\phi$ is Lorentz invariant.
+	
+	For $v_p = c\mathsf{K}^0 / \sqrt{\mathsf{K}_i \mathsf{K}^i}$, since there is no full contraction between two 4-vectors, it is not Lorentz invariant, but it follows Lorentz transformation as $v_p^\prime = c \mathsf{\Lambda}^\kappa_0 \mathsf{K}^0 / \sqrt{\mathsf{\Lambda}^i_j \mathsf{\Lambda}^j_i \mathsf{K}_i \mathsf{K}^i}$.
+	
+	\part Propose the following process:
+	\image{.8\linewidth}{q2-proc}
+	
+	Since there exsits no rest frame for photons (for $\mathsf{P}_\mu \mathsf{P}^\mu = 0$), the above process is kinematically forbidden as per the first postulate of SR.
+	
+	In ZMF,
+	\begin{align*}
+		\mathsf{P}^\mu &= \mathsf{P}^{\prime^\mu}_m + \mathsf{P}^{\prime^\mu}_\gamma \\
+		\underbracket{\mathsf{P}_\mu \mathsf{P}^\mu}_{0} &= \mathsf{P}_\mu \mathsf{P}^{\prime^\mu}_m + \mathsf{P}_\mu \mathsf{P}^{\prime\mu}_\gamma \\
+		\Rightarrow -\frac{E^\prime}{c}\cdot\frac{E^\prime_m}{c} + \frac{E^\prime}{c} p^\prime_m &= -\frac{E^\prime}{c}\cdot\frac{E^\prime_\gamma}{c} + \frac{E^\prime}{c}\cdot\frac{E^\prime_\gamma}{c} \\
+		\Rightarrow \frac{E^\prime_m}{c} &= p^\prime_m \\
+		\Rightarrow m &= 0 \mtext{like photons!}
+	\end{align*}
+	The issue with one photon is the fact that the system 4-momentum has null norm $\Rightarrow$ minimum of 2 photons required for mass generation.
+	
+	Now consider $\mathrm{e}^+ \electron$ pair production (at threshold):
+	\image{.8\linewidth}{q2-pair-production}
+	At threshold, $\mathrm{e}^+ \electron$ pair is at rest in ZMF:
+	\begin{gather*}
+		\textnormal{Conservation of 4-momentum: } \mathsf{P}_\textnormal{ZMF}^\mu = 2\mathsf{P}_\textnormal{e}^{\prime^\mu} \\
+		-\rbracket{p_A^\prime + p_B^\prime}^2 = -2\rbracket{p_A^\prime + p_B^\prime}m_e c \\
+		\Rightarrow p_A^\prime + p_B^\prime = 2m_e c
+	\end{gather*}
+	
+	For photons with the same frequency in LAB, which is also now ZMF:
+	\begin{align*}
+		2p^\prime &= 2m_e c \\
+		p^\prime &= m_e c \\
+		\Rightarrow E_\textnormal{CM, min} &= m_e c^2
+	\end{align*}
+	
+	\part
+	\begin{subparts}
+		\subpart Lab frame sketch:
+		\image{.3\linewidth}{q2-lab}
+		\begin{align*}
+			\textnormal{4-force }
+			\mathsf{F}^\mu &= \diff{\tau}\mathsf{P}^\mu
+			\mtext{where $\mathsf{P}^\mu = (\gamma mc, \gamma m\mathbf{v})$ is the 4-momentum} \\
+			&= \gamma \pderi{\mathsf{P}^\mu}{t} \\
+			&= \gamma \rbracket{\dot{\gamma}mc+\gamma mc, \dot{\gamma}m\mathbf{v}+\gamma m\mathbf{a}}
+			\mtext{where } \mathbf{a}=\deri{\mathbf{v}}{t} \textnormal{ is 3-acceleration} \\
+		\end{align*}
+		
+		By Lorentz force,
+		\begin{align*}
+			\mathbf{f} &= q \rbracket{\mathbf{E} + \cancelto{0}{\mathbf{v}\times\mathbf{B}}} \\
+			&= qE\hat{\mathbf{x}} = -eE\hat{\mathbf{x}}
+			\Rightarrow \mathbf{a}\parallel\mathbf{v} \; \forall t
+		\end{align*}
+		So $\dot{\gamma}=0$, $\dot{m}=0$, $\mathbf{a}\neq 0$ and so none of the components is conserved.
+		
+		\subpart Lab frame sketch:
+		\image{.3\linewidth}{q2-lab-2}
+		Swapping the situation with $\mathbf{E}=0$, $\mathbf{B}=B_y \hat{\mathbf{y}}$ gives:
+		\begin{align*}
+			\mathbf{f} &= -e \sbracket{v_0 \hat{\mathbf{x}} \times B_y \hat{\mathbf{y}}} \\
+			&= -ev_0 B_y \hat{\mathbf{z}} \\
+			\Rightarrow \mathbf{f}\perp&\mathbf{v} \; \forall t \mtext{due to the cross product}
+		\end{align*}
+		
+		So $\dot{m}=0$, $\dot{\gamma}=0$ and so $\mathsf{F}^\mu = (0, \gamma m\mathbf{a})$ $\Rightarrow$ $\mathsf{P}^0$ the energy component is conserved.
+	\end{subparts}
+	
+	\newpage
+	\part Sketch of both lab and mirror rest frames:
+	\image{.8\linewidth}{q2-mirror-rest-frame}
+	In $S^\prime$, the law of reflection gives the angle of reflection $\theta_0 = 45\degree$.
+	
+	Hence the final 4-wavevector in $S^\prime$ is given by:
+	\begin{equation*}
+		\rbracket{\mathsf{K}_0}^\mu = \rbracket{\frac{\omega_0}{c}, k_0 \cos\theta_0, k_0 \sin\theta_0, 0}
+	\end{equation*}
+	where $\omega_0=ck_0$ is the frequency in $S^\prime$.
+	
+	Before reflection, initial 4-wavevectors are realted by $\mathsf{K}_0^\mu = \mathsf{\Lambda}^\mu_\nu \mathsf{K}^\nu$:
+	\begin{align}
+		\Rightarrow \frac{\omega_0}{c} &= \gamma \frac{\omega}{c} - \beta\gamma k \cos\theta_\textnormal{bef} \label{eqn:q2-1} \\
+		k_0 \cos\theta_0 &= -\beta\gamma\frac{\omega}{c} + \gamma k\cos\theta_\textnormal{bef} \notag\\
+		\Rightarrow \gamma k\cos\theta_\textnormal{bef} &= k_0 \cos\theta_0 + \beta\gamma\frac{\omega}{c} \label{eqn:q2-2}
+	\end{align}
+	
+	Combine \eqref{eqn:q2-1} and \eqref{eqn:q2-2}:
+	\begin{gather}
+		\frac{\omega_0}{c} = \frac{\gamma\omega}{c} - k_0 \cos\theta_0 - \frac{\beta\gamma\omega}{c} \notag\\
+		\Rightarrow k_0 \rbracket{1+\cos\theta_0} = k\gamma\rbracket{1-\beta} \notag\\
+		k_0 = k\gamma\frac{1-\beta}{1+\cos\theta_0} \label{eqn:q2-3}
+	\end{gather}
+	
+	Boosting the final 4-wavevector back to $S$:
+	\begin{gather}
+		\rbracket{\mathsf{K}^\prime}^\mu = \mathsf{\Lambda}^\mu_\nu \rbracket{\mathsf{K}^\prime_0}^\nu \notag\\
+		\Rightarrow \frac{\omega^\prime}{c} = \frac{\gamma\omega_0}{c} + \beta\gamma k_0 \cos\theta_0 \label{eqn:q2-4} \\
+		k^\prime \cos\theta = \frac{\beta\gamma\omega_0}{c} + \gamma k_0 \cos\theta_0 \label{eqn:q2-5}
+	\end{gather}
+	
+	\eqref{eqn:q2-4} and \eqref{eqn:q2-3} gives:
+	\begin{align}
+		\frac{\omega^\prime}{c} &= \gamma k_0 + \beta\gamma k_0 \cos\theta_0 \notag\\
+		\Rightarrow k^\prime &= \gamma^2 k \frac{1-\beta}{1+\cos\theta_0} \rbracket{1+\beta\cos\theta_0} \label{eqn:q2-6}
+	\end{align}
+	
+	\eqref{eqn:q2-5} and \eqref{eqn:q2-3} gives:
+	\begin{align}
+		k^\prime \cos\theta &= \beta\gamma k_0 + \gamma k_0 \cos\theta_0 \notag\\
+		\xRightarrow{\div\eqref{eqn:q2-6}} \cos\theta &= \frac{\gamma k_0 \rbracket{\beta + \cos\theta_0}}{\gamma k_0 \rbracket{1 + \beta\cos\theta_0}} = \frac{\beta + \cos\theta_0}{1 + \beta\cos\theta_0} \label{eqn:q2-7}
+	\end{align}
+	
+	Wavelength:
+	\begin{gather*}
+		\lambda = \frac{2\pi}{k} \Rightarrow k = \frac{2\pi}{\lambda_1} \\
+		\xRightarrow{\eqref{eqn:q2-6}} \lambda_2 = \lambda_1 \frac{1+\cos\theta_0}{\rbracket{1-\beta} \rbracket{1+\beta\cos\theta_0}\underbracket{\gamma^2}_{\mathclap{\rbracket{1-\beta^2}^-1}}} \\
+		\lambda_2 = \overbracket{\lambda_1}^{\mathclap{\SI{1}{\micro\metre}}} \frac{\rbracket{1+\cos\SI{45}{\degree}} \rbracket{1+\num{0.99}}}{1+\num{0.99}\cos\SI{45}{\degree}}
+		= \SI{1.9983}{\micro\metre}
+	\end{gather*}
+	
+	And finally:
+	\begin{align*}
+		\theta &= \arccos\frac{\beta+\cos\theta_0}{1+\beta\cos\theta_0} \\
+		&= \arccos\frac{\num{0.99} + \cos\SI{45}{\degree}}{1 + \num{0.99} \cos\SI{45}{\degree}} \\
+		&= \SI{3.36}{\degree}
+	\end{align*}
+\end{parts}

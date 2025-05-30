@@ -1,0 +1,118 @@
+\draft
+\begin{parts}
+	\part For a many-$\electron$ system, its Hamiltonian may be written as:
+	\begin{equation*}
+		\hat{H} = \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2\masselectron} - \frac{Z\mathrm{e}^2}{4\pi\permittivity\hat{r}_i} + \sum_{j>i}\frac{\mathrm{e}^2}{4\pi\permittivity\hat{r}_{ij}}}
+	\end{equation*}
+	where the last term is the inter-$\electron$ repulsion.
+	
+	We may choose a central potential:
+	\begin{equation*}
+		\hat{H}_\textnormal{CF} = \sum_i \sbracket{-\frac{Z\mathrm{e}^2}{4\pi\permittivity\hat{r}_i} + S(\mathbf{r}_i)}
+	\end{equation*}
+	such that $\hat{H} = \hat{H}_\textnormal{CF} + \Delta\hat{H}\textnormal{RE}$ with
+	\begin{equation*}
+		\Delta\hat{H}_\textnormal{RE} = \sum_i \sbracket{\sum_{j>i}\frac{\mathrm{e}^2}{4\pi\permittivity\hat{r}_{ij}} - S(\mathbf{r}_i)}
+	\end{equation*}
+	being the residual electrostatic interaction (i.e. non-central part of the overall potential).
+	
+	For a good choice of $S(\mathbf{r}_i)$, $\Delta\hat{H}_\textnormal{RE} \ll \hat{H}_\textnormal{CF}$ and thus the system may be treated as a perturbed central force system.
+	As $\Delta\hat{H}_\textnormal{RE}$ is an internal interaction, the overall orbital angular momentum should be conserved, making it a good quantum number.
+	Similarly, $S$ is also good since $\Delta\hat{H}_\textnormal{RE}$ does not depend on spins.
+	
+	The labelling of eigenstates $\ket{n lm_l sm_s} \to \ket{n LM_L SM_S}$ is the $LS$ coupling scheme.
+	
+	\part E-dipole selection rules:
+	\begin{enumerate}
+		\item \underline{Configuration} \\
+		$\Delta n = \textnormal{any} \qquad \Delta l = \pm 1$
+		\item Term \\
+		$\Delta L = \pm 1, 0 (0 \nrightarrow 0) \qquad \Delta S = 0$
+		\item Level \\
+		$\Delta J = 0, \pm 1 (0 \nrightarrow 0) \qquad \Delta M_J = 0, \pm 1 (0 \nrightarrow 0 \iff \Delta J = 0)$
+	\end{enumerate}
+	
+	Spin-orbit interaction:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= \beta\hat{\mathbf{l}}\cdot\hat{\mathbf{s}} \to \beta\hat{\mathbf{L}}\cdot\hat{\mathbf{S}} \\
+		\Rightarrow \langle \Delta E_\textnormal{SO} \rangle \to \beta \cdot \frac{1}{2} \sbracket{J(J+1) - L(L+1) - S(S+1)}
+	\end{align*}
+	where $\beta$ is a constant of proportionality that depents on the orbital (radial $\psi$).
+	
+	Energy difference between splittings:
+	\begin{align*}
+		\Delta E_{J,J-1} &= \frac{1}{2} \beta \sbracket{J(J+1) \cancel{-L(L+1)} \bcancel{-S(S+1)} -(J-1)J \cancel{+L(L+1)} \bcancel{+S(S+1)}} \\
+		&= \frac{1}{2} \beta \sbracket{2J}
+	\end{align*}
+	
+	\begin{align*}
+		\Delta E_{J-1,J-2} &= \frac{1}{2} \beta \sbracket{(J-1)J \cancel{-L(L+1)} \bcancel{-S(S+1)} - (J-2)(J-1) \cancel{+L(L+1)} \bcancel{+S(S+1)}} \\
+		&= \frac{1}{2} \beta \sbracket{\cancel{J^2} - J \cancel{-J^2} +3J - 2} \\
+		&= \frac{1}{2} \beta \sbracket{2J - 2}
+	\end{align*}
+	
+	Hence the Interval Rule is true:
+	\begin{equation*}
+		\frac{\Delta E_{J,J-1}}{\Delta E_{J-1,J-2}} = \frac{J}{J-1}
+	\end{equation*}
+	
+	\part Carbon ground state: $1s^2 2s^2 2p^2$
+	\begin{equation*}
+		\begin{matrix}
+			L=2 & \\
+			S=1 \textnormal{ or } 0
+		\end{matrix}
+		\xrightarrow{\textnormal{terms}}
+		\begin{matrix}
+			{}^3 D \\
+			{}^1 D
+		\end{matrix}
+		\xrightarrow{\textnormal{levels}}
+		\begin{matrix}
+			{}^3 D_1, {}^3 D_2, {}^3 D_3 \\
+			{}^1 D_2
+		\end{matrix}
+	\end{equation*}
+	
+	Excited state: $1s^2 2s^2 2p 3s$
+	\begin{equation*}
+		\begin{matrix}
+			L=1 \\
+			S=1 \textnormal{ or } 0
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^3 P \\
+			{}^1 P
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			{}^3 P_0, {}^3 P_1, {}^3 P_2 \\
+			{}^1 P_1
+		\end{matrix}
+	\end{equation*}
+	
+	Allowed transitions:
+	\begin{itemize}
+		\item ${}^3 P_0 \to {}^3 D_1 \qquad (\delta_{12} + \delta_{23} + \Delta)$
+		\item ${}^3 P_1 \to {}^3 D_1 \qquad (\delta_{12} + \delta_{23} + \Delta + E_{01})$
+		\item ${}^3 P_1 \to {}^3 D_2 \qquad (\delta_{23} + \Delta + \epsilon_{01})$
+		\item ${}^3 P_2 \to {}^3 D_1 \qquad (\delta_{12} + \delta_{23} + \Delta + \epsilon_{01} + \epsilon_{12})$
+		\item ${}^3 P_2 \to {}^3 D_2 \qquad (\delta_{23} + \Delta + \epsilon_{01} + \epsilon_{12})$
+		\item ${}^3 P_2 \to {}^3 D_3 \qquad (\Delta + \epsilon_{01} + \epsilon_{12})$
+		\item ${}^1 P_1 \to {}^1 D_2$
+	\end{itemize}
+	
+	\newpage
+	Sketch of the energy levels and transitions:
+	\image{.8\linewidth}{q1-transitions}
+	
+	The only consistent arrangement is shown above in the diagram.
+	Thus:
+	\begin{align*}
+		\delta_{23} &= \SI{2.914}{\per\centi\metre} \\
+		\delta_{12} &= \SI{24.049}{\per\centi\metre} \\
+		\Rightarrow \frac{\delta_{23}}{\delta_{12}} &= \num{0.121}
+	\end{align*}
+	which does not follow the Interval Rule, so $LS$ coupling is not very good here.
+\end{parts}

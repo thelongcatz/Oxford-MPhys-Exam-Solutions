@@ -1,0 +1,95 @@
+\draft
+\begin{parts}
+	\part Neutron ($udd$) sits in the $J^P = \dfrac{1}{2}^+$ octet.
+	
+	\begin{subparts}
+		\subpart Sketch of a quark pudding of radius $R=\SI{1.5}{\fermi}$: \image{.2\linewidth}{q1-quark-pudding}
+		Uniform distribution $\Rightarrow$ Probability of a quark in radius $r$:
+		\begin{align*}
+			P(r) &= \rbracket{\frac{r}{R}}^3 \mtext{for $r \leq R$ else $1$ \hspace{1em}[CDF]} \\
+			\mathbb{P}(r) &= \frac{3r^2}{R^3} \inftsml{r} \mtext{for $r \leq R$ else 0 \hspace{1em}[PDF]}
+		\end{align*}
+		So:
+		\begin{align*}
+			\avg{r^2} &= \defint{0}{\infty}{\mathbb{P} \cdot r^2}{r} \\
+			&= \defint{0}{R}{\frac{3r^4}{R^3}}{r} \\
+			&= \frac{3}{5} \sbracket{\frac{r^5}{R^3}})_0^R \\
+			&= \frac{3}{5} R^2
+		\end{align*}
+		
+		$\Rightarrow$ RMS:
+		\begin{equation*}
+			\sqrt{\avg{r^2}} = \sqrt{\frac{3}{5}}R = \SI{1.16}{\femto\metre}
+		\end{equation*}
+		
+		\subpart Uncertainty principle gives: $\Delta x \Delta p \geq \dfrac{\hbar}{2}$
+		
+		So uncertainty in $p$:
+		\begin{align*}
+			\Delta p &\simeq \frac{\hbar}{2\sqrt{\avg{r^2}}} \\
+			&= \frac{\hbar c}{2 \sqrt{\frac{3}{5}} Rc} \\
+			&= \SI{84.92}{\mega\electronvolt\per c}
+		\end{align*}
+		
+		Assuming $\Delta p = \langle p \rangle$, then mean energy:
+		\begin{align*}
+			\avg{E} &= \sqrt{M^2 c^4 + \langle p \rangle^2 c^2} \\
+			&= \SI{85.06}{\mega\electronvolt}
+		\end{align*}
+	\end{subparts}
+	
+	\part Assuming total symmetry between $u$ and $d$ quarks, total constituent mass is then $3 \langle E \rangle = \SI{255.2}{\mega\electronvolt}$.
+	
+	Ratio of mass: $\dfrac{3 \langle E \rangle}{m_n c^2} = \num{0.27}$ so not in agreement!
+	However modelling the quarks as gases is an unphysical model as the quarks interact heavily under strong interaction.
+	It would be greater to treat the system quantum-mechanically with the use of $\langle E \rangle = \bra{\psi}\hat{H}\ket{\psi}$ where $\ket{\psi}$ is a normalised system wavefunction, $\hat{H}$ is the Hamiltonian of the system.
+	
+	Free neutron decay: $n \longrightarrow p + \electron + \bar{\nu}_e$.
+	\image{.8\linewidth}{q1-neutron-decay}
+	There is no similar process for protons as it is the lightest baryon -- there are no lighter baryons to decay into.
+	
+	\image{.8\linewidth}{q1-momentum}
+	For max $\electron$ energy, proton must move with $\bar{\nu}_{e}$ ($\bar{\nu}_{e}$ assumed to be massless so can't be at rest).
+	
+	For min $\electron$ energy, $\electron$ must be at rest instead to allow for proton movement.
+	
+	For max $\electron$ energy, conservation of 4-momentum gives:
+	\begin{align*}
+		\rbracket{\mathsf{P}_n}^\mu &= \rbracket{\mathsf{P}_p}^\mu + \rbracket{\mathsf{P}_\nu}^\mu + \rbracket{\mathsf{P}_e}^\mu \\
+		\Rightarrow \begin{pmatrix}
+			m_n c \\
+			\mathbf{0}
+		\end{pmatrix}
+		&= \begin{pmatrix}
+			m_p c + p_\nu + \frac{E_e}{c} \\
+			\mathbf{p}_\nu + \mathbf{p}_e
+		\end{pmatrix} \\
+		\Rightarrow |\mathbf{p}_\nu| &= |\mathbf{p}_e| = p^\prime \\
+		\Rightarrow m_n c &= m_p c + \underbracket{p^\prime}_{\frac{1}{c} \sqrt{E_e^2 - m_e^2 c^4}} + \frac{E_e}{c} \\
+		\Rightarrow \cancel{E_e^2} - m_e^2 c^4 &= \rbracket{(m_n - m_p)c^2 - E_e^2} \\
+		&= \cancel{E_e^2} - 2E_e (m_n - m_p)c^2 + (m_n - m_p)^2 c^4 \\
+		\Rightarrow E_{e,\textnormal{max}} &= \frac{\sbracket{(m_n - m_p)^2 + m_e^2} c^4}{2(m_n - m_p)c^2} \\
+		&= \frac{\sbracket{(m_n - m_p)^2 + m_e^2}}{2(m_n - m_p)}c^2
+	\end{align*}
+	
+	For min $\electron$ energy, we get similarly:
+	\begin{align*}
+		\begin{pmatrix}
+			m_n c \\
+			\mathbf{0}
+		\end{pmatrix}
+		&= \begin{pmatrix}
+			\frac{E_p}{c} + \mathbf{p}_\nu + m_e c \\
+			\mathbf{p}_\nu + \mathbf{p}_p
+		\end{pmatrix} \\
+		\Rightarrow E_{e,\textnormal{min}} &= m_e c^2
+	\end{align*}
+	
+	Decay width:
+	\begin{align*}
+		\Gamma &= \frac{\hbar}{\tau} \\
+		&= \frac{\hbar c}{c(15 \cdot \SI{60}{\second})} \\
+		&= \frac{\SI{197.33}{\mega\electronvolt\femto\metre}}{\SI{2.7e26}{\femto\metre}} \\
+		&= \SI{7.31e-25}{\mega\electronvolt}
+	\end{align*}
+\end{parts}

@@ -1,0 +1,178 @@
+\draft
+
+\begin{parts}
+	\part
+	\begin{align*}
+		\textnormal{4-acceleration }
+		\mathsf{A}^\mu &= \deri{\mathsf{X}^\mu}{\tau} = \gamma\deri{\mathsf{X}^\mu}{t}
+		\mtext{with $\mathsf{X}^\mu$ the 4-velocity} \\
+		&= \gamma\rbracket{\dot{\gamma}c, \dot{\gamma}\mathbf{v}+\gamma\mathbf{a}}
+		\mtext{with } \mathbf{a}=\deri{\mathbf{v}}{t} \textnormal{ the 3-acceleration}
+	\end{align*}
+	
+	\begin{align*}
+		\textnormal{4-force }
+		\mathsf{F}^\mu &= \deri{\mathsf{P}^\mu}{\tau} = \gamma\deri{\mathsf{P}^\mu}{t}
+		\mtext{with $\mathsf{P}^\mu$ the 4-momentum} \\
+		&= \gamma \rbracket{\dot{\gamma}mc+\gamma\dot{m}c, \dot{\gamma}m\mathbf{v}+\gamma\dot{m}\mathbf{v}+\gamma m\mathbf{a}}
+	\end{align*}
+	Note that $\gamma\to\infty$ as $v\to c$, so SR places no bound on the possible sizes of the force or acceleration.
+	
+	\begin{align*}
+		\textnormal{Phase velocity }
+		v_p &= \frac{\omega}{k} \\
+		&= \frac{c\mathsf{K}^0}{\sqrt{\mathsf{K}_i \mathsf{K}^i}}
+		\mtext{with } \mathsf{K}^\mu = \rbracket{\frac{\omega}{c}, \mathbf{k}} \textnormal{ the 4-wavevector}
+	\end{align*}
+	Note that there is no constraint on what form $v_p$ should take, so SR does not restrict $v_p$, the confusion comes from the fact that $v_p \le c$ only happens \textit{in vacuo}.
+	
+	\newpage
+	\image{.8\linewidth}{q3-collision}
+	Conservation of 4-momentum tells us:
+	\begin{gather*}
+		\mathsf{P}_\gamma^\mu + \mathsf{P}_\mathrm{e}^\mu = \mathsf{P}^{\prime^\mu}_\gamma + \mathsf{P}^{\prime^\mu}_\mathrm{e} \mtext{in LAB} \\
+		\Rightarrow \rbracket{\mathsf{P}_\gamma^\mu + \mathsf{P}_\mathrm{e}^\mu - \mathsf{P}^{\prime^\mu}_\gamma}^2 = \rbracket{\mathsf{P}^{\prime^\mu}_\mathrm{e}}^2 \\
+		\cancelto{0}{\rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\gamma}^\mu}
+			+ \rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu
+			+ \cancelto{0}{\rbracket{\mathsf{P}_\gamma^\prime}_\mu \rbracket{\mathsf{P}_\gamma^\prime}^\mu} \\
+			\qquad\qquad\qquad\qquad + 2\sbracket{
+				\rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu
+				- \rbracket{\mathsf{P}_\gamma}_\mu \rbracket{\mathsf{P}_\gamma^\prime}^\mu
+				- \rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_\gamma^\prime}^\mu
+			}
+			= -\masselectron^2 c^2 \\
+		-\masselectron^2 c^2 + 2\sbracket{
+			-p\masselectron c
+			+ pp^\prime
+			- pp^\prime \cos\theta
+			+ p^\prime \masselectron c
+		} = -\masselectron^2 c^2 \\
+		p^\prime \sbracket{p - p\cos\theta + \masselectron c} = p\masselectron c \\
+		p^\prime = \frac{p\masselectron c}{p\rbracket{1-\cos\theta} + \masselectron c} \\
+		\Rightarrow E^\prime = \frac{E}{E/\masselectron c^2 \rbracket{1-\cos\theta} + 1} \\
+		\Rightarrow f^\prime = \frac{f}{\hbar f/\masselectron c^2 \rbracket{1-\cos\theta} + 1}
+	\end{gather*}
+	
+	\part Sketch of the lab frame and another travelling at $+v_x \hat{\mathbf{x}}$ relative to it:
+	\image{.8\linewidth}{q3-vx-frame}
+	Events separation $\mathsf{X}^\mu = \sbracket{0, x_0}$
+	
+	Boosting by $+v_x\hat{\mathbf{x}}$ gives:
+	\begin{align*}
+		\rbracket{\mathsf{X}^\prime}^\mu &= \mathsf{\Lambda}^\mu_\nu \mathsf{X}^\nu \\
+		\Rightarrow ct^\prime &= -\beta\gamma x_0 \\
+		x^\prime &= \gamma x_0
+	\end{align*}
+	
+	\image{.3\linewidth}{q3-spacetime}
+	From the space-time diagram,
+	\begin{align*}
+		x_0^\prime &= -ct^\prime + x^\prime \\
+		&= \rbracket{\gamma + \beta\gamma} x_0 \\
+		&= \frac{1+v_x/c}{\sqrt{1-v_x^2/c^2}} x_0
+	\end{align*}
+	
+	\newpage
+	\part \image{.8\linewidth}{q3-collision-2}
+	We know that $p_1 = hc/\lambda_1$.
+	Conservation of 4-momentum gives:
+	\begin{gather*}
+		\mathsf{P}_1^\mu + \mathsf{P}_\mathrm{e}^\mu = \mathsf{P}_2^\mu + \mathsf{P}_\mathrm{e, after}^\mu \\
+		\Rightarrow \rbracket{\mathsf{P}_1^\mu + \mathsf{P}_\mathrm{e}^\mu - \mathsf{P}_2^\mu}^2 = \rbracket{\mathsf{P}_\mathrm{e, after}^\mu}^2 \\
+		\cancelto{0}{\rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_1}^\mu}
+			+ \rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu
+			- \cancelto{0}{\rbracket{\mathsf{P}_2}_\mu \rbracket{\mathsf{P}_2}^\mu} \\
+			\qquad\qquad\qquad + 2\sbracket{
+				\rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_\mathrm{e}}^\mu
+				- \rbracket{\mathsf{P}_1}_\mu \rbracket{\mathsf{P}_2}^\mu
+				- \rbracket{\mathsf{P}_\mathrm{e}}_\mu \rbracket{\mathsf{P}_1}^\mu
+			}
+			= \rbracket{\mathsf{P}_\mathrm{e, after}}_\mu \rbracket{\mathsf{P}_\mathrm{e, after}}^\mu \\
+		-\masselectron^2 c^2 + 2\sbracket{
+			-p_1 \gamma \masselectron c - p_1 \gamma \underbracket{\gamma \masselectron v}_{\mathclap{\diagfrac{1}{c}\sqrt{\gamma^2 \masselectron^2 c^4 - \masselectron^2 c^4} = \masselectron c \sqrt{\gamma^2 - 1}}}
+			+ p_1 p_2 - p_1 p_2 \cos\theta + p_2 \gamma \masselectron c + p_2 \gamma \masselectron v\cos\theta
+		}
+		= -\masselectron^2 c^2 \\
+		\Rightarrow p_1\rbracket{
+			-\gamma \masselectron c - \masselectron c \sqrt{\gamma^2 - 1}
+		} + p_1 p_2 - p_1 p_2 \cos\theta + p_2 \rbracket{
+			\gamma \masselectron c + \masselectron c \sqrt{\gamma^2 - 1} \cos\theta
+		} = 0 \\
+		p_2 = \frac{p_1 \rbracket{\gamma+\sqrt{\gamma^2 - 1}}\masselectron c}{p_1 - p_1 \cos\theta + \masselectron c \sbracket{\gamma + \sqrt{\gamma^2 - 1}}\cos\theta} \\
+		= \frac{p_1 \rbracket{\gamma + \sqrt{\gamma^2 - 1}}}{p_1/\masselectron c \rbracket{1-\cos\theta} + \rbracket{\gamma + \sqrt{\gamma^2 - 1}}\cos\theta} \\
+		= p_1 \cdot \frac{\gamma + \sqrt{\gamma^2 - 1}}{\gamma + \sqrt{\gamma^2 - 1}\cos\theta}
+		\mtext{since $p_1 c \ll \masselectron c^2$} \\
+		\Rightarrow \lambda_2 = \lambda_1 \frac{\gamma + \sqrt{\gamma^2 - 1}\cos\theta}{\gamma + \sqrt{\gamma^2 - 1}} \\
+		= \frac{\gamma - \sqrt{\gamma^2 - 1}}{\gamma + \sqrt{\gamma^2 - 1}} \lambda_1 \\
+		= \frac{1}{\gamma^2 + \gamma^2 - 1 + 2\gamma\sqrt{\gamma^2 - 1}} \lambda_1 \\
+		= \frac{1}{2\gamma^2 + 2\gamma^2} \lambda_1 \mtext{for $\gamma \gg 1$} \\
+		= \frac{\lambda_1}{4\gamma^2}
+	\end{gather*}
+	
+	For $\beta=\num{0.999}$,
+	\begin{align*}
+		\gamma &= \sbracket{1-\num{0.999}^2}^{-1/2} \\
+		&= \num{22.4} \\
+		\Rightarrow \lambda_2 &= \frac{\lambda_1}{4 \cdot \num{22.4}^2} \\
+		&= \SI{4.00e-3}{\micro\metre} = \SI{4.00}{\nano\metre}
+	\end{align*}
+	
+	\part As the wave propagates in $x$ direction (or by symmetry in the $yz$ plane), we have:
+	\begin{align*}
+		\mathsf{F}^{\mu\nu} &=
+		\begin{bmatrix}
+			0 & E_x / c & E_y / c & E_z / c \\
+			-E_x / c & 0 & B_z & -B_y \\
+			-E_y / c & -B_z & 0 & B_x \\
+			-E_z / c & B_y & -B_x & 0
+		\end{bmatrix} \\
+		&= \partial^\mu \mathsf{A}^\nu - \partial_\nu \mathsf{A}^\mu \\
+		&= 0 \mtext{for } \mu\nu = (0, 1), (1, 0), (2, 3), (3, 2) \\
+		\Rightarrow \mathsf{A}^\mu &= \rbracket{\frac{\phi}{c}, A, 0, 0}
+	\end{align*}
+	
+	In vacuum, $\mathbf{B}\perp\mathbf{E}\mathbf{k}$ as per Maxwell's equations.
+	So choose $\mathbf{B}\parallel\hat{\mathbf{y}}$, $\mathbf{E}\parallel\hat{\mathbf{z}}$:
+	\begin{align*}
+		B_y &= \mathsf{F}^{31} \\
+		&= \partial^3 \mathsf{A}^1 - \partial^1 \cancelto{0}{\mathsf{A}^3} \\
+		&= \pderi{A}{z} \\[1em]
+		E_z &= \mathsf{F}^{03} \\
+		&= \partial^0 \cancelto{0}{\mathsf{A}^3} - \partial^3 \mathsf{A}^0 \\
+		&= -\pderi{\phi/c}{ct} \\
+		&= -\frac{1}{c^2} \pderi{\phi}{t}
+	\end{align*}
+	
+	\newpage
+	\part \image{.25\linewidth}{q3-ec}
+	In LAB, $\mathsf{A}^\mu = (\phi/c, \mathbf{0})$:
+	\begin{align*}
+		\mathsf{F}^{\mu\nu} &= \partial^\mu \mathsf{A}^\nu - \partial_\nu \mathsf{A}^\mu \\
+		&= \begin{bmatrix}
+			0 & \diagfrac{1}{c} \pdiagdiff{t}\mathsf{A}^1 - \pdiagderi{\mathsf{A}^0}{x} & \ldots & \ldots \\
+			\vdots & 0 & \ldots & \ldots \\
+			\vdots & \vdots & 0 & \ldots \\
+			\vdots & \vdots & \vdots & 0
+		\end{bmatrix} \\
+		&= \begin{bmatrix}
+			0 & 0 & 0 & -\pdiagdiff{z}(\phi/c) \\
+			0 & 0 & 0 & 0 \\
+			0 & 0 & 0 & 0 \\
+			\pdiagdiff{z}(\phi/c) & 0 & 0 & 0 \\
+		\end{bmatrix} \\[1em]
+		\pdiff{z}\rbracket{\frac{\phi}{c}} &= \frac{1}{c} \pdiff{z}\rbracket{\phi_0 \cos\rbracket{k_u z}} \\
+		&= -\frac{\phi_0}{c} k_u \sin k_u z \\[1em]
+		\Rightarrow \mathbf{E} &= \frac{\phi_0}{c} k_u \sin k_u z \hat{\mathbf{z}} \qquad \mathbf{B} = 0
+	\end{align*}
+	
+	Boosting into the $\electron$ rest frame gives $\mathbf{B}_\parallel=0$, $\mathbf{E}_\perp=0$.
+	\begin{align*}
+		\mathbf{B}_\perp &= \gamma \rbracket{\mathbf{B}_\perp^\textnormal{LAB} + \frac{\mathbf{v}\times\mathbf{E}}{c}} = 0 \\
+		\mathbf{E}_\parallel &= \gamma \rbracket{\mathbf{E}_\parallel - \mathbf{v}\times\mathbf{B}} \\
+		&= \gamma \mathbf{E}_\parallel \\
+		&= \frac{\gamma\phi_0}{c} k_u \sin k_u \ \hat{\mathbf{z}}
+	\end{align*}
+	where $\gamma=[1-(v_z/c)^2]^{-1/2}$.
+	
+	For an EM wave, $\mathsf{F}_{\mu\nu} \mathsf{F}^{\mu\nu} \propto B^2 - E^2/c^2 = 0$, however in this case $B^2 - E^2/c^2 \neq 0$ in the $\electron$ rest frame, so the field is not an EM wave.
+\end{parts}

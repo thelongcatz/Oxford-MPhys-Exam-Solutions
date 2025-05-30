@@ -48,7 +48,7 @@ Introductory information theory with qubits.
 			0 & 0 & -\lambda & 0 \\
 			\diagfrac{1}{4} & 0 & 0 & \diagfrac{1}{4}-\lambda
 		\end{vmatrix} = 0 \\
-		\lambda^2 \left[\left(\frac{3}{4} - \lambda\right)\left(\frac{1}{4} - \lambda\right) - \left(\frac{1}{4}\right)^2\right] = 0 \\
+		\lambda^2 \sbracket{\rbracket{\frac{3}{4} - \lambda}\rbracket{\frac{1}{4} - \lambda} - \rbracket{\frac{1}{4}}^2} = 0 \\
 		\begin{align*}
 			\Rightarrow \lambda = 0 \textnormal{\hspace{1em}(Trivial root)} &
 			\textnormal{\hspace{4em}or}&&\lambda^2 - \lambda + \frac{1}{8} = 0 && \\
@@ -59,17 +59,17 @@ Introductory information theory with qubits.
 	
 	Now recall the definition of von Neumann entropy:
 	\begin{equation*}
-		S = -\textnormal{tr}\left(\rho\log_2 \rho\right)
+		S = -\textnormal{tr}\rbracket{\rho\log_2 \rho}
 	\end{equation*}
 	
 	And further note that trace is basis invariant, therefore we have:
 	\begin{align*}
 		\rho\log_2 \rho &=
 		\begin{aligned}[t]
-			&\textnormal{diag}\left(0,\, 0,\, \frac{1+\sqrt{\diagfrac{1}{2}}}{2},\, \frac{1-\sqrt{\diagfrac{1}{2}}}{2}\right) \\
-			&\cdot \textnormal{diag}\left(\log_2 0,\, \log_2 0,\, \log_2 \left(\frac{1+\sqrt{\diagfrac{1}{2}}}{2}\right),\, \log_2 \left(\frac{1-\sqrt{\diagfrac{1}{2}}}{2}\right)\right)
+			&\textnormal{diag}\rbracket{0,\, 0,\, \frac{1+\sqrt{\diagfrac{1}{2}}}{2},\, \frac{1-\sqrt{\diagfrac{1}{2}}}{2}} \\
+			&\cdot \textnormal{diag}\rbracket{\log_2 0,\, \log_2 0,\, \log_2 \rbracket{\frac{1+\sqrt{\diagfrac{1}{2}}}{2}},\, \log_2 \rbracket{\frac{1-\sqrt{\diagfrac{1}{2}}}{2}}}
 		\end{aligned} \\
-		&= \textnormal{diag}\left(0,\, 0,\, -0.195,\, -0.406\right)
+		&= \textnormal{diag}\rbracket{0,\, 0,\, -0.195,\, -0.406}
 	\end{align*}
 	Hence $S(\textnormal{AB}) = 0.601$.
 	
@@ -104,8 +104,8 @@ Introductory information theory with qubits.
 	
 	We then have the entropy for each of the subsystem as:
 	\begin{align*}
-		S(\textnormal{A}) = S(\textnormal{B}) &= -\textnormal{tr}\left[  \textnormal{diag}\left(\diagfrac{3}{4},\, \diagfrac{1}{4}\right) \cdot \textnormal{diag}\left(\log_2 \left( \diagfrac{3}{4}\right),\, \log_2 \left(\diagfrac{1}{4}\right)\right) \right] \\
-		&= -\textnormal{tr}\left[ \textnormal{diag}\left(-0.311,\, -0.5\right) \right] \\
+		S(\textnormal{A}) = S(\textnormal{B}) &= -\textnormal{tr}\sbracket{  \textnormal{diag}\rbracket{\diagfrac{3}{4},\, \diagfrac{1}{4}} \cdot \textnormal{diag}\rbracket{\log_2 \rbracket{ \diagfrac{3}{4}},\, \log_2 \rbracket{\diagfrac{1}{4}}} } \\
+		&= -\textnormal{tr}\sbracket{ \textnormal{diag}\rbracket{-0.311,\, -0.5} } \\
 		&= 0.811
 	\end{align*}
 	
@@ -138,14 +138,14 @@ Introductory information theory with qubits.
 	
 	However the very act of measurement has de-cohered Bob's qubit, hence the best description he has for his qubit would be:
 	\begin{align*}
-		\rho_\textnormal{B} &= \textnormal{diag}\left(\diagfrac{1}{2},\, \diagfrac{1}{2}\right) \\
+		\rho_\textnormal{B} &= \textnormal{diag}\rbracket{\diagfrac{1}{2},\, \diagfrac{1}{2}} \\
 		&= \frac{1}{2} \ket{0}\bra{0} + \frac{1}{2} \ket{1}\bra{1}
 	\end{align*}
 	
 	\part The corresponding entropy for Bob's qubit would then be:
 	\begin{align*}
-		S(\textnormal{B}) &= -\textnormal{tr}\left[ \textnormal{diag}\left(\diagfrac{1}{2},\, \diagfrac{1}{2}\right) \cdot \textnormal{diag}\left(\log_2 \left(\diagfrac{1}{2}\right),\, \log_2 \left(\diagfrac{1}{2}\right)\right) \right] \\
-		&= -\textnormal{tr}\left[ \textnormal{diag}\left(-0.5,\, -0.5\right) \right] \\
+		S(\textnormal{B}) &= -\textnormal{tr}\sbracket{ \textnormal{diag}\rbracket{\diagfrac{1}{2},\, \diagfrac{1}{2}} \cdot \textnormal{diag}\rbracket{\log_2 \rbracket{\diagfrac{1}{2}},\, \log_2 \rbracket{\diagfrac{1}{2}}} } \\
+		&= -\textnormal{tr}\sbracket{ \textnormal{diag}\rbracket{-0.5,\, -0.5} } \\
 		&= 1
 	\end{align*}
 	

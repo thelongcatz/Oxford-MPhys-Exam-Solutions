@@ -1,0 +1,145 @@
+\draft
+\begin{parts}
+	\part For a multi-$\electron$ atom, we have the Hamiltonian:
+	\begin{equation*}
+		\hat{H} = \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + \sum_{j>i}\frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}
+	\end{equation*}
+	that describes the kinetic energy, the potential energy with nucleus and the inter-$\electron$ mutual repulsion.
+	
+	We may introduce a central field $S(r)$ such that:
+	\begin{equation*}
+		\hat{H} = \hat{H}_\textnormal{CF} + \Delta\hat{H}_\textnormal{RE}
+	\end{equation*}
+	where
+	\begin{align*}
+		\hat{H}_\textnormal{CF} &= \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + S(r_i)}
+		\mtext{is the central field,} \\
+		\Delta\hat{H}_\textnormal{RE} &= \sum_i \sbracket{-S(r_i) + \sum_{j>i}\frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}
+		\mtext{is residual electrostatic.}
+	\end{align*}
+	
+	Under this approximation, we may then treat the electronic system as acting a perturbation $\Delta\hat{H}_\textnormal{RE}$ on top of $\hat{H}_\textnormal{CF}$, which separates the Schrödinger equation to form \underline{configuration}.
+	
+	This requires that $\Delta\hat{H}_\textnormal{RE} \ll \hat{H}_\textnormal{CF}$, and under this perturbation, as orbital angular momenta couple, it is not a good quantum number.
+	However since $\Delta\hat{H}_\textnormal{RE}$ is an internal interaction, the total orbital angular momentum $\mathbf{L}$ is conserved, making it a good quantum number.
+	
+	Also $S$ is a good quantum number since $\Delta\hat{H}_\textnormal{RE}$ does not act on spins.
+	Hence we may label the eigenstates as $\ket{LM_L SM_S}$ or $\ket{LSJM_J}$.
+	This is $LS$ coupling.
+	
+	For configuration $1s^2 2s^2 2p^6 3s^2 3p 4p$, $L=0,1,2$, $S=0,1$.
+	
+	So we have terms ${}^1 S$, ${}^3 S$, ${}^1 P$, ${}^3 P$, ${}^1 D$, ${}^3 D$.
+	
+	\part For a multi-$\electron$ atom, we have spin-orbit interaction:
+	\begin{equation*}
+		\Delta\hat{H}_\textnormal{SO} = \sum_i \beta_i \hat{\mathbf{l}}_i \cdot \hat{\mathbf{s}}_i
+	\end{equation*}
+	
+	Wigner-Eckart theorem then allows us to equate $\hat{\mathbf{l}}_i$ and $\hat{\mathbf{s}}_i$ with $\hat{\mathbf{L}}$ and $\hat{\mathbf{S}}$ with constant of proportionality akin to vector projection:
+	\begin{equation*}
+		\hat{\mathbf{l}}_i \to \frac{\mathbf{l}_i \cdot \mathbf{L}}{L^2} \hat{\mathbf{L}} \qquad
+		\hat{\mathbf{s}}_i \to \frac{\mathbf{s}_i \cdot \mathbf{S}}{S^2} \hat{\mathbf{S}}
+	\end{equation*}
+	
+	So:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= \sum_i \beta_i \frac{\mathbf{l}_i \cdot \mathbf{L}}{L^2} \hat{\mathbf{L}} \cdot \hat{\mathbf{S}} \frac{\mathbf{s}_i \cdot \mathbf{S}}{S^2} \\
+		&= \beta_\textnormal{SO} \hat{\mathbf{L}}\cdot\hat{\mathbf{S}}
+	\end{align*}
+	where $\beta_\textnormal{SO}=\sum_i \beta_i \dfrac{\mathbf{l}_i \cdot \mathbf{L}}{L^2}\cdot\dfrac{\mathbf{s}_i \cdot \mathbf{S}}{S^2}$
+	
+	\part External magnetic Hamiltonian:
+	\begin{equation*}
+		\Delta\hat{H}_z = -\bm{\mu}_\textnormal{tot}\cdot\mathbf{B}_\textnormal{ext}
+	\end{equation*}
+	where $\bm{\mu}_\textnormal{tot}=\sum_i -\bohrmagneton\mathbf{l}_i - g_s\bohrmagneton\mathbf{s}_i = -\bohrmagneton\mathbf{L}-\bohrmagneton g_s\mathbf{S}$.
+	
+	Under weak perturbation, $J$ remains a good quantum number so by Wigner-Eckart theorem:
+	\begin{equation*}
+		\hat{\mathbf{L}} \to \frac{\mathbf{L} \cdot \mathbf{J}}{J^2} \hat{\mathbf{J}} \qquad
+		\hat{\mathbf{S}} \to \frac{\mathbf{S} \cdot \mathbf{J}}{J^2} \hat{\mathbf{J}}
+	\end{equation*}
+	
+	So:
+	\begin{align*}
+		\Delta\hat{H}_z &= \rbracket{+\bohrmagneton\frac{L^2 + \mathbf{L}\cdot\mathbf{S}}{J^2} + g_s\bohrmagneton\frac{S^2 + \mathbf{L}\cdot\mathbf{S}}{S^2}} \mathbf{J}\cdot\mathbf{B} \\
+		\avg{\Delta E_z} &= g_J \bohrmagneton M_J B
+	\end{align*}
+	where
+	\begin{align*}
+		g_J &= \frac{\splitfrac{\bcancel{L(L+1)} + \frac{1}{2}\rbracket{J(J+1)-L(L+1)-S(S+1)} + 2S(S+1)}{+ \sbracket{J(J+1)-\bcancel{L(L+1)}-S(S+1)}}}{J(J+1)} \\
+		&= \frac{3}{2} + \frac{S(S+1)-L(L+1)}{2J(J+1)}
+	\end{align*}
+	
+	Electric dipole selection rules:
+	\begin{align*}
+		\Delta L=0, \pm 1 (0 \nrightarrow 0) &\qquad\qquad \Delta J=0, \pm 1 (0 \nrightarrow 0) \\
+		\Delta S=0 &\qquad\qquad \Delta M_J=0, \pm 1 (0 \nrightarrow 0 \textnormal{ iff } \Delta J=0)
+	\end{align*}
+	
+	For transitions with multiple energies but same term, we need $S=1$ to have ``degeneracy''.
+	
+	$\Delta S=0$ $\Rightarrow$ transition between $S=1$ states.
+	
+	Try $\underbracket{6s6p\,{}^3 P}_{\mathclap{\textnormal{levels: }{}^3 P_0, {}^3 P_1, {}^3 P_2}} \to \underbracket{6s7s\,{}^3 S}_{{}^3 S_1}$.
+	
+	Try ${}^3 S_1 \to {}^3 P_0$, we have:
+	\begin{align*}
+		M_J = +1 &\to 0 \\
+		0 &\to 0 \\
+		-1 &\to 0
+	\end{align*}
+	So 3 splittings.
+	
+	${}^3 S_1 \to {}^3 P_1$, $M_J$ (note that there is no $0 \to 0$ here since $\Delta J=0$):
+	
+	\begin{tabular}{c c c}
+		$+1 \to +1$ & $0 \to +1$ & $-1 \to 0$ \\
+		$+1 \to 0$ & $0 \to -1$ & $-1 \to -1$
+	\end{tabular}
+	
+	6 splittings here.
+	
+	${}^3 S_1 \to {}^3 P_2$, $M_J$:
+	
+	\begin{tabular}{c c c}
+		$+1 \to +2$ & $0 \to +1$ & $-1 \to 0$ \\
+		$+1 \to +1$ & $0 \to 0$ & $-1 \to -1$ \\
+		$+1 \to 0$ & $0 \to -1$ & $-1 \to -2$
+	\end{tabular}
+	
+	9 splittings here.
+	
+	So line A corresponds to $\underbracket{6s7s\,{}^3 S_1}_{\mathclap{L=0,\, S=1,\, J=1}} \to \underbracket{6s6p\,{}^3 P_0}_{\mathclap{L=1,\, S=1,\, J=0}}$.
+	\begin{equation*}
+		g_J = \frac{3}{2} + \frac{1(2)-0}{2 \cdot 1 \cdot 2} = 2 \mtext{since lower level has no splitting}
+	\end{equation*}
+	
+	Line B corresponds to $\underbracket{6s7s\,{}^3 S_1}_{\mathclap{L=0,\, S=1,\, J=1}} \to \underbracket{6s6p\,{}^3 P_1}_{\mathclap{L=1,\, S=1,\, J=1}}$.
+	
+	Lower level has:
+	\begin{equation*}
+		g_J = \frac{3}{2} + \frac{1(2)-1(2)}{2 \cdot 1 \cdot 2} = \frac{3}{2}
+	\end{equation*}
+	
+	Line C corresponds to $\underbracket{6s7s\,{}^3 S_1}_{\mathclap{L=0,\, S=1,\, J=1}} \to \underbracket{6s6p\,{}^3 P_2}_{\mathclap{L=1,\, S=1,\, J=2}}$.
+	
+	One method of determining if $LS$ coupling is good is to verify the Interval Rule, that is $\Delta E_\textnormal{SO}(J) - \Delta E_\textnormal{SO}(J-1) \propto J$.
+	
+	This implies that:
+	\begin{equation*}
+		\frac{\Delta E_\textnormal{SO}(J) - \Delta E_\textnormal{SO}(J-1)}{\Delta E_\textnormal{SO}(J-1) - \Delta E_\textnormal{SO}(J-2)} = \frac{J}{J-1}
+	\end{equation*}
+	assuming $\beta_\textnormal{SO}$ is constant.
+	
+	\begin{align*}
+		\Delta E_\textnormal{SO}(J=2) - \Delta E_\textnormal{SO}(J=1) &= -\frac{hc}{\lambda_C} + \frac{hc}{\lambda_B} \\
+		\Delta E_\textnormal{SO}(J=1) - \Delta E_\textnormal{SO}(J=0) &= -\frac{hc}{\lambda_B} + \frac{hc}{\lambda_A} \\
+		\Rightarrow \frac{\Delta E_\textnormal{SO}(J=2) - \Delta E_\textnormal{SO}(J=1)}{\Delta E_\textnormal{SO}(J=1) - \Delta E_\textnormal{SO}(J=0)} &= \frac{1/\lambda_B - 1/\lambda_C}{1/\lambda_A - 1/\lambda_B} \\
+		&= 2.63 \neq 2
+	\end{align*}
+	with $\sim 30\%$ deviation!
+	
+	So $LS$ coupling does not describe mercury well.
+\end{parts}

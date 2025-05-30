@@ -1,0 +1,124 @@
+\draft
+\begin{parts}
+	\part Einstein model assumptions:
+	\begin{itemize}
+		\item The atoms do not interact with one another;
+		\item Each atom constitutes a harmonic oscillator $\Rightarrow$ $\textnormal{energy}=\hbar\omega\rbracket{n+\dfrac{1}{2}}$ where $\omega$ is Einstein frequency (a parameter).
+	\end{itemize}
+	
+	Single particle partition function:
+	\begin{align*}
+		Z &= \sum_{n_x, n_y, n_z} e^{-\beta\hbar\omega\rbracket{n_x + n_y + n_z + \frac{3}{2}}} \\
+		&= \sum_n \rbracket{e^{-\beta\hbar\omega (n+\frac{1}{2})}}^3 \mtext{by isotropy} \\
+		&= \frac{e^{-3\beta\hbar\omega\cdot\frac{1}{2}}}{1-e^{-3\beta\hbar\omega}} \\
+		&= \frac{1}{e^{\frac{3}{2}\beta\hbar\omega} - e^{-\frac{3}{2}\beta\hbar\omega}} \\
+		&= \frac{2}{\sinh\rbracket{\frac{3}{2}\beta\hbar\omega}}
+	\end{align*}
+	
+	So expected energy:
+	\begin{align*}
+		\avg{E} &= -\frac{1}{Z} \pderi{Z}{\beta} \\
+		&= -\frac{1}{2} \sinh\rbracket{\frac{3}{2}\beta\hbar\omega} \cdot \rbracket{-\frac{2\cosh\rbracket{\frac{3}{2}\beta\hbar\omega}}{\sinh^2 \rbracket{\frac{3}{2}\beta\hbar\omega}}} \cdot \frac{3}{2}\hbar\omega \\
+		&= \frac{3}{2} \hbar\omega \coth\rbracket{\frac{3}{2}\beta\hbar\omega}
+	\end{align*}
+	
+	For $N$ atoms, total partition function:
+	\begin{align*}
+		Z_N &= (Z)^N \\
+		\Rightarrow \avg{E_N} &= \frac{3}{2} N\hbar\omega \coth\rbracket{\frac{3N}{2}\beta\hbar\omega}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		C &= \pderi{\avg{E_N}}{T} \\
+		&= \pderi{\avg{E_N}}{\beta} \cdot \pderi{\beta}{T} \\
+		&= \frac{3}{2} N\hbar\omega \sbracket{\frac{\sinh(\ldots)}{\sinh(\ldots)} - \frac{\cosh^2 (\ldots)}{\sinh^3 (\ldots)}} \cdot \rbracket{-\boltzmann \beta^2} \\
+		&= \rbracket{\frac{3N}{2} \hbar\omega}^2 \boltzmann\beta^2 \rbracket{1 - \coth^2 (\ldots)} \\
+		&= \rbracket{\frac{3N}{2} \beta\hbar\omega}^2 \boltzmann \sbracket{1 - \coth^2 \rbracket{\frac{3N}{2} \beta\hbar\omega}}
+	\end{align*}
+	
+	\part In high temperature limit, $\beta \ll \hbar\omega$.
+	
+	Also:
+	\begin{align*}
+		\coth x &= \frac{e^x + e^{-x}}{e^x - e^{-x}} \\
+		&= \frac{e^{2x} + 1}{e^{2x} - 1} \\
+		&= \frac{e^{2x} - 1}{e^{2x} - 1} + \frac{2}{e^{2x} - 1} \\
+		&= 1 + 2\nbose (2x)
+	\end{align*}
+	where $\nbose (x) = \dfrac{1}{e^x - 1}$.
+	
+	\begin{align*}
+		\avg{E} &= 3N\hbar\omega \sbracket{\nbose (3N\beta\hbar\omega) + \frac{1}{2}} \\
+		&= 3N\hbar\omega \sbracket{\frac{1}{3N\beta\hbar\omega} - \cancel{\frac{1}{2}} + \frac{3N\beta\hbar\omega}{12} + \cancel{\frac{1}{2}} + \ldots} \\
+		&= \frac{1}{\beta} + \frac{\rbracket{3N\hbar\omega}^2 \beta}{4} + \ldots \\
+		&= \boltzmann T + \frac{\rbracket{3N\hbar\omega}^2}{4\boltzmann T} + \ldots
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		C &= \boltzmann - \frac{\rbracket{3N\hbar\omega}^2}{4\boltzmann T^2} \\[1em]
+		\Rightarrow A_0 &= \boltzmann \\
+		A_1 &= 0 \\
+		A_2 &= -\frac{\rbracket{3N\hbar\omega}^2}{4\boltzmann}
+	\end{align*}
+	
+	\part Einstein temperature:
+	\begin{align*}
+		\hbar\omega &= \boltzmann T_E \\
+		\Rightarrow A_2 &= -\frac{(3N)^2 \boltzmann^2 T_E^2}{4\boltzmann} \\
+		&= -\frac{(3N)^2 \boltzmann}{4} T_E^2
+	\end{align*}
+	
+	Next note that $A_0 \to NA_0$, $A_2 \to NA_2$:
+	\begin{align*}
+		\Rightarrow N &= \frac{A_0}{\boltzmann} \\
+		\Rightarrow T_E^2 &= -\frac{4}{9} \frac{\boltzmann^2}{A_0^2} \frac{A_2}{\boltzmann} \\
+		T_E &= \SI{11.54}{\kelvin}
+	\end{align*}
+	
+	\part Argon atom weighs $40u$.
+	
+	$\Rightarrow$ Mass of sample:
+	\begin{align*}
+		M &= 40Nu \\
+		&= \frac{40u A_0}{\boltzmann}
+		&= \SI{0.120}{\kilo\gram}
+	\end{align*}
+	
+	For lattice constant $a$, nearest neighbour distance $d$,
+	\begin{equation*}
+		a = \sqrt{2}d
+	\end{equation*}
+	
+	\image{.2\linewidth}{q2-argon}
+	An FCC unit cell (conventional) contains 4 argon atoms.
+	
+	Hence:
+	\begin{align*}
+		V &= \frac{N}{4} a^3 \\
+		\Rightarrow a^3 &= \frac{4V}{N} = \frac{4\boltzmann V}{A_0} \\
+		a &= \SI{3.59e-8}{\centi\metre} \\
+		&= \SI{0.359}{\nano\metre} \\
+		\Rightarrow d &= \frac{a}{\sqrt{2}} \\
+		&= \SI{0.254}{\nano\metre}
+	\end{align*}
+	
+	\part For a harmonic oscillator,
+	\begin{align*}
+		E &= \frac{1}{2}kx^2 + \frac{p^2}{2m} \\
+		\avg{E} &= \frac{1}{2}k \avg{x^2} + \frac{\avg{p^2}}{2m} \\
+		&= k \avg{x^2} \mtext{by equipartition theorem} \\
+		&= 2\boltzmann T
+	\end{align*}
+	
+	\begin{align*}
+		\avg{x^2} &= \defint{-\infty}{\infty}{P(x) x^2}{x} \\
+		&= \defint{-\infty}{\infty}{\frac{e^{-\beta E}}{Z} x^2}{x}
+	\end{align*}
+	where
+	\begin{equation*}
+		Z = \defint{-\infty}{\infty}{}{\mathbf{p}} \indefint{e^{-\beta\sbracket{\frac{\mathbf{p}^2}{2m}+\frac{k\mathbf{x}^2}{2}}}}{\mathbf{x}}
+	\end{equation*}
+	since we are in the classical regime.
+\end{parts}

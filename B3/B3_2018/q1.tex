@@ -1,0 +1,178 @@
+\draft
+\begin{parts}
+	\part As the $\electron$ orbits around the nucleus with angular momentum $\mathbf{l} \neq 0$, it experiences magnetic field in its rest trame due to the transformation of the electric field from the nucleus.
+	The interaction between this magnefic field and the intrinsic magnetic moment of the $\electron$ leads to a splitting in energy level called fine structure.
+	
+	\image{.2\linewidth}{q1-electron-orbit}
+	In $\electron$ rest frame,
+	\begin{align*}
+		\mathbf{B} &= -\frac{\mathbf{v}\times\mathbf{B}}{c^2} \mtext{and} \\
+		\mathbf{v} &= \frac{\mathbf{p}}{m},\, -e\mathbf{E} = -\pderi{U}{r}
+	\end{align*}
+	where $U(r)$ is Coulomb potential of the nucleus.
+	
+	\begin{align*}
+		\Rightarrow \mathbf{B} &= -\frac{1}{m_e c^2} \rbracket{\frac{1}{er} \pderi{U}{r}} \mathbf{p}\times\mathbf{r} \mtext{since } \hat{\mathbf{r}}=\frac{\mathbf{r}}{r} \\
+		&= \frac{\hbar}{m_e c^2} \rbracket{\frac{1}{er} \pderi{U}{r}} \mathbf{l} \mtext{for } \mathbf{r}\times\mathbf{p}=\hbar\mathbf{l}
+	\end{align*}
+	
+	Also magnetic moment of $\electron$:
+	\begin{equation*}
+		\bm{\mu}_s = -g_s \bohrmagneton \mathbf{s}
+	\end{equation*}
+	with $g_s \simeq 2$ the gyromagnetic ratio, $\bohrmagneton = \dfrac{e\hbar}{2m_e}$.
+	
+	Hamiltonian of magnetic interaction:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= -\bm{\mu}_s \cdot \mathbf{B} \\
+		&= g_s \bohrmagneton \cdot \frac{\hbar}{m_e c^2} \rbracket{\frac{1}{er} \pderi{U}{r}} \mathbf{s}\cdot\mathbf{l} \\
+		&\rightarrow (g_s - 1) \frac{e\hbar}{2m_e} \cdot \frac{\hbar}{m_e c^2} \rbracket{\frac{1}{er} \frac{Ze^2}{4\pi\permittivity r^2}} \mathbf{s}\cdot\mathbf{l}
+	\end{align*}
+	by Thomas precession and $\pdiagderi{U}{r} = \pdiagdiff{r}\rbracket{-\dfrac{Ze^2}{4\pi\permittivity r}}$.
+	
+	\begin{align*}
+		\Delta E_\textnormal{SO} &= \frac{\hbar^2}{2m_e^2 c^2} \avg{\frac{1}{r^3}} \frac{Ze^2}{4\pi\permittivity} \underbracket{\avg{\mathbf{s}\cdot\mathbf{l}}}_{\mathclap{\frac{1}{2}\avg{\hat{\mathbf{j}}^2 - \hat{\mathbf{l}}^2 - \hat{\mathbf{s}}^2}}} \\
+		&= \frac{\beta}{2} \sbracket{j(j+1)-l(l+1)-s(s+1)}
+	\end{align*}
+	where
+	\begin{align*}
+		\beta &= \frac{\hbar}{2m_e^2 c^2} \avg{\frac{1}{r^3}} \cdot \frac{Ze^2}{4\pi\permittivity} \\
+		&= \frac{\hbar}{2m_e^2 c^2} \cdot \rbracket{\frac{Z}{na_0}}^3 \cdot \frac{1}{l(l+\frac{1}{2})(l+1)} \cdot \frac{Ze^2}{4\pi\permittivity} \\
+		&= \frac{\hbar}{2m_e^2 c^2} \cdot \frac{e^2}{4\pi\permittivity} \cdot \frac{Z^4}{l(l+\frac{1}{2})(l+1)(na_0)^3}
+	\end{align*}
+	
+	\part $n=2$ shells: $2s$, $2p$
+	
+	$n=3$ shells: $3s$, $3p$, $3d$
+	
+	Config $2s$ $\to$ Term ${}^2 S$ $\to$ Level ${}^2 S_{1/2}$
+	
+	Config $2p$ $\to$ Term ${}^2 P$ $\to$ Level ${}^2 P_{1/2}$, ${}^2 P_{3/2}$
+	
+	Config $3s$ $\to$ Term ${}^2 S$ $\to$ Level ${}^2 S_{1/2}$
+	
+	Config $3p$ $\to$ Term ${}^2 P$ $\to$ Level ${}^2 P_{1/2}$, ${}^2 P_{3/2}$
+	
+	Config $3d$ $\to$ Term ${}^2 D$ $\to$ Level ${}^2 D_{3/2}$, ${}^2 D_{5/2}$
+	
+	Energy shifts:
+	\begin{align*}
+		2p \; {}^2 P_{1/2}: \; \beta &= \frac{\hbar^2}{2m_e^2c^2} \cdot \alpha 2\pi hc \cdot \frac{2^4}{1\rbracket{\frac{3}{2}} (2) (2a_0)^3} \\
+		&= \frac{(\SI{197.33}{\mega\electronvolt\femto\metre})^3 \cdot 16\pi}{(\SI{0.511}{\mega\electronvolt})^2 \cdot 24(\SI{5.292e4}{\femto\metre})^3} \\
+		&= \SI{4.158e-7}{\mega\electronvolt} = \SI{0.4158}{\electronvolt} \\
+		\Rightarrow \Delta E_\textnormal{SO}\rbracket{j=\frac{1}{2}} &= \frac{\beta}{2} \sbracket{\frac{1}{2}\rbracket{\frac{3}{2}} - 1(2) - \frac{1}{2}\rbracket{\frac{3}{2}}} \\
+		&= -\beta =\SI{-0.4158}{\electronvolt}
+	\end{align*}
+	
+	\begin{align*}
+		2p \; {}^2 P_{3/2}: \; \Delta E_\textnormal{SO} &= \frac{\beta}{2} \sbracket{\frac{3}{2}\rbracket{\frac{5}{2}} - 1(2) - \frac{1}{2\rbracket{\frac{3}{2}}}} \\
+		&= \frac{\beta}{2} = \SI{0.2079}{\electronvolt}
+	\end{align*}
+	
+	\begin{align*}
+		3p \; {}^2 P_{1/2}: \; \beta &= \frac{(\SI{197.33}{\mega\electronvolt\femto\metre})^3 \cdot 2^4 \pi}{(\SI{0.511}{\mega\electronvolt})^2 \cdot 3 \cdot 3^3 (\SI{5.292e4}{\femto\metre})^3} \mtext{similarly} \\
+		&= \SI{1.232e-7}{\mega\electronvolt} = \SI{0.1232}{\electronvolt} \\
+		\Delta E_\textnormal{SO}\rbracket{j=\frac{1}{2}} &= \frac{\beta}{2} \cdot \sbracket{\frac{1}{2}\rbracket{\frac{3}{2}}\ldots} \\
+		&= -\beta \\
+		&= \SI{-0.1232}{\electronvolt} \mtext{similarly} \\[1em]
+		{}^2 P_{3/2}: \; \Delta E\rbracket{j=\frac{3}{2}} &= \frac{\beta}{2} \\
+		&= \SI{0.0616}{\electronvolt}
+	\end{align*}
+	
+	\begin{align*}
+		3d \; {}^2 D_{3/2}: \; \beta &= \frac{(\SI{197.33}{\mega\electronvolt\femto\metre})^3 \cdot 16 \pi}{(\SI{0.511}{\mega\electronvolt})^2 \cdot 2 \rbracket{\frac{5}{2}} (3) \cdot 3^3 (\SI{5.292e4}{\femto\metre})^3} \\
+		&= \SI{2.464e-8}{\mega\electronvolt} \\
+		&= \SI{0.02464}{\electronvolt} \\
+		\Delta E\rbracket{j=\frac{3}{2}} &= \frac{\beta}{2} \sbracket{\frac{3}{2}\rbracket{\frac{5}{2}} - 2(3) - \frac{1}{2}\rbracket{\frac{3}{2}}} \\
+		&= -\frac{3\beta}{2} \\
+		&= \SI{-0.03696}{\electronvolt} \\[1em]
+		\Delta E\rbracket{j=\frac{5}{2}} &= \frac{\beta}{2} \sbracket{\frac{5}{2}\rbracket{\frac{9}{2}} - 2(3) - \frac{1}{2}\rbracket{\frac{3}{2}}} \\
+		&= \beta \\
+		&= \SI{0.02464}{\electronvolt}
+	\end{align*}
+	
+	\newpage
+	Energy level diagram:
+	\image{.8\linewidth}{q1-energy-level}
+	
+	Electric dipole selection rule:
+	
+	\begin{tabular}{p{.11\linewidth} p{.22\linewidth} p{.22\linewidth} p{.3\linewidth}}
+		$\Delta n=$ any & $\Delta l=\pm 1$ & & \\
+		$\Delta S=0$ & $\Delta L=0, \pm 1$ ($0 \nrightarrow 0$) & $\Delta J=0, \pm 1 (0 \nrightarrow 0)$ & $\Delta M_J = 0, \pm 1$ ($0 \nrightarrow 0$ iff $\Delta J=0$)
+	\end{tabular}
+	
+	So possible transitions:
+	
+	\begin{tikzpicture}[auto]
+		\matrix (2s) [matrix of math nodes,row sep=1cm,column sep=16mm] {
+			2s/3s \;\; {}^2 S_{1/2} & 2p \;\; {}^2 P_{1/2} \\
+			& 2p \;\; {}^2 P_{3/2} \\
+			& 3p \;\; {}^2 P_{1/2} \\
+			& 3p \;\; {}^2 P_{3/2} \\
+		};
+		\draw (2s-1-1)--(2s-1-2);
+		\draw (2s-1-1)--(2s-2-2);
+		\draw (2s-1-1)--(2s-3-2);
+		\draw (2s-1-1)--(2s-4-2);
+	\end{tikzpicture}
+	
+	\part $\Omega^-$ baryon belongs to the $J^P = \dfrac{3}{2}^+$ group so it possesses $s=\dfrac{3}{2}$.
+	
+	For the exotic hydrogenic ion \ion{Pb}{81+}, replace $m_e \to m_\Omega$ and $s=\dfrac{1}{2} \to \dfrac{3}{2}$.
+	
+	So:
+	\begin{align*}
+		\beta &= \frac{\hbar^2 c^2}{2m_\Omega^2 c^4} \cdot 2\pi\alpha\hbar c \cdot \frac{82^4}{9\rbracket{\frac{19}{2}}(10)(10)^3 (a_0)^3} \\
+		&= \frac{(\SI{197.33}{\mega\electronvolt\femto\metre})^3 \cdot 82^4 \pi}{(\SI{1672}{\mega\electronvolt})^2 \cdot \num{855000} (\SI{5.292e4}{\femto\metre})^3} \\
+		&= \SI{3.081e-12}{\mega\electronvolt} \\
+		&= \SI{3.081e-6}{\electronvolt}
+	\end{align*}
+	
+	Config $10l$ $\to$ Term ${}^4 L$ $\to$ Level ${}^4 L_{15/2}$, ${}^4 L_{17/2}$, ${}^4 L_{19/2}$, ${}^4 L_{21/2}$
+	
+	So:
+	\begin{align*}
+		\Delta E\rbracket{j=\frac{15}{2}} &= \frac{\beta}{2} \sbracket{\frac{15}{2}\rbracket{\frac{17}{2}} - 9(10) - \frac{3}{2}\rbracket{\frac{5}{2}}} \\
+		&= -15\beta = \SI{-4.621e-5}{\electronvolt} \\[1em]
+		\Delta E\rbracket{j=\frac{17}{2}} &= \frac{\beta}{2} \sbracket{\frac{17}{2}\rbracket{\frac{19}{2}} - 9(10) - \frac{3}{2}\rbracket{\frac{5}{2}}} \\
+		&= -\frac{13}{2}\beta = \SI{-2.003e-5}{\electronvolt} \\[1em]
+		\Delta E\rbracket{j=\frac{19}{2}} &= \frac{\beta}{2} \sbracket{\frac{19}{2}\rbracket{\frac{21}{2}} - 9(10) - \frac{3}{2}\rbracket{\frac{5}{2}}} \\
+		&= 3\beta = \SI{9.243e-6}{\electronvolt} \\[1em]
+		\Delta E\rbracket{j=\frac{21}{2}} &= \frac{\beta}{2} \sbracket{\frac{21}{2}\rbracket{\frac{23}{2}} - 9(10) - \frac{3}{2}\rbracket{\frac{5}{2}}} \\
+		&= \frac{27}{2}\beta = \SI{4.159e-5}{\electronvolt}
+	\end{align*}
+	\image{.7\linewidth}{q1-energy-diff}
+	
+	\part Possible spins:
+	\begin{align*}
+		S &= \abs{\frac{3}{2}-\frac{3}{2}} \ldots \rbracket{\frac{3}{2}+\frac{3}{2}} \\
+		&= 0, 1, 2, 3
+	\end{align*}
+	
+	For excited state $1s2s$ $\to$
+	\begin{tabular}{l c c c c}
+		Term & ${}^1 S$ & ${}^3 S$ & ${}^5 S$, ${}^7 S$ \\
+		& \vline & \vline & \vline & \vline \\
+		Level & ${}^1 S_0$ & ${}^3 S_1$ & ${}^5 S_2$ & ${}^7 S_3$
+	\end{tabular}
+	
+	For $1s2p$,
+	
+	\begin{tabular}{l c c c c}
+		Term & ${}^1 P$ & ${}^3 P$ & ${}^5 P$ & ${}^7 P$ \\
+		&& $\downarrow$ && \\
+		Level & ${}^1 P_1$ & ${}^3 P_0$, ${}^3 P_1$, ${}^3 P_2$ & ${}^5 P_1$, ${}^5 P_2$, ${}^5 P_3$ & ${}^7 P_2$, ${}^7 P_3$, ${}^7 P_4$
+	\end{tabular}
+	
+	For ground state $1s^2$, Pauli exclusion principle states that no 2 fermions may occupy the same state, so the 2 $\Omega^-$'s must not have aligned spins.
+	So the available spins are $S=0, 1, 2$.
+	
+	$\Rightarrow$
+	\begin{tabular}{l c c c}
+		Ground term & ${}^1 S$ & ${}^3 S$ & ${}^5 S$ \\
+		Level & ${}^1 S_0$ & $\bcancel{\cancel{{}^3 S_1}}$ & ${}^5 S_2$
+	\end{tabular}
+	
+	This differs from helium whereby only ${}^1 S_0$ is available as $\electron$ has spin $\dfrac{1}{2}$ instead of $\dfrac{3}{2}$.
+\end{parts}

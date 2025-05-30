@@ -1,0 +1,95 @@
+\draft
+\begin{parts}
+	\part Addition of angular momentum:
+	\begin{align*}
+		\hat{\mathbf{J}} &= \hat{\mathbf{J}}_1 + \hat{\mathbf{J}}_2 \\
+		\Rightarrow \hat{J}^2 &= \hat{J}_1^2 + \hat{J}_2^2 + 2\hat{\mathbf{J}}_1\cdot\hat{\mathbf{J}}_2 \\
+		\Rightarrow 2\hat{\mathbf{J}}_1\cdot\hat{\mathbf{J}}_2 &= \frac{1}{2} \sbracket{\hat{J}^2 - \hat{J}_1^2 - \hat{J}_2^2}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\hat{H} &= A\hat{\mathbf{J}}_1\cdot\hat{\mathbf{J}}_2 \\
+		\Rightarrow \avg{E} &= A \avg{\hat{\mathbf{J}}_1\cdot\hat{\mathbf{J}}_2} \\
+		&= \frac{A}{2} \sbracket{J(J+1) - J_1(J_1 + 1) - J_2(J_2 + 1)}
+	\end{align*}
+	for eigenstates $\ket{J J_1 J_2 M_J}$.
+	
+	Then:
+	\begin{align*}
+		E(J) - E(J-1) &= \frac{A}{2} \sbracket{J(J+1) - J_1(J_1 + 1) - J_2(J_2 + 1) \right.\\
+		&\qquad \left.(J-1)J - J_1(J_1 + 1) - J_2(J_2 + 1)} \\
+		&= \frac{A}{2} \sbracket{J^2 + J - J^2 + J} = AJ
+	\end{align*}
+	
+	\part The interval rule is a property of $LS$ coupling scheme.
+	In this scheme, it is assumed that $\hat{H}_\textnormal{CF} \gg \Delta\hat{H}_\textnormal{RE} \gg \Delta\hat{H}_\textnormal{SO}$ where $\hat{H}_\textnormal{CF}$ is a central field Hamiltonian under central field approximation, $\Delta\hat{H}_\textnormal{RE}$ is the residual electrostatic interaction, $\Delta\hat{H}_\textnormal{SO}$ is the spin-orbit interaction.
+	
+	For example, for calcium we have excited config $4s4p$ with terms ${}^1 P$, ${}^3 P$ which then have levels ${}^1 P_1$, ${}^3 P_0$, ${}^3 P_1$, ${}^3 P_2$.
+	\image{.7\linewidth}{q2-levels}
+	
+	\part Hyperfine Hamiltonian:
+	\begin{equation*}
+		\hat{H}_\textnormal{hfs} = -g_I \nuclearmagneton \hat{\mathbf{I}}\cdot\hat{\mathbf{B}}_\textnormal{e}
+	\end{equation*}
+	
+	$\mathbf{B}_\textnormal{e}$ is the magnetic field due to the motion and intrinsic magnetic moment of the $\electron$.
+	Since the magnetic moment of an $\electron$ $\propto$ $\hat{\mathbf{l}} + g_s \hat{\mathbf{s}}$ where $\hat{\mathbf{l}}$ is orbital angular momentum and $\hat{\mathbf{s}}$ is spin.
+	We expect $\hat{\mathbf{B}}_\textnormal{e} \propto \hat{\mathbf{J}}$ by the Wigner-Eckart theorem.
+	
+	Hence $\hat{H}_\textnormal{hfs} = A\hat{\mathbf{I}}\cdot\hat{\mathbf{J}}$, since this is an internal interaction, the total angular momentum $\mathbf{F} = \mathbf{I} + \mathbf{J}$ is conserved, making it a good quantum number and diagonalising $\hat{H}_\textnormal{hfs}$ with $\ket{IJFM_F}$, similar to $LS$ coupling.
+	
+	\part \todo The frequencies of hyperfine transitions are the energy differences between each hyperfine level and the reference level.
+	Similar to $LS$ coupling, we then have the Interval Rule where $\Delta E(F) - \Delta E(F-1) = AF$:
+	\begin{align*}
+		\Rightarrow \frac{\Delta E(F) - \Delta E(F-1)}{\Delta E(F-1) - \Delta E(F-2)} &= \frac{F}{F-1} \\
+		\Rightarrow \frac{\Delta E(F) - \Delta E(F+1)}{\Delta E(F+1) - \Delta E(F+2)} &= \frac{F}{F+1}
+	\end{align*}
+	
+	We may then find $F$ from the data, and with the knowledge of $J$ at ground state and the hint of whether $I$ is integer/half-integer from the mass number, we may find the nuclear spin $I$.
+	With knowledge of $\mathbf{B}_\textnormal{e}$ we may also find the nuclear g-factor.
+	
+	\element{Mn}{55} peaks: \num{0}, \num{72}, \num{145}, \num{217.3}, \num{289.7}, \SI{362.1}{\mega\hertz}
+	
+	\element{Mn}{56} peaks: \num{0}, \num{85}, \num{141}, \num{197.4}, \num{253.8}, \SI{310.2}{\mega\hertz}
+	
+	Ratios of $\Delta E$ (\element{Mn}{55}):
+	\begin{align*}
+		&\num{0.497},\, \num{0.667},\, \num{0.750},\, \num{0.800} \\
+		&\simeq \frac{1}{2},\, \frac{2}{3},\, \frac{3}{4},\, \frac{4}{5}
+	\end{align*}
+	So $F$ ranges from 1 to 6.
+	\begin{gather*}
+		\begin{cases}
+			I+J = 6 \\
+			\abs{I-J} = 1
+		\end{cases} \\
+		\Rightarrow 2I=7 \mtext{or\hspace{1em}} 2I=5 \\
+		\Rightarrow I=\frac{7}{2} \mtext{or\hspace{1em}} I=\frac{5}{2} \\
+		\Rightarrow J=-\frac{1}{2} \textnormal{ (unphysical!)\hspace{1em}or\hspace{1em}} J=\frac{1}{2}
+	\end{gather*}
+	
+	For \element{Mn}{56}, the ratios are:
+	\begin{align*}
+		&\num{0.603},\, \num{0.714},\, \num{0.777},\, \num{0.818} \\
+		&\simeq \frac{\diagfrac{3}{2}}{\diagfrac{5}{2}},\, \frac{\diagfrac{5}{2}}{\diagfrac{7}{2}},\, \frac{\diagfrac{7}{2}}{\diagfrac{9}{2}},\, \frac{\diagfrac{9}{2}}{\diagfrac{11}{2}}
+	\end{align*}
+	So $F$ ranges from $\dfrac{3}{2}$ to $\dfrac{11}{2}$.
+	\begin{gather*}
+		\begin{cases}
+			I+J = \frac{11}{2} \\
+			\abs{I-J} = \frac{3}{2}
+		\end{cases} \\
+		\Rightarrow I=\frac{7}{2} \mtext{or\hspace{1em}} I=2 \\
+		\Rightarrow J=2 \textnormal{ (unphysical!)\hspace{1em}or\hspace{1em}} J=\frac{7}{2}
+	\end{gather*}
+	But since the mass number is even, we have $I$ as an integer so $I=2$.
+	
+	\part From before, $A\mathbf{J} = -g_I \nuclearmagneton \hat{\mathbf{I}}\cdot\hat{\mathbf{B}}_\textnormal{e}$ so the ratio of $A$ gives the ratio of $g_I$:
+	\begin{align*}
+		\Delta E_{55}(1) - \Delta E_{55}(2) &= -A_{55}(2) \\
+		\Delta E_{56}\rbracket{\frac{3}{2}} - \Delta E_{56}\rbracket{\frac{5}{2}} &= -A_{56}\rbracket{\frac{5}{2}} \\
+		\Rightarrow \frac{A_{55}}{A_{56}} &= \frac{g_{I, 55}}{g_{I, 56}} \\
+		&= \frac{4}{5}\cdot\frac{72}{85} = \num{0.678}
+	\end{align*}
+\end{parts}

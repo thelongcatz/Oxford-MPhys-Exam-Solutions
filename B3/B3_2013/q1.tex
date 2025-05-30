@@ -1,0 +1,121 @@
+\draft
+\begin{parts}
+	\part
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{m{.2\linewidth}|p{.3\linewidth}|p{.3\linewidth}}
+			& Fine structure & Hyperfine structure \\ \hline
+			Physical origin & Spin-orbit interaction between $\electron$ moment and transformed field & Spin-spin interaction due to intrinsic magnetic moments of nucleus and $\electron$ \\ \hline
+			Coupling & $\ket{LSJM_J}$ & $\ket{IJFM_F}$ where $\hat{\mathbf{F}}=\hat{\mathbf{I}}+\hat{\mathbf{J}}$ \\ \hline
+			Relative strength & 1 & $\dfrac{\masselectron}{\massproton} \sim \num{e-3}$
+		\end{tabular}
+	\end{table}
+	
+	In $IJ$ coupling scheme, the total atomic-nuclear angular momentum:
+	\begin{align*}
+		\hat{\mathbf{F}}^2 &= \rbracket{\hat{\mathbf{I}}+\hat{\mathbf{J}}}^2 \\
+		\Rightarrow \mathbf{I}\cdot\mathbf{J} &= \frac{1}{2} \sbracket{\hat{\mathbf{F}}^2 - \hat{\mathbf{I}}^2 - \hat{\mathbf{J}}^2}
+	\end{align*}
+	
+	For eigenstates $\ket{IJFM_F}$, we then have:
+	\begin{align*}
+		E_F &= \langle\hat{H}_\textnormal{hf}\rangle \\
+		E_F &= \frac{A}{2} \rbracket{F(F+1)-I(I+1)-J(J+1)}
+	\end{align*}
+	
+	The good quantum numbers in this scheme are $I$, $J$, $F$ and $M_F$.
+	
+	\part Now find $\Delta E_\textnormal{hf}$:
+	\begin{align*}
+		\Delta E_\textnormal{hf} &= E_F - E_{F-1} \\
+		&= \frac{A}{2} \sbracket{F(F+1)-I(I+1)-J(J+1) - (F-1)F+I(I+1)+J(J+1)} \\
+		&= \frac{A}{2} \sbracket{F^2 + F - F^2 + F} \\
+		&= AF
+	\end{align*}
+	
+	Level ${}^2 S_{\diagfrac{1}{2}}$ has $J=\diagfrac{1}{2}$, hydrogen has $I=\diagfrac{1}{2}$ $\Rightarrow$ $F=0$ or $1$.
+	
+	So:
+	\begin{align*}
+		\Delta E(F=0) &= \frac{A}{2} \sbracket{0(1)-\frac{1}{2}\rbracket{\frac{3}{2}}-\frac{1}{2}\rbracket{\frac{3}{2}}} \\
+		&= -\frac{3A}{4} \\
+		&= -\frac{3}{4} \rbracket{\frac{\permeability}{4\pi}} \rbracket{\frac{g_I \bohrmagneton \nuclearmagneton}{\diagfrac{1}{2}}} \, \frac{8}{3} \, \frac{1}{a_0^3} \\
+		&= -\frac{3}{4} \underbracket{\rbracket{\SI{5.89e-6}{\electronvolt}}}_{\mathclap{\SI{1.425e9}{\hertz} = \SI{4.749}{\per\metre}}} \\
+		&= \SI{-1.069e9}{\hertz} \\
+		&= \SI{-1.069e3}{\mega\hertz} \\
+		&= \SI{-3.562}{\per\metre} = \SI{-0.03562}{\per\centi\metre}
+	\end{align*}
+	
+	\begin{align*}
+		\Delta E(F=1) &= \frac{A}{2} \sbracket{1(2)-\frac{1}{2}\rbracket{\frac{3}{2}}-\frac{1}{2}\rbracket{\frac{3}{2}}} \\
+		&= \frac{A}{4} \\
+		&= \SI{3.562e8}{\hertz} \\
+		&= \SI{356.2}{\mega\hertz} \\
+		&= \SI{1.187}{\per\metre} = \SI{0.0187}{\per\centi\metre}
+	\end{align*}
+	Since no $\electron$ has any transition, this is not an electric dipole transition (in fact it's magnetic dipole).
+	
+	\part $A_{10} \sim 1/\tau \sim \Delta\omega_n$ where $\Delta\omega_n$ is natural broadening, $\tau$ is the decay time.
+	
+	Typically in lab, we would have Doppler broadening: $\Delta\omega / \omega \sim v/c$
+	
+	Equipartition theorem tells us:
+	\begin{align*}
+		\frac{1}{2}mv^2 = 3\boltzmann T \\
+		\Rightarrow v &= \sqrt{\frac{6\boltzmann T}{m}} \\
+		\Rightarrow \frac{\Delta\omega}{\omega} &\sim \num{1.658e-5} \mtext{for } T\sim\SI{500}{\kelvin} \\
+		\Delta\omega &= \SI{2.36e4}{\hertz} \gg A_{10}
+	\end{align*}
+	So without eliminating such broadening, it would be difficult to resolve such transition.
+	
+	\part $5d^2 6s$ ${}^4 F_{\diagfrac{9}{2}}$ has $J=\frac{9}{2}$.
+	
+	Since there are an even (8) number of splitting, $F$ is an integer $\Rightarrow$ $I$ is a half-integer.
+	
+	Also the Interval Rule:
+	\begin{align*}
+		\Delta E_F - \Delta E_{F-1} &= AF \\
+		\Rightarrow \frac{\Delta E_F - \Delta E_{F-1}}{\Delta E_{F-1} - \Delta E_{F-2}} &= \frac{F}{F-1}
+	\end{align*}
+	
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			$\Delta E$ ($\si{\mega\hertz}$) & $\Delta E - \Delta E_0$ ($\si{\mega\hertz}$) & Ratio $\dfrac{\Delta E - \Delta E_0}{\Delta E^\prime - \Delta E}$ \\ \hline
+			\num{0} & N/A & N/A \\
+			\num{2312.87} & \num{2312.87} & N/A \\
+			\num{4334.02} & \num{2021.15} & $\diagfrac{8}{7}$ \\
+			\num{6075.97} & \num{1741.95} & $\diagfrac{7}{6}$ \\
+			\num{7528.28} & \num{1452.31} & $\diagfrac{6}{5}$ \\
+			\num{8688.88} & \num{1160.60} & $\diagfrac{5}{4}$ \\
+			\num{9568.19} & \num{879.31} & $\diagfrac{4}{3}$
+		\end{tabular}
+	\end{center}
+	
+	So $F$ ranges from $2$ to $9$:
+	\begin{gather*}
+		\begin{cases}
+			I+J = 9 \\
+			I-J = 2
+		\end{cases} \\
+		\Rightarrow 2I = 11 \\
+		I = \frac{11}{2}
+	\end{gather*}
+	
+	So we have:
+	\begin{equation*}
+		A = \rbracket{\frac{\permeability}{4\pi}} \rbracket{\frac{g_I \bohrmagneton \nuclearmagneton}{\diagfrac{11}{2}}} \, \frac{8}{3} \, \frac{57}{(6a_0)^3}
+	\end{equation*}
+	
+	Also:
+	\begin{align*}
+		\Delta E_{F=9} - \Delta E_{F=8} = 9A &= \SI{2312.87}{\mega\hertz} \\
+		A &= \SI{256.99}{\mega\hertz} = \SI{1.703e-25}{\joule}
+	\end{align*}
+	
+	Lastly:
+	\begin{equation*}
+		g_I \nuclearmagneton = \frac{4\pi\cdot\diagfrac{11}{2}\cdot 3 \cdot (6a_0)^3 \Delta E}{\permeability \bohrmagneton 8 \cdot 57}
+		= \SI{2.127e-25}{\joule\per\tesla}
+	\end{equation*}
+	but the Interval Rule assumes that $IJ$ coupling is good.
+\end{parts}

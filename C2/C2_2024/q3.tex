@@ -21,8 +21,8 @@ Rabi flopping in the context of atomic/ionic quantum computing.
 	This means that $\mathcal{H}$ is Hermitian, i.e. $\mathcal{H} = \mathcal{H}^\dag$.
 	Hence the propagator $U = \exp(-i\mathcal{H}t/\hbar)$ satisfies the following relation:
 	\begin{align*}
-		UU^\dag &= \exp\left(-\frac{i \mathcal{H} t}{\hbar}\right) \exp\left(\frac{i \mathcal{H}^\dag t}{\hbar}\right) \\
-		&= \exp\left(-\frac{i \mathcal{H} t}{\hbar} + \frac{i \mathcal{H} t}{\hbar}\right) \textnormal{\hspace{1em}since }[\mathcal{H},\, \mathcal{H}^\dag] = 0 \\
+		UU^\dag &= \exp\rbracket{-\frac{i \mathcal{H} t}{\hbar}} \exp\rbracket{\frac{i \mathcal{H}^\dag t}{\hbar}} \\
+		&= \exp\rbracket{-\frac{i \mathcal{H} t}{\hbar} + \frac{i \mathcal{H} t}{\hbar}} \textnormal{\hspace{1em}since }[\mathcal{H},\, \mathcal{H}^\dag] = 0 \\
 		&= \exp(0) \\
 		&= \mathds{1}
 	\end{align*}
@@ -69,17 +69,17 @@ Rabi flopping in the context of atomic/ionic quantum computing.
 	
 	So a system undergoes Rabi flopping over time:
 	\begin{equation*}
-		\ket{\psi(t)} = A \ket{+} \exp\left(-\frac{iVt}{2}\right) + B \ket{-} \exp\left(\frac{iVt}{2}\right)
+		\ket{\psi(t)} = A \ket{+} \exp\rbracket{-\frac{iVt}{2}} + B \ket{-} \exp\rbracket{\frac{iVt}{2}}
 	\end{equation*}
 	Note that $\ket{0} = \bigl(\ket{+} \;+\; \ket{-}\bigr) / \sqrt{2}$ and $\ket{1} = \bigl(\ket{+} \;-\; \ket{-}\bigr) / \sqrt{2}$.
 	
 	An initial state of $\ket{0}$ then gives $A = B = 1/\sqrt{2}$, hence:
 	\begin{equation*}
-		\ket{\psi(t)} = \cos\left(\frac{Vt}{2}\right) \ket{0} -i\sin\left(\frac{Vt}{2}\right) \ket{1}
+		\ket{\psi(t)} = \cos\rbracket{\frac{Vt}{2}} \ket{0} -i\sin\rbracket{\frac{Vt}{2}} \ket{1}
 	\end{equation*}
 	Whereas an initial state of $\ket{1}$ gives $A = -B = 1/\sqrt{2}$:
 	\begin{equation*}
-		\ket{\psi(t)} = -i\sin\left(\frac{Vt}{2}\right) \ket{0} + \cos\left(\frac{Vt}{2}\right) \ket{1}
+		\ket{\psi(t)} = -i\sin\rbracket{\frac{Vt}{2}} \ket{0} + \cos\rbracket{\frac{Vt}{2}} \ket{1}
 	\end{equation*}
 	
 	In the case where $V \ll \delta$, we may apply perturbation theory onto the case with $V = 0$.
@@ -95,10 +95,10 @@ Rabi flopping in the context of atomic/ionic quantum computing.
 	
 	We proceed to solve the TDSE with the \textit{exact} eigenvalue\footnote{Not a huge fan of the wording but this is the most logical thing I can think of!} from \eqref{eqn:q3-h2-eigenvalues} to get detuned Rabi flopping:
 	\begin{align}
-		\ket{\psi(t)} &= C \ket{0} \exp\left( -\frac{i\lambda_+ t}{\hbar} \right) + D \ket{1} \exp\left( -\frac{i\lambda_- t}{\hbar} \right) \notag \\
-		&= C \ket{0} \exp\left( -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} \right) + D \ket{1} \exp\left( -it\,\frac{\delta - \sqrt{\delta^2 + V^2}}{2} \right) \notag \\
-		&= \exp(-i\delta t/2) \left[ C \ket{0} \exp\left( -it \, \sqrt{\delta^2 + V^2}/2 \right) + D \ket{1} 
-		\exp\left( it \, \sqrt{\delta^2 + V^2}/2 \right) \right]
+		\ket{\psi(t)} &= C \ket{0} \exp\rbracket{ -\frac{i\lambda_+ t}{\hbar} } + D \ket{1} \exp\rbracket{ -\frac{i\lambda_- t}{\hbar} } \notag \\
+		&= C \ket{0} \exp\rbracket{ -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} } + D \ket{1} \exp\rbracket{ -it\,\frac{\delta - \sqrt{\delta^2 + V^2}}{2} } \notag \\
+		&= \exp(-i\delta t/2) \sbracket{ C \ket{0} \exp\rbracket{ -it \, \sqrt{\delta^2 + V^2}/2 } + D \ket{1} 
+		\exp\rbracket{ it \, \sqrt{\delta^2 + V^2}/2 } }
 		\label{eqn:q3-detuned-rabi}
 	\end{align}
 	
@@ -120,7 +120,7 @@ Rabi flopping in the context of atomic/ionic quantum computing.
 	
 	Rewriting $\ket{\pm} = \bigl(\ket{0} \pm \ket{1}\bigr)/\sqrt{2}$ then gives:
 	\begin{align*}
-		\mathcal{H}_3 &= \frac{\hbar V}{2} \ket{2} \times \left( \sqrt{2} \bra{+} \right) + \hbar\delta \ket{2}\bra{2} + \textnormal{c.c.} \\
+		\mathcal{H}_3 &= \frac{\hbar V}{2} \ket{2} \times \rbracket{ \sqrt{2} \bra{+} } + \hbar\delta \ket{2}\bra{2} + \textnormal{c.c.} \\
 		&= \hbar \bordermatrix{
 			&\bra{-} & \bra{+} & \bra{2} \cr
 			&0 & 0 & 0 \cr
@@ -132,19 +132,19 @@ Rabi flopping in the context of atomic/ionic quantum computing.
 	Note that the off-diagonal interaction only occurs between the state $\ket{+}$ and $\ket{2}$, hence we may quote the previous part \eqref{eqn:q3-detuned-rabi} for the time evolution of the state:
 	\begin{align*}
 		\ket{\psi(t)} = &X \ket{-} \exp(0) \\
-		&+ \exp(-i\delta t/2) \left[ Y \ket{+} \exp\left( -it \, \sqrt{\delta^2 + V^2}/2 \right) + Z \ket{2} 
-		\exp\left( it \, \sqrt{\delta^2 + V^2}/2 \right) \right]
+		&+ \exp(-i\delta t/2) \sbracket{ Y \ket{+} \exp\rbracket{ -it \, \sqrt{\delta^2 + V^2}/2 } + Z \ket{2} 
+		\exp\rbracket{ it \, \sqrt{\delta^2 + V^2}/2 } }
 	\end{align*}
 	
 	For an initial state of $\ket{0}$, we have $X=Y=1/\sqrt{2}$ and $Z=0$.
 	Hence the evolution will be given as:
 	\begin{align*}
-		\ket{\psi(t)} &= \frac{1}{\sqrt{2}} \left[ \ket{-} \;+\; \ket{+} \exp\left( -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} \right) \right] \\
+		\ket{\psi(t)} &= \frac{1}{\sqrt{2}} \sbracket{ \ket{-} \;+\; \ket{+} \exp\rbracket{ -it\,\frac{\delta + \sqrt{\delta^2 + V^2}}{2} } } \\
 		&= \frac{1}{2} \Bigl[ \bigl(\exp(-i\Omega t)+1\bigr)\ket{0} \;+\; \bigl(\exp(-i\Omega t)-1\bigr)\ket{1} \Bigr] \\
-		&= \exp\left(-\frac{i\Omega t}{2}\right) \left[ \cos\left(\frac{\Omega t}{2}\right)\ket{0} - i\sin\left(\frac{\Omega t}{2}\right) \ket{1} \right]
+		&= \exp\rbracket{-\frac{i\Omega t}{2}} \sbracket{ \cos\rbracket{\frac{\Omega t}{2}}\ket{0} - i\sin\rbracket{\frac{\Omega t}{2}} \ket{1} }
 	\end{align*}
 	
-	And this is simply a detuned Rabi flopping with effective frequency $\Omega = \diagfrac{1}{2} \left(\delta + \sqrt{\delta^2 + V^2}\right)$.
+	And this is simply a detuned Rabi flopping with effective frequency $\Omega = \diagfrac{1}{2} \rbracket{\delta + \sqrt{\delta^2 + V^2}}$.
 		
 	\part The setup above corresponds to Raman transitions where an additional third level is used to facilitate transitions between two low-lying levels where direct transition is forbidden via the two-photon process.
 	

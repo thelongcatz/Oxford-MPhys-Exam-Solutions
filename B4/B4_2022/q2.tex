@@ -1,0 +1,94 @@
+\draft
+\begin{parts}
+	\part Fermi's Golden Rule: reaction rate $\Gamma = \dfrac{2\pi}{\hbar} |M_{if}|^2 \rho (E)$, where $|M_{if}|$ is the matrix element of the interaction ($\bra{f}\hat{V}\ket{i}$), which may be determined with the aid of Feynman diagram.
+	{\color{red}What are $\bra{f}$, $\hat{V}$, $\ket{i}$?}
+	
+	$\rho (E)$ is the density of states of each particle in the interaction.
+	
+	\part $\pip \to \muonp \neutrinom \photon$:
+	\image{.5\linewidth}{q2-pi-mu}
+	Assuming the neutrino is massless, then the decay is similar to a Fermi 4-point interaction and thus Sargent's Rule applies: $\Gamma \propto Q^5$ where $Q$ is the energy available after decay.
+	{\color{red}Derive it.}
+	
+	Since $\neutrinom$ and $\photon$ are massless,
+	\begin{align*}
+		Q^2 &= m_\mu^2 c^4 + p_\nu c + p_\photon c - m_{\pip}^2 c^4 \\
+		&\simeq (m_\mu^2 - m_{\pip}^2) c^4
+	\end{align*}
+	at low energy scale so $m_\mu c \gg p_\nu c / p_\photon c$.
+	
+	{\color{red}What happened to $Q^5$?
+	$\Gamma_{\pi\to\mu} \propto Q^5 = (m_\pi - m_\mu)^5 \propto BR$, $BR=\dfrac{\Gamma_{\pi\to\mu}}{\sum_i \Gamma_i}$}
+	
+	\part $\tau$ decay channels:
+	\begin{equation*}
+		\tau \to
+		\begin{cases}
+			\mu \\ \electron \\ \pi \times 3 \textnormal{ colours}
+		\end{cases}
+	\end{equation*}
+	
+	Sargent's rule gives a scaling of $Q^5$, so:
+	\begin{align*}
+		\tau_\tau \propto \frac{\tau_\mu}{5} \rbracket{\frac{m_\mu}{m_\tau}}^5 \\
+		&\sim \SI{3e-13}{\second}
+	\end{align*}
+	
+	\part As described above, Feynman diagram provides aid in calculating the matrix element of the interaction $M_{if}$.
+	
+	In a Feynman diagram, there are vertex which couples different particles, and propagator that transmits 4-momentum between vertices.
+	
+	e.g. EM interaction vertex, a charged particle $\mathcal{C}$ emits a photon.
+	\image{.3\linewidth}{q2-em-vertex}
+	The matrix element is then:
+	\begin{equation*}
+		M_{if} = \prod_i \textnormal{vertex factor} \times \prod_i \textnormal{propagator}
+	\end{equation*}
+	where vertex factor encodes the strength of interaction, propagator $= \dfrac{1}{\mathsf{P}_\mu \mathsf{P}^\mu - m^2 c^2}$ where $m$ is the on-shell rest mass of the propagating boson, $\mathsf{P}^\mu$ is the 4-momentum transfer of the interaction.
+	{\color{red}Derive everything.}
+	
+	\part Compton scattering:
+	\image{.3\linewidth}{q2-compton}
+	
+	Bremsstrahlung:
+	\image{.25\linewidth}{q2-bremsstrahlung}
+	
+	Pair production:
+	\image{.35\linewidth}{q2-pair-prod}
+	
+	\part
+	\begin{subparts}
+		\subpart $\electron \neutrinoe \to \electron \neutrinoe$:
+		\image{.8\linewidth}{q2-e-e}
+		
+		\subpart $\electron \neutrinom \to \electron \neutrinom$:
+		\image{.3\linewidth}{q2-e-mu}
+		
+		\subpart $\electron \aneutrinoe \to \electron \aneutrinoe$:
+		\image{.8\linewidth}{q2-e-ebar}
+		
+		\subpart $\positron \aneutrinoe \to \positron \aneutrinoe$:
+		\image{.8\linewidth}{q2-p-ebar}
+		
+		All but $\electron \neutrinom \to \electron \neutrinom$ have the same cross section since W boson exchange is forbidden between different lepton flavours.
+		$\electron \neutrinom \to \electron \neutrinom$ should have half of the cross section due to it having only half of the available channels.
+	\end{subparts}
+	
+	\newpage
+	\part $\muonn \to \electron \electron \positron \neutrinom \aneutrinoe$:
+	\image{.6\linewidth}{q2-mu-eee}
+	\begin{equation*}
+		\begin{matrix}
+			\textnormal{$\mu$ num: } 1 \\
+			\textnormal{e num: } 0 \\
+			\textnormal{charge: } -1
+		\end{matrix}
+		\rightarrow
+		\begin{matrix}
+			1 \\
+			1+1-1-1=0 \\
+			-1-1+1=-1
+		\end{matrix}
+	\end{equation*}
+	Since lepton numbers and charge are all conserved, the process is allowed in the Standard Model.
+\end{parts}

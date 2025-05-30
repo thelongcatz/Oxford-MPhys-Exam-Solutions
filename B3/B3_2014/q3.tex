@@ -1,0 +1,86 @@
+\draft
+\begin{parts}
+	\part $\alpha = e^2 / 4\pi\permittivity hc$ represents the scale of the $1/r$ potential in the Bohr model: $V(r)=\alpha hc/r$.
+	
+	\begin{align*}
+		\frac{\alpha^2 m_e c^2}{2} &= \frac{\SI{0.511}{\electronvolt}}{2\cdot\num{137.04}^2} \\
+		&= \SI{1.360e-5}{\mega\electronvolt} \\
+		&= \SI{13.60}{\electronvolt}
+	\end{align*}
+	This is simply the ground state of the $\electron$ in hydrogen.
+	
+	Relativistic Hamiltonian:
+	\begin{align*}
+		\hat{H} &= \sqrt{m_e^2 c^4 + \hat{p}^2 c^2} - m_e c^2 + V(r) \\
+		&= m_e c^2 \sbracket{1 + \frac{1}{2}\,\frac{\hat{p}^2}{m_e^2 c^2} + \mathcal{O}\rbracket{\frac{\hat{p}^4}{m_e^4 c^4}}} - m_e c^2 + V(r) \\
+		&= \frac{\hat{p}^2}{2m_e} + V(r) + \mathcal{O}\rbracket{\frac{\hat{p}^4}{m_e^4 c^4}}
+	\end{align*}
+	Since the ground state gross structure $\propto\alpha^2$, I then expect fine structure to be proportional to $\rbracket{\alpha^2}^2 = \alpha^4$.
+	
+	\part \image{.15\linewidth}{q3-elec-orbit}
+	In $\electron$ rest frame,
+	\begin{align*}
+		\mathbf{B} &= -\frac{\mathbf{v}\times\mathbf{E}}{c^2} \\
+		&= -\frac{1}{m_e c^2} \, \mathbf{p}\times\rbracket{+\frac{1}{e}\,\pderi{V}{r}\,\frac{\mathbf{r}}{r}} \\
+		&= \frac{1}{m_e c^2} \rbracket{\frac{1}{er}\,\pderi{V}{r}} \hbar\mathbf{l}
+	\end{align*}
+	since $\mathbf{r}\times\mathbf{p}=\hbar\mathbf{l}$.
+	
+	Spin-orbit Hamiltonian:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= -\bm{\mu}_s \cdot \mathbf{B} \\
+		&= g_s \bohrmagneton \mathbf{s}\cdot\frac{1}{m_e c^2} \rbracket{\frac{1}{er}\,\pderi{V}{r}} \hbar\mathbf{l}
+	\end{align*}
+	
+	Thomas precession tells us $g_s \to g_s - 1 \simeq 1$ so:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= \frac{e\hbar}{2m_e} \cdot \frac{\hbar}{m_e c^2} \rbracket{\frac{1}{er}\,\pderi{V}{r}} \mathbf{s}\cdot\mathbf{l} \\
+		&= \frac{1}{2m_e^2 c^2} \rbracket{\frac{1}{r}\,\pderi{V}{r}} \mathbf{l}\cdot\mathbf{s}
+	\end{align*}
+	setting $\hbar = 1$.
+	
+	\part For hydrogenic ions,
+	\begin{align*}
+		V(r) &= -\frac{Ze^2}{4\pi\permittivity r} \\
+		\Rightarrow \frac{1}{r}\,\pderi{V}{r} &= \frac{Ze^2}{4\pi\permittivity r^3}
+	\end{align*}
+	
+	\begin{align*}
+		\Delta E_\textnormal{SO} &= \frac{1}{2m_e^2 c^2} \cdot \frac{Ze^2}{4\pi\permittivity} \underbracket{\avg{\frac{1}{r^3}}}_{\mathclap{\substack{\frac{1}{81}\rbracket{\frac{Z}{a_0}}^3 \\ \textnormal{for $3p$}}}} \underbracket{\avg{\mathbf{l}\cdot\mathbf{s}}}_{\mathclap{\frac{1}{2}\sbracket{j(j+1)-l(l+1)-s(s+1)}}} \\
+		&= \frac{Ze^2}{1296m_e^2 c^2 \cdot\pi\permittivity} \rbracket{\frac{Z}{a_0}}^3 \sbracket{j(j+1)-l(l+1)-s(s+1)}
+	\end{align*}
+	
+	For $3p$ $\electron$, $l=1$, $s=1/2$:
+	\begin{align*}
+		E_{3/2} - E_{1/2} &= \frac{Z^4 e^2}{1296\pi\permittivity m_e^2 c^2} \, \frac{1}{a_0} \sbracket{\frac{3}{2}\rbracket{\frac{5}{2}} - \cancel{1(2) - \frac{1}{2}\rbracket{\frac{3}{2}}} - \frac{1}{2}\rbracket{\frac{3}{2}} + \cancel{1(2) - \frac{1}{2}\rbracket{\frac{3}{2}}}} \\
+		&=  \frac{Z^4 e^2}{432\pi\permittivity m_e^2 c^2} \cdot \rbracket{\frac{m_e e^2}{4\pi\permittivity\hbar^2}}^3 \\
+		&= \frac{Z^4 e^8 m_e}{432\pi^4 \permittivity^4 c^2} \\
+		&= \frac{Z^4 m_e}{432c^2} \, \rbracket{\frac{e^2}{4\pi\permittivity c}}^4 \cdot 4^4 c^4 \\
+		&= \frac{1}{108} \rbracket{Z\alpha}^4 m_ec^2
+	\end{align*}
+	
+	For hydrogen, $Z=1$:
+	\begin{align*}
+		E_{3/2} - E_{1/2} &= \frac{1}{108} \alpha^4 m_e c^2 \\
+		&= \frac{\SI{0.511}{\mega\electronvolt}}{108\cdot\num{137.04}^4} \\
+		&= \SI{1.342e-11}{\mega\electronvolt} \\
+		&= \SI{1.342e-5}{\electronvolt} \\
+		&= \SI{67.985}{\per\metre}
+	\end{align*}
+	
+	Empirical $E_{3/2} - E_{1/2}$:
+	\begin{align*}
+		\delta E &= \abs{hc \sbracket{\frac{1}{\SI{589.6}{\nano\metre}} - \frac{1}{\SI{589.0}{\nano\metre}}}} \\
+		&= \SI{1727.74}{\per\metre} \\
+		&= \SI{2.142e-9}{\mega\electronvolt}
+	\end{align*}
+	
+	Equate $\delta E = 1/108 (Z\alpha)^4 m_e c^2$:
+	\begin{align*}
+		\Rightarrow Z^4 &= \frac{108 \delta E}{\alpha^4 m_e c^2} \\
+		&= \num{159.68} \\
+		\Rightarrow Z_\textnormal{eff} &= \num{3.55}
+	\end{align*}
+	
+	The effective $Z$ is smaller than the actual $Z$ since the valence $\electron$ experiences shielding by the core $\electron$, thereby experiencing lower effective $Z$.
+\end{parts}

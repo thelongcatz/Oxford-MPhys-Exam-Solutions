@@ -1,0 +1,143 @@
+\draft
+\begin{parts}
+	\part \image{.4\linewidth}{q4-four-level-laser}
+	Both three-level and four-lever lasers operate by pumping a ground state population $\ket{0}$ to an unstable state $\ket{3}$, which decays immediately to the upper lasing state $\ket{2}$.
+	The lasing causes the population to drop to lower state $\ket{1}$.
+	
+	Three-level lasers have the energy gap between $\ket{0}$ and $\ket{1}$ within thermal energy $\boltzmann T$, making them essentially a single level.
+	Otherwise it is a four-level laser.
+	
+	The reason why three-level laser has a substantially higher power requirement is that population at $\ket{1}\neq 0$ initially, requiring higher power to induce population inversion.
+	Four-level laser has the initial population $=0$, so it requires lower power.
+	
+	\image{.5\linewidth}{q4-population-dynamics}
+	Rate equations:
+	\begin{align*}
+		\deri{N_2}{t} &= R_2 + \rho B_{12}N_1 - \rho B_{21}N_2 - \frac{N_2}{\tau_2} \\
+		\deri{N_1}{t} &= R_1 - \rho B_{12}N_1 + \rho B_{21}N_2 + A_{21}N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	For a radiation of width $\delta\omega$, energy change after passing through a volume element $A\inftsml{z}$:
+	\begin{align*}
+		\inftsml{\mathcal{I}} \cancel{\delta\omega} \bcancel{A} &= \rbracket{\rho B_{21}N_2 - \rho B_{12}N_1} g(\omega - \omega_0) \delta\omega \cdot \hbar\omega \cdot A \inftsml{z} \\
+		\deri{\mathcal{I}}{z} &= \rbracket{N_2 - \frac{g_2}{g_1}N_1} \underbracket{\rho}_{\mathclap{\frac{\mathcal{I}}{c}}} B_{21} g(\omega - \omega_0) \hbar\omega \\
+		&= N^* \sigma_{21}(\omega - \omega_0) \mathcal{I}
+	\end{align*}
+	where $\mathcal{I}$ is spectral density, $N^* = N_2 - \dfrac{g_2}{g_1}N_1$, $\sigma_{21}(\omega - \omega_0) = B_{21}g(\omega - \omega_0)\dfrac{\hbar\omega}{c}$.
+	
+	So substitute $N^*$, $\sigma_{21}$, $\mathcal{I}$ into the rate equations and integrating over all $\omega$ to get total intensity $I$:
+	\begin{align*}
+		\deri{N_2}{t} &= R_2 - N^* \sigma_{21} \frac{I}{\hbar\omega} - \frac{N_2}{\tau_2} \\
+		\deri{N_1}{t} &= R_1 +  N^* \sigma_{21} \frac{I}{\hbar\omega} + A_{21}N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	At steady state,
+	\begin{align*}
+		N_2 &= R_2 \tau_2 -  N^* \sigma_{21} \frac{I}{\hbar\omega} \tau_2 \\
+		N_1 &= R_1 \tau_1 +  N^* \sigma_{21} \frac{I}{\hbar\omega} \tau_1 + A_{21}N_2 \tau_1
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		N^* &= N_2 - \frac{g_2}{g_1}N_1 \\
+		&= \rbracket{1 - \frac{g_2}{g_1}A_{21}\tau_1}N_2 - \frac{g_2}{g_1}R_1\tau_1 - \frac{g_2}{g_1}N^* \sigma_{21} \frac{I}{\hbar\omega}\tau_1 \\
+		&= \rbracket{1 - \frac{g_2}{g_1}A_{21}\tau_1}R_2\tau_2 + \rbracket{-\tau_2 + \frac{g_2}{g_1}A_{21}\tau_1\tau_2 - \frac{g_2}{g_1}\tau_1}N^* \sigma_{21} \frac{I}{\hbar\omega} - \frac{g_2}{g_1}R_1\tau_1 \\
+		\Rightarrow N^*(I) &= \frac{N^*(0)}{1+\cfrac{I}{I_s}}
+	\end{align*}
+	where
+	\begin{align*}
+		N^*(0) &= \rbracket{1 - \frac{g_2}{g_1}A_{21}\tau_1}R_2\tau_2 - \frac{g_2}{g_1}R_1\tau_1 \\[1em]
+		I_s &= \sbracket{\underbracket{\rbracket{\tau_2 + \frac{g_2}{g_1}\tau_1 - \frac{g_2}{g_1}A_{21}\tau_1}}_{\tau_R} \frac{\sigma_{21}}{\hbar\omega}}^{-1} \\
+		&= \frac{\hbar\omega}{\sigma_{21}\tau_R}
+	\end{align*}
+	is the saturation intensity.
+	
+	\part Natural broadening has a Lorentzian lineshape.
+	Its width is the sum of the width from upper and lower decay widths ($1/\tau_\textnormal{tot} = 1/\tau_\textnormal{upper} + 1/\tau_\textnormal{lower}$).
+	
+	Einstein relation:
+	\begin{align*}
+		\frac{A_{21}}{B_{21}} &= \frac{\hbar\omega^3}{\pi^2 c^3} \\
+		\Rightarrow \sigma_{21}(\omega - \omega_0) &= \frac{\pi^2 c^3}{\hbar\omega^3} A_{21}g(\omega - \omega_0)\cdot\frac{\hbar\omega}{c}
+	\end{align*}
+	
+	At $\omega=\omega_0$, $g(0)=\dfrac{2}{\pi}$ by normalisation (Lorentzian peaks at $\omega=\omega_0$):
+	\begin{align*}
+		\Rightarrow \sigma_{21}(0) &= \frac{\pi^2 c^3}{\hbar\omega^3}\cdot\frac{2}{\pi}\cdot\frac{\hbar\omega_0}{c} \\
+		&= \frac{2\pi c^2}{\omega_0^2}
+	\end{align*}
+	
+	For $\lambda_0 = \SI{700}{\nano\metre}$,
+	\begin{align*}
+		\sigma_{21}(0) &= \frac{2\pi c^2}{\omega_0^2} \\
+		&= \frac{2\pi}{k_0^2} \\
+		&= \frac{\lambda_0^2}{2\pi} = \SI{7.799e4}{\nano\metre\squared}
+	\end{align*}
+	
+	\part Sketch of the setup:
+	\image{.55\linewidth}{q4-optical-cavity}
+	\begin{subparts}
+		\subpart $L=\SI{4}{\centi\metre}$, $D=\SI{0.4}{\centi\metre}$, $N_\textnormal{tot}=\SI{4e19}{\per\centi\metre}$, $\lambda_0=\SI{694}{\nano\metre}$.
+		
+		Assuming no saturation, beam growth $\propto$ $R_1R_2e^{2\alpha L}$ with $\alpha = N^* \sigma_{21}$ the gain coefficient.
+		
+		At threshold,
+		\begin{align*}
+			R_1R_2e^{2\alpha L} = 1 \\
+			2\alpha L &= -\ln\rbracket{R_1R_2} \\
+			\alpha &= -\frac{1}{2L} \ln\rbracket{R_1R_2} \\
+			N^*_\textnormal{th} &= -\frac{\ln\rbracket{R_1R_2}}{2L\sigma_{21}} \\
+			N_2^\textnormal{th} - \underbracket{\frac{g_2}{g_1}}_{1}N_1^\textnormal{th} &= N_2^\textnormal{th} - \rbracket{N_\textnormal{tot} - N_2^\textnormal{th}} \\
+			\Rightarrow N_2^\textnormal{th} &= \frac{1}{2}N_\textnormal{tot} - \frac{1}{2}\frac{\ln\rbracket{R_1R_2}}{2L\sigma_{21}}
+		\end{align*}
+		
+		Hence energy density required to achieve population inversion:
+		\begin{align*}
+			\rho &= N_2^\textnormal{th} \cdot \hbar\omega_\textnormal{pump} \\
+			\sigma_{21} &= \frac{\lambda_0^2}{2\pi} \Rightarrow \rho = \SI{2e19}{\per\centi\metre\cubed} \cdot \SI{3.98e-19}{\joule}
+		\end{align*}
+		
+		Total energy required (assuming $100\%$ efficiency):
+		\begin{align*}
+			E &= \rho \cdot \pi \rbracket{\frac{D}{2}}^2 \cdot L \\
+			&= \SI{12.56}{\joule}
+		\end{align*}
+		
+		\subpart $L=\SI{1}{\centi\metre}$, $N_\textnormal{tot}=\SI{5e19}{\per\centi\metre}$, $\sigma_{21}=\SI{3e-19}{\centi\metre\squared}$, $\lambda_\textnormal{pump}=\SI{532}{\nano\metre}$, $D=\SI{100}{\micro\metre}$, $\tau_2=\SI{3e-6}{\second}$, $\tau_1=\SI{1e-10}{\second}$.
+		
+		For pulsed laser, we just need to achieve population inversion (not maintain it):
+		
+		Since $N_1 = 0$ for four-level laser, $N^*_\textnormal{th} = N_2^\textnormal{th} = -\dfrac{\ln\rbracket{R_1R_2}}{2L\sigma_{21}}$.
+		
+		So energy density required:
+		\begin{align*}
+			\rho &= N_2^\textnormal{th} \cdot \frac{hc}{\lambda_\textnormal{pump}} \\
+			&= \SI{8.55e16}{\per\centi\metre\cubed} \cdot \SI{3.74e-19}{\joule}
+		\end{align*}
+		
+		Hence pumping energy:
+		\begin{align*}
+			E &= \rho \pi \rbracket{\frac{D}{2}}^2 \cdot L \\
+			&= \SI{2.51e-6}{\joule}
+		\end{align*}
+		
+		For continuous wave, we need:
+		\begin{align*}
+			N_2^\textnormal{th} &= \rbracket{1-\underbracket{\frac{g_2}{g_1}}_{1} \underbracket{A_{21}}_{\frac{1}{\tau_2}} \tau_1} \mathcal{R}\tau_2 \\
+			&= \rbracket{1-\frac{\tau_1}{\tau_2}}\mathcal{R}\tau_2 = -\frac{\ln\rbracket{R_1R_2}}{2L\sigma_{21}} \\
+			\Rightarrow \mathcal{R} &= \frac{-\ln\rbracket{R_1R_2}}{\rbracket{1-\frac{\tau_1}{\tau_2}}\tau_2 \cdot 2L\sigma_{21}} \\
+			&= \SI{2.85e22}{\centi\metre\squared\per\second}
+		\end{align*}
+		is the pumping rate.
+		
+		So pumping power:
+		\begin{align*}
+			P &= \mathcal{R} \frac{hc}{\lambda_\textnormal{pump}} \cdot \pi\rbracket{\frac{D}{2}}^2 \cdot L \\
+			&= \SI{0.836}{\watt}
+		\end{align*}
+		
+		Natural width should be $\Delta\omega = 1/\tau_1 + 1/\tau_2 = \SI{1e10}{\radian\per\second}$.
+		Other mechanisms such as phonon broadening can cause extra broadening.
+		But Doppler does not apply here as \underline{sapphire} is a solid.
+	\end{subparts}
+\end{parts}

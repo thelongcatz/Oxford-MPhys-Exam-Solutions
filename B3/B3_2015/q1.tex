@@ -1,0 +1,134 @@
+\draft
+\begin{parts}
+	\part In a multi-$\electron$ atom, the Hamiltonian of the system is:
+	\begin{equation*}
+		\hat{H} = \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + \sum_{J>i} \frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}
+	\end{equation*}
+	where the first two terms are kineic energy and potential energy under tha Coulomb potential due to the nuclues.
+	The last term is the mutual repulsion between $\electron$.
+	
+	Introduce a central field $S(r_i)$ such that $\hat{H} = \hat{H}_\textnormal{CF} + \Delta\hat{H}_\textnormal{RE}$, where:
+	\begin{align*}
+		\hat{H}_\textnormal{CF} &= \sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m_e} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + S(r_i)} \mtext{is the central field Hamiltonian} \\
+		\Delta\hat{H}_\textnormal{RE} &= \sum_i \sbracket{\sum_{J>i} \frac{e^2}{4\pi\permittivity\hat{r}_{ij}} - S(r_i)} \mtext{is the residual electrostatic Hamiltonian}
+	\end{align*}
+	
+	With a proper choice of $S(r)$, $\Delta\hat{H}_\textnormal{RE} \ll \hat{H}_\textnormal{CF}$ and thus the atom may be diagonalised into $\ket{\Psi_\textnormal{atom}} = \ket{\psi_1} + \ket{\psi_2} + \ldots + \ket{\psi_n}$ where $\ket{\psi_i}$ is the wavefunction of the $i$th $\electron$.
+	
+	This then leads to the concept of \underline{configuration} where the eigenstates are perturbed by $\Delta\hat{H}_\textnormal{RE}$, i.e. $\hat{H}\ket{\Psi_\textnormal{atom}} = (E_1 + E_2 + \ldots + E_n)\ket{\Psi_\textnormal{atom}}$.
+	
+	$\Delta\hat{H}_\textnormal{RE}$ being an internal interaction, conserves the total angular momentum $\mathbf{L}$ with modifying the individual angular momentum $\mathbf{l}_i$.
+	This gives rise to a \underline{term} where a configuration may possess different values of $L$ and $S$, causing splitting.
+	
+	Furthermore, the spin-orbit interaction $\Delta\hat{H}_\textnormal{SO}$ means that within a term, further splitting may occur due to different possible values of $\mathbf{J} = \mathbf{L} + \mathbf{S}$.
+	This arises from the fact that:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= \beta_1\avg{\mathbf{l}_1\cdot\mathbf{s}_1} + \beta_2\avg{\mathbf{l}_2\cdot\mathbf{s}_2} + \ldots \\
+		\xRightarrow{\textnormal{Wigner-Eckart}} \Delta\hat{H}_\textnormal{SO} &= \beta_1 \frac{\avg{\mathbf{l}_1\cdot\mathbf{L}}}{L^2}\mathbf{L} \cdot \mathbf{S}\frac{\avg{\mathbf{s}_1\cdot\mathbf{S}}}{S^2} + \ldots \\
+		&= \beta_\textnormal{SO} \mathbf{L}\cdot\mathbf{S} \\
+		\Rightarrow \Delta E_\textnormal{SO} &= \frac{\beta_\textnormal{SO}}{2} \sbracket{J(J+1) - L(L+1) - S(S+1)}
+	\end{align*}
+	
+	The labelling of eigenstates with $\ket{LM_L SM_S}$ or $\ket{LSJM_J}$ is called the $LS$ coupling scheme.
+	It warrants the assumption that $\hat{H}_\textnormal{CF} \gg \Delta\hat{H}_\textnormal{RE} \gg \Delta\hat{H}_\textnormal{SO}$ so that the perturbation is done successively via \underline{term} and then \underline{level}.
+	
+	From before,
+	\begin{align*}
+		\Delta E_\textnormal{SO} (J) &= \frac{\beta_\textnormal{SO}}{2} \sbracket{J(J+1) - L(L+1) - S(S+1)} \\
+		\Delta E_\textnormal{SO} (J-1) &= \frac{\beta_\textnormal{SO}}{2} \sbracket{(J-1)J - L(L+1) - S(S+1)} \\
+		\Delta E_\textnormal{SO} (J-2) &= \frac{\beta_\textnormal{SO}}{2} \sbracket{(J-2)(J-1) - L(L+1) - S(S+1)}
+	\end{align*}
+	
+	\begin{align*}
+		\frac{\Delta E_\textnormal{SO} (J) - \Delta E_\textnormal{SO} (J-1)}{\Delta E_\textnormal{SO} (J-1) - \Delta E_\textnormal{SO} (J-2)} &= \frac{J(J+1) - (J-1)J}{(J-1)J - (J-2)(J-1)} \\
+		&= \frac{\cancel{J^2} + J - \cancel{J^2} + J}{J^2 - J - J^2 + 3J - 2} \\
+		&= \frac{J}{J-1}
+	\end{align*}
+	This is the interval rule and is an indicator of how good $LS$ coupling is in describing the energy levels.
+	
+	\part Config $5s5l$:
+	\begin{equation*}
+		\begin{matrix}
+			L = l \\ S = 0, 1
+		\end{matrix}
+		\longrightarrow \; \textnormal{Term} \;
+		\begin{matrix}
+			{}^1 L \\ {}^3 L
+		\end{matrix}
+		\longrightarrow \; \textnormal{Level} \;
+		\begin{matrix}
+			{}^1 L_l \\ {}^3 L_{l+1} \\ {}^3 L_l \\ {}^3 L_{l-1}
+		\end{matrix}
+	\end{equation*}
+	
+	In the triplet,
+	\begin{align*}
+		\Delta E(l+1) - \Delta E(l) &= \SI{35045}{\per\centi\metre} - \SI{35022}{\per\centi\metre} \\
+		&= \SI{23}{\per\centi\metre} \\[1em]
+		\Delta E(l) - \Delta E(l-1) &= \SI{35022}{\per\centi\metre} - \SI{35007}{\per\centi\metre} \\
+		&= \SI{15}{\per\centi\metre}
+	\end{align*}
+	
+	Interval rule:
+	\begin{align*}
+		\frac{l+1}{l} &= \frac{23}{15} \simeq \frac{3}{2} \\
+		\Rightarrow l &= 2
+	\end{align*}
+	
+	So the four levels are ${}^1 D_2$, ${}^3 D_3$, ${}^3 D_2$, ${}^3 D_1$.
+	
+	\part Electric dipole selection rules:
+	
+	\begin{center}
+		\begin{tabular}{c c}
+			1 $\electron$ jumpps & $\Delta L = 0, \pm 1$ ($0 \nrightarrow 0$) \\
+			$\Delta n=$ any & $\Delta S=0$ \\
+			$\Delta l=\pm 1$ & $\Delta J = 0, \pm 1$ ($0 \nrightarrow 0$) \\
+			& $\Delta M_J = 0, \pm 1$ ($0 \nrightarrow 0 \iff \Delta J=0$)
+		\end{tabular}
+	\end{center}
+	
+	Try $5s5d \to 5s5p$:
+	
+	\newpage
+	Allowed transitions:
+	
+	\begin{tikzpicture}[auto]
+		\matrix (DP)[matrix of math nodes,row sep=1cm,column sep=16mm] {
+			{}^3 D_3 & \\
+			{}^3 D_2 & {}^3 P_2 \\
+			{}^3 D_1 & {}^3 P_1 \\
+			{}^1 D_2 & {}^1 P_1 \\
+		};
+		\draw (DP-1-1)--(DP-2-2);
+		\draw (DP-2-1)--(DP-2-2);
+		\draw (DP-2-1)--(DP-3-2);
+		\draw (DP-3-1)--(DP-2-2);
+		\draw (DP-3-1)--(DP-3-2);
+		\draw (DP-4-1)--(DP-4-2);
+	\end{tikzpicture}
+	
+	so a total of 6 lines!
+	
+	What about $5s5d \to 5s5f$?
+	
+	Levels: ${}^3 F_4$, ${}^3 F_3$, ${}^3 F_2$, ${}^1 F_3$
+	
+	\begin{tikzpicture}[auto]
+		\matrix (FD)[matrix of math nodes,row sep=1cm,column sep=16mm] {
+			{}^3 F_4 & {}^3 D_3 \\
+			{}^3 F_3 & {}^3 D_2 \\
+			{}^3 F_2 & {}^3 D_1 \\
+			{}^1 F_3 & {}^1 D_2 \\
+		};
+		\draw (FD-1-1)--(FD-1-2);
+		\draw (FD-2-1)--(FD-1-2);
+		\draw (FD-3-1)--(FD-1-2);
+		\draw (FD-2-1)--(FD-2-2);
+		\draw (FD-3-1)--(FD-2-2);
+		\draw (FD-3-1)--(FD-3-2);
+		\draw (FD-4-1)--(FD-4-2);
+	\end{tikzpicture}
+	
+	so 7 lines but not observed, hence $5s5p$ is the correct config.
+\end{parts}

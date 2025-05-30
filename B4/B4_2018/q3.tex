@@ -1,0 +1,127 @@
+\draft
+\begin{parts}
+	\part $\mathbb{B}$ is defined as $+\frac{1}{3}$ for quarks, $-\frac{1}{3}$ for anti-quarks, $0$ for leptons.
+	Therefore a baryon would have $\mathbb{B}=\pm 1$, where negative sign is for anti-baryons.
+	Mesons only have $\mathbb{B}=0$ since they contain a quark-antiquark pair.
+	{\color{red} More detailed explanation for baryons and mesons would be good.}
+	
+	\part \begin{subparts}
+		\subpart
+		\begin{align*}
+			\proton + \proton &\to \neutron + \proton + \pip \\
+			\begin{matrix}
+				\mathbb{B} = 2 \\
+				\mathbb{Q} = +2 \\
+				\mathbb{L} = 0
+			\end{matrix}
+			&\phantom{\to}
+			\begin{matrix}
+				\mathbb{B} = 2 \\
+				\mathbb{Q} = +2 \\
+				\mathbb{L} = 0
+			\end{matrix}
+		\end{align*}
+		As $\mathbb{B}$, $\mathbb{Q}$, $\mathbb{L}$ are all conserved, the above process is allowed. (Try breakdown the calc.)
+		
+		Feynman diagram:
+		\image{.5\linewidth}{q3-pp}
+		
+		\subpart
+		\begin{align*}
+			\proton + \electron &\to \rhoz \\
+			\begin{matrix}
+				\mathbb{B} = 1 \\
+				\mathbb{Q} = 0 \\
+				\mathbb{L} = +1
+			\end{matrix}
+			&\phantom{\to}
+			\begin{matrix}
+				\mathbb{B} = 0 \\
+				\mathbb{Q} = 0 \\
+				\mathbb{L} = 0
+			\end{matrix}
+		\end{align*}
+		Since lepton number and baryon number are not conserved, the process is forbidden.
+		
+		\subpart
+		\begin{align*}
+			\muonn &\to \electron + \neutrinom + \aneutrinoe \\
+			\begin{matrix}
+				\mathbb{B} = 0 \\
+				\mathbb{Q} = -1 \\
+				\mathbb{L} = 1
+			\end{matrix}
+			&\qquad
+			\begin{matrix}
+				\mathbb{B} = 0 \\
+				\mathbb{Q} = -1 \\
+				\mathbb{L} = 1
+			\end{matrix}
+		\end{align*}
+		Since $\mathbb{B}$, $\mathbb{Q}$, $\mathbb{L}$ are all conserved, the process is allowed.
+		
+		Feynman diagram:
+		\image{.5\linewidth}{q3-mu-e}
+		
+		\subpart
+		\begin{align*}
+			\neutrinoe + \positron &\to \Qdown + \bar{\Qup} \\
+			\begin{matrix}
+				\mathbb{B} = 0 \\
+				\mathbb{Q} = +1 \\
+				\mathbb{L} = 0
+			\end{matrix}
+			&\phantom{\to}
+			\begin{matrix}
+				\mathbb{B} = 0 \\
+				\mathbb{Q} = -1 \\
+				\mathbb{L} = 0
+			\end{matrix}
+		\end{align*}
+		Since $\mathbb{Q}$ is not conserved, the process is forbidden.
+	\end{subparts}
+	
+	\part X boson: $\mathbb{Q}=+\frac{1}{3}$; $\mathbb{B}$, $\mathbb{L}$ not conserved; $m_\mathrm{X} \gg \massproton$, $\mathbb{Q}$ conserved.
+	
+	Fundamental vertices:
+	\image{.8\linewidth}{q3-fundamental-vertices}
+	
+	Now we try process $\proton \to \positron + \piz$:
+	\image{.5\linewidth}{q3-px}
+	
+	$\neutron \to \positron + \pin$:
+	\image{.5\linewidth}{q3-nx}
+	
+	\part Recall matrix element: (for $\proton \to \positron + \piz$)
+	\begin{align*}
+		|M_{if}| &= |\prod_i \textnormal{vertex factor}| \times |\prod_i \textnormal{propagator factor}| \\
+		&= \lambda_q \lambda_l \cdot \abs{\frac{1}{\mathsf{P}^2 - m_\mathrm{X}^2 c^4}}
+	\end{align*}
+	with $\mathsf{P}^\mu = \rbracket{\dfrac{E_\Qup + E_\Qdown}{c}, \mathbf{p}_\Qup + \mathbf{p}_\Qdown}$ the 4-momentum transferred.
+	
+	But since $m_\mathrm{X} \gg \massproton$, $\mathsf{P}^2 \ll m_\mathrm{X}^2 c^2$ over most energy range in decay:
+	\begin{equation*}
+		\Rightarrow |M_{if}| \simeq \frac{\lambda_q \lambda_l}{m_\mathrm{X}^2 c^4}
+	\end{equation*}
+	
+	Fermi's Golden Rule gives reaction rate:
+	\begin{equation*}
+		\Gamma = \frac{2\pi}{\hbar} |M_{if}|^2 \rho (E)
+	\end{equation*}
+	
+	From Sargent's rule, density of states:
+	\begin{equation*}
+		\rho (E) \propto E^5 = (\massproton c^2)^5
+	\end{equation*}
+	
+	Thus:
+	\begin{equation*}
+		\Gamma_{if} \propto \frac{2\pi}{\hbar} \frac{\lambda_l^2 \lambda_q^2}{m_\mathrm{X}^4} \massproton^5 c^2
+	\end{equation*}
+	
+	So:
+	\begin{align*}
+		\tau_\mathrm{p} &\propto \frac{1}{\Gamma_{if}} \\
+		&= A \frac{m_\mathrm{X}^4 \hbar}{\lambda_l^2 \lambda_q^2 \massproton^5 c^2}
+	\end{align*}
+\end{parts}

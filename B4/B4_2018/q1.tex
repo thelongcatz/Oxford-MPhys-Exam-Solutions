@@ -1,0 +1,119 @@
+\draft
+\begin{parts}
+	\part Consider the SEMF:
+	\begin{equation*}
+		B(Z, A) = \underbracket{a_V A - a_S A^{2/3}}_{\textnormal{liquid-drop model}} - \underbracket{a_C \frac{Z^2}{A^{1/3}}}_{\textnormal{Coulomb repulsion}} - \underbracket{a_A \frac{(A-2Z)^2}{A}}_{\textnormal{asymmtery}} + \delta (A, Z)
+	\end{equation*}
+	where
+	\begin{equation*}
+		\delta (A, Z) =
+		\begin{cases}
+			\frac{\SI{-12}{\mega\electronvolt}}{\sqrt{A}} \mtext{o-o} \\
+			0 \mtext{o-e/e-o} \\
+			\frac{\SI{+12}{\mega\electronvolt}}{\sqrt{A}} \mtext{e-e}
+		\end{cases}
+	\end{equation*}
+	
+	We then seek the stationary point:
+	\begin{align*}
+		\rbracket{\pderi{B}{Z}}_A &= 0 \\
+		\Rightarrow Z &= \frac{2a_A A}{a_C A^{2/3} + 4a_A}
+	\end{align*}
+	where $a_C \sim \SI{1}{\mega\electronvolt}$, $a_A \sim \SI{10}{\mega\electronvolt}$.
+	
+	Recall that the nucleons are fermions, which abide Pauli's exclusion principle.
+	Therefore it is more energetically favourable to have approximately equal number of protons and neutrons than letting one type pile up on the energy level.
+	\begin{equation*}
+		\lim_{A \to 0} Z = \frac{A}{2}
+	\end{equation*}
+	
+	However, this scenario begins to break down for high $Z$ nuclei as electromagnetic repulsion between protons begins to dominate over strong interaction, meaning that the balance will start to tip towards having more neutrons.
+	\begin{equation*}
+		\lim_{A \to \infty} = \frac{2a_A}{a_C} A^{1/3}
+	\end{equation*}
+	
+	In $\beta^-$ decay, also for a fission free neutron, a neutron decays into a proton, an electron and an anti-electron neutrino.
+	\begin{equation*}
+		\neutron \to \proton + \electron + \aneutrinoe
+	\end{equation*}
+	
+	The reason why an antineutrino is produced has to do with the conservation of lepton numbers, which is a consequence of $\mathrm{W}^\pm$ coupling.
+	\image{.2\linewidth}{q1-w-e}
+	And so $0 = (+1) + (-1)$ since $\electron$ has lepton number $+1$, $\aneutrinoe$ has $-1$.
+	
+	As $A$ decreases, we would have more $\neutron$ than $\proton$ but need $Z \simeq \dfrac{A}{2}$ so $\beta^-$ decay occurs.
+	
+	\part Inverse beta decay:
+	\begin{equation*}
+		\aneutrinoe + \proton \to \positron + \neutron
+	\end{equation*}
+	\image{.5\linewidth}{q1-inverse-beta-decay}
+	
+	Recall that from Fermi's Golden Rule that
+	\begin{equation*}
+		\Gamma = \frac{2\pi}{\hbar} \abs{M_{if}}^2 \rho (E)
+	\end{equation*}
+	and matrix element $M_{if}$ is dependent on the momentum transfer by the gauge boson. (how?)
+	
+	Hence it is expected that the reaction cross-section, which is proportional to $\Gamma$ the reaction rate, to increase with greater $\aneutrinoe$ energy. (details needed)
+	
+	Sargent's rule: $\Gamma \propto Q^5$
+	\image{.2\linewidth}{q1-sargent}
+	D.O.S.:
+	\begin{align*}
+		\inftsml{{}^2 N} &= \frac{V \inftsml{\Omega} P^2 \inftsml{P}}{h^3} \frac{V \inftsml{\Omega} Q^2 \inftsml{Q}}{h^3} \\
+		&= \frac{1}{4\pi^4} \frac{1}{h^6} p^2 q^2 \inftsml{P} \inftsml{Q} \\
+		q &= \frac{(Q - E_\nu)}{c} \mtext{for } Q \gg \masselectron c^2
+	\end{align*}
+	
+	\part Detected interactions in total:
+	\begin{equation*}
+		\deri{I}{\mathrm{E}_\nu} = \sigma_\nu \rho (E)
+	\end{equation*}
+	since reaction rate $\Gamma \propto \rho (E)$ and $\sigma_\nu$.
+	
+	Detected reaction rate $\propto \sigma_\nu$ since cross section dictates the total reaction rate (why?)
+	
+	$\propto \diagderi{N_\nu}{E_\nu} \inftsml{E_\nu}$ as a result of thermodynamical distribution (select population with specific energy for specific $\sigma_\nu$).
+	
+	{
+		\color{red} $\sigma_{\bar{\nu}} \deri{N_{\bar{\nu}}}{E_{\bar{\nu}}}$ represents the cross section as a function of energy combined with the distribution of $\aneutrinoe$ energies per fission reaction, i.e. total cross section of all $\aneutrinoe$ produced at each energy per fission reaction.
+		We have to integrate to get total cross section for all energies and particles.
+		\begin{equation*}
+			\underbracket{\sigma \inftsml{E}}_{\substack{\textnormal{differential}\\\textnormal{cross section}\\\textnormal{for each $E$}}} \cdot \underbracket{\deri{N}{E}}_{\textnormal{\# of $\nu$ for each $E$}}
+		\end{equation*}
+		\image{.6\linewidth}{q1-xsection}
+		\begin{align*}
+			\sigma_{\bar{\nu}} &= \frac{\textnormal{No. events $t$}-1}{\textnormal{Neutrino flux}} \\
+			\therefore \sigma_{\bar{\nu}} \inftsml{N_{\bar{\nu}}} &= \frac{\textnormal{No. of events $t$}-1}{\textnormal{Unit area}} \propto \textnormal{Rate of observed $\bar{\nu}$ interactions}
+		\end{align*}
+	}
+	
+	\part \begin{subparts}
+		\subpart Generator produces \SI{100}{\mega\watt} and each \element{U}{235} fission releases \SI{210}{\mega\electronvolt}:
+		\begin{equation*}
+			\therefore \textnormal{rate} = \frac{\textnormal{power}}{\textnormal{Energy per fission}} = \SI{2.97e18}{\per\second}
+		\end{equation*}
+		
+		\subpart Approximate $\sigma \diagderi{N}{E}$ as a Gaussian, we can derive mean and s.d. from the data:
+		\begin{equation*}
+			I = \SI{0.669e-42}{\centi\metre\squared\per fission}
+		\end{equation*}
+		
+		\subpart \image{.2\linewidth}{q1-photodetector-setup}
+		We have the rate given by:
+		\begin{equation*}
+			\textnormal{Rate} = \rho \sigma v
+		\end{equation*}
+		where $\rho$ is the density of detector medium, $\sigma$ is calculated in II per fission, $v=c$ for massless neutrinos.
+		\begin{align*}
+			\textnormal{Rate} &= \SI{0.025}{\per\second} \\
+			&= \frac{\overbracket{N}^{\mathclap{\substack{\textnormal{\# of}\\\textnormal{scintillating particles}}}}}{\underbracket{V}_{\mathclap{\frac{4}{3}\pi(7)^3}}} \times \SI{0.669e-42}{\centi\metre\squared\per fission} \times \SI{2.97e18}{fission \per\second} \times \underbracket{L}_{\mathclap{\SI{7}{\metre}}}
+		\end{align*}
+		So
+		\begin{align*}
+			\rho &= N \times M_{\textnormal{C\textsubscript{9}H\textsubscript{10}}} \\
+			&= \SI{6085}{\kilo\gram}
+		\end{align*}
+	\end{subparts}
+\end{parts}

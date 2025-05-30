@@ -1,0 +1,123 @@
+\draft
+\begin{parts}
+	\part In a many $\electron$ system, we have Hamiltonian:
+	\begin{equation*}
+		\hat{H} = \sum_i \sbracket{\frac{\hat{\mathbf{p}}^2_i}{2m} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + \sum_{j>i}\frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}
+	\end{equation*}
+	
+	To account for the inter-$\electron$ repulsion, introduce central potential $S(r_i)$ such that $\hat{H} = \hat{H}_\textnormal{CF} + \Delta\hat{H}_\textnormal{RE}$ where:
+	\begin{align*}
+		\hat{H}_\textnormal{CF} &= \sum_i \sbracket{\frac{\hat{\mathbf{p}}^2_i}{2m} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + S(r_i)} \\
+		\Delta\hat{H}_\textnormal{RE} &= \sum_i \sbracket{\sum_{j>i}\frac{e^2}{4\pi\permittivity\hat{r}{ij}} - S(r_i)}
+	\end{align*}
+	
+	Under this central field approximation, we may perturb the eigenstates of $\hat{H}_\textnormal{CF}$ (which forms config) with $\Delta\hat{H}_\textnormal{RE}$ to get a new set of eigenstates.
+	
+	Since $\Delta\hat{H}_\textnormal{RE}$ is an internal interaction, $L$ is a constant of motion (so is $S$), giving rise to the $LS$ coupling scheme -- labelling of eigenstates with $\ket{LSM_L M_S}$.
+	
+	For a electric dipole transition, we have the following selection rules:
+	
+	\begin{tabular}{m{.5\linewidth} m{.4\linewidth}}
+		\begin{equation}
+			\textnormal{Configuration}
+			\begin{cases}
+					\textnormal{only 1 $\electron$ transits} \\
+					\Delta n = \textnormal{any} \\
+					\Delta l = \pm 1
+			\end{cases}
+		\end{equation} &
+		\begin{equation}
+			\textnormal{Term}
+			\begin{cases}
+				\Delta L = 0, \pm 1 (0 \nrightarrow 0) \\
+				\Delta S = 0
+			\end{cases}
+		\end{equation}
+	\end{tabular}
+	
+	External magnetic Hamiltonian:
+	\begin{align*}
+		\Delta\hat{H}_z &= -\bm{\mu}\cdot\mathbf{B} \\
+		&= \bohrmagneton \mathbf{L}\cdot\mathbf{B} + g_s \bohrmagneton \mathbf{S}\cdot\mathbf{B}
+	\end{align*}
+	where $\bm{\mu} = \underbracket{\bm{\mu}_L}_{\substack{\textnormal{orbital}\\\textnormal{angular}\\\textnormal{momentum}}} + \underbracket{\bm{\mu}_S}_{\substack{\textnormal{spin}\\\textnormal{angular}\\\textnormal{momentum}}} = -\bohrmagneton\mathbf{L} - g_s \bohrmagneton\mathbf{S}$.
+	
+	By Wigner-Eckart Theorem,
+	\begin{align*}
+		\mathbf{L}\cdot\mathbf{B} &\to \frac{\mathbf{L}\cdot\mathbf{J}}{J^2} \mathbf{J}\cdot\mathbf{B} \\
+		\mathbf{S}\cdot\mathbf{B} &\to \frac{\mathbf{S}\cdot\mathbf{J}}{J^2} \mathbf{J}\cdot\mathbf{B}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		\Delta\hat{H}_z &= \bohrmagneton \frac{L^2 + \mathbf{L}\cdot\mathbf{S} + g_s S^2 + g_s \mathbf{S}\cdot\mathbf{L}}{J^2} \mathbf{J}\cdot\mathbf{B} \\
+		\Rightarrow \Delta E_z &= g_J \bohrmagneton BM_J
+	\end{align*}
+	where:
+	\begin{equation*}
+		g_J = \frac{
+			\splitfrac{L(L+1) + \cfrac{1}{2}\sbracket{J(J+1) - L(L+1) - S(S+1)}}
+			{+ g_s S(S+1) + \cfrac{g_s}{2}\sbracket{J(J+1) - L(L+1) - S(S+1)}}
+		}{J(J+1)}
+	\end{equation*}
+	
+	Approximating $g_s \simeq 2$:
+	\begin{align*}
+		g_J &= \frac{
+			\splitfrac{\bcancel{2L(L+1)} + J(J+1) - L(L+1) - S(S+1) + \cancel{2S(S+1)}}
+			{+ 2J(J+1) \bcancel{-2L(L+1)} \cancel{-2S(S+1)}}
+		}{2J(J+1)} \\
+		&= \frac{3}{2} - \frac{L(L+1) + S(S+1)}{2J(J+1)}
+	\end{align*}
+	
+	\part For Zeeman transitions, we have selection rules:
+	\begin{equation*}
+		\textnormal{Level}
+		\begin{cases}
+			\Delta J = 0, \pm 1 (0 \nrightarrow 0) \\
+			\Delta M_J = 0, \pm 1 (0 \nrightarrow 0 \iff \Delta J = 0)
+		\end{cases}
+	\end{equation*}
+	
+	``Weak'' magnetic flux refers to the requirement that $\Delta\hat{H}_z \ll \underbracket{\Delta\hat{H}_\textnormal{SO}}_{\mathclap{\substack{\textnormal{spin-orbit}\\\textnormal{interaction}}}}$.
+	\begin{equation*}
+		\Rightarrow g_J \bohrmagneton BM_J \ll \beta_\textnormal{SO} \cdot \frac{1}{2} \sbracket{J(J+1) - L(L+1) - S(S+1)}
+	\end{equation*}
+	
+	\part Alkali has 1 valence $\electron$, and that $\Delta S=0$ $\Rightarrow$ $S_1 = S_2 = 1/2$
+	
+	$\Rightarrow$ $J_2$ should be in between $3/2$ and $5/2$
+	
+	$J_2 > J_1$ so $L_1$ must be $2-1=1$ $\Rightarrow$ possible $J_1$ value: $1/2$, $3/2$
+	
+	The only consistent set with $\Delta J=0, \pm 1$ would be $J_2 = 3/2$, $J_1 = 1/2$ since $J_2 > J_1$.
+	
+	For upper level, ${}^2 D_{3/2}$:
+	\begin{align*}
+		g_J &= \frac{3}{2} - \frac{2(3) + \cfrac{1}{2}\rbracket{\cfrac{3}{2}}}{2\rbracket{\cfrac{3}{2}}\rbracket{\cfrac{5}{2}}} \\
+		&= \frac{9}{10}
+	\end{align*}
+	So:
+	\begin{align*}
+		\Delta E &= g_J \bohrmagneton BM_J \\
+		&= \begin{cases}
+			\pm\SI{31.49}{\per\metre} \qquad M_J = \pm\frac{3}{2} \\
+			\pm\SI{10.50}{\per\metre} \qquad M_J = \pm\frac{1}{2}
+		\end{cases}
+	\end{align*}
+	
+	For lower level, ${}^2 P_{1/2}$:
+	\begin{align*}
+		g_J &= \frac{3}{2} - \frac{1(2) + \cfrac{1}{2}\rbracket{\cfrac{3}{2}}}{2\rbracket{\cfrac{1}{2}}\rbracket{\cfrac{3}{2}}} \\
+		&= -\frac{1}{3}
+	\end{align*}
+	So:
+	\begin{equation*}
+		\Delta E = \mp\SI{3.89}{\per\metre} \qquad M_J = \pm\frac{1}{2}
+	\end{equation*}
+	
+	\image{.5\linewidth}{q2-zeeman-transitions}
+	$\pi$ and $\sigma$'s are visible perpendicular to $B$.
+	
+	Only $\sigma$'s are visible parallel to $B$.
+\end{parts}

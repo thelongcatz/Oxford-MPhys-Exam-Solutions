@@ -1,0 +1,120 @@
+\draft
+\begin{parts}
+	\part Gain saturation refers to the termination in laser gain growth as population inversion begins to be burnt out, resulting in a linear beam growth instead.
+	
+	In a laser amp, as $\rho(\omega)$ overwhelms the system, it can no longer sustain a population inversion, resulting in a dynamic equilibrium where beam can only grow linearly via pumping.
+	\image{.35\linewidth}{q4-population-dynamics}
+	\begin{equation*}
+		\deri{I}{z} = \alpha I
+		\qquad \alpha = \frac{\alpha_0}{1+\frac{I}{I_s}}
+		\qquad\Longrightarrow\qquad \lim_{I\to\infty} \deri{I}{z} = \alpha_0
+	\end{equation*}
+	
+	\part Rate equations:
+	\begin{align*}
+		\deri{N_2}{t} &= \mathcal{R}_2 + \rbracket{B_{12}\rho - B_{21}\rho - \frac{1}{\tau_2}}N_2 \\
+		\deri{N_1}{t} &= \mathcal{R}_1 + \rbracket{B_{21}\rho - B_{12}\rho - \frac{1}{\tau_1}}N_1 + A_{21}N_2
+	\end{align*}
+	
+	At steady state, $\diagderi{N_2}{t} = \diagderi{N_1}{t} = 0$:
+	\begin{align*}
+		\Rightarrow N_2 &= -\frac{\mathcal{R}_2}{B_{12}\rho - B_{21}\rho - \cfrac{1}{\tau_2}} \\
+		\mathcal{R}_1 &+ \rbracket{B_{21}\rho - B_{12}\rho - \frac{1}{\tau_1}}N_1 + \frac{A_{21}\mathcal{R}_2}{B_{12}\rho - B_{21}\rho - \cfrac{1}{\tau_2}} = 0 \\
+		\Rightarrow N_1 &= \frac{1}{B_{21}\rho - B_{12}\rho - \frac{1}{\tau_1}} \cdot \sbracket{-\frac{A_{21}\mathcal{R}_2}{B_{12}\rho - B_{21}\rho - \cfrac{1}{\tau_2}} - \mathcal{R}_1} \\
+		&= \tau_1 \cdot \rbracket{\mathcal{R}_1 - A_{21}\tau_2 \mathcal{R}_2}
+	\end{align*}
+	since $g_1 = g_2 \Rightarrow B_{12} = B_{21}$.
+	
+	\begin{align*}
+		\Rightarrow N^*(0) &= N_2 - N_1 \\
+		&= +\tau_2 \mathcal{R}_2 - \tau_1 \rbracket{\mathcal{R}_1 - A_{21}\tau_2 \mathcal{R}_2} \\
+		&= \mathcal{R}_2 \tau_2 \rbracket{1 - A_{21}\tau_1} - \mathcal{R}_1 \tau_1
+	\end{align*}
+	
+	\part Sketch of the change in intensity:
+	\image{.5\linewidth}{q4-gain-dz}
+	Energy deposited in $\inftsml{z}$ of a laser amp:
+	\begin{equation*}
+		E = I(z) \cdot \sigma_{21}(\omega - \omega_0)
+	\end{equation*}
+	
+	Also from rate equations:
+	\begin{align*}
+		E &= (B_{21} - B_{12})\rho\hbar\omega \\
+		\Rightarrow (B_{21} - B_{12})\rho &= \frac{E}{\hbar\omega} = \frac{I\sigma_{21}}{\hbar\omega}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\deri{N_2}{t} &= \mathcal{R}_2 - \frac{I\sigma_{21}}{\hbar\omega} N^* - \frac{N_2}{\tau_2} \\
+		\deri{N_1}{t} &= \mathcal{R}_1 + \frac{I\sigma_{21}}{\hbar\omega} N^* - \frac{N_1}{\tau_1} + A_{21}N_2
+	\end{align*}
+	
+	At steady state,
+	\begin{align*}
+		N_2 &= \mathcal{R}_2 \tau_2 - N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_2 \\
+		N_1 &= \mathcal{R}_1 + N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_1 + A_{21} \rbracket{\mathcal{R}_2 \tau_2 - N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_2} \tau_1 \\[1em]
+		\Rightarrow N^* &= N_2 - N_1 \\
+		&= \mathcal{R}_2 \tau_2 - N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_2 - \mathcal{R}_1 \tau_1 - N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_1 \\
+		&\qquad - A_{21} \rbracket{\mathcal{R}_2 \tau_2 - N^* \frac{I\sigma_{21}}{\hbar\omega} \tau_2} \tau_1 \\
+		\sbracket{1 + \frac{I\sigma_{21}}{\hbar\omega}(\tau_2 + \tau_1 - A_{21} \tau_2 \tau_1)} N^* &= \mathcal{R}_2 \tau_2 (1-A_{21}\tau_1) - \mathcal{R}_1 \tau_1
+	\end{align*}
+	
+	So:
+	\begin{equation*}
+		I_s = \frac{\hbar\omega}{\sigma_{21} (\tau_2 + \tau_1 - A_{21}\tau_2 \tau_1)}
+	\end{equation*}
+	is the saturation intensity, this is a measure of the intensity required to burn out population inversion.
+	As atomic response to external field is frequency dependent, $I_s (\omega)$ naturally follows since the further away one is from the resonance frequency, the weaker perturbution it gets $\rightarrow$ larger $I_s$.
+	
+	\part Gain coefficient $\alpha = N^* \sigma_{21}$:
+	\begin{align*}
+		\Rightarrow \alpha_1 &= \frac{N^*(0) \sigma_{21} (\omega_1)}{1 + \cfrac{I_0}{I_s (\omega_1)}} = \num{3.2} \\
+		\alpha_2 &= \frac{N^*(0) \sigma_{21} (\omega_2)}{1 + \cfrac{2I_0}{I_s (\omega_1)}} = \num{2.1} \\
+		\frac{\alpha_1}{\alpha_2} &= \frac{\sigma_{21} (\omega_1) \sbracket{1+\cfrac{2I_0}{I_s (\omega_1)}}}{\sigma_{21} (\omega_2) \sbracket{1+\cfrac{I_0}{I_s (\omega_1)}}}
+	\end{align*}
+	
+	Also:
+	\begin{align*}
+		I_s (\omega_2) &= \frac{\hbar \rbracket{\omega_1 + \cfrac{1}{2}\Delta\omega}}{\sigma_{21} (\omega_2) \sbracket{\ldots}} \\
+		&= \frac{1}{2} I_s (\omega_1) = \frac{1}{2} \frac{\hbar\omega_1}{\sigma_{21} (\omega_1) \sbracket{\ldots}} \\
+		\Rightarrow \frac{\sigma_{21} (\omega_1)}{\sigma_{21} (\omega_2)} &= \frac{1}{2} \frac{\omega_1}{\omega_1 + \cfrac{1}{2}\Delta\omega} \\
+		\Rightarrow \frac{\alpha_1}{\alpha_2} &= \frac{1}{2} \frac{\omega_1}{\omega_1 + \cfrac{1}{2}\Delta\omega} \cdot \frac{1 + \cfrac{2I_0}{I_s (\omega_1)}}{1 + \cfrac{I_0}{I_s (\omega_1)}} \\
+		\frac{\alpha_1}{\alpha_2} + \frac{\alpha_1}{\alpha_2} \frac{I_0}{I_s (\omega_1)} &= \frac{\omega_1}{2\omega_1 + \Delta\omega} + \frac{\omega_1}{2\omega_1 + \Delta\omega} \cdot \frac{2I_0}{I_s (\omega_1)} \\
+		\rbracket{\frac{\alpha_1}{\alpha_2} - \frac{\omega_1}{2\omega_1 + \Delta\omega}} I_s (\omega_1) &= \rbracket{\frac{2\omega_1}{2\omega_1 + \Delta\omega} - \frac{\alpha_1}{\alpha_2}} I_0 \\
+		\Rightarrow I_s (\omega_1) &= \frac{\cfrac{\omega_1}{\omega_1 + \frac{1}{2}\Delta\omega} - \cfrac{\alpha_1}{\alpha_2}}{\cfrac{\alpha_1}{\alpha_2} - \cfrac{\omega_1}{2\omega_1 - \Delta\omega}}
+	\end{align*}
+	
+	\newpage
+	Sketch of the gain medium:
+	\image{.4\linewidth}{q4-optical-gain}
+	Gain coefficient:
+	\begin{align*}
+		\alpha &= N^* \sigma_{21} \\
+		&= \frac{N^*(0) \sigma_{21} (\omega)}{1 + \cfrac{I}{I_s (\omega)}}
+	\end{align*}
+	
+	Also:
+	\begin{align*}
+		\alpha &= \pderi{I}{z} \\
+		\Rightarrow 1 + \frac{I}{I_s} \inftsml{I} &= N^*(0) \sigma_{21} (\omega) \inftsml{z}
+	\end{align*}
+	
+	For $\omega_1$:
+	\begin{equation*}
+		\ln\rbracket{\frac{I_1}{I_0}} + \frac{I_1 - I_0}{I_{s_1}} = \alpha_{01} L
+	\end{equation*}
+	
+	Same for $\omega_2$:
+	\begin{equation*}
+		\ln\rbracket{\frac{I_2}{I_0}} + \frac{I_2 - I_0}{I_{s_2}} = \underbracket{\alpha_{02}}_{\frac{1}{2}\alpha_{01}} L
+	\end{equation*}
+	
+	Also:
+	\begin{align*}
+		\sigma_2 &= \frac{1}{2} \sigma_1 \\
+		I_s &\propto \frac{1}{\sigma} \mtext{for optical } (\omega_2 \approx \omega_1 \approx \omega_0) \\[1em]
+		\Rightarrow I_{s_1} &= \num{3.43} I_0 \qquad \alpha_{01} = \SI{36}{\per\metre} \\
+		I_{s_2} &= \num{6.86} I_0 \qquad \alpha_{01} = \SI{18}{\per\metre}
+	\end{align*}
+\end{parts}

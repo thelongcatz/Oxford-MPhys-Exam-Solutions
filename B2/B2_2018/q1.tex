@@ -1,0 +1,173 @@
+\draft
+
+\begin{parts}
+	\part Space-like interval: $\rbracket{\mathsf{D}^\mu - \mathsf{G}^\mu}^2 > 0$
+	Time-like interval: $\rbracket{\mathsf{D}^\mu - \mathsf{G}^\mu}^2 < 0$
+	
+	Nothing stops the 2 events from being connected by a null vector so it is possible,
+	unless they are connected by causality then the interval $\le 0$.
+	
+	\image{.8\linewidth}{q1-lightcone}
+	
+	Within the shaded time cone, the spacetime interval between an event and the origin $<0$ and must remain so in all frames.
+	Conversely, the events outside of the light cone would be space-like and therefore unreachable by signals.
+	
+	Now:
+	\begin{align*}
+		\mathsf{Y}_\mu \mathsf{X}^\mu &= 0 \\
+		\Rightarrow -c^2 tt^\prime + \mathbf{x}\cdot\mathbf{x}^\prime &= 0 \\
+		\mathbf{x}\cdot\mathbf{x}^\prime &= -c^2 tt^\prime \\
+		\textnormal{For this relation to hold, }
+		\mathbf{x}\cdot\rbracket{\mathbf{x} + \Delta\mathbf{x}} &= c^2 \rbracket{t + \Delta t}t \\
+		x^2 + \mathbf{x}\cdot\Delta\mathbf{x} &= c^2 t^2 + c^2 t \Delta t \\
+		\Rightarrow \mathsf{X}_\mu \mathsf{X}^\mu + \mathsf{X}_\mu \rbracket{\mathsf{Y}-\mathsf{X}}^\mu &= 0 \\
+		\Rightarrow \mathsf{X}^\mu &= \mathsf{X}^\mu - \mathsf{Y}^\mu \\
+		\Rightarrow \mathsf{Y}^\mu &= 0
+	\end{align*}
+	By symmetry, $\mathsf{X}^\mu$ could also be $0$, or that $\mathbf{x}\cdot\mathbf{x}^\prime = c^2 tt^\prime$.
+	
+	\part 4-acceleration: $\mathsf{A}^\mu =\diagderi{\mathsf{U}^\mu}{\tau} = \gamma\rbracket{\dot{\gamma}c, \dot{\gamma}\mathbf{v} + \gamma\mathbf{a}}$
+	4-wavevector: $\mathsf{K}^\mu = \rbracket{\omega/c, \mathbf{k}}$
+	4-current: $\mathsf{J}^\mu = \rho\mathsf{U}^\mu = \rbracket{\gamma\rho c, \gamma\rho\mathbf{v}}$
+	So:
+	\begin{equation*}
+		\mathsf{A}_\mu \mathsf{J}^\mu = -\dot{\gamma}\gamma^2 \rho c^2 + \gamma^2 \dot{\gamma}\rho v^2 + \gamma^3 \rho \mathbf{a}\cdot\mathbf{v}
+	\end{equation*}
+	In a rest frame, $\gamma=1$, $\mathbf{v}=0$ $\Rightarrow$ $\mathsf{A}_\mu \mathsf{J}^\mu = -\dot{\gamma}\rho c^2 \neq 0$.
+	
+	Likewise $\mathsf{A}^\mu \mathsf{A}_\mu = a_0^2 \neq 0$ and $\mathsf{J}_\mu \mathsf{J}^\mu = \rho^2 c^2$.
+	
+	Also $\mathsf{K}_\mu \mathsf{K}^\mu = -\omega^2 / c^2 + k^2$, and we have the following dispersion for light \textit{in vacuo}:
+	\begin{equation*}
+		\omega = ck
+		\Rightarrow \mathsf{K}_\mu \mathsf{K}^\mu = -k^2 + k^2 = 0
+	\end{equation*}
+	
+	\part 4-momentum:
+	\begin{align*}
+		\mathsf{P}^\mu = m\mathsf{U}^\mu &= m \deri{\mathsf{X}^\mu}{\tau} \mtext{where } \mathsf{U}^\mu = \deri{\mathsf{X}^\mu}{\tau} \textnormal{ is the 4-velocity} \\
+		&= \gamma m \rbracket{c, \mathbf{v}} \mtext{where $\mathbf{v}$ is 3-velocity}
+	\end{align*}
+	
+	4-acceleration:
+	\begin{equation*}
+		\mathsf{A}^\mu =\deri{\mathsf{U}^\mu}{\tau} = \gamma\rbracket{\dot{\gamma}c, \dot{\gamma}\mathbf{v} + \gamma\mathbf{a}}
+		\mtext{where }
+		\mathbf{a} = \deri{\mathbf{v}}{t}
+		\textnormal{ is 3-acceleration}
+	\end{equation*}
+	
+	Then,
+	\begin{equation*}
+		\mathsf{P}_\mu \mathsf{P}^\mu = -\gamma^2 m^2 c^2 + \gamma^2 m^2 v^2
+	\end{equation*}
+	
+	Evaluating in rest frame gives $\gamma=1$, $\mathbf{v}=0$ so $\mathsf{P}_\mu \mathsf{P}^\mu = -m^2 c^2$.
+	
+	Next we have:
+	\begin{equation*}
+		\mathsf{A}^\mu \mathsf{A}_\mu = -\gamma^2 \dot{\gamma}^2 c^2 + \gamma^2 \dot{\gamma}^2 v^2 + 2\gamma^3 \dot{\gamma} \mathbf{v}\cdot\mathbf{a} + \gamma^4 a^2
+	\end{equation*}
+	
+	Noting that:
+	\begin{gather*}
+		\gamma = \rbracket{1 - \frac{v^2}{c^2}}^{-1/2} \\
+		\dot{\gamma} = -\frac{1}{2}\underbracket{\rbracket{1 - \frac{v^2}{c^2}}^{-3/2}}_{\gamma^3} \rbracket{-\frac{2v}{c^2} \cdot \deri{v}{t}} \\
+		= \frac{v}{c^2} \gamma^3 a
+	\end{gather*}
+	
+	For $\mathbf{a} \parallel \mathbf{v}$, $\mathbf{a}\cdot\mathbf{v} = av$, thus:
+	\begin{align*}
+		\mathsf{A}^\mu \mathsf{A}_\mu &= -\gamma^2 \rbracket{\frac{v}{c^2} \gamma^3 a}^2 c^2 \\
+		&\qquad + \gamma^2 \rbracket{\frac{v}{c^2} \gamma^3 a}^2 v^2 \\
+		&\qquad + 2\gamma^3 \rbracket{\frac{v}{c^2} \gamma^3 a} va + \gamma^4 a^2 \\
+		&= -\gamma^8 a^2 v^2 \cdot \frac{1}{c^2} \\
+		&\qquad + \gamma^8 a^2 v^4 \cdot \frac{1}{c^4} \\
+		&\qquad + 2\gamma^6 a^2 v^2 \cdot \frac{1}{c^2} + \gamma^4 a^2 \\
+		&= \gamma^6 a^2 \sbracket{-\gamma^2 \beta^2 + \gamma^2 \beta^4 + 2\beta^2 + \frac{1}{\gamma^2}} \\
+		&= \gamma^6 a^2 \sbracket{-\beta^2 \cancelto{1}{\gamma^2 \rbracket{1-\beta^2}} + 2\beta^2 + 1 - \beta^2} \\
+		&= \gamma^6 a^2
+	\end{align*}
+	
+	\part 3-force: $\mathbf{f} = \deri{\mathbf{p}}{t} = \dot{\gamma}m\mathbf{v} + \gamma m\mathbf{a}$
+	
+	For central force, $\dot{\gamma} = 0$:
+	\begin{gather*}
+		\Rightarrow \mathbf{f} = \gamma m\mathbf{a} = \frac{\alpha \mathbf{r}}{r^3} \\
+		\Rightarrow \mathsf{F}^\mu = \rbracket{0, \gamma\mathbf{f}}
+		\mtext{since central force does no work}
+	\end{gather*}
+	
+	Potential of $\mathbf{f}$ is given by $\defint{-\infty}{r}{\alpha / r^2}{r} = -\alpha / r$.
+	
+	Total energy of the system $\gamma mc^2 - \alpha / r$ is thus conserved.
+	One example of central force is Coulomb attraction between an electron and a nucleus.
+	
+	\part Sketch of the setup:
+	\image{.3\linewidth}{q1-plates}
+	
+	In $S$, the $\electron$ gains energy $qEl$, thus at the end gaining a total energy of:
+	\begin{align*}
+		E^\prime &= E_0 + \Delta E \\
+		\gamma mc^2 &= mc^2 + qEl \\
+		\gamma &= 1 + \frac{qEl}{mc^2} = \num{97.7}
+	\end{align*}
+	
+	In $\electron$ rest frame, we have $E_\parallel^\prime = \gamma E_\parallel$ assuming $B=0$:
+	\begin{align*}
+		\Rightarrow \textnormal{Lorentz force } \mathbf{f} &= qE^\prime \\
+		\Rightarrow ma_0 &= \gamma qE \\
+		a_0 &= \frac{\gamma qE}{m}
+	\end{align*}
+	
+	Also $\gamma^6 a^2 = a_0^2$ from before, so:
+	\begin{align*}
+		\gamma^6 a^2 &= \frac{\gamma^2 q^2 E^2}{m^2} \\
+		a^2 &= \frac{q^2 E^2}{\gamma^4 m^2} \\
+		a &= \frac{qE}{\gamma^2 m}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		\dot{\gamma} &= \overbracket{\frac{v}{c^2}}^{\beta/c} \gamma^3 \cdot \frac{qE}{\gamma^2 m} \\
+		&= \frac{1}{c} \sbracket{1-\gamma^{-2}}^{-1/2} \frac{qE}{m} \gamma \\
+		\deri{\gamma}{t} &= \frac{qE}{mc} \sqrt{\gamma^2 - 1} \\
+		\int_{1}^{\gamma} \frac{\mathrm{d}\gamma}{\sqrt{\gamma^2 - 1}} &= \defint{0}{t}{\frac{qE}{mc}}{t}
+	\end{align*}
+	
+	The LHS gives:
+	\begin{align*}
+		\frac{\mathrm{d}\gamma}{\sqrt{\gamma^2 - 1}} &= \arcosh\gamma - \underbracket{\arcosh 1}_{0} \\
+		\Rightarrow \arcosh\gamma &= \frac{qEt}{mc} \\
+		\gamma &= \cosh\rbracket{\frac{qEt}{mc}} \\
+		\Rightarrow \beta = \rbracket{1 - \gamma^{-2}}^{1/2} &= \tanh\rbracket{\frac{qEt}{mc}}
+		\mtext{since rapidity $\rho=qEt/m$}
+	\end{align*}
+	
+	At the end of the gap,
+	\begin{align*}
+		t &= \frac{mc}{qE} \arcosh\gamma \\
+		&= \SI{9.00e-10}{\second}
+	\end{align*}
+	
+	Sketch of $\gamma$ against $t$:
+	\image{.8\linewidth}{q1-sketch-gamma}
+	\newpage
+	Sketch of $\beta$ against $t$:
+	\image{.8\linewidth}{q1-sketch-beta}
+	
+	Replace $E \to 0.8E$,
+	\begin{gather*}
+		\beta = \tanh\rbracket{0.8 \frac{qEt}{mc}} \\
+		\Rightarrow \rho = 0.8 \frac{qEt}{mc} = 4.22 \\
+		\Rightarrow \beta = \tanh 4.22 \\
+		\Rightarrow \frac{\beta}{\beta_0} = \frac{\tanh 4.22}{\tanh\rbracket{\arcosh 97.7}} = \num{0.9996}
+	\end{gather*}
+	
+	Replace $m \to m_p$,
+	\begin{align*}
+		\rho &= \frac{qEt}{m_p c} = \num{2.87e-3} \\
+		\Rightarrow \gamma &= \cosh\num{2.87e-3} = \num{1.000004} \\
+		\beta &= \tanh\num{2.87e-3} = \num{2.87e-3}
+	\end{align*}
+\end{parts}

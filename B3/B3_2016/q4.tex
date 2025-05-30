@@ -1,0 +1,68 @@
+\draft
+\begin{parts}
+	\part Substituting $\Psi(\mathbf{r}, t)$ into the TDSE:
+	\begin{align*}
+		i\hbar\pderi{\Psi}{t} &= \hat{H}\Psi \\
+		\Rightarrow i\hbar\dot{c}_1\psi_1 e^{-\frac{iE_1 t}{\hbar}} + i\hbar c_1\psi_1 \rbracket{-i\frac{E_1}{\hbar}} e^{-\frac{iE_1 t}{\hbar}} \\
+		+ i\hbar\dot{c}_2\psi_2 e^{-\frac{iE_2 t}{\hbar}} + i\hbar c_2\psi_2 \rbracket{-i\frac{E_2}{\hbar}} e^{-\frac{iE_2 t}{\hbar}}
+		&= E_1 c_1 \psi_1  e^{-\frac{iE_1 t}{\hbar}} + E_2 c_2 \psi_2  e^{-\frac{iE_2 t}{\hbar}} \\
+		&\qquad + \hat{V}\sbracket{c_1 \psi_1  e^{-\frac{iE_1 t}{\hbar}} + c_2 \psi_2  e^{-\frac{iE_2 t}{\hbar}}}
+	\end{align*}
+	$\times\psi_2^*$ and integrate over position to get:
+	\begin{align*}
+		i\hbar\dot{c}_2 e^{-\frac{iE_2 t}{\hbar}} + \cancel{E_2 c_2 \psi_2  e^{-\frac{iE_2 t}{\hbar}}} &= \cancel{E_2 c_2 \psi_2  e^{-\frac{iE_2 t}{\hbar}}} \\
+		&\qquad + \bra{2}\hat{V}\ket{1}c_1 e^{-\frac{iE_1 t}{\hbar}} + \bra{2}\hat{V}\ket{2}c_2 e^{-\frac{iE_2 t}{\hbar}} \\
+		\Rightarrow \dot{c}_2(t) &= -\frac{i}{\hbar} \bra{2}\hat{V}\ket{1} e^{i\omega_0 t} c_1(t) - \frac{i}{\hbar} \bra{2}\hat{V}\ket{2} c_2(t)
+	\end{align*}
+	where $\omega_0=(E_2 - E_1)/\hbar$.
+	
+	Now:
+	\begin{align*}
+		\hat{V}(t) &= ex\mathcal{E}\cos\omega t \\
+		\Rightarrow V_{ij} &= \bra{i}\hat{V}\ket{j} \\
+		\Rightarrow V_{21} &= \bra{2}ex\mathcal{E}\cos\omega t\ket{1} \\
+		&= \hbar\Omega\cos\omega t
+	\end{align*}
+	where $\hbar\Omega = \bra{2}ex\mathcal{E}\ket{1}$ is the Rabi frequency.
+	
+	In addition, $V_{22} = \bra{2}ex\mathcal{E}\cos\omega t\ket{2} = 0$ as electric dipole transition requires the state to change.
+	
+	Approximating $c_1 \simeq 1$, we have:
+	\begin{align*}
+		\dot{c}_2 &= -i\Omega e^{i\omega_0 t} \cos\omega t \\
+		&= -\frac{i\Omega}{2} \sbracket{\frac{e^{i(\omega_0 + \omega)t} + e^{i(\omega_0 - \omega)t}}{2}} \\
+		\Rightarrow c_2(t) &= \defint{0}{t}{\dot{c}_2(t^\prime)}{t^\prime} \\
+		&= -\frac{i\Omega}{2} \sbracket{\frac{e^{i(\omega_0 + \omega)t}}{i(\omega_0 + \omega)} + \frac{e^{i(\omega_0 - \omega)t}}{i(\omega_0 - \omega)}}_{t=0}^t
+	\end{align*}
+	
+	Typically for optical transition, we may invoke rotating wave approximation as $\omega + \omega_0 \gg |\omega - \omega_0|$.
+	So we may ignore the term with $\omega + \omega_0$ since the fraction vanishes, physically this corresponds to the behaviour that the atom could not catch up with the high frequency mode.
+	\begin{align*}
+		\Rightarrow c_2(t) &\simeq -\frac{i\Omega}{2} \sbracket{\frac{e^{i(\omega_0 - \omega)t}-1}{i(\omega_0 - \omega)}} \\
+		&= -\frac{i\Omega}{2(\omega_0 - \omega)} e^{i\frac{\omega_0 - \omega}{2}t} \sbracket{\frac{e^{i\frac{\omega_0 - \omega}{2}t} - e^{-i\frac{\omega_0 - \omega}{2}t}}{2i}} \cdot 2 \\
+		&= -\frac{i\Omega}{\delta} e^{i\diagfrac{\delta}{2}t} \sin^2\rbracket{\frac{\delta}{2}t} \mtext{where } \delta=\omega_0 - \omega \\
+		|c_2(t)|^2 &= \rbracket{\frac{\Omega}{\delta}}^2 \sin^2\rbracket{\frac{\delta}{2}t}
+	\end{align*}
+	
+	For a broadband radiation, the energy density is given by:
+	\begin{align*}
+		\hbar\Omega &= \bra{2}e\sqrt{\frac{2\rho\delta\omega}{\permittivity}}x\ket{1} \\
+		\Rightarrow \Omega &= e\sqrt{\frac{2\rho\delta\omega}{\permittivity}} \bra{2}x\ket{1} \\
+		\Omega^2 &= e^2 \rbracket{\frac{2\rho\delta\omega}{\permittivity}} \abs{\bra{2}x\ket{1}}^2
+	\end{align*}
+	
+	Replacing $\delta\omega$ with integral, the limits assume that the response range is narrow enough such that $\rho\simeq\rho(\omega_0)$ for all $\omega$:
+	\begin{align*}
+		\Rightarrow |c_2(t)|^2 &= \defint{-\infty}{\infty}{\frac{2e^2\rho(\omega_0)}{4\permittivity} \abs{\bra{2}x\ket{1}}^2 \sbracket{\frac{\sin^2\rbracket{\frac{\delta}{2}t}}{\rbracket{\frac{\delta}{2}}^2}}}{\omega} \\
+		&= \frac{2e^2\rho(\omega_0)}{4\permittivity} \abs{\bra{2}x\ket{1}}^2 \cdot 2\pi t \\
+		&= \frac{\pi e^2\rho(\omega_0)}{\permittivity} \abs{\bra{2}x\ket{1}}^2 \cdot t
+	\end{align*}
+	
+	Transition probability:
+	\begin{align*}
+		\rho B_{12} &= \frac{|c_2(t)|^2}{t} \\
+		B_{12} &= \frac{\pi e^2}{\permittivity} \abs{\bra{2}x\ket{1}}^2 \\
+		&= \frac{\pi e^2}{3\permittivity} \abs{\bra{2}x\ket{1}}^2
+	\end{align*}
+	by isotropy and Einstein assumes incoherent radiation.
+\end{parts}

@@ -3,11 +3,11 @@
 \begin{parts}
 	\part From the given quantity:
 	\begin{align*}
-		\mathbf{\mu}_\textnormal{sat} &= \frac{\mu_\textnormal{B}}{2}
+		\mathbf{\mu}_\textnormal{sat} &= \frac{\bohrmagneton}{2}
 		\begin{pmatrix}
 			g_\bot n_x \\ g_\bot n_y \\ g_\parallel n_z
 		\end{pmatrix} \\
-		\Rightarrow \mu_\textnormal{sat} &= \frac{\mu_\textnormal{B}}{2} \sqrt{g_\bot^2 \underbracket{\left(n_x^2 + n_y^2\right)}_{r^2 \textnormal{ in $xy$ plane}}}
+		\Rightarrow \mu_\textnormal{sat} &= \frac{\bohrmagneton}{2} \sqrt{g_\bot^2 \underbracket{\rbracket{n_x^2 + n_y^2}}_{r^2 \textnormal{ in $xy$ plane}}}
 	\end{align*}
 	So $\mu_\textnormal{sat}$ is independent of the orientation in $xy$ plane.
 	
@@ -19,7 +19,7 @@
 		\includegraphics[width=.8\linewidth]{q6-energy-levels}
 	\end{figure}
 	
-	\part Spin-orbit Hamiltonian: $\mathcal{H}_\textnormal{SO} = \lambda \mathbf{L} \cdot \mathbf{S}$, $\lambda < 0$ and $\left|\lambda\right| \ll \left|D\right|$ so perturb from the crystal field.
+	\part Spin-orbit Hamiltonian: $\mathcal{H}_\textnormal{SO} = \lambda \mathbf{L} \cdot \mathbf{S}$, $\lambda < 0$ and $\abs{\lambda} \ll \abs{D}$ so perturb from the crystal field.
 	
 	For $L = 2$, $S = \diagfrac{1}{2}$, Wigner-Eckart gives $\left\langle\mathbf{L} \cdot \mathbf{S}\right\rangle \propto L_z S_z$ so for the lowest orbital term:
 	\begin{figure}[H]
@@ -30,15 +30,15 @@
 	\part Zeeman Hamiltonian:
 	\begin{align*}
 		\mathcal{H}_\textnormal{Z} &= -\mathbf{\mu} \cdot \mathbf{B} \\
-		&= \mu_\textnormal{B} \left(\mathbf{L} \cdot \mathbf{B} + 2\mathbf{S} \cdot \mathbf{B}\right)
+		&= \bohrmagneton  \rbracket{\mathbf{L} \cdot \mathbf{B} + 2\mathbf{S} \cdot \mathbf{B}}
 	\end{align*}
 	
 	Since we are further perturbing from the previous interactions, we have:
 	\begin{equation*}
-		\mu_\textnormal{B} \left(\mathbf{L} \cdot \mathbf{B}\right) + 2\mu_\textnormal{B} \left(\mathbf{S} \cdot \mathbf{B}\right) =
+		\bohrmagneton  \rbracket{\mathbf{L} \cdot \mathbf{B}} + 2\bohrmagneton  \rbracket{\mathbf{S} \cdot \mathbf{B}} =
 		\begin{cases}
-			\mu_\textnormal{B} \left(L_z B + 2S_z B\right) \hspace{1em} \mathbf{B}\parallel\hat{\mathbf{z}} \\
-			\mu_\textnormal{B} \left(\underbracket{L_x}_{\frac{L_+ + L_-}{2}} B + 2 \underbracket{S_x}_{\frac{S_+ + S_-}{2}} B\right) \hspace{1em} \mathbf{B}\bot\hat{\mathbf{z}}
+			\bohrmagneton  \rbracket{L_z B + 2S_z B} \hspace{1em} \mathbf{B}\parallel\hat{\mathbf{z}} \\
+			\bohrmagneton  \rbracket{\underbracket{L_x}_{\frac{L_+ + L_-}{2}} B + 2 \underbracket{S_x}_{\frac{S_+ + S_-}{2}} B} \hspace{1em} \mathbf{B}\bot\hat{\mathbf{z}}
 		\end{cases}
 	\end{equation*}
 	choosing $x$ axis by isotropy.
@@ -47,11 +47,11 @@
 	\begin{itemize}
 		\item \underline{$D > 0$}
 		\begin{equation*}
-			\Delta E_z = \pm \mu_\textnormal{B} B \textnormal{\hspace{1em}for\hspace{1em}} \ket{L_z = 0, S_z = \pm\diagfrac{1}{2}}
+			\Delta E_z = \pm \bohrmagneton  B \textnormal{\hspace{1em}for\hspace{1em}} \ket{L_z = 0, S_z = \pm\diagfrac{1}{2}}
 		\end{equation*}
 		\item \underline{$D < 0$}
 		\begin{equation*}
-			\Delta E_z = \pm \mu_\textnormal{B} B \left(2+1\right) = \pm 3 \mu_\textnormal{B} B \textnormal{\hspace{1em}for\hspace{1em}} \ket{L_z = \pm 2, S_z = \pm\diagfrac{1}{2}}
+			\Delta E_z = \pm \bohrmagneton  B \rbracket{2+1} = \pm 3 \bohrmagneton  B \textnormal{\hspace{1em}for\hspace{1em}} \ket{L_z = \pm 2, S_z = \pm\diagfrac{1}{2}}
 		\end{equation*}
 	\end{itemize}
 	
@@ -60,20 +60,20 @@
 		\item \underline{$D > 0$}
 		\begin{gather*}
 			\begin{split}
-				\Delta E_z = \frac{1}{2} &\left(\bra{L_z = 0, S_z = +\diagfrac{1}{2}} + \bra{L_z = 0, S_z -\diagfrac{1}{2}}\right) \\
+				\Delta E_z = \frac{1}{2} &\rbracket{\bra{L_z = 0, S_z = +\diagfrac{1}{2}} + \bra{L_z = 0, S_z -\diagfrac{1}{2}}} \\
 				&\mathcal{H}_\textnormal{Z} \\
-				&\left(\ket{L_z = 0, S_z = +\diagfrac{1}{2}} + \ket{L_z = 0, S_z = -\diagfrac{1}{2}}\right)
+				&\rbracket{\ket{L_z = 0, S_z = +\diagfrac{1}{2}} + \ket{L_z = 0, S_z = -\diagfrac{1}{2}}}
 			\end{split} \\
 			\begin{split}
-				= &\frac{1}{2} \left(\bra{\ldots} + \bra{\ldots}\right)
-				\left[\mu_\textnormal{B} B \cdot 2 \cdot \frac{1}{2} \sqrt{\diagfrac{1}{2} (\diagfrac{3}{2}) - \diagfrac{1}{2} (\diagfrac{1}{2})} \ket{0, -\diagfrac{1}{2}} \right. \\
-				&\left. + \mu_\textnormal{B} B \cdot 2 \cdot \frac{1}{2} \sqrt{\diagfrac{1}{2} (\diagfrac{3}{2}) - (-\diagfrac{1}{2}) (\diagfrac{1}{2})} \ket{0, +\diagfrac{1}{2}}\right]
+				= &\frac{1}{2} \rbracket{\bra{\ldots} + \bra{\ldots}}
+				\sbracket{\bohrmagneton  B \cdot 2 \cdot \frac{1}{2} \sqrt{\diagfrac{1}{2} (\diagfrac{3}{2}) - \diagfrac{1}{2} (\diagfrac{1}{2})} \ket{0, -\diagfrac{1}{2}} \right. \\
+				&\left. + \bohrmagneton  B \cdot 2 \cdot \frac{1}{2} \sqrt{\diagfrac{1}{2} (\diagfrac{3}{2}) - (-\diagfrac{1}{2}) (\diagfrac{1}{2})} \ket{0, +\diagfrac{1}{2}}}
 			\end{split} \\
-			= \frac{1}{2} \left[B \mu_\textnormal{B} + \mu_\textnormal{B} B\right] = \mu_\textnormal{B} B
+			= \frac{1}{2} \sbracket{B \bohrmagneton  + \bohrmagneton  B} = \bohrmagneton  B
 		\end{gather*}
 		\item \underline{$D < 0$}
 		\begin{align*}
-			\Delta E_z &= \frac{1}{2} \left(\ldots\right) \left[\mu_\textnormal{B} B \cdot \frac{1}{2} \sqrt{2 \cdot 3 - (-2) + \ldots} \ket{\ldots} + \ldots\right] \\
+			\Delta E_z &= \frac{1}{2} \rbracket{\ldots} \sbracket{\bohrmagneton  B \cdot \frac{1}{2} \sqrt{2 \cdot 3 - (-2) + \ldots} \ket{\ldots} + \ldots} \\
 			&= 0 \textnormal{\hspace{1em}since we have no bras with $L_z = \pm 1$}
 		\end{align*}
 	\end{itemize}
@@ -82,11 +82,11 @@
 	Picking the new ground states then gives:
 	\begin{align*}
 		D < 0 &\Rightarrow \begin{cases}
-			\parallel:\; \mathbf{\mu}_\textnormal{sat} = -\mu_\textnormal{B} \hat{\mathbf{z}} \\
-			\bot:\; \mathbf{\mu}_\textnormal{sat} = +\mu_\textnormal{B} \hat{\mathbf{z}}
+			\parallel:\; \mathbf{\mu}_\textnormal{sat} = -\bohrmagneton  \hat{\mathbf{z}} \\
+			\bot:\; \mathbf{\mu}_\textnormal{sat} = +\bohrmagneton  \hat{\mathbf{z}}
 		\end{cases} \Rightarrow g_\parallel = -\frac{1}{2} \qquad g_\bot = +\frac{1}{2} \\
 		D > 0 &\Rightarrow \begin{cases}
-			\parallel:\; \mathbf{\mu}_\textnormal{sat} = -3\mu_\textnormal{B} \hat{\mathbf{z}} \\
+			\parallel:\; \mathbf{\mu}_\textnormal{sat} = -3\bohrmagneton  \hat{\mathbf{z}} \\
 			\bot:\; \mathbf{\mu}_\textnormal{sat} = 0
 		\end{cases} \Rightarrow g_\parallel = -\frac{3}{2} \qquad g_\bot = 0
 	\end{align*}

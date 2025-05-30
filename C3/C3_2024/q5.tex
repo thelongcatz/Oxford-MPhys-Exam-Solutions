@@ -17,7 +17,7 @@ Ye olde superconductors.
 	\end{subparts}
 	
 	\part A rather strange part.
-	I'd say that it tests more on Ampere's Law\footnote{As an anecdote, the author bombed this part by creating a new universe in which Ampere's Law took the form of $\int\mathbf{B}\cdot\mathrm{d}\mathbf{A}$\dots} than SC!
+	I'd say that it tests more on Ampere's Law\footnote{As an anecdote, the author bombed this part by creating a new universe in which Ampere's Law took the form of $\int\mathbf{B}\cdot\inftsml{\mathbf{A}}$\dots} than SC!
 	\begin{subparts}
 		\subpart By Silsbee's Rule (fancy name for Ampere's Law under critical conditions), we have:
 		\begin{equation}
@@ -46,14 +46,14 @@ Ye olde superconductors.
 		
 		\subpart At $T_1$ we have the critical $B$ field as:
 		\begin{equation}
-			B_\textnormal{c}(T_1) = B_\textnormal{c}\left[1 - \left(\frac{T_1}{T_\textnormal{c}}\right)^2\right]
+			B_\textnormal{c}(T_1) = B_\textnormal{c}\sbracket{1 - \rbracket{\frac{T_1}{T_\textnormal{c}}}^2}
 		\end{equation}
 		
 		Then by Silsbee's Rule we have the critical current at $T_1$:
 		\begin{align*}
 			I_\textnormal{c}^\textnormal{Ta}(T_1) &= \frac{B_\textnormal{c}(T_1) \cdot 2\pi r_1}{\mu_0} \\
-			&= I_\textnormal{c}^\textnormal{Ta} \left[1-\left(\frac{T_1}{T_\textnormal{c}}\right)^2\right] \\
-			&= \left(\SI{45}{\ampere}\right) \left[1-\left(\frac{\SI{4.15}{\kelvin}}{\SI{4.48}{\kelvin}}\right)^2\right] \\
+			&= I_\textnormal{c}^\textnormal{Ta} \sbracket{1-\rbracket{\frac{T_1}{T_\textnormal{c}}}^2} \\
+			&= \rbracket{\SI{45}{\ampere}} \sbracket{1-\rbracket{\frac{\SI{4.15}{\kelvin}}{\SI{4.48}{\kelvin}}}^2} \\
 			&= \SI{6.39}{\ampere}
 		\end{align*}
 		
@@ -79,20 +79,20 @@ Ye olde superconductors.
 			\label{eqn:q5-b2}
 		\end{gather}
 		
-		So $\alpha = \left(\dfrac{\mu_0}{2\pi r_1}\right)^2$, $\beta = \left(\dfrac{\mu_0 N}{L}\right)^2$.
+		So $\alpha = \rbracket{\dfrac{\mu_0}{2\pi r_1}}^2$, $\beta = \rbracket{\dfrac{\mu_0 N}{L}}^2$.
 		
 		\subpart Equating $B$ with $B_\textnormal{c}^\textnormal{Ta}(T_1)$ and therefore \eqref{eqn:q5-net-b-field} becomes:
 		\begin{gather*}
 			B_\textnormal{c}^\textnormal{Ta}(T_1) = \sqrt{\alpha I_1^2 + \beta I_2^2} \\
-			\Rightarrow \beta = \frac{1}{I_2^2} \left[\left( B_\textnormal{c}^\textnormal{Ta}(T_1) \right)^2 - \alpha I_1^2\right] = \left(\mu_0 n_\textnormal{c}\right)^2 \\
-			\Rightarrow n_\textnormal{c} = \frac{1}{\mu_0 I_2} \sqrt{\left( B_\textnormal{c}^\textnormal{Ta}(T_1) \right)^2 - \alpha I_1^2} = \SI{1.02e5}{\per\metre} = \SI{102}{\per\milli\metre}
+			\Rightarrow \beta = \frac{1}{I_2^2} \sbracket{\rbracket{ B_\textnormal{c}^\textnormal{Ta}(T_1) }^2 - \alpha I_1^2} = \rbracket{\mu_0 n_\textnormal{c}}^2 \\
+			\Rightarrow n_\textnormal{c} = \frac{1}{\mu_0 I_2} \sqrt{\rbracket{ B_\textnormal{c}^\textnormal{Ta}(T_1) }^2 - \alpha I_1^2} = \SI{1.02e5}{\per\metre} = \SI{102}{\per\milli\metre}
 		\end{gather*}
 		where $n_\textnormal{c} = (\diagfrac{N}{L})_\textnormal{c}$ is the critical number of turns per unit length beyond which the Ta wire becomes resistive.
 	\end{subparts}
 	
 	\part Simple question on BCS theory.
 	\begin{subparts}
-		\subpart Recall from BCS theory that $\lambda = g(E_\textnormal{F}) \left|g_\textnormal{eff}\right|^2$ is the phonon-electron coupling parameter -- it encodes the interaction between phonon and electron near the Fermi surface and has been shown to be attractive by Cooper.
+		\subpart Recall from BCS theory that $\lambda = g(E_\textnormal{F}) \abs{g_\textnormal{eff}}^2$ is the phonon-electron coupling parameter -- it encodes the interaction between phonon and electron near the Fermi surface and has been shown to be attractive by Cooper.
 		
 		$\hbar\omega_\textnormal{D}$ is the energy at Debye frequency -- in Cooper's theory this is the upper energy limit for which the electron-phonon interaction remains attractive.
 		
@@ -109,17 +109,17 @@ Ye olde superconductors.
 		\newpage
 		\subpart From the given gap equation,
 		\begin{equation}
-			\lambda \int_{0}^{\hbar\omega_\textnormal{D}} \mathrm{d}\epsilon \frac{1}{\sqrt{\epsilon^2 + \Delta^2}} = 1
+			\lambda \int_{0}^{\hbar\omega_\textnormal{D}} \inftsml{\epsilon} \frac{1}{\sqrt{\epsilon^2 + \Delta^2}} = 1
 			\label{eqn:q5-gap-equation}
 		\end{equation}
 		
 		Taking the limit of $\Delta \ll \hbar\omega_\textnormal{D} \Rightarrow \hbar\omega_\textnormal{D} / \Delta \gg 1$ yields:
 		\begin{gather}
-			\lambda \int_{0}^{\hbar\omega_\textnormal{D}} \frac{\mathrm{d}\epsilon / \Delta}{\sqrt{1 + (\epsilon/\Delta)^2}} = 1 \notag \\
-			\Rightarrow \lambda \int_{0}^{\hbar\omega_\textnormal{D} / \Delta} \frac{\mathrm{d}x}{\sqrt{1+x^2}} = 1 \textnormal{\hspace{1em}where $x=\epsilon/\Delta$} \notag \\
-			\sinh^{-1} \left(\frac{\hbar\omega_\textnormal{D}}{\Delta}\right) - \sinh^{-1} 0 = \frac{1}{\lambda} \notag \\
-			\Rightarrow \ln \left(\sqrt{\left(\frac{\hbar\omega_\textnormal{D}}{\Delta}\right)^2 + 1} + \left(\frac{\hbar\omega_\textnormal{D}}{\Delta}\right)\right) - 0 = \frac{1}{\lambda} \notag \\
-			\Rightarrow \ln \left[ 2 \left(\frac{\hbar\omega_\textnormal{D}}{\Delta}\right) \right] = \frac{1}{\lambda} \textnormal{\hspace{1em}since $\hbar\omega_\textnormal{D} / \Delta \gg 1$} \notag \\
+			\lambda \int_{0}^{\hbar\omega_\textnormal{D}} \frac{\inftsml{\epsilon} / \Delta}{\sqrt{1 + (\epsilon/\Delta)^2}} = 1 \notag \\
+			\Rightarrow \lambda \int_{0}^{\hbar\omega_\textnormal{D} / \Delta} \frac{\inftsml{x}}{\sqrt{1+x^2}} = 1 \textnormal{\hspace{1em}where $x=\epsilon/\Delta$} \notag \\
+			\sinh^{-1} \rbracket{\frac{\hbar\omega_\textnormal{D}}{\Delta}} - \sinh^{-1} 0 = \frac{1}{\lambda} \notag \\
+			\Rightarrow \ln \rbracket{\sqrt{\rbracket{\frac{\hbar\omega_\textnormal{D}}{\Delta}}^2 + 1} + \rbracket{\frac{\hbar\omega_\textnormal{D}}{\Delta}}} - 0 = \frac{1}{\lambda} \notag \\
+			\Rightarrow \ln \sbracket{ 2 \rbracket{\frac{\hbar\omega_\textnormal{D}}{\Delta}} } = \frac{1}{\lambda} \textnormal{\hspace{1em}since $\hbar\omega_\textnormal{D} / \Delta \gg 1$} \notag \\
 			\Delta = 2\hbar\omega_\textnormal{D} e^{-1/\lambda}
 			\label{eqn:q5-energy-gap}
 		\end{gather}

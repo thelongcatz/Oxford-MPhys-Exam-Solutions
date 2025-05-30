@@ -18,37 +18,37 @@ If you keep your head cool then you should be able to bag at least 20 marks from
 	
 	We also know that intensity $I = n \hbar\omega c$, together with the careful consideration that the lasing medium takes up only a fraction $f_c$ of the cavity:
 	\begin{equation}
-		\frac{\mathrm{d}n_\textnormal{lasing}}{\mathrm{d}t} = f_c N^* \sigma_{21} nc
+		\deri{n_\textnormal{lasing}}{t} = f_c N^* \sigma_{21} nc
 		\label{eqn:q1-photon-density-lasing}
 	\end{equation}
 	
 	Taking cavity loss into account then yields the total rate of change in cavity photon density:
 	\begin{align}
-		\frac{\mathrm{d}n}{\mathrm{d}t} &= \frac{\mathrm{d}n_\textnormal{lasing}}{\mathrm{d}t} - \frac{n}{\tau_c} \notag \\
-		&= \left(f_c N^* \sigma_{21} c \tau_c - 1\right) \frac{n}{\tau_c} \notag \\
-		&= \left(\frac{N^*}{N^*_\textnormal{th}} - 1\right) \frac{n}{\tau_c}
+		\deri{n}{t} &= \deri{n_\textnormal{lasing}}{t} - \frac{n}{\tau_c} \notag \\
+		&= \rbracket{f_c N^* \sigma_{21} c \tau_c - 1} \frac{n}{\tau_c} \notag \\
+		&= \rbracket{\frac{N^*}{N^*_\textnormal{th}} - 1} \frac{n}{\tau_c}
 		\label{eqn:q1-dn-dt}
 	\end{align}
-	where $\tau_c$ is the cavity lifetime, and $N^*_\textnormal{th} = \left(f_c \sigma_{21} c \tau_c\right)^{-1}$ is the threshold population inversion which signifies the minimum population inversion required for the cavity photon density to grow.
+	where $\tau_c$ is the cavity lifetime, and $N^*_\textnormal{th} = \rbracket{f_c \sigma_{21} c \tau_c}^{-1}$ is the threshold population inversion which signifies the minimum population inversion required for the cavity photon density to grow.
 	
 	\part Another bookwork.
 	We consider the simplified rate equations by ignoring the pump and spontaneous terms:
 	\begin{gather}
-		\frac{\mathrm{d}N_2}{\mathrm{d}t} = - \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c} \label{eqn:q1-dn2-dt} \\
-		\frac{\mathrm{d}N_1}{\mathrm{d}t} = \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c}
+		\deri{N_2}{t} = - \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c} \label{eqn:q1-dn2-dt} \\
+		\deri{N_1}{t} = \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c}
 		\label{eqn:q1-dn1-dt}
 	\end{gather}
 	
 	We then have population inversion $N^* = N_2 - g_2 / g_1 N_1$, so
 	\begin{align}
-		\frac{\mathrm{d}N^*}{\mathrm{d}t} &= - \underbracket{\left(1 + \frac{g_2}{g_1}\right)}_{\beta} \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c}
+		\deri{N^*}{t} &= - \underbracket{\rbracket{1 + \frac{g_2}{g_1}}}_{\beta} \frac{N^*}{N^*_\textnormal{th}} \, \frac{n}{f_c \tau_c}
 		\label{eqn:q1-dN*-dt} \\
 		&= -\beta \sigma_{21} c N^* n \notag
 	\end{align}
 	
 	To find the output energy, we first consider the power output $P$ of the cavity:
 	\begin{align}
-		P &= \left(\textnormal{rate of photon ejection}\right) \times \hbar\omega  \notag \\
+		P &= \rbracket{\textnormal{rate of photon ejection}} \times \hbar\omega  \notag \\
 		&= \frac{nV_c \hbar\omega}{\tau_c}
 		\label{eqn:q1-output-power}
 	\end{align}
@@ -56,11 +56,11 @@ If you keep your head cool then you should be able to bag at least 20 marks from
 	
 	Then we integrate \eqref{eqn:q1-output-power}, noting the usual trick of dummy substitution\footnote{Also a potential footgun here: $N^*_f$ is not the same as $N^*_\textnormal{th}$! The author had the misfortune of stepping on this trap and lost a couple of marks\dots}:
 	\begin{align*}
-		E &= \int_{-\infty}^{\infty} P\,  \mathrm{d}t \\
-		&= \int_{-\infty}^{\infty} \mathrm{d}t\, \hbar\omega V_c \frac{n}{\tau_c} \\
-		&= \int_{-\infty}^{\infty} \mathrm{d}t\, \hbar\omega V_c \frac{N^*}{N^*_\textnormal{th}} \frac{n}{\tau_c} \\
-		&= - \int_{N^*_i}^{N^*_f} \mathrm{d}N^*\, \hbar\omega V_c \frac{f_c}{\beta} \\
-		&= \left(N^*_i - N^*_f\right) \hbar\omega V_c \frac{f_c}{\beta} \\
+		E &= \defint{-\infty}{\infty}{P}{t} \\
+		&= \int_{-\infty}^{\infty} \inftsml{t} \, \hbar\omega V_c \frac{n}{\tau_c} \\
+		&= \int_{-\infty}^{\infty} \inftsml{t} \, \hbar\omega V_c \frac{N^*}{N^*_\textnormal{th}} \frac{n}{\tau_c} \\
+		&= - \int_{N^*_i}^{N^*_f} \inftsml{N^*} \, \hbar\omega V_c \frac{f_c}{\beta} \\
+		&= \rbracket{N^*_i - N^*_f} \hbar\omega V_c \frac{f_c}{\beta} \\
 		&= \underbracket{\frac{1-N^*_f/N^*_i}{\beta}}_{\eta} V_g \hbar\omega
 	\end{align*}
 	where $\eta$ is the energy utilisation factor -- it encodes how efficient a laser system is in extracting energy from population inversion.
@@ -82,28 +82,28 @@ If you keep your head cool then you should be able to bag at least 20 marks from
 	
 	Now to relate between $r$ and $E$, we need to first eliminate $N^*_f$ -- this can be done by dividing \eqref{eqn:q1-dn-dt} with \eqref{eqn:q1-dN*-dt} to get:
 	\begin{equation}
-		\frac{\mathrm{d}n}{\mathrm{d}N^*} = -\frac{f_c}{\beta} \frac{N^*/N^*_\textnormal{th} - 1}{N^*/N^*_\textnormal{th}}
+		\deri{n}{N^*} = -\frac{f_c}{\beta} \frac{N^*/N^*_\textnormal{th} - 1}{N^*/N^*_\textnormal{th}}
 		\label{eqn:q1-dn-dN*}
 	\end{equation}
 	
 	Solving \eqref{eqn:q1-dn-dN*} then gives:
 	\begin{gather}
-		\int_{n(t=0)}^{n(t)} \mathrm{d}n = -\int_{N^*_i}^{N^* (t)} \mathrm{d}N^*\, \frac{f_c}{\beta} \left(1 - \frac{N^*_\textnormal{th}}{N^*}\right) \notag \\
-		n(t) - 0 = -\frac{f_c}{\beta} \left[\left(N^* (t) - N^*_i\right) - N^*_\textnormal{th} \left(\ln N^* (t) - \ln N^*_i\right)\right] \notag \\
-		\Rightarrow n(t) = \frac{f_c}{\beta} \left[N^*_\textnormal{th} \ln\left(\frac{N^* (t)}{N^*_i}\right) - \left(N^*(t) - N^*_i\right)\right]
+		\defint{n(t=0)}{n(t)}{}{n} = -\int_{N^*_i}^{N^* (t)} \inftsml{N^*} \, \frac{f_c}{\beta} \rbracket{1 - \frac{N^*_\textnormal{th}}{N^*}} \notag \\
+		n(t) - 0 = -\frac{f_c}{\beta} \sbracket{\rbracket{N^* (t) - N^*_i} - N^*_\textnormal{th} \rbracket{\ln N^* (t) - \ln N^*_i}} \notag \\
+		\Rightarrow n(t) = \frac{f_c}{\beta} \sbracket{N^*_\textnormal{th} \ln\rbracket{\frac{N^* (t)}{N^*_i}} - \rbracket{N^*(t) - N^*_i}}
 		\label{eqn:q1-n(t)}
 	\end{gather}
 	
 	Substituting $n(t\rightarrow\infty) = 0$ and $N^* (t\rightarrow\infty) = N^*_f$ into \eqref{eqn:q1-n(t)} then gives:
 	\begin{gather*}
-		N^*_f - N^*_i = N^*_\textnormal{th} \ln\left(\frac{N^*_f}{N^*_i}\right) \\
-		\Rightarrow \underbracket{1 - \frac{N^*_f}{N^*_i}}_{\beta\eta} = -\frac{1}{r} \ln\underbracket{\left(\frac{N^*_f}{N^*_i}\right)}_{1 - \beta\eta}
+		N^*_f - N^*_i = N^*_\textnormal{th} \ln\rbracket{\frac{N^*_f}{N^*_i}} \\
+		\Rightarrow \underbracket{1 - \frac{N^*_f}{N^*_i}}_{\beta\eta} = -\frac{1}{r} \ln\underbracket{\rbracket{\frac{N^*_f}{N^*_i}}}_{1 - \beta\eta}
 	\end{gather*}
 	
 	Hence for the energy output to reach $\SI{95}{\percent}$ of its maximum, we need:
 	\begin{gather*}
 		\beta\eta = \SI{95}{\percent} \\
-		\Rightarrow 0.95 = -\frac{1}{r} \ln \left(1 - 0.95\right) \\
+		\Rightarrow 0.95 = -\frac{1}{r} \ln \rbracket{1 - 0.95} \\
 		\Rightarrow r = 3.15
 	\end{gather*}
 \end{parts}

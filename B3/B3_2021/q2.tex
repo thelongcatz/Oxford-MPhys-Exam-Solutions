@@ -1,0 +1,33 @@
+\draft
+\begin{parts}
+	\part The differential equations are the result of time-dependent perturbation theory of monochromatic light-matter interaction -- $c_1$, $c_2$ are the amplitudes of each stationary state, $\hbar\Omega = \bra{2}e\mathcal{E}_0 x\ket{1}$ is Rabi frequency which characterises the transition frequeney in resonence.
+	Rotating wave approximation is the dropping of term with $\omega + \omega_0$, since $|\omega - \omega_0| \ll (\omega + \omega_0)$ for optical transitions, causing the fast mode to be negligible.
+	
+	\part \begin{align*}
+		c_2(t) &= \defint{0}{t}{-ie^{-i\delta t}\frac{\Omega}{2}}{t} \mtext{since $\tau_p$ is very short $\Rightarrow$ $c_1 \simeq 1$} \\
+		&= -\frac{i\Omega}{2} \sbracket{\frac{e^{-i\delta t}}{-i\delta}}_0^t \\
+		&= -\frac{i\Omega}{2} \rbracket{\frac{e^{-i\delta t} - 1}{-i\delta}} \\
+		&= \frac{i\Omega}{\delta} e^{-i\frac{\delta}{2} t} \rbracket{\frac{e^{-i\frac{\delta}{2}t} - e^{i\frac{\delta}{2}t}}{2i}} \\
+		&= -i\frac{i\Omega}{\delta} e^{-i\frac{\delta}{2}t} \sin\frac{\delta}{2}t \\
+		\Rightarrow \abs{c_2(\tau_p)}^2 &= \frac{\Omega^2}{\delta^2} \sin^2\rbracket{\frac{\delta\tau_p}{2}}
+	\end{align*}
+	
+	In absence of radiation, $c_2 \to c_2 e^{i\delta t}$ since it is stationary (only relative phase matter so choose $c_1$ to have 0 phase).
+	
+	After $T$, $c_2 \to c_2 e^{i\delta T} = c_2(T)$.
+	
+	Repeating the same calculation above gives:
+	\begin{align*}
+		c_2(T+\tau_p) &= c_2(T) + \frac{-i\Omega}{\delta} \sin\rbracket{\frac{\delta\tau_p}{2}} e^{-i\frac{\delta}{2}t} \\
+		&= -\frac{i\Omega}{\delta} \sin\rbracket{\frac{\delta\tau_p}{2}} e^{i\frac{\delta}{2}\tau_p} \sbracket{1 + e^{i\delta T}} \\
+		\Rightarrow \abs{c_2(t)}^2 &= \frac{\Omega^2}{\delta^2} \sin^2\rbracket{\frac{\delta\tau_p}{2}} \cos^2\rbracket{\frac{\delta T}{2}}
+	\end{align*}
+	
+	\part \todo Hyperfine $\Delta E = -g_I \nuclearmagneton \mathbf{I}\cdot\mathbf{B}_e$
+	
+	Assuming the Interval Rule holds, transition energy $A \propto g_I \nuclearmagneton$
+	\begin{align*}
+		\Rightarrow \omega_0 &\simeq \frac{g_I \nuclearmagneton}{\hbar} \\
+		&= \SI{1.92e4}{\per\tesla\per\second}
+	\end{align*}
+\end{parts}

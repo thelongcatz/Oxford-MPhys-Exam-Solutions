@@ -1,0 +1,157 @@
+\draft
+\begin{parts}
+	\part A phonon is a quantum of lattice vibrations, similar to photons, a phonon is a boson and may occupy a non-empty state with others.
+	
+	A Brillouin zone is a primitive unit cell of reciprocal lattice.
+	
+	\part With $\xi = \SI{0.084}{\nano\metre}$, $A=\SI{1600}{\electronvolt}$, $B=\SI{40}{\electronvolt}$:
+	\begin{equation*}
+		V(r) = Ae^{-\frac{2r}{\xi}} - Be^{-\frac{r}{\xi}}
+	\end{equation*}
+	
+	At equilibrium,
+	\begin{align*}
+		\deri{V}{r} &= 0 \\
+		\Rightarrow -\frac{2A}{\xi} e^{-\frac{2r}{\xi}} + \frac{B}{\xi} e^{-\frac{r}{\xi}} &= 0 \\
+		\Rightarrow \frac{2A}{\cancel{\xi}} e^{-\frac{2r}{\xi}} &= \frac{B}{\cancel{\xi}} e^{-\frac{r}{\xi}} \\
+		e^{-\frac{r}{\xi}} &= \frac{B}{2A} \\
+		\Rightarrow r_0 &= \xi \sbracket{\ln\rbracket{\frac{2A}{B}}} \\
+		&= \SI{0.3681}{\nano\metre}
+	\end{align*}
+	
+	Bonding energy:
+	\begin{equation*}
+		V(a) - \underbracket{V(\infty)}_{0} = \SI{-0.25}{\electronvolt}
+	\end{equation*}
+	
+	Around $r_0$,
+	\begin{equation*}
+		V(r) \simeq V(r_0) + (r-r_0) \cancelto{0}{\evalat{\deri{V}{r}}{r_0}} + \frac{1}{2} (r-r_0)^2 \evalat{\deri[2]{V}{r}}{r_0} + \ldots
+	\end{equation*}
+	
+	\begin{align*}
+		\deri[2]{V}{r} &= +\frac{4A}{\xi^2} e^{-\frac{2r}{\xi}} - \frac{B}{\xi^2} e^{-\frac{r}{\xi}} \\
+		\xRightarrow{r=r_0} &= \frac{\bcancel{4}\bcancel{A}}{\xi^2} \cdot \frac{B^2}{\bcancel{4} A^{\bcancel{2}}} - \frac{B}{\xi^2} \cdot \frac{B}{2A} \\
+		&= \frac{B^2}{\xi^2 A} \rbracket{1-\frac{1}{2}} = \frac{B^2}{2\xi^2 A} \\
+		\Rightarrow V(r) \simeq V(r_0) + \frac{B^2}{4\xi^2 A} (r-r_0)^2
+	\end{align*}
+	
+	\begin{align*}
+		F(r-r_0) &= \deri{V(r-r_0)}{(r-r_0)} \\
+		&= -\frac{B^2}{2\xi^2 A} (r-r_0) \\
+		&= -\kappa (r-r_0)
+	\end{align*}
+	where $\kappa = \dfrac{B^2}{2\xi^2 A} = \SI{70.8617}{\electronvolt\per\nano\metre\squared} = \SI{11}{\newton\per\metre}$.
+	
+	\part \image{.4\linewidth}{q3-spring}
+	Newton's 2nd law:
+	\begin{align*}
+		m\ddot{x}_n &= \kappa (x_{n+1} - x_n) - \kappa (x_n - x_{n-1}) \\
+		&= \kappa (x_{n+1} - 2x_n + x_{n-1})
+	\end{align*}
+	
+	Insert Ansatz $x_n = A e^{i\omega t -ikan}$:
+	\begin{align*}
+		\Rightarrow -m\omega^2 &= \kappa \rbracket{e^{-ika} - 2 + e^{ika}} \\
+		\omega^2 &= \frac{2\kappa}{m} \rbracket{1-\cos\rbracket{ka}}
+	\end{align*}
+	
+	Group velocity:
+	\begin{align*}
+		v_g (k) &= \pderi{\omega}{k} \\
+		\Rightarrow 2\omega\pderi{\omega}{k} &= \frac{2\kappa a}{m} \sin\rbracket{ka} \\
+		\pderi{\omega}{k} &= \frac{\kappa a}{m\omega} \sin\rbracket{ka} \\
+		\Rightarrow v_g (k) &= \frac{\kappa a}{m} \sin\rbracket{ka} \cdot \sqrt{\frac{m}{2\kappa}} \sbracket{1-\cos\rbracket{ka}}^{-1/2}
+	\end{align*}
+	
+	Speed of sound:
+	\begin{align*}
+		v_s &= \lim_{k \to 0} v_g (k) \\
+		&= \frac{\kappa a}{m} \cdot \sqrt{\frac{m}{2\kappa}} \cdot \rbracket{ka} \cdot \sbracket{1-1+\frac{1}{2}\rbracket{ka}^2}^{-1/2} \\
+		&= \sqrt{\frac{\kappa^{\cancelto{1}{2}} a^2}{m^{\cancelto{1}{2}}} \cdot \frac{\cancel{m}}{\cancel{2}\cancel{\kappa}} \cdot \bcancel{\rbracket{ka}^2} \cdot \sbracket{\cancel{2}\frac{1}{\bcancel{\rbracket{ka}^2}}}}
+		&= \sqrt{\frac{\kappa a^2}{m}} \\
+		&= \SI{2100}{\metre\per\second}
+	\end{align*}
+	
+	{
+		\color{cyan}Alternative way -- consider the definition of speed of sound in a material:
+		\begin{equation*}
+			v_s = \sqrt{\frac{1}{\rho\beta}}
+		\end{equation*}
+		where
+		\begin{align*}
+			\beta &= -\frac{1}{L}\sqrt{\deri{L}{F}} \\
+			&= -\frac{1}{a} \frac{\Delta x}{-\kappa \Delta x} \\
+			&= \frac{1}{a\kappa}
+		\end{align*}
+		is the linear expansion coefficient, and
+		\begin{equation*}
+			\rho = \frac{m}{a}
+		\end{equation*}
+		is the density of the chain.
+		
+		Thus:
+		\begin{equation*}
+			v_s = \sqrt{\frac{\kappa a^2}{m}}
+		\end{equation*}
+	}
+	
+	\part Third order term of $V(r)$:
+	\begin{equation*}
+		\frac{1}{6} \rbracket{r-r_0}^3 \evalat{\deri[3]{V}{r}}{r=r_0}
+	\end{equation*}
+	
+	And:
+	\begin{align*}
+		\deri[3]{V}{r} &= -\frac{8A}{\xi^3} \cdot \frac{B^2}{4A^2} + \frac{B}{\xi^3} \cdot \frac{B}{2A} \\
+		&= \frac{B^2}{\xi^3 A} \sbracket{-2 + \frac{1}{2}} \\
+		&= -\frac{3B^2}{2\xi^3 A} \\
+		&= \SI{-2.5308e30}{\electronvolt\per\metre\cubed} = \SI{-4.0548e11}{\joule\per\metre\cubed}
+	\end{align*}
+	
+	To estimate the thermal expansion coefficient, we shall consider the dimensions of the relevant terms:
+	\begin{align*}
+		\alpha = \frac{1}{L} \pderi{L}{T} \Rightarrow \sbracket{\alpha} = \mathsf{T}^{-1}
+	\end{align*}
+	We know that $L=a$, and only $\kappa$, $\kappa_3$ and $\boltzmann$ can enter $\pdderi{L}{T}$, so to arrange for the appropriate dimensions, we try:
+	\begin{align*}
+		\pderi{L}{T} &= \frac{\kappa_3 \boltzmann}{\kappa^2} \\
+		\Rightarrow \rbracket{\pderi{L}{t}} &= \frac{\sbracket{\kappa_3} \sbracket{\boltzmann}}{\sbracket{\kappa}^2} \\
+		&= \frac{\sbracket{\mathsf{E} \mathsf{L}^{-3}} \sbracket{\mathsf{E} \mathsf{T}^{-1}}}{\sbracket{\mathsf{E} \mathsf{L}^{-2}}^2} \\
+		&= \sbracket{\mathsf{L} \mathsf{T}^{-1}}
+	\end{align*}
+	which matches the expectation.
+	
+	Hence:
+	\begin{equation*}
+		\alpha = \frac{\kappa_3 \boltzmann}{a\kappa^2}
+	\end{equation*}
+	
+	\part
+	\begin{subparts}
+		\subpart For higher orders to be negligible,
+		\begin{equation*}
+			\rbracket{\Delta x}^3 \kappa_3 \ll \rbracket{\Delta x}^4 \kappa_4
+		\end{equation*}
+		
+		From the previous part we also know,
+		\begin{align*}
+			\Delta x &= \frac{\boltzmann \kappa_3}{\kappa^2} \Delta T \\
+			\Rightarrow \Delta T &\ll \frac{\kappa_3}{\kappa_4} \rbracket{\frac{\kappa^2}{\boltzmann \kappa_3}} \\
+			&= \frac{\kappa^2}{\kappa + \boltzmann} \\
+			&= \SI{650}{\kelvin}
+		\end{align*}
+		
+		\subpart Consider a quantum harmonic oscillator,
+		\begin{align*}
+			E_n &= \rbracket{n+\frac{1}{2}} \hbar\omega \\
+			\Delta E \sim \hbar\omega
+		\end{align*}
+		
+		So for QM effect to diminish, we require
+		\begin{align*}
+			\boltzmann T &\gg \underbracket{\hbar\omega}_{2\sqrt{\frac{\kappa}{m}} \cancel{1\textnormal{  for estimation}}{\sin(ka)}} \\
+			\Rightarrow T &\gg \SI{90}{\kelvin}
+		\end{align*}
+	\end{subparts}
+\end{parts}

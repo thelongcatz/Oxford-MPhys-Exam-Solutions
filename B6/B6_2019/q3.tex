@@ -1,0 +1,91 @@
+\draft
+\begin{parts}
+	\part 2-dimensional $\electron$ gas:
+	\begin{align*}
+		N &= 2 \sum_{\mathbf{k}} \nfermi \mtext{where } \nfermi = \frac{1}{e^{\beta\sbracket{E(\mathbf{k}) - \mu}} + 1} \\
+		&= \frac{2V}{(2\pi)^2} \defint{0}{\infty}{2\pi k \nfermi}{k} \\
+		n &= \defint{0}{\infty}{\frac{4\pi}{(2\pi)^2} k \nfermi}{k}
+	\end{align*}
+	
+	From the dispersion relation,
+	\begin{align*}
+		E &= \frac{\hbar^2 k^2}{2m} \\
+		\Rightarrow \inftsml{E} &= \frac{2\hbar^2 k}{2m} \inftsml{k} \\
+		k \inftsml{k} &= \frac{\bcancel{2}m}{\bcancel{2}\hbar^2} \inftsml{E}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		g(k) &= \frac{k}{\pi} \inftsml{k} \\
+		&= \frac{m}{\pi\hbar^2} \inftsml{E} = g(E)
+	\end{align*}
+	
+	For $\electron$ in conduction band,
+	\begin{equation*}
+		n = \defint{\mathcal{e}_c}{\infty}{g(E-\mathcal{e}_c) \nfermi}{E}
+	\end{equation*}
+	
+	For $\mu \ll \mathcal{e}_c$ $\Rightarrow$ $E - \mu \gg 1$ $\Rightarrow$ $\nfermi \simeq e^{-\beta(E-\mu)}$:
+	\begin{align*}
+		n &= \defint{\mathcal{e}_c}{\infty}{\frac{m}{\pi\hbar^2} e^{-\beta(E-\mu)}}{E} \\
+		&= \sbracket{\frac{m}{\pi\hbar^2} e^{\beta\mu} \cdot \rbracket{-\frac{1}{\beta} e^{-\beta E}}}_{E=\mathcal{e}_c}^{\infty} \\
+		&= \frac{m\boltzmann T}{\pi\hbar^2} e^{-\beta(\mathcal{e}_c - \mu)} \\
+		\Rightarrow C &= \frac{\boltzmann}{\pi\hbar^2},\, a=1,\, b=1
+	\end{align*}
+	
+	\part Similarly,
+	\begin{align*}
+		p(T) &= \frac{\masshole^* \boltzmann T}{\pi\hbar^2} e^{-\beta(\mu - \mathcal{e}_v)} \\
+		np &= \frac{\masselectron^* \masshole^* (\boltzmann T)^2}{\pi^2 \hbar^4} e^{-\beta(\mathcal{e}_c - \mu + \mu - \mathcal{e}_v)} \\
+		&= \masselectron^* \masshole^* \rbracket{\frac{\boltzmann T}{\pi\hbar^2}}^2 e^{-\beta E_g}
+	\end{align*}
+	where $E_g = \mathcal{e}_c - \mathcal{e}_v$ and $\mathcal{e}_v$ is the energy at the top of the valence band.
+	
+	\part Law of mass action states $np=n_i^2$ where $n_i$ is intrinsic $\electron$ concentration:
+	\begin{align*}
+		\Rightarrow n_i &= \sqrt{\masselectron^* \masshole^*} \frac{\boltzmann T}{\pi\hbar^2} e^{-\frac{E_g}{2\boltzmann T}} \\
+		&= \SI{1.06e13}{\per\metre\squared}
+	\end{align*}
+	for $t=\SI{300}{\kelvin}$, $\masselectron^* = 0.026\masselectron$, $\masshole^* = 0.41\masselectron$, $E_g = \SI{0.36}{\electronvolt}$.
+	
+	Transitioning from intrinsicn to extrinsic region requires:
+	\begin{align*}
+		n_i &\ll n_D \\
+		\Rightarrow \sqrt{\masselectron^* \masshole^*} \frac{\boltzmann T}{\pi\hbar^2} e^{-\frac{E_g}{2\boltzmann T}} &= n_D = \SI{e13}{\per\metre\squared} \\
+		\Rightarrow T &\simeq \SI{298}{\kelvin} \mtext{by trial and error}
+	\end{align*}
+	
+	\part TISE: $\hat{H}\Psi = E\Psi$ where $\hat{H}=\dfrac{\hat{\mathbf{p}}^2}{2m} + V(r)$ with $V(r) = -\dfrac{e^2}{4\pi\permittivity\hat{r}}$:
+	\begin{align*}
+		-\frac{\hbar^2}{2m} \pdiff[2]{r} \Psi + V\Psi &= E\Psi \\
+		\Rightarrow -\frac{\hbar^2}{2m} \cdot Ab^2 e^{-b|\mathbf{r} - \mathbf{r}_0|} + VA e^{-b|\mathbf{r} - \mathbf{r}_0|} &= EA e^{-b|\mathbf{r} - \mathbf{r}_0|} \\
+		\Rightarrow E &= V - \frac{\hbar^2 b^2}{2m}
+	\end{align*}
+	
+	For hydrogenic bound state,
+	\begin{align*}
+		E &= -R_\infty hc \sbracket{\frac{\masselectron^*}{\masselectron} \frac{1}{\epsilon_r^2}} \\
+		&= \SI{-0.0016}{\electronvolt}
+	\end{align*}
+	
+	Also effective Bohr radius:
+	\begin{align*}
+		a_0^\textnormal{eff} &= a_0 \rbracket{\epsilon_r \frac{\masselectron}{\masselectron^*}} \\
+		&= \SI{3.05e-8}{\metre} \\
+		\Rightarrow V &= -\frac{e^2}{e\pi\permittivity a_0^\textnormal{eff}} \\
+		&= \SI{-0.047}{\electronvolt} \\
+		b^2 &= \frac{2\masselectron^* (V-E)}{\hbar^2} \\
+		&= \frac{2\masselectron^* c^2 (V-E)}{\hbar^2 c^2} \\
+		&= \SI{-1.19e-12}{\per\fermi\squared} \\
+		\Rightarrow b &= \num{1.09e-6} i\, \unit{\per\fermi}
+	\end{align*}
+	
+	\part Conductivity:
+	\begin{align*}
+		\sigma &= \frac{j}{E} \\
+		&= \frac{-nev}{E} \\
+		&= -n\underbracket{e\mu}_{\mathclap{\textnormal{T independent}}} \propto n
+	\end{align*}
+	So $\sigma$ scales with $n$, which should exhibit both intrinsic and extrinsic behaviour over the temperature range of $30-600\unit{\kelvin}$, freezing out is not shown as the critical temperature for so is \SI{18.2}{\kelvin}.
+	\image{.8\linewidth}{q3-conductivity-temperature}
+\end{parts}

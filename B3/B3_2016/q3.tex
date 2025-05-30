@@ -1,0 +1,107 @@
+\draft
+\begin{parts}
+	\part A 3-level laser has its metastable level close to the ground level, making them essentially the same state.
+	A 4-level laser, however, has a distinguishable metastable term at typical temperature range.
+	
+	Example of 3-level laser: He-Ne
+	
+	Example of 4-level laser: Nd:YAG
+	
+	Both lasers operate by pumping the ground state population to an unstable upper state, which then immediately decays into the upper lasing state.
+	After lasing the decayed population decays spontaneously back to the ground state.
+	
+	The pump rate of 3-level laser is proportional to the difference in population if both ground and unstable states.
+	At thermal equilibrium, the population will be roughly the same, making pumping difficult.
+	In contrast, 4-level lasers do not suffer from this and thus may operate at lower power continuously.
+	
+	\image{.4\linewidth}{q3-population-dynamics}
+	In the absence of radiation, the rate equations read:
+	\begin{align*}
+		\deri{N_2}{t} &= R_2 - N_2 A_{21} \\
+		\deri{N_1}{t} &= R_1 + N_2 A_{21} - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	At thermal equilibrium,
+	\begin{align*}
+		\deri{N_2}{t} = \deri{N_1}{t} &= 0 \\
+		\Rightarrow N_2 &= \frac{R_2}{A_{21}} \\
+		N_1 &= R_1 \tau_1 + R_2 \tau_1
+	\end{align*}
+	\begin{align*}
+		N^* &= N_2 - \frac{g_2}{g_1}N_1 \\
+		&= \frac{R_2}{A_{21}} - \frac{g_2}{g_1}\rbracket{R_1 \tau_1 + R_2 \tau_1} \\
+		&= R_2\sbracket{\frac{1}{A_{21}} - \frac{g_2}{g_1}\tau_1}
+	\end{align*}
+	for $R_1 = 0$.
+	
+	Now in the presence of radiation:
+	\begin{align*}
+		\deri{N_2}{t} &= R_2 + \rho B_{12}N_1 - \rho B_{21}N_2 - A_{21}N_2 \\
+		\deri{N_1}{t} &= R_1 - \rho B_{12}N_1 + \rho B_{21}N_2 + A_{21}N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	where $\rho$ is spectral energy density, $B$ is Einstein's B coefficient.
+	
+	Change in number of photons in a volume element $A\inftsml{z}$ (assuming narrowband so $\rho\to\rho g_H \delta\omega$ where $g_H(\omega - \omega_0)$ is homogeneous broadening function, $\delta\omega$ is the width of the input frequency):
+	\begin{equation*}
+		\Delta N_\gamma = \sbracket{\rho B_{21}N_2 - \rho B_{12}N_1} g_H \delta\omega A \inftsml{z}
+	\end{equation*}
+	
+	Energy change to the beam:
+	\begin{align*}
+		\inftsml{I} \bcancel{A\delta\omega} &= \Delta N_\gamma\cdot\omega_L = \sbracket{\rho B_{21}N_2 - \rho B_{12}N_1} g_H \bcancel{\delta\omega A} \inftsml{z}\cdot\hbar\omega_L \\
+		\deri{I}{z} &= \underbracket{\sbracket{N_2 - \frac{g_2}{g_1}N_1}}_{N^*} \underbracket{B_{21}g_H\frac{\hbar\omega_L}{c}}_{\sigma_{21}} I
+	\end{align*}
+	where $\omega_L$ is the lasing frequency, $\rho=I/c$ and $B_{12}g_1 = g_2 B_{21}$.
+	
+	Now rewrite the rate equations with $N^*$, $\sigma_{21}$ and $I$:
+	\begin{align*}
+		\deri{N_2}{t} &= R_2 - N^* \sigma_{21} \frac{I}{\hbar\omega_L} - A_{21}N_2 \\
+		\deri{N_1}{t} &= R_1 + N^* \sigma_{21} \frac{I}{\hbar\omega_L} + A_{21}N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	At thermal equilibrium,
+	\begin{align*}
+		N_2 &= \frac{R_2}{A_{21}} - \frac{N^* \sigma_{21} I}{A_{21}\hbar\omega_L} \\
+		N_1 &= R_1 \tau_1 + N^* \sigma_{21} \frac{I}{\hbar\omega_L} \tau_1 + A_{21} N_2 \tau_1
+	\end{align*}
+	
+	Substitute $N_2$, $N_1$ into $N^*$:
+	\begin{align*}
+		N^* &= \rbracket{1-\frac{g_2}{g_1}\tau_1 A_{21}} \sbracket{\frac{R_2}{A_{21}} - N^* \sigma_{21} \frac{I}{\hbar\omega_L} \frac{1}{A_{21}}} - R_1 \tau_1 - N^* \sigma_{21} \frac{I}{\hbar\omega_L} \tau_1 \\
+		\Rightarrow N^*(I) &= \frac{N^*(0)}{1 + \cfrac{I}{I_s}}
+	\end{align*}
+	where
+	\begin{align*}
+		N^*(0) &= \sbracket{1-\frac{g_2}{g_1}\tau_1 A_{21}} \cdot \frac{R_2}{A_{21}} - R_1 \tau_1 \\
+		&= R_2 \rbracket{\frac{1}{A_{21}} - \frac{g_2}{g_1}\tau_1} - R_1 \tau_1
+	\end{align*}
+	and
+	\begin{align*}
+		I_s &= \sbracket{\sigma_{21} \frac{1}{\hbar\omega_L}\frac{1}{A_{21}}\rbracket{1-\frac{g_2}{g_1}\tau_1 A_{21}} + \sigma_{21}\frac{1}{\hbar\omega_L}\tau_1}^{-1} \\
+		&= \sbracket{\sigma_{21}\frac{1}{\hbar\omega_L}\underbracket{\rbracket{\tau_1 + \frac{1}{A_{21}} + \frac{g_2}{g_1}\tau_1 \frac{1}{A_{21}}}}_{\tau_R}}^{-1} \\
+		&= \frac{\hbar\omega_L}{\sigma_{21}\tau_R}
+	\end{align*}
+	is the saturation intensity.
+	
+	Beam growth $\diagderi{I}{z} = \alpha(I)I$ where
+	\begin{equation*}
+		\alpha(I) = N^*(I) \sigma_{21} = \frac{\alpha(0)}{1+\cfrac{I}{I_s}}
+	\end{equation*}
+	with
+	\begin{align*}
+		\alpha(0) &= N^*(0) \sigma_{21} \\
+		&= R_2 \sigma_{21} \rbracket{\frac{1}{A_{21}}-\frac{g_2}{g_1}\tau_1} - R_1 \sigma_{21} \tau_1
+	\end{align*}
+	the null intensity gain coefficient.
+	
+	So:
+	\begin{align*}
+		\frac{1}{I}+\frac{1}{I_s} \inftsml{I} &= \alpha(0) \inftsml{z} \\
+		\ln\rbracket{\frac{I}{I_0}}+\frac{I-I_0}{I_s} &= \alpha(0)z
+	\end{align*}
+	For $I \gg I_s$, the second term dominates and so $I=I_0 + \alpha(0)I_s z$ and the beam growth is linear as the medium is saturated.
+	
+	\part For $\sigma_{21} = \SI{4e-15}{\centi\metre\squared}$, $R_2 = \SI{5e19}{\per\second\per\centi\metre\cubed}$, $R_1 = 0$, $A_{21} = \SI{3e6}{\per\second}$, $g_2 = 5$, $g_1 = 3$, $\tau_1 = \SI{2e-8}{\second}$ $\rightarrow$ $\alpha(0) = \num{0.06}$.
+	
+	Similarly for $A_{21} = \SI{3e6}{\per\second}$, $g_2 = 3$, $\tau_1 = \SI{3e-7}{\second}$, $g_1 = 1$ $\rightarrow$ $\alpha(0) = \num{-0.113}$
+\end{parts}

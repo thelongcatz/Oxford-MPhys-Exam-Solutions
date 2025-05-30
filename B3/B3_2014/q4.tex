@@ -1,0 +1,81 @@
+\draft
+\begin{parts}
+	\part \image{.5\linewidth}{q4-two-level}
+	Rate equations:
+	\begin{align*}
+		\deri{N_2}{t} &= S_2 + B_{12} \rho N_1 - B_{21} \rho N_2 - \frac{N_2}{\tau_2} \\
+		\deri{N_1}{t} &= S_1 + B_{21} \rho N_2 - B_{12} \rho N_1 + A_{21} N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	\image{.4\linewidth}{q4-gain-dz}
+	Change in number of photons due to the radiative process:
+	\begin{align*}
+		\Delta N_\gamma &= \sbracket{B_{21} \rho N_2 - B_{12} \rho N_1} \underbracket{\inftsml{V}}_{\mathclap{A \inftsml{z}}} \\
+		&= B_{21} \rho \rbracket{N_2 - \frac{g_2}{g_1}N_1} A \inftsml{z}
+	\end{align*}
+	since $g_1 B_{12} = g_2 B_{21}$.
+	
+	Change in beam energy:
+	\begin{align*}
+		\Delta E &= \Delta N_\gamma \cdot \hbar\omega \\
+		&= \sbracket{I(z+\inftsml{z}) - I(z)} A \inftsml{\omega} \\
+		\Rightarrow \frac{B_{21} \rbracket{N_2 - \cfrac{g_2}{g_1}N_1}I\hbar\omega}{c} g_\textnormal{H} \cancel{A} \inftsml{z} \bcancel{\inftsml{\omega}} &= \inftsml{I} \cancel{A} \bcancel{\inftsml{\omega}} \\
+		\deri{I}{z} &= \underbracket{\rbracket{N_2 - \frac{g_2}{g_1}N_1}}_{N^*} \underbracket{B_{21} g_\textnormal{H} \frac{\hbar\omega}{c}}_{\sigma_{21}} I
+	\end{align*}
+	where a transformation $\rho\to\rho g_\textnormal{H}$ was made to take into account of narrowband broadening.
+	
+	Now rewrite the rate equations with $N^*$ and $\sigma$:
+	\begin{align*}
+		\deri{N_2}{t} &= S_2 - B_{21} \rho g_\textnormal{H} \delta\omega N^* - \frac{N_2}{\tau_2} \\
+		\deri{N_1}{t} &= S_1 + B_{21} \rho g_\textnormal{H} \delta\omega N^* + A_{21} N_2 - \frac{N_1}{\tau_1}
+	\end{align*}
+	
+	At steady state, $\diagderi{N_2}{t} = \diagderi{N_1}{t} = 0$, so:
+	\begin{align*}
+		N_2 &= S_2 \tau_2 - B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_2 \\
+		N_1 &= S_1 \tau_1 + B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_1 + A_{21} N_2 \tau_1 \\
+		&= S_1 \tau_1 + B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_1 + A_{21} \sbracket{S_2 \tau_2 -  B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_2} \tau_1
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		N^* &= N_2 - \frac{g_2}{g_1}N_1 \\
+		&= S_2 \tau_2 - B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_2 \\
+		&\qquad - \frac{g_2}{g_1} \sbracket{S_1 \tau_1 + B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_1 + A_{21} \tau_1 \rbracket{S_2 \tau_2 -  B_{21} \rho g_\textnormal{H} \delta\omega N^* \tau_2}} \\
+		&= S_2 \tau_2 - \frac{g_2 A_{21} \tau_1}{g_1}S_2 \tau_2 - \frac{g_2 S_1 \tau_1}{g_1} \\
+		&\qquad -\frac{\sigma_{21}}{\hbar\omega} I \sbracket{N^* \tau_2 + \frac{g_2}{g_1}N^* \tau_1 - \frac{g_2}{g_1}A_{21}\tau_1 N^* \tau_2} \\
+		\Rightarrow N^*(I) &= \frac{N^*(0)}{1 + \cfrac{I}{I_s}}
+	\end{align*}
+	where:
+	\begin{align*}
+		N^*(0) &= S_2 \tau_2 \sbracket{1 - \frac{g_2 A_{21} \tau_1}{g_1}} - \frac{g_2}{g_1} S_1 \tau_1 \\
+		I_s &= \frac{\hbar\omega}{\sigma_{21}} \sbracket{\tau_2 + \frac{g_2}{g_1}\tau_1 - \frac{g_2}{g_1}A_{21}\tau_1\tau_2}^{-1}
+	\end{align*}
+	
+	\part Recall that the definition of beam gain coefficient:
+	\begin{align*}
+		\alpha &= N^* \sigma_{21} \\
+		\alpha(I) &= \frac{N^*(0) \sigma_{21}}{1 + \cfrac{I}{I_s}}
+	\end{align*}
+	
+	The reason why the input signal level affects beam gain has to do with the fact that lasing burns out population inversion -- as the intensity of a beam grows, the inversion begins to burn out more, reducing gain.
+	This of course warrants the assumption of thermal equilibrium, which implicitly assumes that we are looking at continuous operation.
+	Pulsed laser may be possible even if inversion is impossible in equilibrium.
+	
+	\image{.7\linewidth}{q4-gain-setup}
+	Beam growth equation:
+	\begin{align*}
+		\deri{I}{z} &= \alpha I \\
+		\Rightarrow \deri{I}{z} &= \frac{\alpha(0)}{1 + \cfrac{I}{I_s}} I \\
+		\Rightarrow \frac{1}{I} + \frac{1}{I_s} \inftsml{I} &= \alpha(0) \inftsml{z} \\
+		\Rightarrow \ln\rbracket{\frac{I}{I_0}} + \frac{I-I_0}{I_s} &= \alpha(0) L
+	\end{align*}
+	
+	Since the amplifiers are identical,
+	\begin{align*}
+		\ln\rbracket{\frac{100I_0}{I_0}} + \frac{100I_0 - I_0}{I_s} &= \ln\rbracket{\frac{300I_0}{100I_0}} + \frac{300I_0 - I_0}{I_s} \\
+		\Rightarrow \frac{200I_0}{I_s} &= \ln(100) - \ln(3) \\
+		I_s &= \frac{200I_0}{\ln(100) - \ln(3)} \\
+		&= \num{57.0}I_0
+	\end{align*}
+\end{parts}

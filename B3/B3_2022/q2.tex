@@ -1,0 +1,85 @@
+\draft
+\begin{parts}
+	\part Propose an operator $\hat{\mathbf{F}} = \hat{\mathbf{I}} + \hat{\mathbf{J}}$ and by squaring we get:
+	\begin{align*}
+		\hat{\mathbf{F}}^2 &= \hat{\mathbf{I}}^2 + \hat{\mathbf{J}}^2 + 2 \hat{\mathbf{I}}\cdot\hat{\mathbf{J}} \\
+		\Rightarrow \hat{\mathbf{I}}\cdot\hat{\mathbf{J}} &= \frac{1}{2} \sbracket{\hat{\mathbf{F}}^2 - \hat{\mathbf{I}}^2 - \hat{\mathbf{J}}^2}
+	\end{align*}
+	The addition of angular momenta also gives us $F = |I-J|, |I-J+1|, \ldots, (I+J)$ as good quantum numbers.
+	
+	Hence:
+	\begin{align*}
+		\avg{\hat{H}} &= A \avg{\hat{\mathbf{I}}\cdot\hat{\mathbf{J}}} \\
+		&= \frac{1}{2} A \sbracket{F(F+1)-I(I+1)-J(J+1)}
+	\end{align*}
+	
+	Now the step between adjacent energy levels:
+	\begin{align*}
+		\Delta E &= \frac{1}{2} A \sbracket{(F+1)(F+2)-I(I+1)-J(J+1)} \\
+		&\qquad -\frac{1}{2} A \sbracket{F(F+1)-I(I+1)-J(J+1)} \\
+		&= \frac{1}{2} A \sbracket{F^2 + 3F + 2 - F^2 - F} \\
+		&= A (F+1) = E_{F+1} - E_F
+	\end{align*}
+	Hence the interval rule.
+	
+	In atoms there are 2 interactions of this sort: spin-orbit interaction between the electron magnetic moment and nuclear magnetic field in its rest frame, and hyperfine interaction between nuclear magnetic moment and electron magnetic moment.
+	
+	For spin-orbit interactions, $\hat{\mathbf{L}}$ and $\hat{\mathbf{S}}$ couple so that the set of good quantum numbers is $\ket{nl_i LSJM_J}$.
+	
+	For hyperfine interaction, $\hat{\mathbf{I}}$ and $\hat{\mathbf{J}}$, the set is $\ket{nl_i IJFM_F}$, where $L$ is total orbital angular momentum, $S$ is total spin, $I$ is nuclear spin, $J$ is total $\electron$ angular momentum, $F$ is total atomic angular momentum.
+	
+	\part \todo The constant of proportionaity $A$ is dependent on the nuclear g-factor $g_I$, which varies wildly with isotopes.
+	It happens that europium has a large $g_I$ that causes the hyperfine structure to be large.
+	\textit{s-$\electron$ penetrates nucleus more since $\psi(r=0) \neq 0$ $\rightarrow$ more contribution.}
+	
+	\part \todo Interval Rule:
+	\begin{align*}
+		\Delta E_{F, F-1} &\propto F \\
+		\Rightarrow \frac{\Delta E_{F, F-1}}{\Delta E_{F-1, F-2}} &= \frac{F}{F-1}
+	\end{align*}
+	
+	\begin{align*}
+		\Delta E_{ab} &= \SI{2.82}{\giga\hertz} \\
+		\Delta E_{bc} &= \SI{3.53}{\giga\hertz} \\
+		\Delta E_{ce} &= \SI{4.24}{\giga\hertz} \\[1em]
+		\frac{\Delta E_{ab}}{\Delta E_{bc}} &= \num{0.80} \simeq \frac{4}{5} \\
+		\frac{\Delta E_{bc}}{\Delta E_{ce}} &= \num{0.83} \simeq \frac{1}{1.2} = \frac{5}{6}
+	\end{align*}
+	So the peaks between $a$, $b$, $c$, $e$ obey the Interval Rule.
+	
+	The next peak from $e$ should then be $\Delta E_{e1} = \dfrac{7}{6} \Delta E_{ce} = \SI{4.95}{\giga\hertz}$ away.
+	
+	So peak with position $\SI{10.60}{\giga\hertz} - \SI{4.95}{\giga\hertz} = \SI{5.65}{\giga\hertz}$ is the next, i.e. peak $i$.
+	
+	Similarly the next peak should be $\dfrac{8}{7} \cdot \SI{4.95}{\giga\hertz} = \SI{5.66}{\giga\hertz}$ away from $i$, and that corresponds to peak $l$.
+	
+	Since the mass number is odd, we expect $I$ to be half-integer, together with $J=\dfrac{11}{2}$, $F$ should be an integer.
+	
+	From the ratios:
+	\begin{align*}
+		F_\textnormal{max}=8 &\qquad F_\textnormal{min}=4-1=3 \\
+		\Rightarrow 2I&=8-3=5 \\
+		\Rightarrow I&=\frac{5}{2}
+	\end{align*}
+	
+	\part Excluding the identified peaks, we should have the rest as the ones due to \element{Eu}{153}.
+	\begin{equation*}
+		\begin{matrix}
+			\Delta E_{df} = \num{1.25} \\
+			\Delta E_{fg} = \num{1.57} \\
+			\Delta E_{gh} = \num{1.88} \\
+			\Delta E_{hj} = \num{2.20} \\
+			\Delta E_{jk} = \num{2.51}
+		\end{matrix}
+		\Rightarrow
+		\begin{matrix}
+			\frac{\Delta E_{df}}{\Delta E_{fg}} = \num{0.80} \simeq \frac{4}{5} \\
+			\frac{\Delta E_{fg}}{\Delta E_{gh}} = \num{0.84} \simeq \frac{1}{1.2} = \frac{5}{6} \\
+			\frac{\Delta E_{gh}}{\Delta E_{hj}} = \num{0.85} \simeq \frac{1}{1.17} = \frac{6}{7} \\
+			\frac{\Delta E_{hj}}{\Delta E_{jk}} = \num{0.88} \simeq \frac{1}{1.14} = \frac{7}{8}
+		\end{matrix}
+	\end{equation*}
+	So similarly $F_\textnormal{max}=8$, $F_\textnormal{min}=3$ $\Rightarrow$ $I=\dfrac{5}{2}$.
+	
+	Recall $A \propto \bm{\mu}_I$, so pick $\Delta E$ of the same $F$ $\rightarrow$ $\dfrac{{}^157 \mu_I}{{}^153 \mu_I} = 2.2$.
+\end{parts}

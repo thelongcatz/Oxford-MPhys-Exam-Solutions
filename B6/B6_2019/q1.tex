@@ -1,0 +1,91 @@
+\draft
+\begin{parts}
+	\part Lattice: a mathematical set of points related by an infinite number of primitive lattice vectors (which are linearly independent of one another).
+	
+	Basis: a construct of repeated motifs with respect to a lattice point.
+	
+	\part Reciprocal PLV:
+	\begin{equation*}
+		\mathbf{b}_i = \frac{2\pi \mathbf{a}_j \times \mathbf{a}_k}{\mathbf{a}_i \cdot \rbracket{\mathbf{a}_j \times \mathbf{a}_k}}
+	\end{equation*}
+	
+	For $\mathbf{R} = h\mathbf{a}_1 + k\mathbf{a}_2 + l\mathbf{a}_3$,
+	\begin{align*}
+		\mathbf{R}\cdot\mathbf{G} &= 2\pi \rbracket{h+k+l} \\
+		\Rightarrow e^{i\mathbf{G}\cdot\mathbf{R}} &= 1
+	\end{align*}
+	for any integer $h$, $k$, $l$.
+	
+	So $\mathbf{G}$ is a primitive reciprocal lattice vector.
+	
+	\part
+	\begin{align*}
+		V_q &= \indefint{e^{i\mathbf{q}\cdot\mathbf{x}} V(\mathbf{x})}{\mathbf{x}} \\
+		&= \sum_{\mathbf{R}} \defint{\textnormal{UC}}{}{e^{i\mathbf{q}\cdot\rbracket{\mathbf{R}+\mathbf{x}^\prime}} V(\mathbf{R}+\mathbf{x}^\prime)}{\mathbf{x}^\prime} \\
+		&= \underbracket{
+			\sum_{\mathbf{R}}
+			e^{i\mathbf{q}\cdot\mathbf{R}}
+		   }_{
+			   \substack{\textnormal{This term}\\\textnormal{vanishes}\\\textnormal{unless } \mathbf{q}=\mathbf{G} \\\textnormal{so it becomes}\\\textnormal{an infinite sum}}
+		   }
+			\defint{\textnormal{UC}}{}{
+				e^{i\mathbf{q}\cdot\mathbf{x}^\prime}
+				\underbracket{V(\mathbf{x}^\prime)}_{\mathclap{V(\mathbf{x}) = V(\mathbf{x}+\mathbf{R})}}}{\mathbf{x}^\prime}
+	\end{align*}
+	
+	\part Matrix element:
+	\begin{align*}
+		\bra{\mathbf{k}^\prime}V(\mathbf{x})\ket{\mathbf{k}} &= \indefint{e^{i\mathbf{q}\cdot\mathbf{x}} V(\mathbf{x})}{{}^3 \mathbf{x}} \mtext{where } \mathbf{q} = (\mathbf{k}^\prime - \mathbf{k}) \\
+		&= \underbracket{\sum_{\mathbf{R}} e^{i\mathbf{q}\cdot\mathbf{R}}}_{\textnormal{over system}} \defint{\textnormal{UC}}{}{e^{i\mathbf{q}\cdot\mathbf{x}} V(\mathbf{x})}{{}^3 \mathbf{x}}
+	\end{align*}
+	similar to part c.
+	
+	Structure factor:
+	\begin{align*}
+		b_p (\mathbf{G}) &= \defint{\textnormal{UC}}{}{e^{i\mathbf{q}\cdot\mathbf{x}} V(\mathbf{x})}{{}^3 \mathbf{x}} \\
+		&= \defint{\textnormal{UC}}{}{e^{i\mathbf{q}\cdot\mathbf{x}} \sbracket{\sum_j u_j (\mathbf{x}-\mathbf{x}_j)}}{{}^3 \mathbf{x}} \mtext{by Laue condition} \\
+		&= \sum_j \defint{\textnormal{UC}}{}{e^{i\mathbf{G}\cdot\mathbf{x}} u_j (\mathbf{x}-\mathbf{x}_j)}{{}^3 \mathbf{x}} \\
+		&= \underbracket{\sum_j}_{\mathclap{\textnormal{in UC only}}} \defint{\textnormal{UC}}{}{e^{i\mathbf{G}\cdot(\mathbf{x}-\mathbf{x}_j)} u_j (\mathbf{x})}{{}^3 \mathbf{x}}
+	\end{align*}
+	
+	So by relabelling $\mathbf{R} \to \mathbf{r}_p$,
+	\begin{align*}
+		S(\mathbf{G}) &= \sum_p b_p (\mathbf{G}) e^{i\mathbf{G}\cdot\mathbf{r}_p} \\
+		\Rightarrow I(\mathbf{G}) \propto \Gamma \propto \abs{S(\mathbf{G})}^2
+	\end{align*}
+	
+	\part For cubic lattice, $d=\dfrac{a}{\sqrt{h^2 + k^2 + l^2}}$ where $d$ is reciprocal lattice plane spacing.
+	
+	Also:
+	\begin{align*}
+		|\mathbf{G}| = G &= \frac{2\pi}{d} \\
+		&= \frac{2\pi\sqrt{h^2 + k^2 + l^2}}{a}
+	\end{align*}
+	
+	Bragg's law:
+	\begin{align*}
+		2d \sin\theta &= \lambda \\
+		\sin\theta \propto \frac{1}{d} \propto \sqrt{h^2 + k^2 + l^2}
+	\end{align*}
+	
+	Assuming all the silicons have similar $b_p (\mathbf{G})$, i.e. ignoring the asymmetry in nearest neighbour distances:
+	\begin{align*}
+		S(\mathbf{G}) &= b_\textnormal{Si} \sbracket{e^{i\pi 0} + e^{2i\pi\rbracket{\frac{h+k+l}{4}}} + e^{2i\pi\rbracket{\frac{h+k}{2}}} + e^{2i\pi\rbracket{\frac{k+l}{2}}} + e^{2i\rbracket{\frac{h+l}{2}}} + \ldots} \\
+		&= b_\textnormal{Si} \sbracket{1 + e^{i\pi\rbracket{h+k}} + e^{i\pi\rbracket{k+l}} + e^{i\pi\rbracket{h+l}}} \sbracket{1 + e^{\frac{i\pi}{2}\rbracket{h+k+l}}}
+	\end{align*}
+	
+	So FCC selection rules apply, albeit with some absences where $(h+k+l)\cdot\frac{1}{2}$ is odd:
+	\begin{itemize}
+		\item $\cbracket{111}$ \ding{51}
+		\item $\cbracket{200}$ \ding{55} -- $\dfrac{2}{2}=1$ so absence due to above condition
+		\item $\cbracket{220}$ \ding{51}
+	\end{itemize}
+	So the 2 lowest angle of scattering corresponds to:
+	\begin{equation*}
+		G = \frac{2\pi\sqrt{3}}{a}
+	\end{equation*}
+	and
+	\begin{equation*}
+		G = \frac{2\pi\sqrt{8}}{a}
+	\end{equation*}
+\end{parts}

@@ -1,0 +1,112 @@
+\draft
+\begin{parts}
+	\part
+	\begin{subparts}
+		\subpart At zone boundary, $y=0$:
+		\begin{align*}
+			\Rightarrow E &- E_\textnormal{ZB} \sbracket{1\pm\epsilon} \\
+			&= E_\textnormal{ZB} \pm \abs{V_G}
+		\end{align*}
+		
+		$E_\textnormal{ZB}$ should be the unperturbed eigenvalue for the following Hamiltonian at zone boundary:
+		\begin{align*}
+			\hat{H}_0 &= \frac{\hbar^2 \hat{k}^2}{2\masselectron} \\
+			\Rightarrow E_\textnormal{ZB} &= \frac{\hbar^2}{2\masselectron} \cdot \rbracket{\frac{\pi}{a}}^2 \\
+			&= \frac{\hbar^2 \pi^2}{2\masselectron a^2}
+		\end{align*}
+		
+		\subpart \todo Recall that periodic potential $V(\mathbf{r}) = \dfrac{e^2}{4\pi\permittivity r}$ for each boundary.
+		
+		$\Rightarrow$ Bloch's theorem then tells us that:
+		\begin{equation*}
+			V_{01} = \indefint{e^{i\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r})}{{}^3 \mathbf{r}}
+		\end{equation*}
+		
+		$\Rightarrow$ Band gap = $2\abs{V_G}$ from above.
+		{
+			\color{red}Explain how I got this.
+			
+			Matrix element:
+			\begin{equation*}
+				\bra{k^\prime} V(x) \ket{k} = \indefint{V e^{i(k^\prime - k)x}}{x}
+			\end{equation*}
+			
+			So:
+			\begin{equation*}
+				V_G = \bra{k-G} V \ket{k} = \indefint{V e^{iG \cdot x}}{x}
+			\end{equation*}
+		}
+		
+		\subpart \image{.25\linewidth}{q2-dispersion}
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart Density of states within the first Brillouin zone:
+		\begin{equation*}
+			g_\textnormal{1D} (k) = \underbracket{2}_{\pm} \cdot \underbracket{2}_{\mathclap{\textnormal{spin}}} \cdot \frac{L}{2\pi} \inftsml{k}
+		\end{equation*}
+		
+		So total energy:
+		\begin{align*}
+			E_D &= \frac{1}{Na} \defint{-1}{1}{g(y) E}{y} \mtext{where } y=1-\frac{ka}{\pi} \Rightarrow \inftsml{k}=-\frac{\pi}{a}\inftsml{y} \\
+			&= \frac{1}{a} \defint{-1}{1}{E}{y} \\
+			&= \frac{E_\textnormal{ZB}}{a} \sbracket{\frac{2}{3} + \rbracket{2-\sqrt{4+\epsilon^2}} + \frac{\epsilon^2}{4} \ln\rbracket{\frac{\sqrt{\epsilon^2 + 4} - 2}{\sqrt{\epsilon^2 + 4} + 2}}}
+		\end{align*}
+		
+		\subpart $-\sqrt{4+\epsilon^2} < 0$, so $\ln\rbracket{\ldots}$ always $<0$ since denominator $>$ numerator.
+		\image{.2\linewidth}{q2-dispersion-area}
+		
+		\subpart Expand $\sqrt{\epsilon^2 + 4} \simeq 2 + \frac{\epsilon^2}{4} + \mathcal{O}\rbracket{\epsilon^3}$
+		\begin{equation*}
+			\alpha = 1 \qquad \beta = 2
+		\end{equation*}
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart
+		\begin{align*}
+			G &= \frac{2\pi}{a} \\
+			V_G &= -2\pi\delta V_0 \mtext{since } \textnormal{FT}\sbracket{\cos\rbracket{kx}} = \delta\rbracket{k^\rightarrow - k} \\
+			&= 0 \mtext{if $\delta = 0$}
+		\end{align*}
+		
+		\subpart $\delta = 0$ $\Rightarrow$ $V_G = 0$ $\Rightarrow$ metallic like single $\electron$ chain.
+		
+		\subpart Plug in $V_G$.
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart
+		\begin{align*}
+			V_G &= \indefint{e^{i\mathbf{k}\cdot\mathbf{r}} V(\mathbf{r})}{\mathbf{r}} \\
+			\Rightarrow V_G &= \defint{-\infty}{\infty}{e^{ikx} V_0 \sbracket{
+				\cos\rbracket{\frac{4\pi}{a}x}
+				- 2\pi\delta\rbracket{
+					\cos\rbracket{\frac{2\pi}{a}x}
+					-\cos\rbracket{\frac{6\pi}{a}x}
+				}
+			}}{x} \\
+		&= V_0 \sbracket{
+			\delta^{(1)} \rbracket{k-\frac{4\pi}{a}}
+			- 2\pi\delta\rbracket{
+				\delta^{(1)} \rbracket{k-\frac{2\pi}{a}}
+				-\delta^{(1)} \rbracket{k-\frac{6\pi}{a}}
+			}
+		}
+		\end{align*}
+		by convolution theorem.
+	\end{subparts}
+	
+	\part $E_\textnormal{tot} = \underbracket{\kappa\delta^2}_{\textnormal{increase}} + \overbracket{E(\delta)}^{\textnormal{decrease}}$
+	
+	\begin{align*}
+		\pderi{E}{\delta} &= 0 \\
+		\Rightarrow \textnormal{solution for } \delta > 0
+	\end{align*}
+	
+	Plot w/o calc.
+	\image{.5\linewidth}{q2-energy}
+\end{parts}

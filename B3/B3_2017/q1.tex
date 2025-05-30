@@ -1,0 +1,139 @@
+\draft
+\begin{parts}
+	\part \image{.3\linewidth}{q1-electron-orbit}
+	In $\electron$ rest frame, the magnetic field due to nucleus is:
+	\begin{align*}
+		\mathbf{B} &= -\frac{\mathbf{v}\times\mathbf{E}}{c^2} \mtext{by Lorentz transformation} \\
+		&= -\frac{1}{m_ec^2}\mathbf{p}\times\frac{1}{e}\pderi{U}{r}\frac{\mathbf{r}}{r} \mtext{for $\mathbf{p}=m\mathbf{v}$ momentum and the central field } -eE=-\pderi{U}{r}\hat{\mathbf{r}} \\
+		&= \frac{1}{m_ec^2} \rbracket{\frac{1}{er}\pderi{U}{r}} \hbar\mathbf{l} \mtext{for $\mathbf{r}\times\mathbf{p}=\hbar\mathbf{l}$}
+	\end{align*}
+	
+	Intrinsic magnetic moment of $\electron$:
+	\begin{equation*}
+		\bm{\mu}_s = -g_s \bohrmagneton \mathbf{s}
+	\end{equation*}
+	with $g_s \simeq 2$, $\bohrmagneton = \dfrac{e\hbar}{2m_e}$.
+	
+	Dipole interaction:
+	\begin{align*}
+		\hat{H}_\textnormal{SO} &= -\bm{\mu}_s\cdot\mathbf{B} \\
+		&= g_s \bohrmagneton \cdot \frac{1}{m_ec^2} \rbracket{\frac{1}{er}\pderi{U}{r}} \hbar\mathbf{s}\cdot\mathbf{l} \\
+		&\rightarrow \rbracket{g_s - 1} \underbracket{\frac{e\hbar}{2m_e}}_{\frac{1}{2}\alpha cea_0} \cdot \frac{1}{m_ec^2} \rbracket{\frac{1}{er}\pderi{U}{r}} \hbar\mathbf{s}\cdot\mathbf{l} \mtext{by Thomas precession} \\
+		&= \underbracket{\rbracket{g_s - 1}}_{\simeq 1} \frac{\hbar^2}{2m_e^2c^2} \rbracket{\frac{1}{r}\pderi{U}{r}} \mathbf{s}\cdot\mathbf{l} \\
+		= \frac{\hbar\alpha a_0}{2m_ec} \rbracket{\frac{1}{r}\pderi{U}{r}} \mathbf{s}\cdot\mathbf{l}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\Delta E_\textnormal{SO} &= \frac{\hbar^2}{2m_e^2c^2} \rbracket{\avg{\frac{1}{r} \frac{Ze^2}{4\pi\permittivity r^2}}} \avg{\mathbf{s}\cdot\mathbf{l}} \\
+		&= \frac{\hbar^2}{2m_e^2c^2} \cdot Z\alpha\hbar c \avg{\frac{1}{r^3}} \avg{\mathbf{s}\cdot\mathbf{l}} \\
+		&= \frac{\hbar^2}{2m_e^2c^2} \cdot Z\alpha\hbar c \cdot \frac{1}{l(l+\frac{1}{2})(l+1)} \rbracket{\frac{Z}{na_0}}^3 \cdot \avg{\mathbf{s}\cdot\mathbf{l}} \\
+		&= \frac{\hbar\alpha a_0}{2m_ec} \cdot \frac{Z^4\alpha\hbar c}{l(l+\frac{1}{2})(l+1)} \cdot \frac{1}{(na_0)^3} \avg{\mathbf{s}\cdot\mathbf{l}} \\
+		&= \frac{Z^4\alpha^2\hbar^2\avg{\mathbf{s}\cdot\mathbf{l}}}{2m_en^3a_0^2l(l+\frac{1}{2})(l+1)} \\
+		&= \overbracket{\frac{Z^4\alpha^2}{n^3l(l+1)} \frac{\hbar^2}{m_ea_0^2(2l+1)}}^{\beta} \underbracket{\avg{\mathbf{s}\cdot\mathbf{l}}}_{\mathclap{\frac{1}{2}[j(j+1)-l(l+1)-s(s+1)] \textnormal{ for } \hat{\mathbf{j}}=\hat{\mathbf{l}}+\hat{\mathbf{s}}}}
+	\end{align*}
+	
+	Energy separation:
+	\begin{align*}
+		\Delta E &= \frac{\beta}{2} \sbracket{\rbracket{l+\frac{1}{2}}\rbracket{l+\frac{3}{2}} - l(l+1) - s(s+1) \right. \\
+		&\left. \qquad - \rbracket{l-\frac{1}{2}}\rbracket{l+\frac{1}{2}} + l(l+1) + s(s+1)} \\
+		&= \frac{\beta}{2} \sbracket{l^2 + 2l + \frac{3}{4} - l^2 + \frac{1}{4}} \\
+		&= \frac{\beta}{2}\rbracket{2l+1} \\
+		&= \frac{Z^4\alpha^2}{n^3l(l+1)} \cdot \underbracket{\frac{\hbar^2}{2m_ea_0^2}}_{hcR_\infty ?}
+	\end{align*}
+	
+	Configuration $2p$: $l=1$, $s=1/2$
+	\begin{align*}
+		\Rightarrow\Delta E &= \frac{\alpha^2hcR_\infty}{2^3 1 (2)} \\
+		&= \frac{\SI{13.606}{\electronvolt}}{8 \cdot 2 \cdot \rbracket{\num{137.04}}^2} = \SI{4.528e-5}{\electronvolt}
+	\end{align*}
+	
+	Magnetic field:
+	\begin{align*}
+		-\Delta\bm{\mu}_s \cdot \mathbf{B} &= \Delta E \\
+		B &= \frac{\Delta E}{g_s \bohrmagneton \rbracket{\frac{1}{2}+\frac{1}{2}}} \\
+		&= \frac{\alpha^2hcR_\infty}{32\bohrmagneton} = \SI{0.024}{\tesla}
+	\end{align*}
+	
+	For $n=2$, $2s$ has no splitting since $l=0$.
+	$2p$ was already done.
+	
+	For $n=4$, $4s$ has no splitting.
+	$4p$, $4d$, $4f$ do.
+	
+	$4p$: $l=1$, $s=1/2$
+	\begin{align*}
+		\Delta E &= \frac{\alpha^2hcR_\infty}{4^3 \cdot 1(2)} \\
+		&= \frac{\SI{13.606}{\electronvolt}}{128\rbracket{\num{137.04}}^2} = \SI{5.660e-6}{\electronvolt}
+	\end{align*}
+	
+	$4d$: $l=2$, $s=1/2$
+	\begin{align*}
+		\Delta E &= \frac{\alpha^2hcR_\infty}{4^3 \cdot 2(3)} \\
+		&= \frac{\SI{13.606}{\electronvolt}}{384\rbracket{\num{137.04}}^2} = \SI{1.887e-6}{\electronvolt}
+	\end{align*}
+	
+	$4f$: $l=3$, $s=1/2$
+	\begin{align*}
+		\Delta E &= \frac{\alpha^2hcR_\infty}{4^3 \cdot 3(4)} \\
+		&= \frac{\SI{13.606}{\electronvolt}}{768\rbracket{\num{137.04}}^2} = \SI{9.434e-7}{\electronvolt}
+	\end{align*}
+	
+	Electric dipole selection rules:
+	\begin{itemize}
+		\item 1 $\electron$ transition
+		\item $\Delta l = \pm 1$
+		\item $\Delta n =$ any
+		\item $\Delta J = \Delta j = 0, \pm 1$ ($0 \nrightarrow 0$)
+	\end{itemize}
+	
+	So we have the following transitions:
+	
+	\begin{tikzpicture}[auto]
+		\matrix (transition)[matrix of math nodes,row sep=.3cm,column sep=16mm] {
+			4f {}^2 F_{5/2, 7/2} & 4d {}^2 F_{5/2} \\
+			& 4d {}^2 F_{3/2} \\
+			4d {}^2 D_{3/2, 5/2} & 4p {}^2 P_{3/2} \\
+			& 4p {}^2 P_{1/2} \\
+			& 2p {}^2 P_{3/2} \\
+			& 2p {}^2 P_{1/2} \\
+			4p {}^2 P_{3/2, 1/2} & 4s {}^2 S_{1/2} \\
+			& 2s {}^2 S_{1/2} \\
+		};
+		\draw (transition-1-1)--(transition-1-2);
+		\draw (transition-1-1)--(transition-2-2);
+		\draw (transition-3-1)--(transition-3-2);
+		\draw (transition-3-1)--(transition-4-2);
+		\draw (transition-3-1)--(transition-5-2);
+		\draw (transition-3-1)--(transition-6-2);
+		\draw (transition-7-1)--(transition-7-2);
+		\draw (transition-7-1)--(transition-8-2);
+	\end{tikzpicture}
+	
+	Energy diagram:
+	\image{.8\linewidth}{q1-energy-diagram}
+	
+	From gross structure energy, $E_n = -\dfrac{R_\infty hc}{n^2}$
+	
+	Balmer-$\beta$ line should possess energy:
+	\begin{align*}
+		R_\infty hc\sbracket{\frac{1}{2^2} - \frac{1}{4^2}} = \frac{3}{16} R_\infty \bcancel{hc} &= \frac{\bcancel{hc}}{\lambda} \\
+		\Rightarrow \lambda = \frac{16}{3R_\infty} &= \SI{4.860e-7}{\metre} \\
+		&= \SI{486}{\nano\metre}
+	\end{align*}
+	
+	Doppler broadening has $\dfrac{\Delta\omega}{\omega}=\dfrac{\Delta E}{E}=\dfrac{v}{c}$ with $v$ the velocity of atoms.
+	
+	Equipartition theorem gives:
+	\begin{align*}
+		\frac{1}{2}mv^2 &= \frac{3}{2}\boltzmann T \\
+		v &= \sqrt{\frac{3\boltzmann T}{m}}
+	\end{align*}
+	
+	So:
+	\begin{equation*}
+		\frac{\Delta E}{E} = \sqrt{\frac{3\boltzmann T}{m_Hc^2}} = \num{1.173e-5} @ \SI{500}{\kelvin}
+	\end{equation*}
+	
+	Fine structure has $\dfrac{\Delta E}{E}=\dfrac{\SI{4.528e-5}{\electronvolt}}{\SI{2.551}{\electronvolt}}=\num{1.775e-5}$ so they are just barely resolved, we could consider Doppler-free spectroscopy to eliminate this.
+\end{parts}

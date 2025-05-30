@@ -1,0 +1,89 @@
+\draft
+\begin{parts}
+	\part For EM wave to interact with a nucleus, it must possess wavelength of $\sim\unit{\fermi}$ range, this corresponds to gamma rays and therefore X-rays do not interact with it well.
+	X-rays are therefore only affected by the bound $\electron$ in an atom.
+	
+	\image{.4\linewidth}{q1-braggs-law}
+	Bragg's Law:
+	\begin{align*}
+		2d \sin\theta &= \lambda \\
+		\Rightarrow d &= \frac{\lambda}{2\sin\theta}
+	\end{align*}
+	
+	Total diffraction angle: $2\theta$
+	
+	For cubic lattice,
+	\begin{align*}
+		d &= \frac{a}{\sqrt{h^2 + k^2 + l^2}} \\
+		\Rightarrow h^2 + k^2 + l^2 &= \rbracket{\frac{a}{d}}^2
+	\end{align*}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline \rule[-1.4em]{0pt}{3.5em} $2\theta$ ($\unit{\degree}$) & $d$ ($\unit{\nano\metre}$) & $\dfrac{d_0}{d} \to \rbracket{\dfrac{d_0}{d}}^2$ & $h^2 + k^2 + l^2$ & $a$ ($\unit{\nano\metre}$) \\ \hline
+			$\num{27.4}$ & $\num{0.325}=d_0$ & $\num{1}\to\num{1}$ & $3 = 1^2 + 1^2 + 1^2$ & $\num{0.563}$ \\
+			$\num{31.7}$ & $\num{0.282}$ & $\num{1.15}\to\num{1.33}$ & $4 = 2^2 + 0^2 + 0^2$ & $\num{0.564}$ \\
+			$\num{45.4}$ & $\num{0.200}$ & $\num{1.63}\to\num{2.65}$ & $8 = 2^2 + 2^2 + 0^2$ & $\num{0.566}$ \\
+			$\num{53.8}$ & $\num{0.170}$ & $\num{1.91}\to\num{3.65}$ & $11 = 3^2 + 1^2 + 1^2$ & $\num{0.564}$ \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	Since $h$, $k$, $l$ all have the same parity, NaCl is an FCC crystal in this condition.
+	
+	Lattice constant:
+	\begin{align*}
+		a &= \sqrt{h^2 + k^2 + l^2} d \\
+		&= \frac{1}{4} \rbracket{\num{0.563} + \num{0.564} + \num{0.566} + \num{0.564}} \\
+		&= \SI{0.564}{(\nano\metre)}
+	\end{align*}
+	
+	\part \image{.8\linewidth}{q1-lattice}
+	Scattering amplitude now becomes:
+	\begin{equation*}
+		S_{(hkl)} = f_\textnormal{Na} + f_\textnormal{Cl} e^{i\pi (h+k+l)}
+	\end{equation*}
+	
+	Since $f_\textnormal{Na} \neq f_\textnormal{Cl}$, and the fact that NaCl is now a simple cubic lattice means that any $h$, $k$, $l$ constitute a diffraction peak.
+	
+	Minimum diffraction angle should then correlates to the $\cbracket{1 0 0}$ family:
+	\begin{equation*}
+		a = d_0 = \frac{\lambda}{2 \sin\theta} = \SI{0.300}{\nano\metre}
+	\end{equation*}
+	
+	Next ring should be due to the $\cbracket{1 1 0}$ family:
+	\begin{align*}
+		d_{\cbracket{1 1 0}} &= \frac{a}{\sqrt{1^2 + 1^2 + 0^2}} = \SI{0.212}{\nano\metre} \\
+		\Rightarrow \sin \frac{1}{2}\theta_{\cbracket{1 1 0}} &= \frac{\lambda}{2d_{\cbracket{1 1 0}}} \\
+		&= \num{0.362} \\
+		\Rightarrow \theta_{\cbracket{1 1 0}} &= \SI{42.5}{\degree}
+	\end{align*}
+	
+	Ratio of intensity:
+	\begin{equation*}
+		\frac{I_{\cbracket{1 1 0}}}{I_{\cbracket{1 0 0}}} = \frac{M_{\cbracket{1 1 0}}}{M_{\cbracket{1 0 0}}} \abs{\frac{S_{\cbracket{1 1 0}}}{S_{\cbracket{1 0 0}}}}^2
+	\end{equation*}
+	where $M_{\cbracket{1 1 0}} = 12$ and $M_{\cbracket{1 0 0}} = 6$ are multiplicities associated with the corresponding family.
+	
+	Since $f_i \propto Z_i$ for atom $i$, we write:
+	\begin{equation*}
+		f_\textnormal{Na} = 11f \qquad f_\textnormal{Cl} = 17f
+	\end{equation*}
+	with constant of proportionality $f$.
+	
+	Structure factors read:
+	\begin{align*}
+		S_{\cbracket{1 1 0}} = 11f + 17f e^{i2\pi} = 28f \\
+		S_{\cbracket{1 0 0}} = 11f + 17f e^{i\pi} = -6f
+	\end{align*}
+	
+	Therefore,
+	\begin{align*}
+		\frac{I_{\cbracket{1 1 0}}}{I_{\cbracket{1 0 0}}} &= \frac{12}{6} \abs{\frac{28}{-6}}^2 \\
+		&= \num{43.56}
+	\end{align*}
+	
+	\begin{align*}
+		\textnormal{Ratio of volume} = \rbracket{\frac{a_{\SI{80}{\giga\pascal}}}{a_\textnormal{STP}}}^3 \\
+		&= \rbracket{\frac{\num{0.300}}{\num{0.564}}}^3 = \num{0.150}
+	\end{align*}
+\end{parts}

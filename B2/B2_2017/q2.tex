@@ -1,0 +1,123 @@
+\draft
+
+\begin{parts}
+	\part A 4-wavevector is defined as $\mathsf{K}^\mu = \partial^{\mu}\phi = (\omega / c, \mathbf{k})$ where $\phi(t, \mathbf{x})$ is the phase of a wave, $\omega$ is the frequency of the wave, and $\mathbf{k}$ is the 3-wavevector.
+	
+	The phase may be given by (with $\mathsf{X}^\mu = (ct, \mathbf{x})$):
+	\begin{align*}
+		\phi &= \mathsf{K}_\mu \mathsf{X}^\mu \\
+		&= \omega t - \mathbf{k}\cdot\mathbf{x}
+	\end{align*}
+	
+	However as $\mathsf{K}_\mu \mathsf{X}^\mu$ is a contraction of two 4-vectors, and Lorentz transformation is unitary, $\phi$ shall be Lorentz invariant.
+	
+	\part Consider the process $\electron \rightarrow \electron\gamma$:
+	\image{.8\linewidth}{q2-proc}
+	
+	Conservation of 4-momentum tells us:
+	\begin{gather*}
+		\mathsf{P}_\mathrm{e}^\mu = \mathsf{P}_\mathrm{e}^{\prime^\mu} + \mathsf{P}_\gamma^{\prime^\mu} \\
+		\Rightarrow \rbracket{\mathsf{Q}_\mathrm{e}^\mu - \mathsf{Q}_\gamma^{\prime^\mu}}^2 = \rbracket{\mathsf{Q}_\mathrm{e}^{\prime^\mu}}^2 \\
+		-\masselectron^2 c^2 + 0 + 2 \masselectron c \cdot p_\gamma = -\masselectron^2 c^2 \\
+		\Rightarrow \masselectron c p_\gamma = 0 \\
+		\Rightarrow \masselectron = 0
+	\end{gather*}
+	which is unphysical, therefore the process is kinematically forbidden.
+	
+	\part Space-like interval:
+	\begin{gather*}
+		\rbracket{\mathsf{D}^\mu \mathsf{G}^\mu}^2 > 0 \\
+		\Rightarrow c^2 \rbracket{t_d - t_g}^2 < (\mathbf{x}_d - \mathbf{x}_g)^2
+	\end{gather*}
+	
+	For space-like interval, since the two events cannot be connected by a signal path, it is possible to find a frame where they are simultaneous since causality is not possible between them.
+	
+	\newpage
+	Sketch of the collision:
+	\image{.8\linewidth}{q2-collision}
+	\part System 4-momentum:
+	\begin{align*}
+		\mathsf{P}^\mu &= \mathsf{P}_1^\mu + \mathsf{P}_2^\mu \\
+		&= (p+p, p, p, 0) \mtext{where $p=\hbar\omega/c$ is the photon momentum} \\
+		\Rightarrow \mathsf{P}_\mu \mathsf{P}^\mu &= -(2p)^2 + 2p^2 \\
+		-m_\gamma^2 c^2 &= -2p^2 \\
+		m_\gamma &= \frac{p}{c} = \frac{\hbar\omega}{c}
+	\end{align*}
+	
+	\part Rotate the axis such that the new $x$-axis points at $\diagfrac{1}{\sqrt{2}}(\hat{\mathbf{x}} + \hat{\mathbf{y}})$, now:
+	
+	\begin{equation*}
+		\mathsf{P}^\mu = \rbracket{2p, 2p \sin 45\degree, 0, 0}
+	\end{equation*}
+	
+	Lorentz transform and impose the condition that $\mathsf{P}^\prime = 0$:
+	\begin{gather*}
+		0 = -\beta\gamma (2p) + \gamma (2p \sin 45\degree) \\
+		2\beta\gamma = \frac{1}{\sqrt{2}} \cdot 2p \\
+		\beta = \frac{1}{\sqrt{2}} \\
+		\Rightarrow \mathbf{v} = \frac{1}{\sqrt{2}} c \sbracket{\frac{1}{\sqrt{2}} \rbracket{\hat{\mathbf{x}} + \hat{\mathbf{y}}}}
+	\end{gather*}
+	
+	\part \image{.3\linewidth}{q2-schematics}
+	
+	Lorentz transformation of EM fields:
+	\begin{align*}
+		\mathbf{E}_\perp^\prime &= \gamma \rbracket{\mathbf{E}_\perp - \mathbf{v}\times\mathbf{B}} & \mathbf{E}_\parallel^\prime = \mathbf{E}_\parallel \\
+		\mathbf{B}_\perp^\prime &= \gamma \rbracket{\mathbf{B}_\perp - \frac{\mathbf{v}\times\mathbf{E}}{c^2}} & \mathbf{B}_\parallel^\prime = \mathbf{B}_\parallel
+	\end{align*}
+	
+	\part $E^2/c^2 > B^2$ $\Rightarrow$ No frame with $E=0$ since $E^2/c^2 - B^2$ is Lorentz invariant.
+	
+	So choose $B=0$ and boost by $\gamma_u$ along $+\hat{\mathbf{x}}$:
+	\begin{gather*}
+		0 = B - \frac{uE}{c^2} \\
+		\Rightarrow u = \frac{Bc^2}{E}
+	\end{gather*}
+	
+	So $E^{\prime^2} = E^2 - B^2 c^2$ from the invariant:
+	\begin{equation*}
+		\Rightarrow E_y^\prime = \gamma_u \rbracket{E - uB} = \sqrt{E^2 - B^2 c^2}
+	\end{equation*}
+	
+	\todo So in $S^\prime$, the $\electron$ gains velocity in $\hat{\mathbf{y}}$, and the Lorentz force is:
+	\begin{align*}
+		\mathbf{f} &= -e\mathbf{E}^\prime \\
+		f_y &= -e\sqrt{E^2 - B^2 c^2}
+	\end{align*}
+	
+	In $S$ the $\electron$ would appear to be travelling in $-\hat{\mathbf{y}}$ before turning under the B field.
+	\image{.3\linewidth}{q2-turn}
+	
+	\part Conversely if $E^2/c^2 < B^2$, we can choose $E^\prime = 0$ in $S^\prime$.
+	
+	Boosting by $\gamma_u$ along $+\hat{\mathbf{x}}$:
+	\begin{gather*}
+		0 = E - uB \Rightarrow u = \frac{E}{B} \\
+		B^\prime = \gamma_u \rbracket{B - \frac{uE}{c^2}} \\
+		\Rightarrow -B^{\prime^2} = \frac{E^2}{c^2} - B^2 \\
+		B^\prime = \sqrt{B^2 - \frac{E^2}{c^2}} \\
+		\Rightarrow f^\prime = -evB^\prime
+	\end{gather*}
+	
+	So the particle would undergo a circular motion in $S^\prime$ with $f$ as follows:
+	\begin{align*}
+		\abs{f^\prime} &= \gamma_u^3 \masselectron a \\
+		\Rightarrow evB^\prime &= \gamma_u^3 \masselectron \frac{u^2}{r} \\
+		\Rightarrow r &= \frac{\gamma_u^3 \masselectron u^2}{evB^\prime}
+	\end{align*}
+	where $r$ is the radius.
+	
+	In $S$ this would appear as a helical-like path similar to the trajectory a type makes when rolling:
+	\image{.5\linewidth}{q2-helix}
+	
+	Consider the 4-momentum of the system:
+	\begin{align*}
+		\mathsf{P}^\mu &= \rbracket{\sum_i W_i, \sum_i \mathbf{p}_i} \\
+		\Rightarrow \mathsf{P}_\mu \mathsf{P}^\mu &= -\rbracket{\sum_i W_i}^2 + \rbracket{\sum_i \mathbf{p}_i}^2 = -S^2 \mtext{is invariant}
+	\end{align*}
+	
+	For photon gas, $W_i = p_i c = p_i$, and for a non-interacting gas, $\sum_i \mathbf{p}_i = 0$, thus:
+	\begin{equation*}
+		S^2 = \rbracket{\sum_i W_i}^2 = \rbracket{\sum_i p_i}^2
+	\end{equation*}
+\end{parts}

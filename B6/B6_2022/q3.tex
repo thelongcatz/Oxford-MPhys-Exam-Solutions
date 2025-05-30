@@ -1,0 +1,120 @@
+\draft
+\begin{parts}
+	\part With $\nfermi (x) = \dfrac{1}{e^x + 1}$ the Fermi occupation factor, $\beta = \dfrac{1}{\boltzmann T}$ the Boltzmann factor, $\mu$ the chemical potential:
+	\begin{align*}
+		f_c (\epsilon) &= \nfermi\rbracket{\beta(\epsilon - \mu)} \\
+		&= \frac{1}{e^{\beta(\epsilon - \mu)} + 1} \\
+		&\simeq e^{-\beta(\epsilon - \mu)} \mtext{for $\mu$ well below conduction band}
+	\end{align*}
+	
+	Similarly,
+	\begin{align*}
+		f_v (\epsilon) &= \sbracket{1 - \nfermi \rbracket{\beta \rbracket{\epsilon - \mu}}} \\
+		&\simeq e^{\beta (\epsilon - \mu)} \mtext{for $\mu$ well above valence band}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		n(T) &= \defint{\epsilon_c}{\infty}{
+			\frac{(2\masselectron)^{3/2}}{2\pi^2 \hbar^3}
+			\sqrt{\epsilon - \epsilon_c}
+			\cdot e^{-\beta(\epsilon - \mu)}
+		}{\epsilon} \\
+		&= \defint{0}{\infty}{
+			\frac{(2\masselectron)^{3/2}}{2\pi^2 \hbar^3}
+			\sqrt{x}
+			e^{-\beta x} e^{-\beta \epsilon_c} e^{\beta\mu}
+		}{x} \\
+		&= \frac{(2\boltzmann T\masselectron)^{3/2}}{2\pi^2 \hbar^3} 
+		\sbracket{\frac{\sqrt{\pi}}{2}} e^{-\beta\epsilon_c} e^{\beta\mu}
+	\end{align*}
+	
+	Similarly, with substitution $x=\beta (\epsilon_v - \epsilon)$ $\Rightarrow$ $-\infty \to \infty$, $\epsilon_v \to 0$:
+	\begin{align*}
+		p(T) &= \defint{-\infty}{\epsilon_v}{
+			\frac{(2\masshole)^{3/2}}{2\pi^2 \hbar^3}
+			\sqrt{\epsilon_v - \epsilon} e^{\beta (\epsilon - \mu)}
+		}{\epsilon} \\
+		&= \frac{(2\masshole)^{3/2}}{2\pi^2 \hbar^3}
+		e^{\beta\epsilon_v} e^{-\beta\mu}
+		\defint{+\infty}{0}{-\sqrt{x} e^{-\beta x}}{x} \\
+		&= \frac{(2\boltzmann T\masshole)^{3/2}}{2\pi^2 \hbar^3}
+		e^{\beta\epsilon_v} e^{-\beta\mu} \cdot \frac{\sqrt{\pi}}{2}
+	\end{align*}
+	
+	Thus:
+	\begin{align*}
+		n(T) p(T) &= \frac{(2\boltzmann T\masselectron)^{3/2} (2\boltzmann T\masshole)^{3/2}}{4\pi^4 \hbar^6}
+		\cdot \frac{\pi}{4} e^{-\beta \overbracket{(\epsilon_c - \epsilon_v)}^{E_g}} \\
+		&= \frac{1}{2} \sbracket{\frac{\boltzmann T}{\pi\hbar^2}}^3
+		\rbracket{\masselectron\masshole}^{3/2} e^{-\beta E_g}
+	\end{align*}
+	
+	\part
+	\begin{subparts}
+		\subpart
+		\begin{align*}
+			n_\textnormal{occupied} &= N_D \cdot \textnormal{Probability of occupying energy $\epsilon_D$} \\
+			&= N_D \cdot \nfermi \sbracket{\beta\rbracket{\epsilon_D - \mu}} \\[1em]
+			n_\textnormal{empty} &= N_D \cdot \sbracket{1 - \nfermi \rbracket{
+				\beta \rbracket{\epsilon_D - \mu}
+			}} \mtext{similar to holes}
+		\end{align*}
+		
+		Therefore:
+		\begin{align*}
+			\frac{n_\textnormal{occupied}}{n_\textnormal{empty}} &= \frac{
+				\frac{1}{e^{\beta (\epsilon_D - \mu)} + 1}
+			}{
+				1 - \frac{1}{e^{\beta (\epsilon_D - \mu)} + 1}
+			} \\
+			&= \frac{1}{e^{\beta (\epsilon_D - \mu)} + 1 - 1} \\
+			&= e^{\beta (\mu - \epsilon_D)}
+		\end{align*}
+		
+		\subpart From a,
+		\begin{equation*}
+			n = \frac{(2\boltzmann T\masselectron)^{3/2}}{2\pi^2 \hbar^3} 
+			\cdot \frac{\sqrt{\pi}}{2} e^{-\beta(\epsilon_c - \mu)}
+		\end{equation*}
+		
+		So:
+		\begin{align*}
+			\frac{n_\textnormal{occupied}}{n_\textnormal{empty}} &= \frac{N_D - n}{n} \\
+			\Rightarrow \frac{n^2}{N_D - n} &= n(T) \frac{n_\textnormal{empty}}{n_\textnormal{occupied}} \\
+			&= 2 \rbracket{\frac{\masselectron}{2\pi\beta\hbar^2}}^{3/2} e^{-\beta E_i}
+		\end{align*}
+		
+		In addition, $\boltzmann T \ll E_g$ $\Rightarrow$ all $\electron$ from impurity states so neglect holes.
+	\end{subparts}
+	
+	\part
+	\begin{subparts}
+		\subpart At high temperature, the $\electron$ have enough thermal energy to escape conduction band, forming an intrinsic region where the intrinsic carrier dominates the carrier concentration.
+
+		As the sample begins to appouch $T\sim\SI{50}{\kelvin}$, the transition between intrinsic and extrinsic regimes begins as the intrinsic $\electron$ start to freeze out from the decreasing thermal energy.
+		\image{.3\linewidth}{q3-density-temperature}
+		
+		At $T\ll\SI{50}{\kelvin}$, the sample enters the extrinsic regime where the donor carrier dominates.
+		
+		\subpart \todo For intrinsic $\electron$,
+		\begin{align*}
+			n_i^2 &= np = \frac{8\masselectron^{3/2} \masshole^{3/2}}{\pi^3 \hbar^6} e^{-\beta E_g} \\
+			\Rightarrow n_i &= \frac{2\sqrt{2} \masselectron^{3/4} \masshole^{3/4}}{\pi^{3/2} \hbar^3} e^{-\frac{\beta E_g}{2}} \\
+			\Rightarrow \ln\rbracket{n_i} &\propto -\frac{\beta E_g}{2} = -\frac{E_g}{2\boltzmann T} \\
+			\Rightarrow \textnormal{gradient} &= -\frac{E_g}{2\boltzmann} \\
+			\Rightarrow \ln\rbracket{\num{e21}} - \ln\rbracket{\num{e19}} &= -\frac{E_g}{2\boltzmann} \rbracket{\num{0.01}-\num{0.02}}\unit{\per\kelvin} \\
+			\Rightarrow E_g &= \frac{6 \ln\rbracket{10} \boltzmann}{\SI{0.01}{\per\kelvin}} \\
+			&= \SI{1.91e-20}{\joule} = \SI{0.12}{\electronvolt}
+		\end{align*}
+		which also corresponds to the thermal energy at $\sim\SI{1000}{\kelvin}$.
+		
+		At low temperature, with $N_D \sim \SI{3e18}{\per\metre\cubed}$:
+		\begin{align*}
+			\frac{n^2}{N_D - n} &\simeq \frac{n^2}{n_D} \propto e^{-\beta E_i} \mtext{since $n \ll N_D$} \\
+			n &= \ldots \\
+			\ln (n) &= \ldots \\
+			\Rightarrow \textnormal{gradient} &\Rightarrow E_i = \ldots \sim \SI{100}{\kelvin}
+		\end{align*}
+	\end{subparts}
+\end{parts}

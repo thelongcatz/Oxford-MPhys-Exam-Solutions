@@ -1,0 +1,109 @@
+\draft
+\begin{parts}
+	\part Hamiltonian $\hat{H}=\hat{H}_0 + \hat{V}(t)$ where $\hat{H}_0$ is the unperturbed Hamiltonian.
+	
+	TDSE gives $\hat{H}\ket{\psi} = i\hbar\pdiagdiff{t}\ket{\psi}$.
+	
+	Substituting ansatz
+	\begin{equation*}
+		\psi (t, \mathbf{r}) = c_1(t)\psi_1(\mathbf{r})e^{-\frac{iE_1t}{\hbar}} + c_2(t)\psi_2(\mathbf{r})e^{-\frac{iE_2t}{\hbar}}
+	\end{equation*}
+	then gives: (since $\psi_1$ and $\psi_2$ are the stationary states with energies $E_1$ and $E_2$, they come with a phase factor $e^{-\frac{iEt}{\hbar}}$ as per TDSE, this is simply a superposition of the two states)
+	\begin{align*}
+		i\hbar\sbracket{\splitfrac{\dot{c}_1\psi_1e^{-\frac{iE_1t}{\hbar}} - \cancel{\frac{iE_1}{\hbar}c_1\psi_1e^{-\frac{iE_1t}{\hbar}}}}{+ \dot{c}_2\psi_2e^{-\frac{iE_2t}{\hbar}} - \bcancel{\frac{iE_2}{\hbar}c_2\psi_2e^{-\frac{iE_2t}{\hbar}}}}} &= \splitfrac{\cancel{E_1c_1\psi_1e^{-\frac{iE_1t}{\hbar}}} + \bcancel{E_2c_2\psi_2e^{-\frac{iE_2t}{\hbar}}}}{+ \hat{V}c_1\psi_1e^{-\frac{iE_1t}{\hbar}} + \hat{V}c_2\psi_2e^{-\frac{iE_2t}{\hbar}}} \\
+		i\hbar\dot{c}_1\psi_1e^{-\frac{iE_1t}{\hbar}} + i\hbar\dot{c}_2\psi_2e^{-\frac{iE_2t}{\hbar}} &= \hat{V}c_1\psi_1e^{-\frac{iE_1t}{\hbar}} + \hat{V}c_2\psi_2e^{-\frac{iE_2t}{\hbar}}
+	\end{align*}
+	
+	$\times\psi_1^*$ then gives:
+	\begin{align*}
+		i\hbar\dot{c}_1e^{-\frac{iE_1t}{\hbar}} &= \bra{1}\hat{V}\ket{1}c_1e^{-\frac{iE_1t}{\hbar}} + \bra{1}\hat{V}\ket{2}c_2e^{-\frac{iE_2t}{\hbar}} \\
+		\Rightarrow \dot{c}_1 &= -\frac{i}{\hbar}\bra{1}\hat{V}\ket{2}e^{-i\omega_0t}c_2 \mtext{for $\hbar\omega_0 = E_2 - E_1$ and $\hat{V}$ prohibits null transition} \\
+		&= \frac{i}{\hbar}\mathcal{E}_0\chi_{12}\cos(\omega t)e^{-i\omega_0t}c_2 \mtext{since $\hat{V}(t)=ex\mathcal{E}_0\cos(\omega t)$} \\
+		&= \frac{i\mathcal{E}_0\chi_{12}}{2\hbar}\sbracket{e^{i(\omega - \omega_0)t} + e^{-i(\omega+\omega_0)t}}c_2
+	\end{align*}
+	
+	Similarly for $\dot{c}_2$, we replace $e^{-i\omega_0t} \to e^{i\omega_0t}$:
+	\begin{equation*}
+		\Rightarrow \dot{c}_2 = \frac{i\mathcal{E}_0\chi_{12}}{2\hbar}\sbracket{e^{+i(\omega + \omega_0)t} + e^{-i(\omega - \omega_0)t}}c_1
+	\end{equation*}
+	
+	\part For weak perturbation, $c_2 \simeq 0$, $c_1 \simeq 1$:
+	\begin{align*}
+		\Rightarrow \dot{c}_2 &= i\frac{\mathcal{E}_0\chi_{12}}{2\hbar} \sbracket{e^{-i(\omega - \omega_0)t} + e^{i(\omega + \omega_0)t}} \\
+		c_2(t) &= i\frac{\mathcal{E}_0\chi_{12}}{2\hbar} \sbracket{\frac{e^{-i(\omega - \omega_0)t}}{-i(\omega - \omega_0)} + \frac{e^{i(\omega + \omega_0)t}}{i(\omega + \omega_0)}}_{t=0}^t
+	\end{align*}
+	
+	Since $\abs{\dfrac{\delta\omega}{\omega_0}} \ll 1$, we may invoke rotating wave approximation where $\abs{\omega - \omega_0} \ll \omega + \omega_0$:
+	\begin{align*}
+		\Rightarrow c_2(t) &\simeq i\frac{\mathcal{E}_0\chi_{12}}{2\hbar} \sbracket{\frac{e^{-i(\omega - \omega_0)t} - 1}{-i(\omega - \omega_0)}} \\
+		&= i\frac{\mathcal{E}_0\chi_{12}}{\hbar} \cdot \frac{e^{-i\frac{\delta\omega}{2}t}}{\delta\omega} \sbracket{\frac{e^{-i\frac{\delta\omega}{2}t} - e^{i\frac{\delta\omega}{2}t}}{-2i}} \mtext{for $\delta\omega = \omega - \omega_0$} \\
+		&= \frac{ie^{-i\frac{\delta\omega}{2}t}}{\delta\omega} \, \frac{\mathcal{E}_0\chi_{12}}{\hbar} \sin\rbracket{\frac{\delta\omega}{2}t}
+	\end{align*}
+	
+	So:
+	\begin{equation*}
+		\abs{c_2(t)}^2 = \rbracket{\frac{1}{\delta\omega}}^2 \rbracket{\frac{\mathcal{E}_0\chi_{12}}{\hbar}}^2 \sin^2\rbracket{\frac{\delta\omega}{2}t}
+	\end{equation*}
+	
+	\part Write $\defint{\omega_0}{\omega_0 + \Delta\omega}{u(\omega)}{\omega} = \rho(\omega)$ $\Rightarrow$ $\mathcal{E}_0^2 = \dfrac{2\rho}{\permittivity}$.
+	
+	So $\abs{c_2(t)}^2 = \rbracket{\dfrac{1}{\delta\omega}}^2 \dfrac{2\rho}{\permittivity} \sin^2\rbracket{\dfrac{\delta\omega}{2}t}$.
+	
+	Note that Einstein's B coefficient is defined as $u(\omega)B_{21}=\dfrac{\abs{c_2(t)}^2}{t}$ for each $\inftsml{\omega}$ interval.
+	
+	Also by realising that the $\sinc$ function has a sharp resonance at $\omega_0$ so $u(\omega) \simeq u(\omega - \omega_0)$ since we assume it varies slowly, we write:
+	\begin{align*}
+		u(\omega_0)B_{21} &= \frac{1}{t} \defint{0}{\infty}{\frac{2u(\omega_0)}{4\permittivity} \rbracket{\frac{\chi_{12}}{\hbar}}^2 \cdot \rbracket{\frac{1}{\delta\omega}}^2 \sin^2\rbracket{\frac{\delta\omega}{2}t}}{\omega} \\
+		u(\omega_0)B_{21} &= \frac{2\pi t}{t} \cdot \frac{2u(\omega_0)}{4\permittivity} \rbracket{\frac{\chi_{12}}{\hbar}}^2 \\
+		B_{21} &= \frac{\pi\chi_{12}^2}{\permittivity\hbar^2} \\
+		&\to \frac{\pi\chi_{12}^2}{3\permittivity\hbar^2} \mtext{to account for the fact that we have defined $B$ for unpolarised light}
+	\end{align*}
+	
+	\part Since this interaction does not life the degeneracy in $m_l$, we choose $m_l=1$ for convenience.
+	\begin{align*}
+		\chi_{12} &= -e \indefint{\psi_{1s}^* x \psi_{2p}}{{}^3\mathbf{r}} \\
+		&= -e \defint{0}{2\pi}{}{\phi} \defint{0}{\pi}{}{\theta} \defint{0}{\infty}{\frac{e^{-\frac{r}{a_0}}}{\sqrt{\pi}a_0^{3/2}} \cdot r\sin\theta\cos\phi \cdot \frac{e^{-\frac{r}{2a_0}}}{\sqrt{2\pi}a_0^{3/2}}\cdot\frac{r}{a_0} \sin\theta r^2\sin\theta e^{+i\phi}}{r} \\
+		&= -e \frac{1}{\sqrt{2}\pi a_0^3 a_0} \defint{0}{2\pi}{e^{i\phi} \cos\phi}{\phi} \defint{0}{\pi}{\sin^2 \theta}{\theta} \defint{0}{\infty}{e^{-\frac{3r}{2a_0}} r^3}{r} \\
+		&= -\frac{e}{\sqrt{2}\pi a_0^4} \defint{0}{2\pi}{\frac{e^{2i\phi} + 1}{2}}{\phi} \defint{0}{\pi}{\rbracket{1-\cos^2 \theta} \sin\theta}{\theta} \defint{0}{\infty}{r^3 e^{-\frac{3r}{2a_0}}}{r}
+	\end{align*}
+	
+	Evaluate radial integral:
+	\begin{align*}
+		F=r^3 &\qquad\Rightarrow\qquad \inftsml{F}=3r^2 \inftsml{r} \\
+		\inftsml{G}=e^{-\frac{3r}{2a_0}} \inftsml{r} &\qquad\Rightarrow\qquad G=-\frac{2a_0}{3} e^{-\frac{3r}{2a_0}} \\[1em]
+		\defint{0}{\infty}{r^3 e^{-\frac{3r}{2a_0}}}{r} &= \defint{0}{\infty}{2a_0 r^2 e^{-\frac{3r}{2a_0}}}{r} \mtext{since $F \cdot G$ vanishes at the boundaries} \\[1em]
+		F=r^2 &\qquad\Rightarrow\qquad \inftsml{F}=2r \inftsml{r} \\
+		\inftsml{G}=e^{-\frac{3r}{2a_0}} \inftsml{r} &\qquad\Rightarrow\qquad G=-\frac{2a_0}{3} e^{-\frac{3r}{2a_0}} \\[1em]
+		&\rightarrow \defint{0}{\infty}{\frac{8}{3}a_0^2 r e^{-\frac{3r}{2a_0}}}{r} \\[1em]
+		F=r &\qquad\Rightarrow\qquad \inftsml{F}=\inftsml{r} \\
+		\inftsml{G}=e^{-\frac{3r}{2a_0}} \inftsml{r} &\qquad\Rightarrow\qquad G=-\frac{2a_0}{3} e^{-\frac{3r}{2a_0}} \\[1em]
+		&\rightarrow \defint{0}{\infty}{\frac{16}{9}a_0^3 e^{-\frac{3r}{2a_0}}}{r} \\
+		&= \sbracket{-\frac{32}{27}a_0^4 e^{-\frac{3r}{2a_0}}}_{r=0}^\infty \\
+		&= \frac{32}{27}a_0^4
+	\end{align*}
+	
+	$\theta$ integral:
+	\begin{align*}
+		\defint{0}{\pi}{\sin\theta}{\theta} + \defint{0}{\pi}{\cos^2 \theta}{\rbracket{\cos\theta}} &= \sbracket{-\cos\theta}_0^\pi + \sbracket{\frac{\cos^3 \theta}{3}}_0^\pi \\
+		&= 1 + 1 - \frac{1}{3} - \frac{1}{3} = \frac{4}{3}
+	\end{align*}
+	
+	$\phi$ integral:
+	\begin{align*}
+		\defint{0}{2\pi}{\frac{e^{2-\phi}}{2}}{\phi} &= \sbracket{\frac{e^{2i\phi}}{4i} + \frac{\phi}{2}}_0^{2\pi} \\
+		&= \pi
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\chi_{12} &= -\frac{e}{2\sqrt{2}\bcancel{\pi}\cancel{a_0^4}} \cdot \bcancel{\pi} \cdot \frac{4}{3} \cdot \frac{32}{27} \cancel{a_0^4} \\
+		&= -\frac{16}{81\sqrt{2}} \\[1em]
+		\Rightarrow B_{12} &= \frac{\pi\chi_{12}^2}{3\permittivity\hbar^2} = \SI{2.075e77}{\per\farad\metre\joule\squared\second\squared}
+	\end{align*}
+	
+	ERRATA:
+	
+	$\chi_{12} = \dfrac{128\sqrt{2}}{243} ea_0$
+	
+	$B_{12} = \SI{4.2e20}{\metre\cubed\radian\per\joule\per\second\squared}$
+\end{parts}

@@ -1,0 +1,101 @@
+\draft
+\begin{parts}
+	\part Recall Lorentz transformation:
+	\begin{align*}
+		ct^\prime &= \gamma ct - \gamma\beta x \\
+		x^\prime &= -\gamma\beta ct + \gamma x \\
+		y^\prime &= y \qquad z^\prime = z
+	\end{align*}
+	
+	Tensor transformation law also tells us:
+	\begin{align*}
+		\pdiff{x^\mu} &= \pdiff{x^{\prime^\nu}} \cdot \pderi{x^{\prime^\nu}}{x^\mu} \\
+		\Rightarrow \pdiff{x^{\prime^\nu}} &= \pdiff{x^\mu} \cdot \pderi{x_\nu}{x^\prime_\mu} \\[1em]
+		\pdiff{x_\mu} &= \pdiff{x^\prime_\nu} \cdot \pderi{x^\prime_\nu}{x_\mu} \\
+		\Rightarrow \pdiff{x^\prime_\nu} &= \pdiff{x_\mu} \cdot \pderi{x^\nu}{x^{\prime^\mu}}
+	\end{align*}
+	
+	Comparing against (1) and (2) gives:
+	\begin{align*}
+		\pdiff{x^\mu} &= \partial_\mu = \rbracket{\frac{1}{c} \partial_t, \bm{\nabla}} \\
+		\pdiff{x_\mu} &= \partial^\mu = \rbracket{-\frac{1}{c} \partial_t, \bm{\nabla}}
+	\end{align*}
+	
+	\part
+	\begin{equation*}
+		\partial_\mu \partial^\mu = -\frac{1}{c^2} \pdiff[2]{t} + \nabla^2
+		\mtext{where } \nabla^2 = \pdiff[2]{x} + \pdiff[2]{y} + \pdiff[2]{z}
+	\end{equation*}
+	
+	From above, we have transformed tensors:
+	\begin{align*}
+		\rbracket{\partial^\prime}_\mu &= \pderi{x^\prime_\mu}{x_\nu} \rbracket{\partial}_\nu \\
+		\rbracket{\partial^\prime}^\mu &= \pderi{x^{\prime^\mu}}{x^\nu} \rbracket{\partial}^\nu
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		\rbracket{\partial^\prime}_\mu \rbracket{\partial^\prime}^\mu &= \partial_\nu \partial^\nu \cdot \pderi{x^\prime_\mu}{x_\nu} \cdot \underbracket{\pderi{x^{\prime^\mu}}{x^\nu}}_{\mathclap{\rbracket{\pderi{x_\mu}{x^\prime_\nu}}^{-1}}} \\
+		&= \partial_\nu \partial^\nu
+	\end{align*}
+	So it is Lorentz invariant.
+	
+	\part Maxwell's equations:
+	\begin{align}
+		\bm{\nabla}\cdot\mathbf{E} &= \frac{\rho}{\permittivity} \label{eqn:q1-maxwell-1} \\
+		\bm{\nabla}\cdot\mathbf{B} &= 0 \label{eqn:q1-maxwell-2} \\
+		\bm{\nabla}\times\mathbf{E} &= -\pderi{\mathbf{E}}{t} \label{eqn:q1-maxwell-3} \\
+		\bm{\nabla}\times\mathbf{B} &= +\permeability \mathbf{J} + \permeability \permittivity \pderi{\mathbf{E}}{t} \label{eqn:q1-maxwell-4}
+	\end{align}
+	
+	$\mathbf{\div}\cdot$\eqref{eqn:q1-maxwell-4} then gives:
+	\begin{align*}
+		\bm{\nabla}\cdot\rbracket{\bm{\nabla}\times\mathbf{B}} &= +\permeability \bm{\nabla}\cdot\mathbf{J} + \permeability \permittivity \bm{\nabla}\cdot\pderi{\mathbf{E}}{t} \\
+		0 &= +\permeability \bm{\nabla}\cdot\mathbf{J} + \permeability \permittivity \pdiff{t}\underbracket{\rbracket{\bm{\nabla}\cdot\mathbf{E}}}_{\mathclap{\frac{\rho}{\permittivity}}} \\
+		\Rightarrow \bm{\nabla}\cdot\mathbf{J} + \pderi{\rho}{t} &= 0
+	\end{align*}
+	Note the relation may be simply written as $\partial_\mu \mathsf{J}^\mu = 0$ where $\mathsf{J}^\mu = (\rho c, \mathbf{J})$.
+	
+	\part $\mathsf{A}^\mu = (\phi/c, \mathbf{A})$ with $\partial_\mu \mathsf{A}^\mu = 0$ $\Rightarrow$ $\phi$ independent of $t$ and $\bm{\nabla}\cdot\mathbf{A} = 0$.
+	
+	\begin{align*}
+		\partial^\nu \partial_\nu \mathsf{A}^0 &= -\frac{1}{c^2} \pdiff[2]{t}\rbracket{\frac{\phi}{c}} + \nabla^2 \rbracket{\frac{\phi}{c}} \\
+		&= \nabla^2 \rbracket{\frac{\phi}{c}}
+	\end{align*}
+	
+	From \eqref{eqn:q1-maxwell-1},
+	\begin{align*}
+		\bm{\nabla}\cdot\rbracket{-\bm{\nabla}\phi - \pderi{\mathbf{A}}{t}} &= \frac{\rho}{\permittivity} \\
+		\Rightarrow -\nabla^2 \phi &= \frac{\rho}{\permittivity} \\
+		\Rightarrow \partial^\nu \partial_\nu \mathsf{A}^0 &= -\frac{\rho}{\permittivity c} = -\frac{c\rho}{\permittivity c^2} = -\permeability \rho c
+	\end{align*}
+	
+	Next we have:
+	\begin{align*}
+		\partial^\nu \partial_\nu \mathsf{A}^i &= -\frac{1}{c^2} \pdiff[2]{t}\rbracket{\mathsf{A}^i} + \nabla^2 \rbracket{\mathsf{A}^i} \\
+		\bm{\nabla}\times\mathbf{B} &= \bm{\nabla}\times\rbracket{\bm{\nabla}\times\mathbf{A}} \\
+		&= \cancelto{0}{\bm{\nabla}\rbracket{\bm{\nabla}\cdot\mathbf{A}}} - \nabla^2 \mathbf{A}
+		= \permeability \mathbf{J} + \permeability \permittivity \pdiff{t}\sbracket{-\bm{\nabla}\phi - \pderi{\mathbf{A}}{t}} \\
+		-\nabla^2 \mathbf{A} &= \permeability \mathbf{J} + \rbracket{-\underbracket{\permeability \permittivity}_{1/c^2} \pderi[2]{\mathbf{A}}{t}} \\
+		\Rightarrow -\frac{1}{c^2} \pdiff[2]{t} \mathbf{A} + \nabla^2 \mathbf{A} &= -\permeability \mathbf{J} = \partial_\nu \partial^\nu \mathsf{A}^i
+	\end{align*}
+	And so $\partial^\nu \partial_\nu \mathsf{A}^a = -\permeability \mathsf{J}^a$.
+	
+	Since the contraction of $\partial^\nu \partial_\nu \mathsf{A}^a$ yields a 4-vector and that $\partial_\nu$, $\partial^\nu$ are 4-components by quotient rule we must know that $\mathsf{A}^\mu$ is a 4-vector.
+	
+	\part
+	\begin{align*}
+		\partial_\mu \mathsf{A}^\mu = 0 \Rightarrow \mathsf{K}_\mu \mathsf{\epsilon}^\mu \sin\rbracket{k^a x_a} &= 0 \\
+		\Rightarrow \mathsf{\epsilon}^0 &= 0 \mtext{for $\bm{\epsilon}\cdot\mathbf{k}=0$}
+	\end{align*}
+	
+	Now with gauge transformation:
+	\begin{align*}
+		\mathsf{A}^\mu &= \rbracket{\mathsf{A}^\prime}^\mu + \partial^\mu x \\
+		&= \rbracket{\mathsf{\epsilon}^\prime}^\mu \sin\rbracket{k^{\prime^a} x^\prime_a} + \partial^\mu x \\
+		\Rightarrow \rbracket{\mathsf{\epsilon}^\prime}^0 \sin\rbracket{k^{\prime^a} x^\prime_a} + \partial^0 x &= \mathsf{\epsilon}^0 = 0 \\
+		\Rightarrow x &= \indefint{-\rbracket{\mathsf{\epsilon}^\prime}^0 \sin\rbracket{\ldots} \cdot c}{t} \\
+		&= \cos\rbracket{\ldots} \cdot \frac{\rbracket{\mathsf{\epsilon}^\prime}^0 c}{\rbracket{k^\prime}^0} c
+	\end{align*}
+	So free to choose any $\mathsf{\epsilon}$ such that $\mathbf{k}\cdot\bm{\epsilon} = 0$.
+\end{parts}

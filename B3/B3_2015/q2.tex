@@ -1,0 +1,65 @@
+\draft
+\begin{parts}
+	\part $A_J \mathbf{I}\cdot\mathbf{J}$: spin-spin interaction between the nucleus and the $\electron$, this is the alignment of nuclear spin under the magnetic field due to the $\electron$ motion and intrinsic magnetic moment.
+	
+	$g_J \bohrmagneton \mathbf{J}\cdot\mathbf{B}_\textnormal{ext}$: external magnetic field Hamiltonian.
+	This is the alignment of total electronic angular momentum with the external field due to the $\electron$ motion and intrinsic magnetic moment.
+	
+	$g_J \nuclearmagneton \mathbf{I}\cdot\mathbf{B}_\textnormal{ext}$: external magnetic field Hamiltonian, similar to the electronic one above but this is the interaction between nuclear spin and external field.
+	
+	Weak magnetic field means that $g_J \bohrmagneton \mathbf{J}\cdot\mathbf{B}_\textnormal{ext} + g_J \nuclearmagneton \mathbf{I}\cdot\mathbf{B}_\textnormal{ext} \gg A_J \mathbf{I}\cdot\mathbf{J}$, i.e. the external interaction is much weaker than the hyperfine interaction.
+	
+	Strong field means the opposite, where the external interaction is much stronger than the hyperfine interaction.
+	
+	In weak field, the external Hamiltonian acts as a perturbation on top of the hyperfine interaction, which conserves total angular momentum $F$, making it a good quantum number.
+	
+	Wigner-Eckart theorem then states $\mathbf{J} \to \mathbf{J}\cdot\mathbf{F}/F^2 \mathbf{F}$ and $\mathbf{I} \to \mathbf{I}\cdot\mathbf{J}/F^2 \mathbf{F}$ so:
+	\begin{align*}
+		\hat{H}_F &= A_J \mathbf{I}\cdot\mathbf{J} + g_J \bohrmagneton \frac{\mathbf{J}\cdot\mathbf{F}}{F^2} \mathbf{F}\cdot\mathbf{B} - g_I \nuclearmagneton \frac{\mathbf{I}\cdot\mathbf{F}}{F^2} \mathbf{F}\cdot\mathbf{B} \\
+		\Rightarrow E_F &= \frac{A_J}{2}\sbracket{\ldots} + g_J \bohrmagneton \frac{J(J+1) + \cfrac{1}{2}\sbracket{F(F+1)-J(J+1)-I(I+1)}}{F(F+1)} M_F B + \underbracket{\ldots}_{\mathclap{\substack{\textnormal{negligible}\\\textnormal{as }\nuclearmagneton \ll \bohrmagneton}}}
+	\end{align*}
+	
+	So hyperfine level is split by:
+	\begin{equation*}
+		\Delta E_F = \underbracket{g_J \sbracket{\frac{1}{2}+\frac{1}{2}\,\frac{J(J+1)-I(I+1)}{F(F+1)}}}_{g_F} \bohrmagneton BM_F
+	\end{equation*}
+	
+	\part For \element{K}{39} at ground state with config $4s$, available term: $L=0$, $S=1/2$ $\rightarrow$ ${}^2 S$ $\Rightarrow$ level ${}^2 S_{1/2}$.
+	
+	\begin{align*}
+		&\bohrmagneton \mathbf{L}\cdot\mathbf{B} + g_s \bohrmagneton \mathbf{S}\cdot\mathbf{B} \\
+		&\rightarrow \bohrmagneton \sbracket{\frac{\mathbf{L}\cdot\mathbf{J}}{J^2}\mathbf{J}\cdot\mathbf{B} + g_s \frac{\mathbf{S}\cdot\mathbf{J}}{J^2}\mathbf{J}\cdot\mathbf{B}} \\
+		&\rightarrow \bohrmagneton \frac{
+			\splitfrac{\cancel{L(L+1)} + \frac{1}{2}\sbracket{J(J+1)-L(L+1)-S(S+1)} + 2S(S+1)}
+			{+ \frac{1}{2}\times 2\sbracket{J(J+1)-\cancel{L(L+1)}-S(S+1)}}
+		}{J(J+1)} \mathbf{B}\cdot\mathbf{J} \\
+		&\Rightarrow g_J = \frac{3}{2} - \frac{L(L+1) - S(S+1)}{2J(J+1)} \\
+		&\phantom{\Rightarrow g_J} = \frac{3}{2} - \frac{-\frac{1}{2}(\frac{3}{2})}{2(\frac{1}{2})(\frac{3}{2})} = 2
+	\end{align*}
+	
+	Total possible values of $F = |I-J|, ..., (I+J) = 1, 2$.
+	\begin{align*}
+		g_F (F=1) &= g_J \cdot \frac{1}{2} \sbracket{1+\frac{\frac{1}{2}(\frac{3}{2}) - \frac{3}{2}(\frac{5}{2})}{1(2)}} = -\frac{1}{2} \\
+		g_F (F=2) &= g_J \cdot \frac{1}{2} \sbracket{1+\frac{\frac{1}{2}(\frac{3}{2}) - \frac{3}{2}(\frac{5}{2})}{2(3)}} = \frac{1}{2}
+	\end{align*}
+	
+	\image{.7\linewidth}{q2-zeeman-transitions}
+	
+	\part Electric dipole selection rules:
+	\begin{itemize}
+		\item $\Delta n =$ any
+		\item $\Delta l = \pm 1$ $\leftarrow$ violated!
+	\end{itemize}
+	
+	Try magnetic dipole:
+	\begin{itemize}
+		\item $\Delta n = \Delta l = 0$
+		\item $\Delta F = 0, \pm 1$ ($0 \nrightarrow 0$)
+		\item $\Delta M_F = 0, \pm 1$ ($0 \nrightarrow 0 \iff \Delta F = 0$)
+	\end{itemize}
+	
+	Since $|g_F|$ is identical across the two levels, some transitions share the same frequency.
+	So in total there are $\underbracket{N(\textnormal{0 gaps})}_{1} + \underbracket{N(\textnormal{1 gap})}_{3} + \underbracket{N(\textnormal{2 gaps})}_{3} = 7$ lines.
+	
+	When observed along the magnetic field, only the $\sigma$ radiation may be observed ($\sigma^+$ and $\sigma^-$), but there will still be 7 lines as explained above.
+\end{parts}

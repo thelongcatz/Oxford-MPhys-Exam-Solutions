@@ -1,0 +1,94 @@
+\draft
+\begin{parts}
+	\part Fine structure Hamiltonian:
+	\begin{align*}
+		\Delta\hat{H}_\textnormal{SO} &= \frac{\hbar^2}{2m_e^2 c^2} \underbracket{\avg{\frac{1}{r^3}}}_{\mathclap{\frac{1}{l(l+\frac{1}{2})(l+1)} \rbracket{\frac{Z}{na_0}}^3}} \cdot \frac{Ze^2}{4\pi\permittivity} \cdot \avg{\mathbf{s}\cdot\mathbf{l}} \mtext{for hydrogen} \\
+		\Rightarrow \Delta E_\textnormal{SO} &= \frac{\hbar^2}{2m_e^2 c^2} \cdot \frac{e^2}{4\pi\permittivity} \cdot \frac{1}{l(l+\frac{1}{2})(l+1)} \rbracket{\frac{1}{na_0}}^3 \cdot \frac{1}{2} \sbracket{j(j+1)-l(l+1)-s(s+1)} \\
+		&\sim \frac{\hbar^2}{2m_e^2 c^2} \cdot \frac{e^2}{4\pi\permittivity} \cdot \frac{1}{a_0^3}
+	\end{align*}
+	
+	Zeeman:
+	\begin{align*}
+		\Delta\hat{H}_z &= -\bm{\mu}\cdot\mathbf{B} \\
+		&= \bohrmagneton \mathbf{L}\cdot\mathbf{B} + g_s \bohrmagneton \mathbf{S}\cdot\mathbf{B} \\
+		&= g_J \bohrmagneton \mathbf{J}\cdot\mathbf{B} \sim \bohrmagneton B
+	\end{align*}
+	
+	Equating both energies gives:
+	\begin{align*}
+		\bohrmagneton B &= \frac{\hbar^2}{2m_e^2 c^2} \cdot \underbracket{\frac{e^2}{4\pi\permittivity}}_{\alpha\hbar c} \cdot \frac{1}{a_0^3} \\
+		&= \frac{(\hbar c)^3}{2m_e^2 c^4} \cdot \alpha \cdot \frac{1}{a_0^3} \\
+		&= \frac{(\SI{197.33}{\mega\electronvolt\femto\metre})^3}{2(\SI{0.511}{\mega\electronvolt})^2} \cdot \frac{1}{\num{137.06}} \cdot \frac{1}{(\SI{5.292e4}{\femto\metre})^3} \\
+		&= \SI{7.24e-10}{\mega\electronvolt} \\
+		&= \SI{7.24e-4}{\electronvolt} = \SI{1.16e-22}{\joule} \\
+		\Rightarrow B &= \SI{11.9}{\tesla}
+	\end{align*}
+	So within $~\SI{12}{\tesla}$, Zeeman perturbation works on top of spin-orbit interaction.
+	
+	\part From above, $\Delta\hat{H}_z = \bohrmagneton \sbracket{\hat{\mathbf{L}}\cdot\hat{\mathbf{B}} + g_s \hat{\mathbf{S}}\cdot\hat{\mathbf{B}}}$.
+	
+	By Wigner-Eckart theorem, we may substitute $\mathbf{L}$ and $\mathbf{S}$ with $\mathbf{J}$ with constant of proportionality akin to vector projection:
+	\begin{align*}
+		\Delta\hat{H}_z &= \bohrmagneton \sbracket{\frac{\hat{\mathbf{L}}\cdot\hat{\mathbf{J}}}{\hat{J}^2} \hat{\mathbf{J}}\cdot\mathbf{B} + g_s \frac{\hat{\mathbf{S}}\cdot\hat{\mathbf{J}}}{\hat{J}^2} \hat{\mathbf{J}}\cdot\mathbf{B}} \\
+		&= g_J \bohrmagneton \hat{\mathbf{J}}\cdot\mathbf{B}
+	\end{align*}
+	with $g_J = \dfrac{3}{2} + \dfrac{S(S+1)-L(L+1)}{2J(J+1)}$ approximating $g_s \simeq 2$.
+	
+	\part \begin{align*}
+		V_\textnormal{ext} &= \alpha(x^2 + y^2) + \beta z^2 \\
+		&= \alpha r^2 \cos^2 \theta + \beta r^2 \sin^2 \theta
+	\end{align*}
+	
+	Energy shift $\Delta E = \bra{n}\hat{V}_\textnormal{ext}\ket{n}$ for state $\ket{n}$.
+	
+	For $1s$,
+	\begin{align*}
+		\Delta E_{1s} &= \defint{0}{2\pi}{}{\phi} \defint{0}{\pi}{}{\theta} \defint{0}{\infty}{\frac{1}{\pi a_0^3} e^{-\frac{2r}{a_0}} \rbracket{\alpha r^2 \cos^2 \theta + \beta r^2 \sin^2 \theta} \times r^2 \sin\theta}{r} \\
+		&= 2\pi \cdot \frac{1}{\pi a_0^3} \defint{0}{\pi}{\alpha \cos^2 \theta + \beta \sin^2 \theta \sin\theta}{\theta} \defint{0}{\infty}{r^4 e^{-\frac{2r}{a_0}}}{r}
+	\end{align*}
+	
+	Radial integral:
+	\begin{align*}
+		F=r^2 &\qquad\Rightarrow\qquad \inftsml{F}=2r\inftsml{r} \\
+		\inftsml{G}=e^{-\frac{2r}{a_0}}\inftsml{r} &\qquad\Rightarrow\qquad G=-\frac{a_0}{2} e^{-\frac{2r}{a_0}} \\[1em]
+		&\rightarrow \defint{0}{\infty}{a_0 r e^{-\frac{2r}{a_0}}}{r} \\[1em]
+		F=r &\qquad\Rightarrow\qquad \inftsml{F}=\inftsml{r} \\
+		\inftsml{G}=e^{-\frac{2r}{a_0}}\inftsml{r} &\qquad\Rightarrow\qquad G=-\frac{a_0}{2} e^{-\frac{2r}{a_0}} \\[1em]
+		&\rightarrow \defint{0}{\infty}{\frac{a_0^2}{2} e^{-\frac{2r}{a_0}}}{r} \\
+		&= \sbracket{-\frac{a_0^3}{4} e^{-\frac{2r}{a_0}}}_0^\infty \\
+		&= \frac{a_0^3}{4} \cdot \frac{12a_0^2}{4} = \frac{3a_0^5}{4}
+	\end{align*}
+	
+	$\theta$ integral:
+	\begin{align*}
+		\defint{0}{\pi}{\alpha \cos^2 \theta \sin\theta + \beta \rbracket{1-\cos^2 \theta} \sin\theta}{\theta} \\
+		&= \defint{1}{-1}{-\alpha\cos^2 \theta - \beta\rbracket{1-\cos^2 \theta}}{(\cos\theta)} \\
+		&= \sbracket{-\frac{\alpha\cos^3 \theta}{3} - \beta\rbracket{\cos\theta - \frac{\cos^3 \theta}{3}}}_1^{-1} \\
+		&= \frac{2\alpha}{3} + \beta\rbracket{2-\frac{2}{3}} = \frac{2\alpha}{3} + \frac{4\beta}{3}
+	\end{align*}
+	
+	So:
+	\begin{align*}
+		\Delta E_{1s} &= \frac{2}{a_0^3} \cdot \rbracket{\frac{2\alpha}{3} + \frac{4\beta}{3}} \cdot \frac{3a_0^5}{4} \\
+		&= \rbracket{\alpha + 2\beta} a_0^2 \\
+		&= 0 \mtext{for } \beta = -\frac{\alpha}{2}
+	\end{align*}
+	
+	For $2s$,
+	\begin{align*}
+		\Delta E_{2s} &= \defint{0}{2\pi}{}{\phi} \defint{0}{\pi}{}{\theta} \defint{0}{\infty}{\frac{1}{32\pi a_0^3} \rbracket{2-\frac{r}{a_0}}^2 e^{-\frac{r}{a_0}} r^2 \sin\theta \rbracket{\alpha r^2 \cos^2 \theta + \beta r^2 \sin^2 \theta}}{r} \\
+		&= \ldots
+	\end{align*}
+	Repeat for $2p$, $3s$, $3p$, $3d$.
+	When $\beta = -\dfrac{\alpha}{2}$, shifting is null.
+	
+	\part \todo $\Delta\hat{H}_z = g_J \bohrmagneton \hat{\mathbf{J}}\cdot\mathbf{B}$
+	
+	For $\mathbf{B}\parallel\hat{\mathbf{z}}$, $\hat{\mathbf{J}}\cdot\mathbf{B} \to M_J B$
+	
+	For $\mathbf{B}\parallel\hat{\mathbf{x}}$, $\hat{\mathbf{J}}\cdot\mathbf{B} \to \hat{\mathbf{J}}_x \cdot B$ where $\hat{\mathbf{J}}_x = \dfrac{1}{2}\sbracket{\hat{\mathbf{J}}_+ + \hat{\mathbf{J}}_-}$
+	
+	Energy shift $\Delta E = \bra{n}\Delta\hat{H}_z\ket{n}$
+	
+	So $\Delta E=0$ for $\mathbf{B}\parallel\hat{\mathbf{x}}$?
+\end{parts}

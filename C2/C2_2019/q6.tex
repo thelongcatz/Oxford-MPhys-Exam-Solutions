@@ -34,7 +34,7 @@ Classic GHZ question.
 		\ket{\mathrm{L}} &= \frac{\ket{\mathrm{H}}-i\ket{\mathrm{V}}}{\sqrt{2}}
 	\end{align*}
 	
-	Note that in optics the correspondence are $\{\ket{\mathrm{H}^\prime},\,\ket{\mathrm{V}^\prime}\}\equiv$ linear polarisation \SI{45}{\degree} to the $\{\ket{\mathrm{H}},\,\ket{\mathrm{V}}\}$ axes, and $\{\ket{\mathrm{R}},\,\ket{\mathrm{L}}\}\equiv$ right/left-handed polarisation.
+	Note that in optics the correspondence are $\cbracket{\ket{\mathrm{H}^\prime},\,\ket{\mathrm{V}^\prime}}\equiv$ linear polarisation \SI{45}{\degree} to the $\cbracket{\ket{\mathrm{H}},\,\ket{\mathrm{V}}}$ axes, and $\cbracket{\ket{\mathrm{R}},\,\ket{\mathrm{L}}}\equiv$ right/left-handed polarisation.
 	
 	To measure these polarisation, consider the following setup:
 	\begin{figure}[H]
@@ -42,11 +42,11 @@ Classic GHZ question.
 		\includegraphics[width=.85\linewidth]{q6-polarisation}
 	\end{figure}
 	
-	\part $\ket{\textnormal{GHZ}} = \diagfrac{1}{\sqrt{2}}\left[\ket{\textnormal{HHH}}-i\ket{\textnormal{VVV}}\right]$
+	\part $\ket{\textnormal{GHZ}} = \diagfrac{1}{\sqrt{2}}\sbracket{\ket{\textnormal{HHH}}-i\ket{\textnormal{VVV}}}$
 	
 	Noting orthogonality between the basis, we have:
 	\begin{gather*}
-		P(\textnormal{HHH}) = P(\textnormal{VVV}) = \left|\frac{1}{\sqrt{2}}\right|^2 = \left|-\frac{i}{\sqrt{2}}\right|^2 = \frac{1}{2} \\
+		P(\textnormal{HHH}) = P(\textnormal{VVV}) = \abs{\frac{1}{\sqrt{2}}}^2 = \abs{-\frac{i}{\sqrt{2}}}^2 = \frac{1}{2} \\
 		P(\textnormal{HHV}) = P(\textnormal{HVH}) = \ldots = 0
 	\end{gather*}
 	
@@ -63,8 +63,8 @@ Classic GHZ question.
 	\end{gather*}
 	
 	\begin{align*}
-		\textnormal{So } \ket{\textnormal{GHZ}} &= \frac{1}{\sqrt{2}} \left[\left(\frac{\ket{\mathrm{H}^\prime} + \ket{\mathrm{V}^\prime}}{\sqrt{2}}\right)^{\otimes 2} \left(\frac{\ket{\mathrm{R}} + \ket{\mathrm{L}}}{\sqrt{2}}\right)
-		-i \left(\frac{\ket{\mathrm{H}^\prime} - \ket{\mathrm{V}^\prime}}{\sqrt{2}}\right)^{\otimes 2} \left(-i\frac{\ket{\mathrm{R}} - \ket{\mathrm{L}}}{\sqrt{2}}\right)\right] \\
+		\textnormal{So } \ket{\textnormal{GHZ}} &= \frac{1}{\sqrt{2}} \sbracket{\rbracket{\frac{\ket{\mathrm{H}^\prime} + \ket{\mathrm{V}^\prime}}{\sqrt{2}}}^{\otimes 2} \rbracket{\frac{\ket{\mathrm{R}} + \ket{\mathrm{L}}}{\sqrt{2}}}
+		-i \rbracket{\frac{\ket{\mathrm{H}^\prime} - \ket{\mathrm{V}^\prime}}{\sqrt{2}}}^{\otimes 2} \rbracket{-i\frac{\ket{\mathrm{R}} - \ket{\mathrm{L}}}{\sqrt{2}}}} \\
 		&= \frac{1}{4} \Bigl[\bigl(\ket{\mathrm{H}^\prime}+\ket{\mathrm{V}^\prime}\bigr) \bigl(\ket{\mathrm{H}^\prime}+\ket{\mathrm{V}^\prime}\bigr) \bigl(\ket{\mathrm{R}}+\ket{\mathrm{L}}\bigr) \\
 		&\phantom{=\frac{1}{4}} - \bigl(\ket{\mathrm{H}^\prime}-\ket{\mathrm{V}^\prime}\bigr) \bigl(\ket{\mathrm{H}^\prime}-\ket{\mathrm{V}^\prime}\bigr) \bigl(\ket{\mathrm{R}}-\ket{\mathrm{L}}\bigr)\Bigr] \\
 	\end{align*}
@@ -95,8 +95,8 @@ Classic GHZ question.
 	
 	Now let's rewrite the state in YYY basis:
 	\begin{equation*}
-		\ket{\textnormal{GHZ}} = \frac{1}{4} \Bigl[\left(\ket{\mathrm{R}}+\ket{\mathrm{L}}\right)\left(\ket{\mathrm{R}}+\ket{\mathrm{L}}\right)\left(\ket{\mathrm{R}}+\ket{\mathrm{L}}\right)
-		-i\left(\ket{\mathrm{R}}-\ket{\mathrm{L}}\right)\left(\ket{\mathrm{R}}-\ket{\mathrm{L}}\right)\left(\ket{\mathrm{R}}-\ket{\mathrm{L}}\right)\left(-i\right)^3\Bigr]
+		\ket{\textnormal{GHZ}} = \frac{1}{4} \Bigl[\rbracket{\ket{\mathrm{R}}+\ket{\mathrm{L}}}\rbracket{\ket{\mathrm{R}}+\ket{\mathrm{L}}}\rbracket{\ket{\mathrm{R}}+\ket{\mathrm{L}}}
+		-i\rbracket{\ket{\mathrm{R}}-\ket{\mathrm{L}}}\rbracket{\ket{\mathrm{R}}-\ket{\mathrm{L}}}\rbracket{\ket{\mathrm{R}}-\ket{\mathrm{L}}}\rbracket{-i}^3\Bigr]
 	\end{equation*}
 	
 	Noting the opposite parity requirement, we have:
@@ -117,7 +117,7 @@ Classic GHZ question.
 		\ket{\mathrm{V}^\prime \mathrm{H}^\prime \mathrm{R}} &\rightarrow \ket{\mathrm{V}^\prime \mathrm{H}^\prime \mathrm{L}}
 	\end{align*}
 	
-	For YYY, we have $\ket{\textnormal{GHZ}_\textnormal{flip}} = \frac{1}{2}\left[\ket{\textnormal{RRL}} + \ket{\textnormal{LLL}} + \ket{\textnormal{LRR}} + \ket{\textnormal{RLR}}\right]$, each having probability of $\diagfrac{1}{4}\times\SI{8}{\percent}=\SI{2}{\percent}$.
+	For YYY, we have $\ket{\textnormal{GHZ}_\textnormal{flip}} = \frac{1}{2}\sbracket{\ket{\textnormal{RRL}} + \ket{\textnormal{LLL}} + \ket{\textnormal{LRR}} + \ket{\textnormal{RLR}}}$, each having probability of $\diagfrac{1}{4}\times\SI{8}{\percent}=\SI{2}{\percent}$.
 	
 	The original states would then each have probability $\diagfrac{1}{4}\times\SI{92}{\percent}=\SI{23}{\percent}$.
 	

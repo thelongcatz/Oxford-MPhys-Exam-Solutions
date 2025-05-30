@@ -1,0 +1,152 @@
+\draft
+\begin{parts}
+	\part First 2 excited configs of helium:
+	
+	\begin{tikzpicture}[auto]
+		\matrix (helium) [matrix of math nodes,row sep=.5cm,column sep=8mm] {
+			\textnormal{Config} & 1s2p & & & & & 1s2s \\
+			\textnormal{Terms} & {}^1 P & & & {}^3 P & {}^1 S & {}^3 S \\
+			\textnormal{Levels} & {}^1 P_1 & {}^3 P_0 & {}^3 P_1 & {}^3 P_2 & {}^1 S_0 & {}^3 S_1 \\
+		};
+		\draw (helium-1-2)--(helium-2-2);
+		\draw (helium-1-2)--(helium-2-5);
+		\draw (helium-1-7)--(helium-2-6);
+		\draw (helium-1-7)--(helium-2-7);
+		\draw (helium-2-2)--(helium-3-2);
+		\draw (helium-2-5)--(helium-3-3);
+		\draw (helium-2-5)--(helium-3-4);
+		\draw (helium-2-5)--(helium-3-5);
+		\draw (helium-2-6)--(helium-3-6);
+		\draw (helium-2-7)--(helium-3-7);
+	\end{tikzpicture}
+	\image{.8\linewidth}{q2-config}
+	
+	So allowed transitions:
+	
+	\begin{tikzpicture}[auto]
+		\matrix (sp) [matrix of math nodes,row sep=.4cm,column sep=16mm,row 1/.style={nodes={text=red}}] {
+			1s^2 \;\; {}^1 S_0 & 1s2p \;\; {}^1 P_1 \\
+			1s2s \;\; {}^1 S_0 & 1s2p \;\; {}^1 P_1 \\
+			1s2s \;\; {}^3 S_1 & 1s2p \;\; {}^3 P_2 \\
+			& 1s2p \;\; {}^3 P_1 \\
+			& 1s2p \;\; {}^3 P_0 \\
+		};
+		\draw [red] (sp-1-1)--(sp-1-2);
+		\draw (sp-2-1)--(sp-2-2);
+		\draw (sp-3-1)--(sp-3-2);
+		\draw (sp-3-1)--(sp-4-2);
+		\draw (sp-3-1)--(sp-5-2);
+	\end{tikzpicture}
+	
+	Note that the {\color{red}$1s^2$--$1s2p$} transition is likely to be observed in absorption as most, if not all, helium atoms reside at ground state under room temperature.
+	
+	As helium has significant inter-$\electron$ interaction, it is likely to observe intercombination lines, e.g. $1s2s \;\; {}^1 S_0$--$1s^2 \;\; {}^1 S_0$ which violates $\Delta l=\pm 1$.
+	
+	\part $LS$ coupling assumes that $\Delta\hat{H}_\textnormal{RE} \ll \hat{H}_\textnormal{CF}$, where $\Delta\hat{H}_\textnormal{RE}$ is residual electrostatic interaction and $\hat{H}_\textnormal{CF}$ the central field Hamiltonian.
+	
+	For weak field, $\Delta\hat{H}_z = -\bm{\mu}_s \cdot \mathbf{B}$ where $\bm{\mu}$ is atomic magnetic moment must be much smaller than $\Delta\hat{H}_\textnormal{RE}$.
+	
+	Atomic magnetic moment $\bm{\mu} = -\bohrmagneton\mathbf{L} - g_s \bohrmagneton \mathbf{S}$ where $\mathbf{L}=\sum_i \mathbf{l}_i$ is total orbital angular momentum, $\mathbf{S}=\sum_i \mathbf{s}_i$ is total spin ($\electron$).
+	\begin{align*}
+		\Rightarrow \Delta\hat{H}_z &= +\bohrmagneton \frac{L^2 + \mathbf{L}\cdot\mathbf{S} + g_s S^2 + g_s \mathbf{S}\cdot\mathbf{L}}{J^2} \mathbf{J}\cdot\mathbf{B} \\
+		\Rightarrow \Delta E_z &= \bohrmagneton M_J B \frac{
+			\splitfrac{L(L+1)+\frac{1}{2}\sbracket{J(J+1)-L(L+1)-S(S+1)}}
+			{+ g_s S(S+1) + \frac{g_s}{2}\sbracket{J(J+1)-L(L+1)-S(S+1)}}
+		}{J(J+1)}
+	\end{align*}
+	
+	Approximating $g_s \simeq 2$,
+	\begin{align*}
+		\Delta E_z &\simeq \bohrmagneton M_J B \frac{
+			\splitfrac{\cancel{2L(L+1)} + J(J+1) - L(L+1) - S(S+1)}
+			{+ \bcancel{2S(S+1)} + 2J(J+1) - \cancel{2L(L+1)} - \bcancel{2S(S+1)}}
+		}{2J(J+1)} \\
+		&= g_J \bohrmagneton M_J B
+	\end{align*}
+	where $g_J = \dfrac{3}{2} - \dfrac{L(L+1)-S(S+1)}{2J(J+1)}$.
+	
+	\part $(1s3s) \;\; {}^3 S_1$ $\to$ $(1s2p) \;\; {}^3 P_1$
+	\image{.4\linewidth}{q2-zeeman-transitions-1}
+	Upper level $g_J = \dfrac{3}{2} - \dfrac{0-1(2)}{2 \cdot 1(2)} = 2$
+	
+	Lower level $g_J = \dfrac{3}{2} - \dfrac{1(2)-1(2)}{2 \cdot 1(2)} = \dfrac{3}{2}$
+	
+	Since $g_J$ differs, we expect anomalous Zeeman splitting.
+	
+	$(1s3s) \;\; {}^1 S_0$ $\to$ $(1s2p) \;\; {}^1 P_1$
+	\image{.4\linewidth}{q2-zeeman-transitions-2}
+	Lower level $g_J = \dfrac{3}{2} - \dfrac{1(2)-0}{2 \cdot 1 \cdot 2} = 1$
+	
+	Since the energy gaps do not differ within each polarisation, we expect normal Zeeman splitting.
+	
+	\part For a total of 6 lines, we can have 4 $\sigma$'s from $(1s2p) \;\; {}^3 P_1$; 2 $\sigma$'s from $(1s2p) \;\; {}^1 P_1$.
+	
+	So the observer is observing parallel to the magnetic field.
+	
+	Collisional mean time:
+	\begin{equation*}
+		\frac{1}{\tau_e} = n\sigma v
+	\end{equation*}
+	where $n$ is number density of atoms, $\sigma$ is collisional cross section, $v$ is speed of atoms.
+	
+	Ideal gas gives:
+	\begin{align*}
+		pV &= N\boltzmann T \\
+		\Rightarrow n &= \frac{N}{V} = \frac{p}{\boltzmann T}
+	\end{align*}
+	
+	Also equipartition theorem gives:
+	\begin{align*}
+		\frac{1}{2}mv^2 &= \frac{3}{2}\boltzmann T \\
+		\Rightarrow v &= \sqrt{\frac{6\boltzmann T}{m}}
+	\end{align*}
+	
+	\image{.6\linewidth}{q2-collision-xsection}
+	Collisional cross section:
+	\begin{equation*}
+		\sigma = \pi \rbracket{\frac{d}{2}}^2 = \frac{\pi d^2}{4}
+	\end{equation*}
+	
+	So:
+	\begin{align*}
+		\frac{1}{\tau_c} &= \frac{p}{\boltzmann T} \cdot \sqrt{\frac{6\boltzmann T}{m}} \cdot \frac{\pi d^2}{4} \\
+		&= \SI{2009}{\per\second} \\
+		\Rightarrow \Delta\omega &\sim \frac{1}{\tau_c} \\
+		\Rightarrow \Delta E &\sim \frac{\hbar}{\tau_c} = \SI{2.12e-31}{\joule}
+	\end{align*}
+	
+	Zeeman $\Delta E_z \sim \bohrmagneton B$ so equating both gives:
+	\begin{align*}
+		B &\sim \frac{\Delta E}{\bohrmagneton} \\
+		&= \SI{2.28e-8}{\tesla}
+	\end{align*}
+	
+	\part Positron and electron are distinguishable and thus Pauli exclusion principle does not apply.
+	
+	Total possible spins:
+	\begin{align*}
+		S &= \abs{\frac{1}{2}-\frac{1}{2}}, \rbracket{\frac{1}{2}+\frac{1}{2}} \\
+		&= 0, 1
+	\end{align*}
+	
+	Zeeman Hamiltonian:
+	\begin{align*}
+		\Delta\hat{H}_z &= -\bm{\mu}\cdot\mathbf{B} \\
+		&= -g_s \bohrmagneton \rbracket{\mathbf{S}_+ \cdot \mathbf{B} - \mathbf{S}_- \cdot \mathbf{B}}
+	\end{align*}
+	with $\bm{\mu}=+g_s \bohrmagneton \mathbf{S}_+ - g_s \bohrmagneton \mathbf{S}_-$.
+	
+	By Wigner-Eckart,
+	\begin{equation*}
+		 \mathbf{S}_+ \to \frac{\mathbf{S}_+ \cdot \mathbf{S}}{S^2} \mathbf{S}
+		 \qquad \mathbf{S}_- \to \frac{\mathbf{S}_- \cdot \mathbf{S}}{S^2} \mathbf{S}
+	\end{equation*}
+	
+	\begin{align*}
+		\Rightarrow \Delta\hat{H}_z &= -g_s \bohrmagneton \sbracket{\frac{S_+^2 + \mathbf{S}_+ \cdot \mathbf{S}_- - S_-^2 - \mathbf{S}_- \cdot \mathbf{S}_+}{S^2}} \\
+		&= 0
+	\end{align*}
+	since $S_+^2 = S_-^2 = \dfrac{1}{2} \rbracket{\dfrac{3}{2}}$.
+	
+	So no matter which term the ``atom'' is in, there will be no Zeeman splitting.
+\end{parts}

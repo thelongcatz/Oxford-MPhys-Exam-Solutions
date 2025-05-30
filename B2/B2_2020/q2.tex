@@ -1,0 +1,100 @@
+\draft
+\begin{parts}
+	\part 4-velocity:
+	\begin{align*}
+		\mathsf{U}^\mu &= \deri{\mathsf{X}^\mu}{\tau} \\
+		&= \gamma \rbracket{c, \mathbf{v}}
+	\end{align*}
+	where $\mathsf{X}^\mu = \rbracket{ct, \mathbf{x}}$ is 4-position, $\tau$ is proper time.
+	
+	4-force:
+	\begin{align*}
+		\mathsf{F}^\mu &= \deri{\mathsf{P}^\mu}{\tau} \\
+		&= \gamma \rbracket{\dot{\gamma}mc + \gamma\dot{m}c, \dot{\gamma}m\mathbf{v} + \gamma\dot{m}\mathbf{v} + \gamma m\dot{\mathbf{v}}}
+	\end{align*}
+	where $\mathsf{P}^\mu$ is 4-momentum.
+	
+	For pure force, $\dot{m}=0$:
+	\begin{equation*}
+		\Rightarrow \mathsf{F}^\mu = \gamma \rbracket{\dot{\gamma}mc, \dot{\gamma}m\mathbf{v} + \gamma m\dot{\mathbf{v}}}
+	\end{equation*}
+	
+	But note that:
+	\begin{align*}
+		\deri{\gamma}{t} &= -\frac{1}{2} \rbracket{1-\frac{v^2}{c^2}}^{-1/2} \cdot \rbracket{-\frac{2v}{c^2}} \cdot \mathbf{a} \\
+		&= \gamma^3 \frac{\mathbf{v}\cdot\mathbf{a}}{c^2}
+	\end{align*}
+	where $\mathbf{a} = \dot{\mathbf{v}}$.
+	
+	Hence:
+	\begin{equation*}
+		\mathsf{F}^\mu = \rbracket{\underbracket{\gamma^4 mc \frac{\mathbf{v}\cdot\mathbf{a}}{c^2}}_{\gamma\deri{E}{t}}, \underbracket{\gamma^4 m\mathbf{v} \frac{\mathbf{v}\cdot\mathbf{a}}{c^2} + \gamma m\mathbf{a}}_{\gamma\mathbf{f}}}
+	\end{equation*}
+	
+	Try:
+	\begin{align*}
+		\mathbf{f}\cdot\mathbf{v} &= \gamma^3 mv^2 \frac{\mathbf{v}\cdot\mathbf{a}}{c^2} + m\mathbf{v}\cdot\mathbf{a} \\
+		&= m\frac{\mathbf{v}\cdot\mathbf{a}}{c^2} \sbracket{\gamma^3 v^2 + c^2} \\
+		&= m\frac{\mathbf{v}\cdot\mathbf{a}}{c^2} \sbracket{\frac{v^2}{\rbracket{1-\frac{v^2}{c^2}}^{3/2}} + c^2} \\
+		\mathsf{U}_\mu \mathsf{F}^\mu &= -\gamma^2 \deri{E}{t} + \gamma^2 \mathbf{f}\cdot\mathbf{u}
+	\end{align*}
+	
+	In rest frame,
+	\begin{align*}
+		E &= mc^2 \\
+		\Rightarrow \deri{E}{t} &= \dot{m}c^2 \\
+		\Rightarrow \mathsf{U}_\mu \mathsf{F}^\mu &= -\dot{m}c^2
+	\end{align*}
+	
+	For pure force,
+	\begin{align*}
+		\dot{m} = 0 \\
+		\Rightarrow \mathsf{U}_\mu \mathsf{F}^\mu &= 0 \\
+		\Rightarrow \deri{E}{t} &= \mathbf{f}\cdot\mathbf{u}
+	\end{align*}
+	
+	\part In rest frame,
+	\begin{align*}
+		\inftsml{v} &= a_0 \inftsml{\tau} \\
+		\Rightarrow \deri{\beta}{\tau} &= \frac{a_0}{c}
+	\end{align*}
+	
+	Since rapidity is defined by:
+	\begin{align*}
+		\tanh\rbracket{\rho} &= \beta \\
+		\Rightarrow \sech^2\rbracket{\rho} \inftsml{\rho} &= \inftsml{\beta} \\
+		\deri{\rho}{\beta} &= \cosh^2\rbracket{\rho} \\
+		\deri{\rho}{\tau} &= \frac{a_0 \cosh^2\rbracket{\rho}}{c} \\
+		\rho \simeq \frac{a_0 \tau}{c} \mtext{$\rho=0$ in rest frame} \\
+		\beta &= \tanh\rbracket{\frac{a_0 \tau}{c}}
+	\end{align*}
+	
+	Also we know $\inftsml{t} = \gamma \inftsml{\tau}$:
+	\begin{align*}
+		\Rightarrow t &= \indefint{\cosh\rbracket{\frac{a_0 \tau}{c}}}{\tau} \\
+		&= \frac{c}{a_0} \sinh\rbracket{\frac{a_0 \tau}{c}}
+	\end{align*}
+	
+	Furthermore,
+	\begin{align*}
+		\sinh\rho &= \beta\gamma \\
+		&= \frac{v}{c} \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+	\end{align*}
+	
+	Hence:
+	\begin{align*}
+		t &= \frac{v}{a_0} \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \\
+		a_0^2 t^2 \rbracket{1-\frac{v^2}{c^2}} &= v^2 \\
+		\rbracket{1+\frac{a_0^2 t^2}{c^2}} v^2 &= a_0^2 t^2 \\
+		v &= \frac{a_0 t}{\sqrt{1+\frac{a_0^2 t^2}{c^2}}}
+	\end{align*}
+	
+	We also know:
+	\begin{align*}
+		\frac{a_0 t}{c} &= \sinh\theta \\
+		\Rightarrow a_0 \inftsml{t} &= \cosh\theta\inftsml{\theta} \\[1em]
+		\Rightarrow x &= \indefint{\frac{c \sinh\theta}{\bcancel{\sqrt{1+\sinh^2\theta}}} \frac{\bcancel{\cosh\theta}}{a_0}}{\theta} \\
+		&= \frac{c}{a_0} \cosh\theta \\
+		\Rightarrow x^2 &= \frac{c^2}{a_0^2} \rbracket{1+\frac{a_0^2 t^2}{c^2}}
+	\end{align*}
+\end{parts}

@@ -1,0 +1,88 @@
+\draft
+\begin{parts}
+	\part By considering a quantity called central field $S(r)$, the Hamiltonian may be written as
+	\begin{equation*}
+		\hat{H}=\hat{H}_\textnormal{CF}+\Delta\hat{H}_\textnormal{RE}
+	\end{equation*}
+	where $\hat{H}_\textnormal{CF}=\sum_i \sbracket{\frac{\hat{\mathbf{p}}_i^2}{2m} - \frac{Ze^2}{4\pi\permittivity\hat{r}_i} + S(r_i)}$ is central field, $\Delta\hat{H}_\textnormal{RE}=\sum_i \sbracket{-S(r_i) + \sum_{j>i}\frac{e^2}{4\pi\permittivity\hat{r}_{ij}}}$ is residual electrostatic.
+	
+	This approximation is called central field approximation where a suitable choice of $S(r)$ minimises $\Delta\hat{H}_\textnormal{RE}$.
+	The Hamiltonian is then separable into different equations for $\electron$, giving electronic configuration with quantum numbers:
+	$n$ the principal quantum number, and $l$ the orbital angular momentum.
+	
+	For $\Delta\hat{H}_\textnormal{RE}$, it couples $\mathbf{l}$'s of different $\electron$, however since it is an internal interaction, the total orbital angular momentum $\mathbf{L}$ is conserved, making $L$ a good quantum number.
+	Likewise, sinee $\Delta\hat{H}_\textnormal{RE}$ does not act on total $\electron$ spin $\mathbf{S}$, $S$ is also a good quantum number.
+	The labelling of eigenstates as $\ket{LM_L SM_S}$ or $\ket{LSJM_J}$ is called $LS$ coupling.
+	
+	\part At small distances, the potential is simply $-\dfrac{Ze^2}{4\pi\permittivity r}$ as there is no screening effect.
+	
+	At large distances, however, the potential is $-\dfrac{e^2}{4\pi\permittivity r}$ as the $\electron$'s screen the nuclear charge, making an effective charge of $+e$.
+	\image{.8\linewidth}{q1-screening-potential}
+	
+	\newpage
+	\part $\electron$ density $n(p) = \dfrac{8\pi}{3h^3}p^3$ %$\Longrightarrow$ Charge density $\rho=-en$
+	
+%	$\electron$ energy: $\dfrac{p^2}{2m} = \dfrac{Ze^2}{4\pi\permittivity r}$
+%	\begin{equation*}
+%		\Rightarrow \rho = -e\cdot\frac{8\pi}{3h^3}\cdot\rbracket{\frac{2mZe^2}{4\pi\permittivity r}}^{3/2}
+%	\end{equation*}
+%	
+%	Maxwell's equations give:
+%	\begin{align*}
+%		\bm{\nabla}\cdot\mathbf{E} &= \frac{\rho}{\permittivity} \\
+%		\Rightarrow -\nabla^2 V &= \frac{\rho}{\permittivity} \\
+%		\frac{1}{r^2} \pdiff{r}\rbracket{r^2 \pderi{V}{r}} &= \frac{8\pi e^2}{3\permittivity h^3} \rbracket{\frac{2mZ}{4\pi\permittivity r}}^{3/2} \\
+%		r^2 \pderi{V}{r} &= \frac{2}{3} r^{3/2}  \frac{8\pi e^2}{3\permittivity h^3} \rbracket{\frac{2mZ}{4\pi\permittivity}}^{3/2} \\
+%		V &= \frac{4}{3} r^{1/2} \frac{8\pi e^2}{3\permittivity h^3} \rbracket{\frac{Zm}{2\pi\permittivity}}^{3/2} \\
+%		&= \frac{eZ}{4\pi\permittivity r} \cdot \underbracket{\frac{4}{3} r^{3/2} \frac{8\pi e^2}{3\permittivity h^3} \rbracket{\frac{Z^{1/2}m^{3/2}}{\sqrt{2}\pi^{3/2}\permittivity^{3/2}}}}_{\chi(r)}
+%	\end{align*}
+%	
+%	Next we have:
+%	\begin{align*}
+%		\deri[2]{\chi}{r} &= \diff{r}\sbracket{2r^{1/2} \frac{8\pi e^2}{3\permittivity h^3}\cdot\frac{Z^{1/2}m^{3/2}}{\sqrt{2}\pi^{3/2}\permittivity^{3/2}}} \\
+%		\frac{\chi^{3/2}}{x^{1/2}} &= r^{-1/2} \frac{8\pi e^2}{3\permittivity h^3}\cdot\frac{Z^{1/2}m^{3/2}}{\sqrt{2}\pi^{3/2}\permittivity^{3/2}} \\
+%		\xRightarrow{\div\chi} \frac{\chi^{1/2}}{x^{1/2}} &= \frac{3}{4} r^{-2} \\
+%		\Rightarrow x &= \frac{r}{b} = \frac{16}{9} r^2 \chi \\
+%		\Rightarrow b &= \frac{9}{16r\chi} \\
+%		&= \frac{9}{16} \cdot \frac{3}{4} r^{-5/2} \cdot \frac{3\permittivity h^3}{8\pi e^2} \rbracket{\frac{\sqrt{2}\pi^{3/2}\permittivity^{3/2}}{Z^{1/2}m^{3/2}}}
+%	\end{align*}
+	
+%	Or try:
+	\begin{align*}
+		\frac{p^2}{2m} &= eV \\
+		\Rightarrow \rho &= -\frac{8\pi}{3h^3} \rbracket{2meV}^{3/2}
+	\end{align*}
+	
+	Maxwell: $\nabla^2 V = \dfrac{8\pi}{3\permittivity h^3}\rbracket{2meV}^{3/2}$
+	
+	Ansatz $V(r) = \dfrac{\chi(r)Ze}{4\pi\permittivity r}$:
+	\begin{align*}
+		\Rightarrow \frac{1}{r^2} \pdiff{r}\rbracket{r^2 \pderi{V}{r}} &= \frac{1}{r^2} \pdiff{r}\rbracket{\dot{\chi}\frac{Zer}{4\pi\permittivity} - \chi\frac{Ze}{4\pi\permittivity}} \\
+		&= \ddot{\chi}\frac{Ze}{4\pi\permittivity r} + \cancel{\dot{\chi}\frac{Ze}{4\pi\permittivity r^2}} - \cancel{\dot{\chi}\frac{Ze}{4\pi\permittivity r^2}} \\
+		&= \ddot{\chi}\frac{Ze}{4\pi\permittivity r}
+	\end{align*}
+	
+	RHS reads:
+	\begin{equation*}
+		\frac{8\pi e}{3\permittivity h^3} \rbracket{2me \frac{\chi Ze}{4\pi\permittivity r}}^{3/2} = \chi^{3/2} \cdot \frac{16\sqrt{2}\pi e^{5/2} Z^{3/2}}{23\permittivity^{5/2}\pi^{3/2}h^3 r^{3/2}}
+	\end{equation*}
+	
+	So:
+	\begin{align*}
+		\Rightarrow \ddot{\chi} &= \chi^{3/2} \frac{2\sqrt{2}e^{5/2}Z^{1/2}}{\frac{3}{4}\pi^{-1/2}\permittivity^{3/2}h^3 r^{1/2}} \\
+		&= \chi^{3/2} \frac{8\sqrt{2}\pi^{1/2}e^{5/2}Z^{1/2}}{3\permittivity^{3/2}h^3 r^{1/2}} \\
+		&= \chi^{3/2} \rbracket{\frac{b}{r}}^{1/2}
+	\end{align*}
+	where $b=\dfrac{128\pi e^5 Z}{9\permittivity^3 h^6}$.
+	
+	\part We have assumed that the $\electron$ behaves like a Fermi gas, but the shell structure means that the distribution of $\electron$ is not uniform, so this model would only work for massive atoms where the distribution is approximately uniform.
+	ERRATA: assumed uniform $\rho$ so need large number of $\electron$.
+	
+	\part Lower angular momentum states are favoured more as they reside deeper in the energy level for multiple reasons:
+	lower angular momentum tends to penetrate the core $\electron$ more often, thereby experiencing lower screening and is more tightly bound to nucleus.
+	Furthermore, the existence of angular momentum barrier as $\dfrac{L^2}{2mr^2}$ means that lower angular momentum would contribute to having lower energy for similar penetration.
+	
+	ADDENDUM:
+	
+	$4s$ before $3d$: minimise ang mtm to minimise centrifugal barrier, lower $l$ lower potential.
+\end{parts}

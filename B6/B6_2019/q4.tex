@@ -1,0 +1,128 @@
+\draft
+\begin{parts}
+	\part Paramagnet: material where $\chi > 0$ and $M=0$ when $B=0$.
+	
+	Diamagnet: material where $\chi < 0$ uad $M=0$ when $B=0$.
+	
+	Ferromagnet: usually $\chi > 0$, $M \neq 0$ even when $B=0$.
+	
+	$\chi$ is defined as $\lim_{H \to 0} \pderi{M}{H}$ where $M$ is magnetisation per unit volume, $H$ is H field.
+	
+	\part For helium, its electronic state has $L=S=J=0$ due to the filled shell, therefore Curie paramagnetism is impossible, rendering Larmor diamagnetism the significant interaction.
+	
+	Larmor diamagnetic Hamiltonian:
+	\begin{align*}
+		\hat{H} &= \frac{e^2}{2\masselectron} \frac{1}{4} \abs{\mathbf{B}\times\mathbf{r}}^2 \mtext{for an $\electron$} \\
+		\Rightarrow \langle E \rangle &= \frac{e^2}{2\masselectron} \cdot \frac{1}{4} B^2 \langle x^2 + y^2 \rangle \mtext{assuming $\mathbf{B}\parallel\hat{\mathbf{z}}$} \\
+		&= \frac{e^2}{8\masselectron} B^2 \cdot \frac{2}{3} \langle r^2 \rangle \mtext{assuming isotropy} \\
+		&= \frac{e^2 B^2 \langle r^2 \rangle}{12\masselectron}
+	\end{align*}
+	
+	Next we have:
+	\begin{align*}
+		\inftsml{U} &= T\inftsml{S} - m\inftsml{B} \\
+		\Rightarrow m &= -\pderi{U}{B} \\
+		&= -\frac{e^2 B \langle r^2 \rangle}{6\masselectron}
+	\end{align*}
+	
+	Magnetisation:
+	\begin{equation*}
+		M = \frac{Nm}{V} = -\frac{ne^2 B \langle r^2 \rangle}{6\masselectron}
+	\end{equation*}
+	where $n=2\rho$ is electron density and $\rho$ is helium density.
+	
+	Hence susceptibility:
+	\begin{align*}
+		\chi &= \lim_{H \to 0} \pderi{M}{H} \\
+		&= \permeability \pderi{M}{B} \\
+		&= -\frac{ne^2 \permeability}{6\masselectron} \langle r^2 \rangle \\
+		&= -\frac{\rho e^2 \permeability}{3\masselectron} \langle r^2 \rangle
+	\end{align*}
+	
+	\part For \element{He}{3} nucleus, paramagnetic Hamiltonian:
+	\begin{equation*}
+		\hat{H} = -\mu_{\textnormal{\element{He}{3}}} \hat{\mathbf{s}} \cdot \mathbf{B}
+	\end{equation*}
+	
+	Single particle partition function:
+	\begin{align*}
+		Z &= e^{-\beta\mu_{\textnormal{\element{He}{3}}} B \cdot \frac{1}{2}} + e^{-\beta\mu_{\textnormal{\element{He}{3}}} B \cdot \rbracket{-\frac{1}{2}}} \\
+		&= 2 \cosh\rbracket{\frac{\beta\mu_{\textnormal{\element{He}{3}}} B}{2}}
+	\end{align*}
+	
+	Furthermore:
+	\begin{align*}
+		\inftsml{U} &= T\inftsml{S} - m\inftsml{B} \\
+		\inftsml{F} &= -S\inftsml{T} - m\inftsml{B} \\
+		\Rightarrow F &= -\boltzmann T \ln Z \\
+		\Rightarrow m &= -\pderi{F}{B} \\
+		&= \boltzmann T \pderi{\ln Z}{B} \\
+		&= \boltzmann T \cdot \frac{1}{Z} \cdot \pderi{Z}{B} \\
+		&= \frac{\bcancel{\boltzmann T}}{\cancel{2}\cosh (\ldots)} \cdot \cancel{2} \sinh (\ldots) \cdot \frac{\bcancel{\beta} \mu_{\textnormal{\element{He}{3}}}}{2} \\
+		&= \frac{\mu_{\textnormal{\element{He}{3}}}}{2} \tanh\rbracket{\frac{\beta\mu_{\textnormal{\element{He}{3}}} B}{2}}
+	\end{align*}
+	
+	Magnetisation:
+	\begin{align*}
+		M &= \frac{mN}{V} \\
+		&= \frac{n \mu_{\textnormal{\element{He}{3}}}}{2} \tanh\rbracket{\frac{\beta\mu_{\textnormal{\element{He}{3}}} B}{2}}
+	\end{align*}
+	where $n$ is the helium nucleus density.
+	
+	Susceptibility:
+	\begin{align*}
+		\chi &= \lim_{H \to 0} \pderi{M}{H} \\
+		&= \permeability \lim_{H \to 0} \pderi{M}{B} \\
+		&= \permeability \pdiff{B} \sbracket{\frac{n\mu_{\textnormal{\element{He}{3}}}}{2} \cdot \frac{\beta\mu_{\textnormal{\element{He}{3}}} B}{2}} \\
+		&= \frac{n\permeability \mu_{\textnormal{\element{He}{3}}}^2}{4\boltzmann T}
+	\end{align*}
+	
+	\part For \element{He}{3}, assuming negligible hyperfine interaction, total susceptibility:
+	\begin{equation*}
+		\chi_\textnormal{tot} = \frac{n\permeability \mu_{\textnormal{\element{He}{3}}}}{4\boltzmann T} - \frac{ne^2 \permeability}{3\masselectron} \langle r^2 \rangle
+	\end{equation*}
+	rewriting $\rho \to n$.
+	
+	At critical temperature, $\chi_\textnormal{tot} = 0$:
+	\begin{align*}
+		\Rightarrow \boltzmann T &= \frac{3\masselectron \bcancel{n \permeability} \mu_{\textnormal{\element{He}{3}}}^2}{\bcancel{n}e^2 \bcancel{\permeability} \langle r^2 \rangle} \\
+		T &= \frac{3\masselectron \mu_{\textnormal{\element{He}{3}}}^2}{4\boltzmann e^2 \langle r^2 \rangle}
+	\end{align*}
+	For helium, $\langle r^2 \rangle \simeq a_0^2$:
+	\begin{equation*}
+		T \simeq \frac{3\masselectron \mu_{\textnormal{\element{He}{3}}}^2}{4\boltzmann e^2 a_0^2} = \SI{0.0797}{\kelvin}
+	\end{equation*}
+	
+	\part \image{.1\linewidth}{q4-lattice}
+	For a site $i$,
+	\begin{equation*}
+		\hat{H}_i = -\frac{1}{2} \cdot 2 \sbracket{J_c \langle s_j \rangle + 3J_e \langle s_j \rangle} \cdot s_i
+	\end{equation*}
+	where $J_c = (\SI{1}{\milli\kelvin})\boltzmann$, $J_e = (\SI{-0.5}{\milli\kelvin})\boltzmann$.
+	
+	Now compare with paramagnetic term $\hat{H}_i = -g_s \bohrmagneton \mathbf{B}\cdot\mathbf{s}_i$ for $\electron$.
+	
+	We get $g_s \bohrmagneton \langle B_\textnormal{eff} \rangle = (J_c + 3J_e) \langle s_j \rangle$.
+	
+	And:
+	\begin{align*}
+		Z &= 2\cosh\rbracket{\beta\bohrmagneton B_\textnormal{eff}} \\
+		\Rightarrow m &= \bohrmagneton \tanh\rbracket{\beta\bohrmagneton B_\textnormal{eff}} = -g_s \bohrmagneton \langle s_i \rangle \\
+		\Rightarrow \langle s_i \rangle &= -\frac{1}{2} \tanh\rbracket{\beta\bohrmagneton B_\textnormal{eff}} \\
+		&= -\frac{1}{2} \tanh\rbracket{\beta\bcancel{\bohrmagneton} \cdot \frac{(J_c + 3J_e)\langle s_j \rangle}{g_s \bcancel{\bohrmagneton}}} \\
+		&= -\frac{1}{2} \tanh\rbracket{\frac{1}{2} \beta (J_c + 3J_e) \langle s_j \rangle}
+	\end{align*}
+	
+	Now invoke equivalence of means,
+	\begin{equation*}
+		\langle s_i \rangle = \langle s_j \rangle = \langle s \rangle = -\frac{1}{2} \tanh\rbracket{\frac{1}{2} \beta (J_c + 3J_e) \langle s \rangle}
+	\end{equation*}
+	
+	\image{.15\linewidth}{q4-self-consistent-solution}
+	At critical temperature, $\pddiff{\langle s \rangle} \textnormal{RHS} = 1$:
+	\begin{align*}
+		\Rightarrow -\frac{1}{4} \sech\rbracket{\frac{1}{2} \beta (J_c + 3J_e) \langle s \rangle} \cdot \beta (J_c + 3J_e) &= 1 \\
+		\Rightarrow T &\simeq -\frac{J_c + 3J_e}{4\boltzmann} \mtext{assuming small $T$} \\
+		&= \SI{0.125}{\milli\kelvin}
+	\end{align*}
+\end{parts}

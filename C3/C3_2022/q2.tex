@@ -1,7 +1,7 @@
 Absorption spectrum of 3D and 2D materials.
 
 \begin{parts}
-	\part The series of peaks is due to excitons -- a bound state of e\textsuperscript{-}-h\textsuperscript{+} pair in a material.
+	\part The series of peaks is due to excitons -- a bound state of $\electron$-$\hole$ pair in a material.
 	In its ground state (i.e. stationary centre-of-mass), its energy level resembles that of a hydrogen atom, hence the $-1/n^2$ dependence of $\Delta E$ in the data.
 	
 	\part From the graph:
@@ -27,7 +27,7 @@ Absorption spectrum of 3D and 2D materials.
 	From TISE:
 	\begin{align*}
 		\frac{\hat{p}^2}{2m} \psi &= E \psi \\
-		\Rightarrow-\frac{\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} \psi &= E \psi \\
+		\Rightarrow-\frac{\hbar^2}{2m} \diff[2]{x} \psi &= E \psi \\
 		\Rightarrow \textnormal{Allowed energy } E_n &= \frac{\hbar^2 k_n^2}{2m} \textnormal{\hspace{1em}where $k_n = \dfrac{n\pi}{L}$} \\
 		&= \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 	\end{align*}
@@ -55,7 +55,7 @@ Absorption spectrum of 3D and 2D materials.
 	\end{align*}
 	$m_{lh}^*$ is chosen since $m_{lh}^* < m_{hh}^*$ so has lower binding energy. Then:
 	\begin{align*}
-		\Rightarrow L^2 &= \frac{\hbar^2 \pi^2}{2\mu \left(\SI{0.08}{\electronvolt}\right)} \\
+		\Rightarrow L^2 &= \frac{\hbar^2 \pi^2}{2\mu \rbracket{\SI{0.08}{\electronvolt}}} \\
 		&= \SI{7.76e-17}{\metre\squared} \\
 		\Rightarrow L &= \SI{8.81}{\nano\metre}
 	\end{align*}
@@ -63,19 +63,19 @@ Absorption spectrum of 3D and 2D materials.
 	\part Optical transitions require us to have:
 	\begin{align*}
 		\Delta E &= E_\textnormal{conduction} - E_\textnormal{valence} \\
-		&= \left(\frac{\hbar^2 k^2}{2m_e^*} + E_g\right) - \left(-\frac{\hbar^2 k^2}{2m_h^*}\right)
+		&= \rbracket{\frac{\hbar^2 k^2}{2m_e^*} + E_g} - \rbracket{-\frac{\hbar^2 k^2}{2m_h^*}}
 	\end{align*}
 	where $E_g$ is a general band gap, $m_h^*$ may be either $m_{hh}^*$ or $m_{lh}^*$.
 	
 	\begin{align*}
-		\Rightarrow \mathrm{d}E &= \frac{\hbar^2 k \, \mathrm{d}k}{\mu} \textnormal{\hspace{1em}where $\mu^{-1} = m_h^{*^{-1}} + m_e^{*^{-1}}$} \\
-		k \, \mathrm{d}k &= \frac{\mu}{\hbar^2} \, \mathrm{d}E
+		\Rightarrow \inftsml{E} &= \frac{\hbar^2 k \inftsml{k}}{\mu} \textnormal{\hspace{1em}where $\mu^{-1} = m_h^{*^{-1}} + m_e^{*^{-1}}$} \\
+		k \inftsml{k} &= \frac{\mu}{\hbar^2} \inftsml{E}
 	\end{align*}
 	
 	Thus in $k$ space, the joint density of transition states $N$ is:
 	\begin{gather*}
-		N = \int g(k) \, \mathrm{d}k \\
-		\Rightarrow g(k) \, \mathrm{d}k = 2\pi k \, \mathrm{d}k \textnormal{\hspace{1em}in 2D QW} \\
-		= \frac{2\pi\mu}{\hbar^2} \, \mathrm{d}E = g(E) \, \mathrm{d}E
+		N = \int g(k) \inftsml{k} \\
+		\Rightarrow g(k) \inftsml{k} = 2\pi k \inftsml{k} \textnormal{\hspace{1em}in 2D QW} \\
+		= \frac{2\pi\mu}{\hbar^2} \inftsml{E} = g(E) \inftsml{E}
 	\end{gather*}
 \end{parts}

@@ -1,0 +1,134 @@
+\draft
+
+\begin{parts}
+	\part For a worldline $\mathsf{X}^\mu = (ct, x, y, z)$, we have 4-velocity:
+	\begin{align*}
+		\mathsf{U}^\mu &= \deri{\mathsf{X}^\mu}{\tau} \\
+		&= \gamma \deri{\mathsf{X}^\mu}{t} \\
+		&= \gamma (c, \mathbf{v})
+	\end{align*}
+	where $\mathbf{v}$ is the 3-velocity.
+	
+	4-momentum is given as $\mathsf{P}^\mu = m\mathsf{U}^\mu$, so 4-force shall be:
+	\begin{align*}
+		\mathsf{F}^\mu &= \deri{\mathsf{P}^\mu}{\tau} \\
+		&= \gamma \deri{\mathsf{P}^\mu}{t} \\
+		&= \gamma (
+		\dot{\gamma}mc + \gamma\dot{m}c,
+		\dot{\gamma}m\mathbf{v} + \gamma m\mathbf{a} + \gamma\dot{m}\mathbf{v}
+		)
+	\end{align*}
+	where $\mathbf{a} = \diagderi{\mathbf{v}}{t}$ is the 3-acceleration.
+	
+	\todo For $\mathsf{D}^\mu \neq 0$ and $\mathsf{G}^\mu \neq 0$, if $\mathsf{D}_\mu \mathsf{G}^\mu = 0$, it implies that $\mathsf{D}_0 \mathsf{G}^0 = \mathsf{D}_i \mathsf{G}^i$.
+	
+	Choosing $\mathsf{D}^\mu = (1, \mathbf{0})$, we then have
+	\begin{gather*}
+		\mathsf{G}^0 = 0 \\
+		\Rightarrow \mathsf{G}_\mu \mathsf{G}^\mu \le 0
+	\end{gather*}
+	
+	But since $\mathsf{G}^\mu \neq 0$, $\mathsf{G}^\mu$ is space-like.
+	
+	\part Choose a frame where the particle is at rest, then $\mathsf{P}^\mu = (mc, \mathbf{0})$:
+	\begin{gather*}
+		\mathsf{P}_\mu \mathsf{P}^\mu = -m^2 c^2 = 0 \\
+		\Rightarrow m=0
+	\end{gather*}
+	so the particle must be massless.
+	One such example is the photon.
+	
+	\part Proper time is defined as the spacetime interval between 2 events at which the
+	space interval is null (i.e. the clock does not move).
+	
+	Pure force is a force such that the mass of a body remains constant, ie. $\dot{m}=0$.
+	
+	If $\mathsf{F}^\mu$ is pure then:
+	\begin{gather*}
+		\mathsf{F}^\mu = \gamma (
+		\dot{\gamma}mc,
+		\dot{\gamma}m\mathbf{v} + \gamma m \mathbf{a}
+		) \\
+		\Rightarrow \mathsf{U}_\mu \mathsf{F}^\mu = -\dot{\gamma}mc^2 \gamma^2 + \gamma^2 \rbracket{\dot{\gamma}v^2 + \gamma \mathbf{a}\cdot\mathbf{v}} \\
+		= 0 \mtext{in the particle rest frame where $\mathbf{v}=0$, $\dot{\gamma}=0$}
+	\end{gather*}
+	
+	The 4-acceleration is then:
+	\begin{align*}
+		\mathsf{A}^\mu &= \deri{\mathsf{U}^\mu}{\tau} \\
+		&= \gamma (\dot{\gamma}c, \dot{\gamma}\mathbf{v} + \gamma\mathbf{a})
+	\end{align*}
+	
+	Noting that $\diagderi{\gamma}{t} = \diagdiff{t}\sbracket{\rbracket{1-\beta^2}^{-1/2}}$, we then have:
+	\begin{gather*}
+		\mathsf{A}_\mu \mathsf{A}^\mu = -\gamma^2 \dot{\gamma}^2 c^2 + \rbracket{\gamma\dot{\gamma}\mathbf{v} + \gamma^2 \mathbf{a}}^2 \\
+		= \gamma^4 a^2
+	\end{gather*}
+	
+	Assuming a constant 3-force,
+	\begin{gather*}
+		\deri{\mathbf{p}}{t} = \diff{t}\rbracket{\gamma m \mathbf{v}} = f_x \\
+		\Rightarrow f_x = \dot{\gamma}m\mathbf{v} + \gamma m \mathbf{a} \\
+		= \beta^2 \gamma^3 \frac{a}{v} m \mathbf{v} + \gamma m \mathbf{a} \mtext{for $\mathbf{v} \parallel \mathbf{a}$} \\
+		= \gamma ma \sbracket{1 + \beta^2 \gamma^2 \frac{v}{v}} \mtext{in $x$ direction} \\
+		= \gamma^3 ma \sbracket{\frac{1}{\gamma^2} + \beta^2}
+		= \gamma^3 ma
+	\end{gather*}
+	
+	Also:
+	\begin{gather*}
+		\gamma = \cosh\rho \\
+		v^2 = c^2 \rbracket{1 - \sech^2 \rho} \\
+		v = c \tanh\rho \\
+		\deri{v}{\rho} = c \sech^2 \rho
+	\end{gather*}
+	
+	We then have:
+	\begin{gather*}
+		f_x = \gamma^3 ma = \gamma^3 m \underbracket{\deri{v}{t}}_{\deri{v}{\rho}\cdot\deri{\rho}{t}} \\
+		\Rightarrow f_x = \cosh^3 \rho \cdot m \cdot c \sech^2 \rho \deri{\rho}{t} \\
+		\Rightarrow \defint{0}{\rho}{\cosh\rho}{\rho} = \defint{0}{t}{\frac{f_x}{mc}}{t} \\
+		\sinh\rho = \beta\gamma = \frac{f_x t}{mc}
+	\end{gather*}
+	
+	Then
+	\begin{align*}
+		\gamma &= \sqrt{1+\sinh^2 \rho} \\
+		&= \sqrt{1+\sbracket{\frac{f_x t}{mc}}^2} \\
+		\Rightarrow \beta &= \frac{f_x t/mc}{\sqrt{1+\rbracket{f_x t/mc}^2}} \\
+		\Rightarrow \mathsf{U}^\mu &= \gamma \rbracket{c, \beta c, 0, 0}
+	\end{align*}
+	
+	Sketch of $\beta$ and $\gamma$ against $t$:
+	\image{.8\linewidth}{q1-beta-gamma-sketch}
+	
+	\part Diagram of the collision:
+	\image{.8\linewidth}{q1-collision}
+	
+	System 4-momentum is given by $\mathsf{P}^\mu = (2E/c, \mathbf{0})$ where $E^2 = (\masselectron c^2)^2 + (p_\mathrm{e} c)^2$ is the energy of the electron/positron.
+	
+	Suppose 1 photon is generated, the final 4-momentum would also be $\mathsf{P}^\mu$, but since $\mathsf{P}_\mu \mathsf{P}^\mu \neq 0$, this implies that the photon must possess finite mass, which is unphysical!
+	Therefore a minimum of 2 photons must be produced.
+	
+	Conservation of 3-momentum means that each of the platons must possess equal but opposite $p_\gamma$ $\Rightarrow$ equal energy so $E_\gamma = E$ by symmetry.
+	\begin{gather*}
+		\mathsf{P}_\mu \mathsf{P}^\mu = -\frac{4E^2}{c^2} \\
+		\Rightarrow E = \sqrt{(\SI{0.511}{\mega\electronvolt})^2 + (\SI{1}{\giga\electronvolt})^2} \\
+		= \SI{1}{\giga\electronvolt}
+	\end{gather*}
+	
+	\newpage
+	\part Sketch of the plates:
+	\image{.3\linewidth}{q1-plates}
+	Energy gained $E$:
+	\begin{gather*}
+		E = e \epsilon L = \gamma \masselectron c^2 \\
+		\Rightarrow \gamma = \frac{e \epsilon L}{\masselectron c^2} = \num{58.7}
+	\end{gather*}
+	
+	We finally have:
+	\begin{gather*}
+		\beta = \sbracket{1 - \gamma^{-2}}^{1/2} \\
+		= \sqrt{1 - \rbracket{\frac{\masselectron c^2}{e \epsilon L}}^2} = \num{0.9999}
+	\end{gather*}
+\end{parts}

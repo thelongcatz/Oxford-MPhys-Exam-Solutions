@@ -1,0 +1,81 @@
+\draft Tight-binding model and Fermi surface.
+
+\begin{parts}
+	\part $E_0$: unperturbed energy of an atom.
+	
+	$t(\mathbf{T})$: transfer integral, that is the overlap between orbitals of different atoms weighted by their potentials.
+	
+	Sketch of the direct lattice:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.8\linewidth]{q6-direct-lattice}
+	\end{figure}
+	
+	\begin{align*}
+		E(\mathbf{k}) &= E_0 - t(\mathbf{a}) \mathrm{e}^{i\mathbf{k}\cdot\mathbf{a}} - t(-\mathbf{a}) \mathrm{e}^{-i\mathbf{k}\cdot\mathbf{a}} - t(\mathbf{b}) \mathrm{e}^{i\mathbf{k}\cdot\mathbf{b}} - t(-\mathbf{b}) \mathrm{e}^{-i\mathbf{k}\cdot\mathbf{b}} \\
+		&= E_0 - 2t_x \cos k_x a - 2t_y \cos k_y a
+	\end{align*}
+	where $t_x = t(\mathbf{a}) = t(-\mathbf{a})$, $t_y = t(\mathbf{b}) = t(-\mathbf{b})$ by translational symmetry.
+	
+	\newpage
+	Sketch of the reciprocal lattice:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.6\linewidth]{q6-reciprocal-lattice}
+	\end{figure}
+	
+	Along $\Gamma - M$:
+	\begin{align*}
+		\frac{k_y}{k_x} &= \frac{b^*}{a^*} = \frac{a}{b} \\
+		\Rightarrow E &= E_0 - 2t_x \cos\rbracket{k_x a} -t_x \underbracket{\cos\rbracket{\frac{a}{b}k_x b}}_{\cos\rbracket{k_x a}} = E_0 - 3t_x \cos\rbracket{k_x a} \\
+		&= \begin{cases}
+			E_0 - 3t_x \mtext{at $\Gamma$} \\
+			E_0 + 3t_x \mtext{at $M$}
+		\end{cases}
+	\end{align*}
+	
+	Along $M - X$:
+	\begin{align*}
+		k_x = \frac{\pi}{a} \Rightarrow E &= E_0 - 2t_x \cos\pi - t_x \cos\rbracket{k_y b} \\
+		&= E_0 + 2t_x - t_x \cos\rbracket{k_y b} \\
+		&= \begin{cases}
+			E_0 + 3t_x \mtext{@$M$} \\
+			E_0 + t_x \mtext{@$X$}
+		\end{cases}
+	\end{align*}
+	
+	Along $X - \Gamma$:
+	\begin{align*}
+		k_y = 0 \Rightarrow E &= E_0 - 2t_x \cos\rbracket{k_x a} - t_x \\
+		&= \begin{cases}
+			E_0 + t_x \mtext{@$X$} \\
+			E_0 - 3t_x \mtext{@$\Gamma$}
+		\end{cases}
+	\end{align*}
+	
+	Along $\Gamma - Y$:
+	\begin{align*}
+		k_x = 0 \Rightarrow E &= E_0 -2t_x - t_x \cos\rbracket{k_y b} \\
+		&= \begin{cases}
+			E_0 - 3t_x \mtext{@$\Gamma$} \\
+			E_0 - t_x \mtext{@$Y$}
+		\end{cases}
+	\end{align*}
+	
+	Along $Y - M$:
+	\begin{align*}
+		k_y = \frac{\pi}{b} \Rightarrow E &= E_0 - 2t_x \cos\rbracket{k_x a} + t_x \\
+		&= \begin{cases}
+			E_0 - t_x \mtext{@$Y$} \\
+			E_0 + 3t_x \mtext{@$M$}
+		\end{cases}
+	\end{align*}
+	
+	Sketch of dispersion:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.8\linewidth]{q6-dispersion}
+	\end{figure}
+	
+	\textbf{\color{red}TO BE CONTINUED...}
+\end{parts}
